@@ -1,0 +1,4 @@
+[15-Oct-2012 07:23:29 UTC] PHP Fatal error:  Call to a member function HashPassword() on a non-object in /var/www/web/dev/devel/cm/transaction/check_reg.php on line 13
+[15-Oct-2012 07:30:22 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, null given in /var/www/web/dev/devel/cm/transaction/check_reg.php on line 32
+[15-Oct-2012 07:33:32 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, null given in /var/www/web/dev/devel/cm/transaction/check_reg.php on line 32
+[15-Oct-2012 07:41:21 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, null given in /var/www/web/dev/devel/cm/transaction/check_reg.php on line 32

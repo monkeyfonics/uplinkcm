@@ -1,0 +1,142 @@
+<?php
+if ($s_lvl < 1) {
+	header("Location: $rpath");
+    die();
+}
+require 'includes/accountcheck.inc';
+
+
+$ac_r = pg_fetch_array($ac);
+
+$acco = $ac_r[identy];
+
+
+/* nr of rows to diplay */
+$rows = 15;
+
+if (!$_GET['startrow']) {
+	$startrow = 0;
+} else {
+	$startrow = $_GET['startrow'];
+}
+
+$query = "
+	select		id as tid,
+				contact_id,
+				company_id,
+				created,
+  				cont,
+  				completed
+	from		$acco.todo
+	order by	completed, created desc
+	
+";
+
+$todo = pg_query($conn, $query);
+
+/*use buttons row */
+echo "
+	<div class='buttons'>
+		<a href='index.php?section=todo&template=todo_list'>
+			<div class='header'>{$lng->__('Todo List')}</div>
+		</a>
+		<a href='index.php?section=todo&template=todo_edit'>
+			<div>{$lng->__('New Todo Item')}</div>
+		</a>
+	</div>
+";
+
+
+echo "
+	
+
+	<div class='fullcont'>
+		
+		
+		<table class='list large'>
+			<tr>
+				<th class='first'>
+					Dated:
+				</th>
+				<th>
+					Contact:
+				</th>
+				<th>
+					Content:
+				</th>
+				<th>
+					Completed:
+				</th>
+			</tr>
+			";
+		while ($todo_r = pg_fetch_array($todo)) {
+			if ($todo_r[completed] == f) {
+				$bolde = 'font-weight: bold;';
+				$tf = "No";
+			} else {
+				$bolde = '';
+				$tf = "Yes";
+			}
+				
+			
+			/* users */
+			$query = "
+				select		$acco.todo.id,
+							$acco.todo.contact_id as cid,
+							$acco.contacts.fname as fname,
+							$acco.contacts.lname as lname
+				from		$acco.todo LEFT OUTER JOIN $acco.contacts ON ($acco.todo.contact_id = $acco.contacts.id)
+				where		$acco.contacts.id = $todo_r[contact_id]
+			";
+			$con = pg_query($conn, $query);
+			$con_r = pg_fetch_array($con);
+			
+			
+			$date = strtotime($todo_r[created]);
+			
+			$pripath = "index.php?section=todo&template=todo_view&tid=$todo_r[tid]";
+			
+			if (!$todo_r[contact_id]) {
+				$person = "None";
+			} else {
+				$person = "$con_r[lname], $con_r[fname]";
+			}
+			
+			
+			
+			echo "	
+			
+				<tr>
+					
+					<td class='first' style='$bolde'>
+						<a href='$pripath'>
+							".date('Y-m-d', $date)."
+						</a>
+					</td>
+					<td style='$bolde'>
+						<a href='$pripath'>
+							$person
+						</a>
+					</td>
+					<td style='overflow: hidden; $bolde' >
+						<a href='$pripath'>";
+							echo substr($todo_r[cont], 0, 30);
+							echo " 
+						</a>
+					</td>
+					<td>
+						$tf
+					</td>
+				</tr>
+			";
+		
+			
+		}
+		
+		
+		
+		echo "	
+		</table>
+		
+		";
+?>

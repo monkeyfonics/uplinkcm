@@ -1,0 +1,461 @@
+html {
+	height: 100%;
+	font-family: serif, Times;
+}
+body {
+	background: #e7f2ec;
+	margin: 0;
+	border: 0;
+	height: 100%;
+	
+}
+div.container {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+	
+	
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+
+	min-height:100%; /* real browsers */
+
+}
+
+a {
+	text-decoration: none;
+	color: #225237;
+	
+}
+a:hover {
+	color: #108143;
+}
+input {
+	font-size: 120%;
+	
+}
+input text {
+	font-size: 120%;
+	width: 100px;
+}
+input.full {
+	width: 95%;
+	
+}
+input.short {
+	width: 90px;
+	
+}
+select {
+	font-size: 120%;
+	min-width: 200px;
+}
+select.short {
+	font-size: 120%;
+	min-width: 120px;
+}
+.bold {
+	font-weight: bold;
+}
+.inactive {
+	color: #b3b3b3;
+	
+}
+h2.header {
+	text-align: center;
+}
+h3.header {
+	text-align: center;
+}
+h4 {
+	text-align: center;
+	margin: 5px;
+	
+}
+div.messagebox {
+	margin: auto;
+	overflow: hidden;
+	width: 400px;
+	background: #fff;
+	margin-top: 25px;
+}
+img.messageicon {
+	margin: 10px;
+	margin-left: 20px;
+	float: left;
+}
+p.messagetext {
+	float: left;
+	margin: 8px;
+	font-size: 130%;
+}
+div.topcont {
+	
+	min-height: 30px;
+	background: #c1decf;
+	padding: 5px;
+	overflow:hidden;
+}
+div.logo {
+	float: left;
+	margin-top: 5px;
+	font-size: 140%;
+	
+}
+div.account {
+	float: left;
+	margin-top: 2px;
+	margin-left: 25px;
+	font-size: 120%;
+	padding: 5px;
+	
+}
+/* Action buttons */
+div.buttons {
+	
+	width: 95%;
+	margin: auto;
+	padding: 3px;
+	overflow:hidden;
+	margin-bottom: 10px;
+}
+div.buttons div {
+	background: #fff;
+	float: left;
+	margin: 10px;
+	border: 1px #000 solid;
+	border-radius: 8px;
+	padding: 8px;
+}
+div.buttons div.inactive {
+	border: 1px solid #b3b3b3;
+}
+
+div.buttons div.header {
+	background: none;
+	border: 0px #000 solid;
+	border-bottom: 2px #225237 solid;
+	border-radius: 0px;
+	padding: 6px;
+	font-size: 140%;
+	margin: 8px;
+}
+.usebutton {
+	background: #fff;
+	display:inline;
+	float: left;
+	color: #225237;
+	border: 1px solid #225237;
+	border-radius: 4px;
+	padding: 8px;
+	margin: 8px;
+}
+div.div50 {
+	
+	width: 50%;
+	float: left;
+	overflow: hidden;
+	
+}
+div.div33 {
+	
+	width: 33%;
+	float: left;
+	overflow: hidden;
+	
+}
+.listbutton {
+	display:block;
+	width: 90%;
+	min-height: 80px;
+	padding: 5px;
+	margin: auto;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.bigbutton {
+	display:block;
+	width: 90%;
+	min-height: 80px;
+	padding: 5px;
+	margin: auto;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.bigbutton span {
+	font-size: 160%;
+	
+}
+.button {
+	display:block;
+	float: left;
+	padding: 5px;
+	margin: 4px;
+	
+}
+.cbutton {
+	width: 100px;
+	padding: 5px;
+	margin: auto;
+	
+}
+/*styling for buttons*/
+.bigstyle {
+	background: #f6faf8; /* fallback */
+	background: -webkit-gradient(linear, left top, left bottom, from(#f6faf8), to(#dfe3e1)); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, #f6faf8, #dfe3e1); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, #f6faf8, #dfe3e1); /* FF3.6+ */
+	background: -ms-linear-gradient(top, #f6faf8, #dfe3e1); /* IE10 */
+	background: -o-linear-gradient(top, #f6faf8, #dfe3e1); /* Opera 11.10+ */
+	background: linear-gradient(top, #f6faf8, #dfe3e1); /* W3C */
+	border: 1px solid #bbc0cc;
+	border-radius: 8px;
+	color: #225237;
+	font-family: serif, Times;
+}
+.bigstyle:hover {
+	background: #fff;
+	border: 1px solid #676c77;
+	border-radius: 8px;
+	
+}
+.bstyle {
+	background: #f6faf8; /* fallback */
+	background: -webkit-gradient(linear, left top, left bottom, from(#f6faf8), to(#dfe3e1)); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, #f6faf8, #dfe3e1); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, #f6faf8, #dfe3e1); /* FF3.6+ */
+	background: -ms-linear-gradient(top, #f6faf8, #dfe3e1); /* IE10 */
+	background: -o-linear-gradient(top, #f6faf8, #dfe3e1); /* Opera 11.10+ */
+	background: linear-gradient(top, #f6faf8, #dfe3e1); /* W3C */
+	border: 1px solid #bbc0cc;
+	border-radius: 8px;
+	color: #225237;
+	font-family: serif, Times;
+}
+.bstyle:hover {
+	background: #fff;
+	border: 1px solid #676c77;
+	border-radius: 8px;
+	
+}
+span.settingtext {
+	padding: 5px;
+}
+span.settingicon {
+	
+}
+span.settingicon img {
+	float: right;
+}
+/* menu */
+div.menu {
+	width: 100%;
+	min-height: 35px;
+	overflow: auto;
+	margin-bottom: 5px;
+	
+	background: #BFD8EF url('img/back_half.png'); /* fallback */
+	background: url('img/back_half.png'), -webkit-gradient(linear, left top, left bottom, from(#BFD8EF), to(#769CC1)); /* Saf4+, Chrome */
+	background: url('img/back_half.png'), -webkit-linear-gradient(top, #BFD8EF, #769CC1); /* Chrome 10+, Saf5.1+ */
+	background: url('img/back_half.png'),    -moz-linear-gradient(top, #dfe3e1, #f6faf8); /* FF3.6+ */
+	background: url('img/back_half.png'),     -ms-linear-gradient(top, #BFD8EF, #769CC1); /* IE10 */
+	background: url('img/back_half.png'),      -o-linear-gradient(top, #BFD8EF, #769CC1); /* Opera 11.10+ */
+	background: url('img/back_half.png'),         linear-gradient(top, #BFD8EF, #769CC1); /* W3C */
+	
+}
+div.menuitem {
+	background: #fff;
+	border: 1px solid #000;
+	border-radius: 8px;
+	padding: 5px;
+	margin: 10px;
+	float: left;
+	min-width: 100px;
+	font-size:130%;
+	text-align: center;
+}
+div.menuitem:hover   {
+	color: #108143;
+}
+
+
+
+.right {
+	
+	float: right
+}
+
+div.logout {
+	float: right;
+	
+}
+/* login */
+table.login {
+	margin-bottom: 20px;
+}
+div.login {
+	margin:auto;
+	background: #c1decf;
+	border: 1px solid #000;
+	border-radius: 8px;
+	width: 400px;
+	padding: 15px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 120%;
+}
+div.login input {
+	
+	font-size: 100%;
+}
+div.reg {
+	margin-top: 40px;
+	
+}
+.correct {
+	background: green;
+}
+/*abc links*/
+.abc_container {
+	background: #f0f0f0;
+	position: absolute;
+	right: 5px;
+	
+}
+.abc_item {
+	background: #fff;
+	margin: 6px;
+	padding: 4px;
+	min-width: 20px;
+	text-align: center;
+	border: 1px solid #000;
+	border-radius: 6px;
+	float: left;
+	font-weight: bold;
+}
+
+/*^main stuff */
+
+div.main_box {
+	min-height: 400px;
+	padding: 5px;
+	padding-bottom: 40px; /* for footer */
+}
+
+
+div.centercont {
+	width: 800px;
+	min-height: 300px;
+	margin: auto;
+	background: #fff;
+	overflow:hidden;
+	
+}
+div.fullcont {
+	width: 95%;
+	min-height: 300px;
+	margin: auto;
+	background: #fff;
+	overflow:hidden;
+	padding: 8px;
+}
+
+div.widget {
+	float: left;
+	border: 1px solid #f0f0f0;
+	width: 46%;
+	min-height: 400px;
+	padding: 0.5%;
+	margin: 1%;
+	
+}
+div.header {
+	background: none;
+	color: #225237;
+	border: 0px #000 solid;
+	border-bottom: 2px #225237 solid;
+	border-radius: 0px;
+	padding: 6px;
+	font-size: 140%;
+	margin: 8px;
+}
+
+table.list {
+	width: 100%;
+	
+}
+table.list td {
+	padding: 5px 10px;;
+	font-size: 110%;
+}
+table.list tr td:first-child {
+	text-align: left;
+	
+	
+}
+table.list tr:nth-child(odd) {
+	background: #f0f0f0;
+}
+table.list tr:nth-child(even) {
+	background: #d9d9d9;
+}
+.large {
+	font-size: 110%;
+}
+.large th {
+	padding: 5px;
+}
+.large td {
+	
+	padding: 10px 10px;
+	text-align: center
+}
+table.grid {
+	width: 100%;
+	font-size: 110%;
+}
+table.grid tr {
+	background: #f0f0f0;
+}
+table.grid tr td:first-child {
+	
+	width: 150px;
+}
+table.grid td {
+	padding: 5px;
+	text-align: left;
+}
+table.grid td.head {
+	color: #108143;
+	width: 150px;
+	text-align: center;
+}
+/* container for small boxes */
+
+.smbox {
+	width: 48%; 
+	float: left;
+	margin: 1%;
+}
+/*admin */
+.imgshow {
+	min-height: 150px;
+}
+.console {
+	position: absolute;
+	right: 10px;
+	top: 100px;
+	width: 100px;
+	min-height: 75px;
+	border: 1px solid #000;
+}
+/* footer */
+div.footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 30px;
+	background: #c1decf;
+	text-align: center;
+	
+}

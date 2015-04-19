@@ -1,0 +1,36 @@
+<?php
+session_start();
+
+
+include("settings.inc");
+include("local_functions.inc");
+
+
+$conn = pg_connect("dbname=".$setting['db']['name']);
+
+if (empty($_SESSION['s_id'])) {
+   $_SESSION['s_id'] = 0;
+}
+
+if (empty($_SESSION['ac_id'])) {
+   $_SESSION['ac_id'] = 0;
+} 
+
+if (empty($_SESSION['lang'])) {
+   $_SESSION['lang'] = 'en';
+}
+
+
+
+/* translate */
+
+require_once("includes/trans.inc");
+
+
+$outputlanguage = $_SESSION['lang'];
+
+$lng = new Translator($outputlanguage);//$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
+ 
+$lng->setPath('lang/');
+
+?>

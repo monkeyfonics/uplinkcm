@@ -1,0 +1,74 @@
+English=Engelska
+Swedish=Svenska
+Finnish=Finska
+Account=Konto
+Logout=Logga ut
+User=Användare
+Yes=Ja
+No=Nej
+Back=Tillbaka
+Next=Nästa
+/*/main/*/
+Dash=Panel
+New Todos=Nya Att göra
+New Invoices=Nya Räkningar
+New Notes= Nya Anteckningar
+New Contacts=Nya Kontakter
+/*/additonal pages/*/
+New password=Nytt Lösenord
+Email=Epost
+Select an account=Välj ett konto
+Demo account=Demo konto
+A generic demo account=Ett allmänt demo konto
+Account to recover=Konto att återhämta
+Registration=Registrering
+Reset=Återhämta
+Date=Datum
+/*/menu/*/
+Contacts=Kontakter
+Companies=Firmor
+Templates=Botten
+Reports=Raporter
+Todo=Att göra
+/*/kontakter/*/
+Contact=Kontakt
+New Contact=Ny Kontakt
+Name=Namn
+Phone=Telefon
+Address=Adress
+City=Stad
+Country=Land
+Edit Contact=Editera Kontakt
+Save Contact=Spara Kontakt
+First Name=Förnamn
+Last Name=Efternamn
+Zip=Post Nr
+New Note=Ny Anteckning
+New Invoice=Ny Faktura
+Language=Språk
+Notes=Anteckningar
+Note=Anteckning
+VAT-nr=Moms-nr
+Dated=Daterad
+Header=Rubrik
+Reference=Referens
+Add company=Lägg till firma
+None=Ingen
+Save Note=Spara Anteckning
+/*/Company/*/
+Company=Firma
+New Company=Ny Firma
+Edit Company=Editera Firma
+Save Company=Spara Firma
+Invoice Templates=Faktura Botten
+Invoices=Fakturor
+Primary=Antagen
+Add Contact=Lägg till kontakt
+/*/Templates/*/
+New Template=Nytt Botten
+Edit Template=Editera Botten
+Recurring=Återkommande
+Amount=Summa
+Active=Aktiv
+Deactivate=Deaktivera
+Publish=Publisera

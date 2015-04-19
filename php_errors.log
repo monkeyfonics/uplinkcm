@@ -1,0 +1,818 @@
+[15-Oct-2012 07:39:12 UTC] PHP Warning:  include(templates/registration.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:39:12 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/registration.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:39:14 UTC] PHP Warning:  include(templates/registration.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:39:14 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/registration.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:57:19 UTC] PHP Warning:  include(template/registration.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:57:19 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'template/registration.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:57:19 UTC] PHP Warning:  include(template/registration.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:57:19 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'template/registration.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:57:38 UTC] PHP Warning:  include(registration.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 07:57:38 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'registration.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 11
+[15-Oct-2012 10:21:47 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;user&quot;
+LINE 3:  user,
+         ^ in /var/www/web/dev/devel/cm/transaction/check_reg.php on line 32
+[15-Oct-2012 10:24:55 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;user&quot;
+LINE 3:  user,
+         ^ in /var/www/web/dev/devel/cm/transaction/check_reg.php on line 32
+[15-Oct-2012 10:26:13 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;user&quot;
+LINE 3:  user,
+         ^ in /var/www/web/dev/devel/cm/transaction/check_reg.inc on line 32
+[15-Oct-2012 10:30:03 UTC] PHP Fatal error:  Call to a member function CheckPassword() on a non-object in /var/www/web/dev/devel/cm/transaction/check_login.inc on line 23
+[16-Oct-2012 07:51:34 UTC] PHP Warning:  include(templates/userman.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 23
+[16-Oct-2012 07:51:34 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/userman.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 23
+[16-Oct-2012 08:37:01 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 5
+[16-Oct-2012 08:37:01 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 5
+[16-Oct-2012 09:35:08 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 5
+[16-Oct-2012 09:35:08 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 5
+[16-Oct-2012 09:38:44 UTC] PHP Warning:  include(headers/topbar.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 22
+[16-Oct-2012 09:38:44 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'headers/topbar.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 22
+[16-Oct-2012 09:57:09 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  duplicate key value violates unique constraint &quot;un_user&quot;
+DETAIL:  Key (login)=(tommy) already exists. in /var/www/web/dev/devel/cm/transaction/check_reg.inc on line 43
+[16-Oct-2012 09:58:17 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  duplicate key value violates unique constraint &quot;un_user&quot;
+DETAIL:  Key (login)=(tommy) already exists. in /var/www/web/dev/devel/cm/transaction/check_reg.inc on line 42
+[16-Oct-2012 09:59:12 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed:  in /var/www/web/dev/devel/cm/transaction/check_reg.inc on line 42
+[16-Oct-2012 09:59:48 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed:  in /var/www/web/dev/devel/cm/transaction/check_reg.inc on line 42
+[17-Oct-2012 07:41:15 UTC] PHP Warning:  include(templates/register.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[17-Oct-2012 07:41:15 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/register.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[17-Oct-2012 10:22:17 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 13
+[17-Oct-2012 10:22:17 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 15
+[17-Oct-2012 11:33:41 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 13
+[17-Oct-2012 11:33:41 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 15
+[17-Oct-2012 18:49:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 13
+[17-Oct-2012 18:49:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 15
+[17-Oct-2012 18:49:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 13
+[17-Oct-2012 18:49:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 15
+[17-Oct-2012 18:50:27 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 13
+[17-Oct-2012 18:50:27 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 15
+[17-Oct-2012 18:50:30 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 13
+[17-Oct-2012 18:50:30 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 15
+[17-Oct-2012 18:51:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 13
+[17-Oct-2012 18:51:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 15
+[17-Oct-2012 18:53:42 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 7: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 12
+[17-Oct-2012 18:53:42 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 14
+[19-Oct-2012 08:35:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 7: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 12
+[19-Oct-2012 08:35:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 14
+[05-Nov-2012 07:40:08 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 7: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 12
+[05-Nov-2012 07:40:08 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 14
+[20-Nov-2012 08:07:39 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 7: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 12
+[20-Nov-2012 08:07:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 14
+[04-Dec-2012 08:04:01 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 7: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 12
+[04-Dec-2012 08:04:01 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 14
+[04-Dec-2012 08:04:51 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 7: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 12
+[04-Dec-2012 08:04:51 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 14
+[04-Dec-2012 08:05:46 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 7: 
+        ^ in /var/www/web/dev/devel/cm/headers/topbar.inc on line 12
+[04-Dec-2012 08:05:46 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/headers/topbar.inc on line 14
+[07-Jan-2013 08:33:17 UTC] PHP Parse error:  syntax error, unexpected '<' in /var/www/web/dev/devel/cm/templates/useradmin.inc on line 2
+[07-Jan-2013 08:45:40 UTC] PHP Warning:  include(templates/contacts.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:45:40 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/contacts.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:46:56 UTC] PHP Warning:  include(templates/contacts.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:46:56 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/contacts.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:47:05 UTC] PHP Warning:  include(cont/contacts.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:47:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'cont/contacts.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:49:29 UTC] PHP Warning:  include(cont/contacts.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:49:29 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'cont/contacts.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:50:03 UTC] PHP Warning:  include(contacts/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:50:03 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'contacts/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:50:54 UTC] PHP Warning:  include(contacts/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:50:54 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'contacts/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:02 UTC] PHP Warning:  include(contacts/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:02 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'contacts/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:15 UTC] PHP Warning:  include(contacts/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:15 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'contacts/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:19 UTC] PHP Warning:  include(templates/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:19 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:23 UTC] PHP Warning:  include(templates/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:51:23 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:52:35 UTC] PHP Warning:  include(contacts/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 08:52:35 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'contacts/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 09:08:28 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  duplicate key value violates unique constraint &quot;un_user&quot;
+DETAIL:  Key (login)=(test3) already exists. in /var/www/web/dev/devel/cm/transaction/check_reg.inc on line 77
+[07-Jan-2013 12:26:22 UTC] PHP Warning:  include(contacts/list.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 12:26:22 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'contacts/list.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[07-Jan-2013 12:29:34 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;sort&quot;
+LINE 9:  sort by  create_date
+         ^ in /var/www/web/dev/devel/cm/templates/useradmin.inc on line 19
+[07-Jan-2013 12:29:34 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/useradmin.inc on line 56
+[08-Jan-2013 08:34:39 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  invalid input syntax for integer: &quot;&quot;
+LINE 3:    set  lvl=''
+                    ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 16
+[08-Jan-2013 08:35:02 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  invalid input syntax for integer: &quot;&quot;
+LINE 3:    set  lvl=''
+                    ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 16
+[08-Jan-2013 08:35:30 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 08:35:30 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:37:00 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:37:00 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:37:07 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:37:07 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:37:11 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:37:11 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:51:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;where&quot;
+LINE 4:    where id=8
+           ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 16
+[08-Jan-2013 09:52:58 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:52:58 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:53:09 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:53:09 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-Jan-2013 09:53:25 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;where&quot;
+LINE 4:    where id=8
+           ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 16
+[08-Jan-2013 09:54:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;where&quot;
+LINE 4:    where id=8
+           ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 16
+[08-Jan-2013 09:55:48 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  invalid input syntax for integer: &quot;&quot;
+LINE 3:    set  lvl=''
+                    ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 16
+[08-Jan-2013 09:56:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;where&quot;
+LINE 4:    where  id = 8
+           ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 16
+[08-Jan-2013 09:57:23 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;where&quot;
+LINE 4:    where  id = 8
+           ^ in /var/www/web/dev/devel/cm/transaction/userlist.inc on line 11
+[23-Apr-2013 13:27:03 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[23-Apr-2013 13:27:03 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[23-Apr-2013 15:21:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 17
+[23-Apr-2013 15:21:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 19
+[23-Apr-2013 15:21:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;;&quot;
+LINE 2:    CREATE SCHEMA ;
+                         ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 25
+[24-Apr-2013 07:16:21 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[24-Apr-2013 07:16:21 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 07:57:37 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;vat&quot; does not exist
+LINE 4:     vat,
+            ^ in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 22
+[29-Apr-2013 07:57:37 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 49
+[29-Apr-2013 07:57:56 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;create_date&quot; does not exist
+LINE 6:     create_date,
+            ^ in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 22
+[29-Apr-2013 07:57:56 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 49
+[29-Apr-2013 07:58:23 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;lvl&quot; does not exist
+LINE 9:  where lvl != 1
+               ^ in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 22
+[29-Apr-2013 07:58:23 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 49
+[29-Apr-2013 08:00:11 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;create_date&quot; does not exist
+LINE 10:  order by  create_date
+                    ^ in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 22
+[29-Apr-2013 08:00:11 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/account_list.inc on line 49
+[29-Apr-2013 08:16:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/devel/cm/templates/createdb.inc on line 17
+[29-Apr-2013 08:16:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/createdb.inc on line 19
+[29-Apr-2013 09:57:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 15
+[29-Apr-2013 09:57:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 17
+[29-Apr-2013 09:57:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;;&quot;
+LINE 2:    CREATE SCHEMA ;
+                         ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 23
+[29-Apr-2013 10:00:44 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 15
+[29-Apr-2013 10:00:44 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 17
+[29-Apr-2013 10:00:44 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;;&quot;
+LINE 2:    CREATE SCHEMA ;
+                         ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 23
+[29-Apr-2013 10:02:16 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:02:16 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:03:13 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 15
+[29-Apr-2013 10:03:13 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 17
+[29-Apr-2013 10:03:13 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;;&quot;
+LINE 2:    CREATE SCHEMA ;
+                         ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 23
+[29-Apr-2013 10:04:18 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;oy&quot;
+LINE 2:    CREATE SCHEMA Demo oy;
+                              ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 23
+[29-Apr-2013 10:04:46 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:04:46 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:04:48 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:04:48 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:05:01 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;1&quot;
+LINE 2:    CREATE SCHEMA 1;
+                         ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 23
+[29-Apr-2013 10:06:20 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:06:20 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:06:23 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:06:23 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:07:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;'acc'&quot;
+LINE 2:    CREATE SCHEMA 'acc'.1;
+                         ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 23
+[29-Apr-2013 10:07:43 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.1&quot;
+LINE 2:    CREATE SCHEMA acc.1;
+                            ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 23
+[29-Apr-2013 10:12:05 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:12:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:13:45 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[29-Apr-2013 10:13:45 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[03-May-2013 08:07:34 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;where&quot;
+LINE 5:  where user_id = 1
+         ^ in /var/www/web/dev/devel/cm/templates/main.inc on line 12
+[03-May-2013 08:07:34 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/main.inc on line 31
+[07-May-2013 11:14:36 UTC] PHP Warning:  include(transaction/account_sel.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[07-May-2013 11:14:36 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/account_sel.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[07-May-2013 11:14:43 UTC] PHP Warning:  include(transaction/account_sel.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[07-May-2013 11:14:43 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/account_sel.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[07-May-2013 11:14:59 UTC] PHP Warning:  include(transaction/account_sel.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[07-May-2013 11:14:59 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/account_sel.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[07-May-2013 11:26:27 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.1&quot;
+LINE 5:  from  acc.1.contacts
+                  ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 15
+[07-May-2013 11:26:27 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 34
+[07-May-2013 11:27:19 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;1.&quot;
+LINE 5:  from  1.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 15
+[07-May-2013 11:27:19 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 34
+[07-May-2013 11:27:44 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_2&quot; does not exist
+LINE 5:  from  acc_2.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 15
+[07-May-2013 11:27:44 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 34
+[07-May-2013 11:34:24 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_2&quot; does not exist
+LINE 5:  from  acc_2.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 15
+[07-May-2013 11:34:24 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 34
+[07-May-2013 12:00:55 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_2&quot; does not exist
+LINE 5:  from  acc_2.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 15
+[07-May-2013 12:00:55 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 34
+[07-May-2013 12:14:46 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_2&quot; does not exist
+LINE 5:  from  acc_2.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 15
+[07-May-2013 12:14:46 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 34
+[08-May-2013 07:09:56 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 07:09:56 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 07:10:01 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 07:10:01 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 07:10:29 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 07:10:29 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 07:32:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;account&quot; does not exist
+LINE 2:  update  account
+                 ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:32:36 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set   ident = acc_Uplin_2
+                       ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:32:36 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 07:36:44 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set  ident=acc_Uplin_2
+                    ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:40:34 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set  ident=acc_Uplin_2
+                    ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:40:34 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 07:41:18 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; of relation &quot;accounts&quot; does not exist
+LINE 3:  set  acc_Uplin_2=ident
+              ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:41:18 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 07:42:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set   ident=acc_Uplin_2
+                     ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:42:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 07:42:46 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set   identy=acc_Uplin_2
+                      ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:42:46 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 07:43:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set   identy=acc_uplin_2
+                      ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:43:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 07:45:41 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set   identy=acc_uplin_2
+                      ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 07:45:41 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 09:12:56 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;acc_uplin_2&quot; does not exist
+LINE 3:  set   identy=acc_uplin_2
+                      ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 09:12:56 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 09:13:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;acc_uplin_2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 09:17:09 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;accuplin2&quot; does not exist
+LINE 3:  set   identy=accuplin2
+                      ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 09:17:32 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;accuplin2&quot; does not exist
+LINE 3:  set   identy=accuplin2
+                      ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 29
+[08-May-2013 09:17:32 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  schema &quot;accuplin2&quot; already exists in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 09:35:34 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 09:35:34 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 09:35:47 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  .contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 29
+[08-May-2013 09:35:47 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 48
+[08-May-2013 09:37:12 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;$&quot;
+LINE 5:  from  $ac_r[identy].contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 29
+[08-May-2013 09:37:12 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 48
+[08-May-2013 09:38:07 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  .contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 30
+[08-May-2013 09:38:07 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 49
+[08-May-2013 09:38:16 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  .contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 30
+[08-May-2013 09:38:16 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 49
+[08-May-2013 09:38:45 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  .contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 30
+[08-May-2013 09:38:45 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 49
+[08-May-2013 09:39:19 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  .contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 30
+[08-May-2013 09:39:19 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 49
+[08-May-2013 09:39:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;_1&quot;
+LINE 2:    CREATE SCHEMA acc_demo _1;
+                                  ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 34
+[08-May-2013 09:40:40 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 09:40:40 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 09:40:47 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 09:40:47 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[08-May-2013 09:41:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  acc_demo _1.contacts
+                          ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 30
+[08-May-2013 09:41:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 49
+[08-May-2013 09:41:07 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.contacts&quot; does not exist
+LINE 5:  from  acc_uplin_2.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 30
+[08-May-2013 09:41:07 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 49
+[08-May-2013 13:16:49 UTC] PHP Warning:  include(templates//Main.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[08-May-2013 13:16:49 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//Main.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[08-May-2013 13:17:02 UTC] PHP Warning:  include(templates//Main.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[08-May-2013 13:17:02 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//Main.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[10-May-2013 11:25:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  invalid input syntax for integer: &quot;&quot;
+LINE 7:  where  id = ''
+                     ^ in /var/www/web/dev/devel/cm/templates/userman.inc on line 13
+[10-May-2013 11:25:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/userman.inc on line 15
+[10-May-2013 11:31:02 UTC] PHP Warning:  include(headers/topbar.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:31:02 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'headers/topbar.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:41:45 UTC] PHP Warning:  include(headers/topbar.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:41:45 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'headers/topbar.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:46:06 UTC] PHP Warning:  include(headers/topbar.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:46:06 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'headers/topbar.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:46:42 UTC] PHP Warning:  include(headers/topbar.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:46:42 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'headers/topbar.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:46:46 UTC] PHP Warning:  include(headers/topbar.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:46:46 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'headers/topbar.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 6
+[10-May-2013 11:47:39 UTC] PHP Warning:  include(transaction/.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/transaction.php on line 8
+[10-May-2013 11:47:39 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/transaction.php on line 8
+[10-May-2013 12:07:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  acc_demo _1.contacts
+                          ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 21
+[10-May-2013 12:07:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 40
+[10-May-2013 12:07:07 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  acc_demo _1.contacts
+                          ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 21
+[10-May-2013 12:07:07 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 40
+[10-May-2013 12:07:19 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;_1&quot;
+LINE 2:    CREATE SCHEMA acc_demo _1;
+                                  ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 35
+[10-May-2013 12:08:48 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;_1&quot;
+LINE 2:    CREATE SCHEMA acc_demo _1;
+                                  ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 35
+[10-May-2013 12:10:11 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;_1&quot;
+LINE 2:    CREATE SCHEMA acc_demo _1;
+                                  ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 38
+[10-May-2013 12:10:32 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;_1&quot;
+LINE 2:    CREATE SCHEMA acc_demo _1;
+                                  ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 38
+[10-May-2013 12:19:35 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;_1&quot;
+LINE 2:    CREATE SCHEMA acc_demo _1;
+                                  ^ in /var/www/web/dev/devel/cm/transaction/createdb.inc on line 39
+[13-May-2013 07:19:46 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_demo_1.contacts&quot; does not exist
+LINE 5:  from  acc_demo_1.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 21
+[13-May-2013 07:19:46 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 40
+[13-May-2013 07:19:46 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_demo_1.contacts&quot; does not exist
+LINE 5:  from  acc_demo_1.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 21
+[13-May-2013 07:19:46 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 40
+[13-May-2013 12:51:49 UTC] PHP Warning:  include(templates/admin/login.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[13-May-2013 12:51:49 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/admin/login.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[14-May-2013 09:50:43 UTC] PHP Warning:  include(templates//account_edit.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[14-May-2013 09:50:43 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//account_edit.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[14-May-2013 09:52:30 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 15: 
+         ^ in /var/www/web/dev/devel/cm/templates/admin/account_edit.inc on line 22
+[14-May-2013 09:52:30 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/account_edit.inc on line 24
+[14-May-2013 09:52:55 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 15: 
+         ^ in /var/www/web/dev/devel/cm/templates/admin/account_edit.inc on line 22
+[14-May-2013 09:52:55 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/account_edit.inc on line 24
+[15-May-2013 09:05:32 UTC] PHP Warning:  include(templates//userman.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[15-May-2013 09:05:32 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//userman.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[15-May-2013 09:05:46 UTC] PHP Warning:  include(templates//userman.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[15-May-2013 09:05:46 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//userman.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[15-May-2013 13:29:41 UTC] PHP Warning:  include(templates/admin/logout.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[15-May-2013 13:29:41 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/admin/logout.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[15-May-2013 13:30:14 UTC] PHP Warning:  include(templates/admin/logout.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[15-May-2013 13:30:14 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/admin/logout.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[17-May-2013 08:18:26 UTC] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting T_STRING or T_VARIABLE or T_NUM_STRING in /var/www/web/dev/devel/cm/transaction/account_edit.inc on line 7
+[20-May-2013 08:28:32 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;Data&quot;
+LINE 3:    set  name=Uplink Data Finland oy,
+                            ^ in /var/www/web/dev/devel/cm/transaction/account_edit.inc on line 17
+[20-May-2013 08:29:15 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;Data&quot;
+LINE 3:    set  name=Uplnk Data Finland oy,
+                           ^ in /var/www/web/dev/devel/cm/transaction/account_edit.inc on line 15
+[20-May-2013 08:30:02 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;where&quot;
+LINE 6:    where id=2
+           ^ in /var/www/web/dev/devel/cm/transaction/account_edit.inc on line 15
+[20-May-2013 08:38:49 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;active&quot; is of type boolean but expression is of type integer
+LINE 4:      active=1,
+                    ^
+HINT:  You will need to rewrite or cast the expression. in /var/www/web/dev/devel/cm/transaction/account_edit.inc on line 22
+[20-May-2013 08:39:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;,&quot;
+LINE 4:      active=,
+                    ^ in /var/www/web/dev/devel/cm/transaction/account_edit.inc on line 22
+[20-May-2013 08:57:50 UTC] PHP Warning:  include(templates//createdb.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 08:57:50 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//createdb.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:22:50 UTC] PHP Warning:  include(templates//user_info.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:22:50 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//user_info.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:30:06 UTC] PHP Warning:  include(templates//user_info.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:30:06 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//user_info.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:30:09 UTC] PHP Warning:  include(templates//user_info.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:30:09 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//user_info.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:30:25 UTC] PHP Warning:  include(templates//user_info.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:30:25 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates//user_info.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:51:25 UTC] PHP Warning:  include(templates/admin/user_edit.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:51:25 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/admin/user_edit.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 09:52:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;email&quot; does not exist
+LINE 6:     email
+            ^ in /var/www/web/dev/devel/cm/templates/admin/main.inc on line 19
+[20-May-2013 09:53:17 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;email&quot; does not exist
+LINE 6:     email
+            ^ in /var/www/web/dev/devel/cm/templates/admin/user_list.inc on line 21
+[20-May-2013 09:53:17 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/user_list.inc on line 59
+[20-May-2013 10:04:42 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_demo_1.contacts&quot; does not exist
+LINE 5:  from  acc_demo_1.contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 21
+[20-May-2013 10:04:42 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 40
+[20-May-2013 10:41:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;email&quot; does not exist
+LINE 5:     email
+            ^ in /var/www/web/dev/devel/cm/templates/admin/userman.inc on line 13
+[20-May-2013 10:41:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/userman.inc on line 15
+[20-May-2013 10:48:47 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;email&quot; does not exist
+LINE 6:     email
+            ^ in /var/www/web/dev/devel/cm/templates/admin/newuser_list.inc on line 19
+[20-May-2013 10:48:47 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/newuser_list.inc on line 45
+[20-May-2013 11:40:27 UTC] PHP Warning:  include(templates/admin/user_edit.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 11:40:27 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'templates/admin/user_edit.inc' for inclusion (include_path='.:/var/www/functions') in /var/www/web/dev/devel/cm/index.php on line 26
+[20-May-2013 12:06:41 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;email&quot; does not exist
+LINE 5:     email
+            ^ in /var/www/web/dev/devel/cm/templates/admin/user_pass.inc on line 13
+[20-May-2013 12:06:41 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/user_pass.inc on line 15
+[22-May-2013 12:20:35 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 9: 
+        ^ in /var/www/web/dev/devel/cm/templates/admin/user_edit.inc on line 19
+[22-May-2013 12:20:35 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/user_edit.inc on line 21
+[23-May-2013 09:55:46 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  invalid input syntax for integer: &quot;&quot;
+LINE 7:  where id = ''
+                    ^ in /var/www/web/dev/devel/cm/templates/admin/user_edit.inc on line 19
+[23-May-2013 09:55:46 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/admin/user_edit.inc on line 21
+[24-May-2013 07:47:51 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 5:  from  .contacts
+               ^ in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 21
+[24-May-2013 07:47:51 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/devel/cm/templates/contacts/list.inc on line 40
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 15:  from  .invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 8:  from  .invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 14:  from  .contacts
+                ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 33
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 2:   select  .invoice_def.id as id,
+                  ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 60
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 2:  select  .contact_notes.id,
+                 ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 79
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 2:  select  .todo.id,
+                 ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 99
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 114
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 149
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 182
+[01-Aug-2014 15:05:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 212
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 15:  from  .invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 8:  from  .invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 14:  from  .contacts
+                ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 33
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 2:   select  .invoice_def.id as id,
+                  ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 60
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 2:  select  .contact_notes.id,
+                 ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 79
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 2:  select  .todo.id,
+                 ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 99
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 114
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 149
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 182
+[01-Aug-2014 15:06:24 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 212
+[01-Aug-2014 15:06:25 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 15:  from  .invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:06:25 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:06:25 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 8:  from  .invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:06:26 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 15:  from  .invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:06:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:06:26 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 8:  from  .invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:06:28 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 15:  from  .invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:06:28 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:06:28 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near "."
+LINE 8:  from  .invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:36 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:36 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:36 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:37 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:37 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:37 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:40 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:40 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:40 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:43 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:43 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:43 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:46 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:46 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:46 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:50 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:50 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:50 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:54 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:54 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:57 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:57 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:57 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:58 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:58 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[01-Aug-2014 15:07:59 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 15:  from  acc_demo_858.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Aug-2014 15:07:59 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Aug-2014 15:07:59 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_demo_858" does not exist
+LINE 8:  from  acc_demo_858.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 232
+[05-Aug-2014 06:22:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 522
+[08-Aug-2014 06:35:19 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 248
+[09-Sep-2014 11:53:11 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  column "phone" of relation "contacts" does not exist
+LINE 5:    phone,
+           ^ in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 75
+[09-Sep-2014 12:01:01 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  column "phone" of relation "contacts" does not exist
+LINE 5:    phone,
+           ^ in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 75
+[09-Sep-2014 12:09:48 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint "contacts_pkey"
+DETAIL:  Key (id)=(1) already exists. in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 77
+[09-Sep-2014 12:10:57 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint "contacts_pkey"
+DETAIL:  Key (id)=(2) already exists. in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 77
+[09-Sep-2014 12:17:16 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint "contacts_pkey"
+DETAIL:  Key (id)=(3) already exists. in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 78
+[09-Sep-2014 12:20:00 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint "contacts_pkey"
+DETAIL:  Key (id)=(4) already exists. in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 78
+[09-Sep-2014 12:24:40 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint "company_pkey"
+DETAIL:  Key (id)=(1) already exists. in /var/www/web/production/uplinkcm/transaction/company_edit.inc on line 69
+[09-Sep-2014 12:27:21 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 351
+[09-Sep-2014 12:31:18 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint "contacts_pkey"
+DETAIL:  Key (id)=(5) already exists. in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 78
+[09-Sep-2014 12:32:07 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint "contacts_pkey"
+DETAIL:  Key (id)=(6) already exists. in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 78
+[11-Sep-2014 10:40:24 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 351
+[11-Sep-2014 10:42:19 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 351
+[11-Sep-2014 10:45:47 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 248
+[11-Sep-2014 10:47:22 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 249
+[02-Jan-2015 11:36:16 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 254
+[13-Jan-2015 13:18:44 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 254
+[15-Jan-2015 11:31:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 254
+[22-Jan-2015 10:53:08 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:04:02 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:06:16 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:06:51 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:06:54 UTC] PHP Warning:  include(templates/contacts/company_view.inc): failed to open stream: No such file or directory in /var/www/web/production/uplinkcm/index.php on line 30
+[22-Jan-2015 11:06:54 UTC] PHP Warning:  include(): Failed opening 'templates/contacts/company_view.inc' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/production/uplinkcm/index.php on line 30
+[22-Jan-2015 11:07:58 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:08:02 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:08:58 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:09:53 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:11:05 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:13:29 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 335
+[22-Jan-2015 11:14:32 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 337
+[22-Jan-2015 11:15:45 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 338
+[22-Jan-2015 11:16:35 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 338
+[22-Jan-2015 11:17:11 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 338
+[22-Jan-2015 11:18:40 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 338
+[22-Jan-2015 11:18:49 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 339
+[22-Jan-2015 11:18:50 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 339
+[22-Jan-2015 11:19:15 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 339
+[22-Jan-2015 11:20:54 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 341
+[22-Jan-2015 11:21:50 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 341
+[22-Jan-2015 11:22:22 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 341
+[22-Jan-2015 11:24:00 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 341
+[22-Jan-2015 11:35:41 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 342
+[23-Jan-2015 12:41:29 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 343
+[23-Jan-2015 12:42:09 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 339
+[23-Jan-2015 12:42:32 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 344
+[23-Jan-2015 12:43:46 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/company/company_edit.inc on line 344
+[23-Jan-2015 12:46:55 UTC] PHP Fatal error:  Call to a member function __() on a non-object in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 353
+[23-Jan-2015 12:48:12 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/production/uplinkcm/templates/def/def_edit.inc on line 254
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 15:  from  acc_tintt_831.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 8:  from  acc_tintt_831.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 251
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 14:  from  acc_tintt_831.contacts
+                ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 33
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 17:   from  acc_tintt_831.invoice_out LEFT JOIN acc_tintt_831.in...
+                 ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 60
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 8:  from  acc_tintt_831.contact_notes LEFT JOIN acc_tintt_831.c...
+               ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 79
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 10:  from  acc_tintt_831.todo LEFT JOIN acc_tintt_831.contacts
+                ^ in /var/www/web/production/uplinkcm/templates/main.inc on line 99
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 114
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 149
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 182
+[01-Apr-2015 19:36:18 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/main.inc on line 212
+[01-Apr-2015 19:36:21 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 15:  from  acc_tintt_831.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Apr-2015 19:36:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Apr-2015 19:36:21 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 8:  from  acc_tintt_831.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 251
+[01-Apr-2015 19:36:21 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 13:  from  acc_tintt_831.contacts
+                ^ in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 30
+[01-Apr-2015 19:36:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 37
+[01-Apr-2015 19:36:21 UTC] PHP Warning:  pg_result_seek() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 87
+[01-Apr-2015 19:36:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 88
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 15:  from  acc_tintt_831.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 8:  from  acc_tintt_831.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 251
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 6:  from  acc_tintt_831.contacts
+               ^ in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 31
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 33
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 14:  from  acc_tintt_831.contacts
+                ^ in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 58
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 60
+[01-Apr-2015 19:36:25 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 7:   FROM   acc_tintt_831.company 
+                 ^ in /var/www/web/production/uplinkcm/templates/contacts/contact_edit.inc on line 115
+[01-Apr-2015 19:38:29 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 2:    insert into acc_tintt_831.contacts (
+                       ^ in /var/www/web/production/uplinkcm/transaction/contact_edit.inc on line 77
+[01-Apr-2015 19:38:31 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 15:  from  acc_tintt_831.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Apr-2015 19:38:31 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Apr-2015 19:38:31 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 8:  from  acc_tintt_831.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 251
+[01-Apr-2015 19:38:31 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 13:  from  acc_tintt_831.contacts
+                ^ in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 30
+[01-Apr-2015 19:38:31 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 37
+[01-Apr-2015 19:38:31 UTC] PHP Warning:  pg_result_seek() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 87
+[01-Apr-2015 19:38:31 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 88
+[01-Apr-2015 19:38:33 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 15:  from  acc_tintt_831.invoice_def
+                ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 28
+[01-Apr-2015 19:38:33 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 32
+[01-Apr-2015 19:38:33 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 8:  from  acc_tintt_831.invoice_out
+               ^ in /var/www/web/production/uplinkcm/includes/invoicecheck.inc on line 251
+[01-Apr-2015 19:38:33 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  schema "acc_tintt_831" does not exist
+LINE 13:  from  acc_tintt_831.contacts
+                ^ in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 30
+[01-Apr-2015 19:38:33 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 37
+[01-Apr-2015 19:38:33 UTC] PHP Warning:  pg_result_seek() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 87
+[01-Apr-2015 19:38:33 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/contacts/contact_list.inc on line 88
+[02-Apr-2015 06:51:12 UTC] PHP Warning:  rename(tempfiles/acc_tintt_831/,tempfiles/acc_tintt_831/logo): Invalid argument in /var/www/web/production/uplinkcm/transaction/logoupload.inc on line 52
+[02-Apr-2015 06:51:12 UTC] PHP Warning:  file_get_contents(tempfiles/acc_tintt_831/logo): failed to open stream: No such file or directory in /var/www/web/production/uplinkcm/includes/wideimage/WideImage.php on line 195
+[02-Apr-2015 06:51:12 UTC] PHP Warning:  unpack(): Type c: not enough input, need 1, have 0 in /var/www/web/production/uplinkcm/includes/wideimage/vendor/de77/TGA.php on line 93
+[02-Apr-2015 06:51:12 UTC] PHP Fatal error:  Uncaught exception 'WideImage_InvalidImageSourceException' with message 'File 'tempfiles/acc_tintt_831/logo' appears to be an invalid image source.' in /var/www/web/production/uplinkcm/includes/wideimage/WideImage.php:226
+Stack trace:
+#0 [internal function]: WideImage::loadFromFile('tempfiles/acc_t...')
+#1 /var/www/web/production/uplinkcm/includes/wideimage/WideImage.php(184): call_user_func(Array, 'tempfiles/acc_t...')
+#2 /var/www/web/production/uplinkcm/transaction/logoupload.inc(55): WideImage::load('tempfiles/acc_t...')
+#3 /var/www/web/production/uplinkcm/transaction.php(9): include('/var/www/web/pr...')
+#4 {main}
+  thrown in /var/www/web/production/uplinkcm/includes/wideimage/WideImage.php on line 226
+[07-Apr-2015 15:48:50 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  INSERT has more expressions than target columns
+LINE 17:    6
+            ^ in /var/www/web/production/uplinkcm/transaction/def_edit.inc on line 164
+[07-Apr-2015 15:50:42 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  INSERT has more expressions than target columns
+LINE 17:    6
+            ^ in /var/www/web/production/uplinkcm/transaction/def_edit.inc on line 164
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at or near ";"
+LINE 17:  where  acc_tintt_831.invoice_out.id = ;
+                                                ^ in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 38
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 40
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at end of input
+LINE 9: 
+        ^ in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 53
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 54
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 66
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 67
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 186
+[07-Apr-2015 15:51:10 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/production/uplinkcm/templates/invoice/invoice_view.inc on line 217
+[07-Apr-2015 15:52:41 UTC] PHP Warning:  pg_query(): Query failed: ERROR:  INSERT has more expressions than target columns
+LINE 17:    6
+            ^ in /var/www/web/production/uplinkcm/transaction/def_edit.inc on line 164
