@@ -317,9 +317,13 @@ echo "
 				</td>
 				<td>
 				";
-					if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
-					if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
-					if ($in_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+					/*check users language somehow if new template*/
+						if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($in_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+					
+				
+					
 					
 				echo "
 					<select name='loc'>
@@ -463,7 +467,7 @@ $ig = pg_query($conn, $query);
 			<input type='hidden' name='ids[]' value='$it_r[id]'/>
 			<tr>
 				<td>
-					<select class='short' name='cat[$it_r[id]]'>
+					<select class='short' name='cat[$it_r[id]]' id='$it_r[id]' onchange='changeOldVat(this);'>
 						";
 						foreach ($cat_ar as $catr) {
     						if ($it_r[cat] == $catr[id]) {
@@ -473,7 +477,7 @@ $ig = pg_query($conn, $query);
 							}
 						
 						echo "
-						<option value='$catr[id]' $sel>
+						<option value='$catr[vat]' $sel>
 							$catr[name]
 						</option>
 						";
@@ -522,6 +526,7 @@ $ig = pg_query($conn, $query);
 			
 			<tr>
 				<td>
+					
 					<select class='short' name='catn' id='catn' onchange='changeVat();'>
 						
 				";
@@ -535,7 +540,7 @@ $ig = pg_query($conn, $query);
 						
 						echo "
 						
-						<option value='$catr2[id]' $sel>
+						<option value='$catr2[vat]' $sel>
 							$catr2[name]
 						</option>
 						";

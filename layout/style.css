@@ -251,7 +251,7 @@ div.menu {
 	width: 100%;
 	min-height: 35px;
 	overflow: auto;
-	margin-bottom: 5px;
+	border-bottom: 1px solid #acbbac;
 	
 	background: #BFD8EF url('img/back_half.png'); /* fallback */
 	background: url('img/back_half.png'), -webkit-gradient(linear, left top, left bottom, from(#BFD8EF), to(#769CC1)); /* Saf4+, Chrome */
@@ -262,11 +262,11 @@ div.menu {
 	background: url('img/back_half.png'),         linear-gradient(top, #BFD8EF, #769CC1); /* W3C */
 	
 }
-div.menuitem {
+.menuitem {
 	background: #fff;
 	border: 1px solid #000;
 	border-radius: 8px;
-	padding: 5px;
+	padding: 8px;
 	margin: 10px;
 	float: left;
 	min-width: 100px;
@@ -278,6 +278,32 @@ div.menuitem:hover   {
 }
 
 
+/*for specialized items*/
+div.menu_lower {
+	width: 90%;
+	min-height: 25px;
+	overflow: auto;
+	margin: auto;
+	
+}
+.loweritem {
+	background: #fff;
+	border-bottom: 1px solid #acbbac;
+	border-left: 1px solid #acbbac;
+	border-right: 1px solid #acbbac;
+	border-radius: 0px 0px 8px 8px;
+	padding: 5px;
+	margin: 10px;
+	margin-top: 0px;
+	float: left;
+	min-width: 100px;
+	font-size:110%;
+	color: #86a384;
+	text-align: center;
+}
+.menuactive {
+	background: #99dc95;
+}
 
 .right {
 	
@@ -378,7 +404,10 @@ div.header {
 	font-size: 140%;
 	margin: 8px;
 }
-
+/* list stuff */
+.pub {
+	color: #7c917b;
+}
 table.list {
 	width: 100%;
 	
@@ -432,9 +461,14 @@ table.grid td.head {
 /* container for small boxes */
 
 .smbox {
-	width: 48%; 
+	width: 47%; 
 	float: left;
 	margin: 1%;
+	
+}
+.smbox:nth-last-child(even) {
+	
+	float: right;
 }
 /*admin */
 .imgshow {

@@ -166,12 +166,14 @@ echo "
 			echo "
 				<tr>
 					<td>
-						$us_r[vatnr]
+						<a href='index.php?section=admin&template=account_info&acid=$us_r[id]'>$us_r[vatnr]</a>
 					</td>
 					<td>
-						$us_r[name]
+						<a href='index.php?section=admin&template=account_info&acid=$us_r[id]'>$us_r[name]</a>
 					</td>
-					
+					<td>
+						<a href='index.php?section=admin&template=account_user&acid=$us_r[id]'>Edit</a>
+					</td>
 				</tr>
 			";
 					

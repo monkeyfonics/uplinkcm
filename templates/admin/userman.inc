@@ -20,7 +20,7 @@ $ch_r = pg_fetch_array($ch);
 echo "
 	<div class='centercont'>
 		<div class='div33'>
-			<a href='?section=admin&template=user_edit'>
+			<a href='?section=admin&template=user_edit&own=1'>
 						<div class='bigbutton bigstyle'>
 							<span>Edit User</span><br/>
 							Change user details.

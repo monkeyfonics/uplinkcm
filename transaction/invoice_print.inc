@@ -244,14 +244,7 @@ $invoice->invoice($info);
 
 $invoice->display("uplink_".$in_r[ident]);
 
-/*update invoice print status */
 
-$query = "
-			update $acco.invoice_out
-			set		pub=true	
-			where	id=$inoid
-		";
-	$ch = pg_query($conn, $query);
 
 
 ?>

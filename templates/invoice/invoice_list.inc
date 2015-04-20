@@ -10,6 +10,17 @@ $ac_r = pg_fetch_array($ac);
 
 $acco = $ac_r[identy];
 
+/* check for contact filter */
+if ($_GET['cfilter']) {
+	$filter = $_GET['cfilter'];
+	$sqlfilt = "and $acco.invoice_out.pid = $filter";
+} elseif ($_GET['comfilter']) {
+	$filter = $_GET['comfilter'];
+	$sqlfilt = "and $acco.invoice_out.cid = $filter";
+}  else {
+	$filter = 0;
+	$sqlfilt = " ";
+}
 
 /* nr of rows to diplay */
 $rows = 15;
@@ -26,6 +37,7 @@ $query = "
 					
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
+		$sqlfilt
 		order by	$acco.invoice_out.dated desc
 		
 		
@@ -54,9 +66,12 @@ do {
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
+		where		$acco.invoice_out.pub = true
+		$sqlfilt
 		order by	$acco.invoice_out.dated desc
 		limit 		{$rows}
 		offset		{$fetchrow}
+		
 		
 	";
 	$in = pg_query($conn, $query);
@@ -70,7 +85,7 @@ $totalrows = pg_num_rows($rowcheck);
 echo "
 	<div class='buttons'>
 		<a href='index.php?section=invoice&template=invoice_list'>
-			<div class='header'>{$lng->__('Invoices')}</div>
+			<div class='header'>{$lng->__('Published')} {$lng->__('Invoices')}</div>
 		</a>
 		<a href='index.php?section=def&template=def_edit'>
 			<div>{$lng->__('New Invoice Template')}</div>
@@ -88,22 +103,22 @@ echo "
 		<table class='list large'>
 			<tr>
 				<th class='first'>
-					Dated:
+					{$lng->__('Dated')}:
 				</th>
 				<th>
-					Reference:
+					{$lng->__('Reference')}:
 				</th>
 				<th>
-					Header:
+					{$lng->__('Header')}:
 				</th>
 				<th>
-					Person:
+					{$lng->__('Person')}:
 				</th>
 				<th>
-					Price:
+					{$lng->__('Amount')}:
 				</th>
 				<th>
-					Pub:
+					{$lng->__('Published')}:
 				</th>
 			</tr>
 			";
@@ -127,6 +142,17 @@ echo "
 			$ua = pg_query($conn, $query);
 			$ua_r = pg_fetch_array($ua);
 			
+			
+			/* check for company */
+			$query = "
+				select		$acco.invoice_out.id,
+							$acco.invoice_out.cid as cid,
+							$acco.company.name as name
+				from		$acco.invoice_out LEFT OUTER JOIN $acco.company ON ($acco.invoice_out.cid = $acco.company.id)
+				where		$acco.company.id = $in_r[cid]
+			";
+			$ca = pg_query($conn, $query);
+			$ca_r = pg_fetch_array($ca);
 			
 			$date = strtotime($in_r[dated_out]);
 			
@@ -177,7 +203,9 @@ echo "
 						</a>
 					</td>
 					<td>
-						$ua_r[lname], $ua_r[fname]
+						$ua_r[lname], $ua_r[fname]"; 
+						if($in_r[cid]) { echo " - <span style='color:#656565;'>$ca_r[name]</span>"; }
+					echo "
 					</td>
 					<td>
 						".number_format($combprice,2,","," ")." &euro;

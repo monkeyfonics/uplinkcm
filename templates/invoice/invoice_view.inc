@@ -28,7 +28,8 @@ $query = "
   				$acco.invoice_out.invoice_id as invoice_id,
   				$acco.invoice_out.created as created_out,
   				$acco.invoice_out.due_date as due_date_out,
-  				$acco.invoice_out.ref as ref
+  				$acco.invoice_out.ref as ref,
+  				$acco.invoice_out.pub as pub
 	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.invoice_id)
 	where		$acco.invoice_out.id = $inoid;
 	
@@ -93,9 +94,22 @@ echo "
 		<a href='index.php?section=invoice&template=invoice_view&inoid=$inoid&ident=$in_r[ident]'>
 			<div class='header'>{$lng->__('Invoices')} - $in_r[header]</div>
 		</a>
-		<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
-			<div>{$lng->__('Print')}</div>
-		</a>
+		";
+		if ($in_r[pub] == t) {
+			echo "
+				<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
+					<div>{$lng->__('Print')}</div>
+				</a>
+			";
+		} else {
+			echo "
+				<a href='transaction.php?section=invoice&t=invoice_pub&ident=$in_r[ident]&inoid=$inoid'>
+					<div>{$lng->__('Publish')}</div>
+				</a>
+			";
+		}
+echo "
+		
 	</div>
 ";
 

@@ -65,10 +65,13 @@ Invoices=Fakturor
 Primary=Antagen
 Add Contact=Lägg till kontakt
 /*/Templates/*/
-New Template=Nytt Botten
+New Invoice Template=Nytt Faktura Botten
 Edit Template=Editera Botten
 Recurring=Återkommande
 Amount=Summa
 Active=Aktiv
 Deactivate=Deaktivera
 Publish=Publisera
+/*/Invoices/*/
+Pending=Obekräftade
+Published=Publiserade

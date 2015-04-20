@@ -1,8 +1,12 @@
 <?php
 
-if (!$_GET['usid']) {
+if ($_GET['own']) {
 	$usid = $s_id;
 } else {
+	if ($s_lvl < 5) {
+		header("Location: $rpath");
+	    die();
+	}
 	$usid = $_GET['usid'];
 }
 

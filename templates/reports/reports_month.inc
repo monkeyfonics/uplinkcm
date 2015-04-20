@@ -70,6 +70,7 @@ $query = "
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.dated between '$minus' and '$dated'
+		and			$acco.invoice_out.pub = true
 		order by	$acco.invoice_out.dated desc
 		
 				

@@ -49,18 +49,19 @@ $query = "
 $cl = pg_query($conn, $query);
 
 
-/*contact invoices*/
+/*company invoices*/
 $query = "
 	select		id,
 				header,
 				addhead,
 				invoice_id,
 				dated,
-				ref
+				ref,
+				pub
 	from		$acco.invoice_out
 	where		cid = $suid
 	order by dated desc
-	
+	Limit		15
 ";
 
 $com_in = pg_query($conn, $query);
@@ -206,22 +207,27 @@ echo "
 			";
 			while ($com_in_r = pg_fetch_array($com_in)) {
 				$date = date('Y-m-d', strtotime($com_in_r[dated]));
+				if ($com_in_r[pub] == f) {
+					$pub = "class='pub'";
+				} else {
+					$pub = " ";
+				}
 				echo "
 					
 					<tr>
 						<td>
-							<a href='index.php?section=invoice&template=invoice_view&inoid=$com_in_r[id]&ident=$com_in_r[invoice_id]'>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$com_in_r[id]&ident=$com_in_r[invoice_id]' $pub>
 								$date
 							</a>
 						</td>
 						
 						<td>
-							<a href='index.php?section=invoice&template=invoice_view&inoid=$com_in_r[id]&ident=$com_in_r[invoice_id]'>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$com_in_r[id]&ident=$com_in_r[invoice_id]' $pub>
 								$com_in_r[header] - $com_in_r[addhead]
 							</a>
 						</td>
 						<td>
-							<a href='index.php?section=invoice&template=invoice_view&inoid=$com_in_r[id]&ident=$com_in_r[invoice_id]'>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$com_in_r[id]&ident=$com_in_r[invoice_id]' $pub>
 								$com_in_r[ref]
 							</a>
 						</td>
@@ -229,6 +235,13 @@ echo "
 					";
 			}
 		echo "
+				<tr>
+					<td colspan='3'>
+						<a href='index.php?section=invoice&template=invoice_list&comfilter=$ul_r[id]'>
+							{$lng->__('Show all')}
+						</a>
+					</td>
+				</tr>
 			</table>
 		</div>
 		";

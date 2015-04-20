@@ -96,7 +96,7 @@ if ($cl) {
 		from		$acco.link_company_contact
 		where company_id = $ul_r[id]
 	)
-	order by	lname, fname
+	
 	";
 } else {
 	$query = "
@@ -111,7 +111,7 @@ if ($cl) {
   				phone1,
   				www
 	from		$acco.contacts
-	order by	lname, fname
+	
 	
 	";
 }
@@ -317,7 +317,7 @@ echo "
 	echo "
 		</table>
 		<h4>{$lng->__('Add Contact')}:</h4>
-			
+				
 					<select name='nco'>
 						<option value=''>
 							{$lng->__('None')}
@@ -329,10 +329,8 @@ echo "
 							$nc_r[lname], $nc_r[fname]
 						</option>
 						";
-					}
-					
+					}	
 					echo "
-					
 					</select>
 					<input type='submit' name='add_co' value='Add'></input>
 		";

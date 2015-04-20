@@ -39,7 +39,7 @@ $ul_r = pg_fetch_array($ul);
 if ($ul_r[loc] == 'fi') {
 	$langu="{$lng->__('Finnish')}";
 } elseif ($ul_r[loc] == 'sv') {
-	$langu="{$lng->__('DSwedish')}";
+	$langu="{$lng->__('Swedish')}";
 } elseif ($ul_r[loc] == 'en') {
 	$langu="{$lng->__('English')}";
 }	
@@ -70,7 +70,7 @@ $query = "
 	from		$acco.contact_notes
 	where		contact_id = $suid
 	order by created desc
-	
+	Limit 		15
 ";
 
 $con_not = pg_query($conn, $query);
@@ -82,10 +82,12 @@ $query = "
 				addhead,
 				invoice_id,
 				dated,
-				ref
+				ref,
+				pub
 	from		$acco.invoice_out
 	where		pid = $suid
 	order by dated desc
+	Limit 		15
 	
 ";
 
@@ -181,41 +183,7 @@ echo "
 		</table>
 		";
 		
-		/* notes */
-	echo "
-		<div class='smbox'>
-		<h4>{$lng->__('Notes')}:</h4>
-		<table class='list'>
-			<tr>
-				<th style='width: 150px;'>
-					{$lng->__('Date')}:
-				</th>
-				<th>
-					{$lng->__('Note')}:
-				</th>
-			</tr>
-			";
-		while($con_not_r = pg_fetch_array($con_not)) {
-			$date = strtotime($con_not_r[created]);
-			echo "
-			<tr>
-				<td>
-					<a href='index.php?section=contacts&template=contact_note&suid=$ul_r[id]&notid=$con_not_r[id]'>
-						".date('Y-m-d', $date)."
-					</a>
-				</td>
-				<td>
-					<a href='index.php?section=contacts&template=contact_note&suid=$ul_r[id]&notid=$con_not_r[id]'>
-						$con_not_r[cont]
-					</a>
-				</td>
-			</tr>
-			";
-		}
-		echo "
-		</table>
-		</div>
-		";
+		
 		
 		/*company*/
 		echo "
@@ -260,6 +228,47 @@ echo "
 		</div>
 		";
 		
+		/* notes */
+	echo "
+		<div class='smbox'>
+		<h4>{$lng->__('Notes')}:</h4>
+		<table class='list'>
+			<tr>
+				<th style='width: 150px;'>
+					{$lng->__('Date')}:
+				</th>
+				<th>
+					{$lng->__('Note')}:
+				</th>
+			</tr>
+			";
+		while($con_not_r = pg_fetch_array($con_not)) {
+			$date = strtotime($con_not_r[created]);
+			echo "
+			<tr>
+				<td>
+					<a href='index.php?section=contacts&template=contact_note&suid=$ul_r[id]&notid=$con_not_r[id]'>
+						".date('Y-m-d', $date)."
+					</a>
+				</td>
+				<td>
+					<a href='index.php?section=contacts&template=contact_note&suid=$ul_r[id]&notid=$con_not_r[id]'>
+						$con_not_r[cont]
+					</a>
+				</td>
+			</tr>
+			";
+		}
+		echo "
+			<tr>
+				<td colspan='2'>
+					Show All
+				</td>
+			</tr>
+		</table>
+		</div>
+		";
+		
 		/*Invoices*/
 		echo "
 		<div class='smbox'>
@@ -281,22 +290,27 @@ echo "
 			";
 			while ($con_in_r = pg_fetch_array($con_in)) {
 				$date = date('Y-m-d', strtotime($con_in_r[dated]));
+				if ($con_in_r[pub] == f) {
+					$pub = "class='pub'";
+				} else {
+					$pub = " ";
+				}
 				echo "
 					
 					<tr>
 						<td>
-							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]'>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]' $pub>
 								$date
 							</a>
 						</td>
 						
 						<td>
-							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]'>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]' $pub>
 								$con_in_r[header] - $con_in_r[addhead]
 							</a>
 						</td>
 						<td>
-							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]'>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]' $pub>
 								$con_in_r[ref]
 							</a>
 						</td>
@@ -304,6 +318,13 @@ echo "
 					";
 			}
 		echo "
+				<tr>
+					<td colspan='3'>
+						<a href='index.php?section=invoice&template=invoice_list&cfilter=$ul_r[id]'>
+							{$lng->__('Show all')}
+						</a>
+					</td>
+				</tr>
 			</table>
 		</div>
 		";

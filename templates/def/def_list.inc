@@ -66,7 +66,7 @@ echo "
 			<div class='header'>{$lng->__('Invoice Templates')}</div>
 		</a>
 		<a href='index.php?section=def&template=def_edit'>
-			<div>{$lng->__('New Template')}</div>
+			<div>{$lng->__('New Invoice Template')}</div>
 		</a>
 	</div>
 ";
