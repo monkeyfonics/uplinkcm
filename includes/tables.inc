@@ -108,6 +108,7 @@ $tables = array(
             "due_date" => array("type"=>"timestamp without time zone"),
             "ref" => array("type"=>"character varying"),
             "pub" => array("type"=>"boolean"),
+            "cash" => array("type"=>"boolean"),
             ),
         "index" => array( // List of indexes
 			"indexname" => array("table"=>"tablename","definition"=>"count(foo)"),

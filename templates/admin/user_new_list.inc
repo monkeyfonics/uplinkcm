@@ -27,7 +27,7 @@ echo "
 		<a href='index.php?section=admin&template=main'>
 			<div class='header'>Admin</div>
 		</a>
-		<a href='index.php?section=admin&template=user_edit&acid=0'>
+		<a href='index.php?section=admin&template=user_edit&usid=0'>
 			<div>{$lng->__('New User')}</div>
 		</a>
 		

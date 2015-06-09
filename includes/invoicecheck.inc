@@ -152,6 +152,7 @@ while ($in_r = pg_fetch_array($in)) {
 			
 			
 			$pub = "f";
+			$cash = "f";
 			
 			
 			/* creating invoice outs */
@@ -167,7 +168,8 @@ while ($in_r = pg_fetch_array($in)) {
 				dated,
 				due_date,
 				ref,
-				pub
+				pub,
+				cash
 				
 				) values (
 				$1,
@@ -180,11 +182,12 @@ while ($in_r = pg_fetch_array($in)) {
 				$8,
 				$9,
 				$10,
-				$11
+				$11,
+				$12
 	
 			)
 		";
-		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$month,$ident,$datenow,$next,$dueplus,$compref,$pub));
+		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$month,$ident,$datenow,$next,$dueplus,$compref,$pub,$cash));
 		
 		
 		/* try to check if date exceeds max date for month*/
