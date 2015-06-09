@@ -477,8 +477,8 @@ table.grid td.head {
 .console {
 	position: absolute;
 	right: 10px;
-	top: 100px;
-	width: 100px;
+	bottom: 30px;
+	width: 400px;
 	min-height: 75px;
 	border: 1px solid #000;
 }
