@@ -38,6 +38,7 @@ $query = "
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
 		$sqlfilt
+		where		$acco.invoice_out.pub = false
 		order by	$acco.invoice_out.dated desc
 		
 		

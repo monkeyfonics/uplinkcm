@@ -26,6 +26,7 @@ $query = "
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.dated between '$minus' and '$dated'
+		and			$acco.invoice_out.pub = true
 		order by	$acco.invoice_out.dated desc
 		
 				
@@ -82,10 +83,18 @@ $co_r = pg_fetch_array($co);
 			while ($it_r = pg_fetch_array($it)) {
 					$tempprice1 = $it_r[price] * $it_r[qty];
 					$tempprice2 = $tempprice1 * $it_r[vat];
-					$combprice = ($tempprice1 + $tempprice2);
+					if ($it_r[invoice_id]== $last_id) {
+						$combprice += ($tempprice1 + $tempprice2);
+					} else {
+						$combprice = ($tempprice1 + $tempprice2);
+					}
+					
+					$last_id = $it_r[invoice_id];
 				}
 	/*format price */
-	$formatprice =  str_replace('.', ',', $combprice);
+	
+	//$formatprice =  str_replace('.', ',', $combprice);
+	$formatprice = number_format($combprice, 2, ',', '');
 	/*format ref number*/
 	$refformat = chunk_split($monthly_r[ref], 5, ' ');
 	/*format date */
@@ -101,7 +110,7 @@ $co_r = pg_fetch_array($co);
 	fputcsv($file, $fields);
 }
 /*Write last line*/
-$formattotalprice =  str_replace('.', ',', $totalprice);
+$formattotalprice =  number_format($totalprice, 2, ',', '');
 $endfield = array('Total', '', '', $formattotalprice, '');
 
 fputcsv($file, $endfield);

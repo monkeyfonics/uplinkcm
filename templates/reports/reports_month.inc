@@ -93,11 +93,30 @@ $monthly = pg_query($conn, $query);
 						Invoice
 					</td>
 					<td>
+						Contact
+					</td>
+					<td>
 						Amount
 					</td>
 				</tr>
 			";
 		while ($monthly_r = pg_fetch_array($monthly)) {
+			
+			 /*get name for contact*/
+					
+			$query = "
+				select		id,
+							lname,
+							fname
+				from		$acco.contacts
+				where		id = $monthly_r[pid]
+							
+			";
+						
+			$co = pg_query($conn, $query);
+			$co_r = pg_fetch_array($co);
+			
+				
 			
 			 /*invoice items for counting total cost*/
 					
@@ -120,7 +139,13 @@ $monthly = pg_query($conn, $query);
 			while ($it_r = pg_fetch_array($it)) {
 					$tempprice1 = $it_r[price] * $it_r[qty];
 					$tempprice2 = $tempprice1 * $it_r[vat];
-					$combprice = ($tempprice1 + $tempprice2);
+					if ($it_r[invoice_id]== $last_id) {
+						$combprice += ($tempprice1 + $tempprice2);
+					} else {
+						$combprice = ($tempprice1 + $tempprice2);
+					}
+					
+					$last_id = $it_r[invoice_id];
 				}
 	/*format price */
 	
@@ -142,6 +167,11 @@ $monthly = pg_query($conn, $query);
 						</a>
 					</td>
 					<td>
+						<a href='index.php?section=contacts&template=contact_view&suid=$co_r[id]'>
+						$co_r[lname], $co_r[fname]
+						</a>
+					</td>
+					<td>
 						$formatprice €
 					</td>
 				</tr>
@@ -158,6 +188,9 @@ $monthly = pg_query($conn, $query);
 				<tr>
 					<td>
 						Total:
+						
+					</td>
+					<td>
 						
 					</td>
 					<td>

@@ -292,7 +292,7 @@ $it = pg_query($conn, $query);
 					".number_format($fullprice,2,","," ")." &euro;
 				</td>
 				<td>
-					$it_r[vat] %
+					$it_r[vat]
 				</td>
 				<td>
 					".number_format($fullvatprice,2,","," ")." &euro;

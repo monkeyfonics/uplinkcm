@@ -477,7 +477,7 @@ $ig = pg_query($conn, $query);
 							}
 						
 						echo "
-						<option value='$catr[vat]' $sel>
+						<option value='$catr[id]' id='$catr[vat]' $sel>
 							$catr[name]
 						</option>
 						";
@@ -540,7 +540,7 @@ $ig = pg_query($conn, $query);
 						
 						echo "
 						
-						<option value='$catr2[vat]' $sel>
+						<option id='$catr2[vat]' value='$catr2[id]' $sel>
 							$catr2[name]
 						</option>
 						";

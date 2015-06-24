@@ -129,7 +129,13 @@ $monthly = pg_query($conn, $query);
 			while ($it_r = pg_fetch_array($it)) {
 					$tempprice1 = $it_r[price] * $it_r[qty];
 					$tempprice2 = $tempprice1 * $it_r[vat];
-					$combprice = ($tempprice1 + $tempprice2);
+					if ($it_r[invoice_id]== $last_id) {
+						$combprice += ($tempprice1 + $tempprice2);
+					} else {
+						$combprice = ($tempprice1 + $tempprice2);
+					}
+					
+					$last_id = $it_r[invoice_id];
 				}
 			/*format price */
 			$formatprice = number_format($combprice, 2, ',', '');

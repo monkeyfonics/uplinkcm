@@ -22,17 +22,19 @@ function alerti() {
 }
 /* check which vat group is selected on new items */
 function changeVat(){
-    var option=document.getElementById('catn').value;
-	document.getElementById('vatn').value=option;
+    var option=document.getElementById('catn');
+    var vat=option.options[option.selectedIndex].id;
+	document.getElementById('vatn').value=vat;
 
     
 }
 /* check which vat group is selected on old items */
 function changeOldVat(name){
 	var itemname=name.id;
-    var option=document.getElementById(itemname).value;
-   	window.alert('vat_'+itemname);
-	document.getElementById('vat_'+itemname).value=option;
+    var option=document.getElementById(itemname);
+    var vat=option.options[option.selectedIndex].id;
+   	window.alert(vat);
+	document.getElementById('vat_'+itemname).value=vat;
 
     addVat(itemname);
 }
