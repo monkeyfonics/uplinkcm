@@ -28,9 +28,9 @@ class sepa {
 	
 	function header ($invoice) {
 		if (file_exists($invoice['logo']))		
-			$this->pdf->Image($invoice['logo'],5,5,0,20);
+			$this->pdf->Image($invoice['logo'],15,5,0,20);
 		$this->pdf->SetFontSize(8);
-		$this->pdf->SetX(60);
+		$this->pdf->SetX(50);
 		$this->pdf->MultiCell(80,3.5,
 			$invoice['recipient']['name']."\n".
 			$invoice['recipient']['street']."\n".
@@ -168,8 +168,8 @@ class sepa {
 		$this->pdf->SetXY(5,$y);
 		$this->pdf->Cell(18,$h1,'','B');
 		$this->pdf->Cell(95,$h1,'','BL');
-		$this->pdf->Cell(53,$h1,'','BL');
-		$this->pdf->Cell(0,$h1,'','BL');
+		$this->pdf->Cell(87,$h1,'','BL');
+		
 		$this->pdf->Ln();
 		$this->pdf->Cell(18,$h1,'','B');
 		$this->pdf->Cell(95,$h1,'','BL');
@@ -190,9 +190,9 @@ class sepa {
 		$l = $y+1;
 		$this->pdf->SetXY(5,$l);
 		$this->pdf->MultiCell(18,2.5,"Saajan tilinumero\nMottagarens kontonummer",'','R');
-		$this->pdf->SetXY(118,$l);
+		$this->pdf->SetXY(23,$l);
 		$this->pdf->MultiCell(53,2.5,"IBAN",'','L');
-		$this->pdf->SetXY(171,$l);
+		$this->pdf->SetXY(118,$l);
 		$this->pdf->MultiCell(53,2.5,"BIC",'','L');
 		$l += $h1;
 		$this->pdf->SetXY(5,$l);
@@ -218,11 +218,11 @@ class sepa {
 		$this->pdf->SetFont('DejaVu','B',10);
 		$l = $y+2;
 		foreach ($invoice['accounts'] as $account) {
-			$this->pdf->SetXY(23,$l);
-			$this->pdf->Cell(33,2.5,$this->bankname($account['bic']));
-			$this->pdf->Cell(70,2.5,$this->stripiban($account['iban']));
-			$this->pdf->Cell(53,2.5,$account['iban']);
-			$this->pdf->Cell(0,2.5,$account['bic']);
+			$this->pdf->SetXY(30,$l);
+			$this->pdf->Cell(25,2.5,$this->bankname($account['bic']));
+			$this->pdf->Cell(70,2.5,$account['iban']);
+			$this->pdf->Cell(53,2.5,$account['bic']);
+			
 			$l += 3.8;
 		}
 		$l = $y+18;

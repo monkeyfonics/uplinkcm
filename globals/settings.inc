@@ -15,4 +15,5 @@ putenv("PGUSER=".$setting['db']['user']);
 $GLOBALS['apath']="/var/www/web/dev/cm";
 $rpath="/";
 $wname="cm.dev.uplink.fi";
+$system_email="info@uplink-data.fi";
 ?>

@@ -94,10 +94,10 @@ echo "
 		<div style='clear:both;'>
 		<h2 class='header'>$ac_r[name]</h2>
 		";
-		$logopath = "acc_img/".$ac_r[identy]."/logo.jpg";
+		$logopath = "acc_img/".$ac_r[identy]."/logo.png";
 		if (file_exists($logopath)) {
 			echo "
-			<img src='$logopath' style='max-height: 75px;'/>
+			<img src='$logopath' style='max-height: 150px;'/>
 			";
 		} else {
 			echo "

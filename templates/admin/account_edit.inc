@@ -38,18 +38,21 @@ if ($ac_r[active]==t) {
 
 /*use buttons row */
 echo "
+	<form action='transaction.php?t=account_edit' method='post' id='accsave'>
 	<div class='buttons'>
 		
 		<a href='index.php?section=admin&template=account_list'>
 			<div class='header'>Accounts</div>
 		</a>
 		
+		<button formid='accsave' class='usebutton'>{$lng->__('Save account')}</button>
+		
 	</div>
 ";
 
 echo "
 	<div class='centercont'>
-		<form action='transaction.php?t=account_edit' method='post'>
+		
 		<input type='hidden' name='acti' value='false'/>
 		";
 		if ($acd) {
@@ -165,11 +168,7 @@ echo "
 
 echo "
 			
-			<tr>
-				<td colspan='2' style='text-align: center;'>
-					<input type='submit' value='Save'>
-				</td>
-			</tr>
+			
 		</table>
 		</form>
 	</div>

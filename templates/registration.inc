@@ -30,21 +30,25 @@ echo "
 			
 			var typed = document.getElementById('login').value;
 			var loginjs = typed.trim();
+			var hit = 0;
 			
 			for (var i = 0; i < arrayLength; i++) {
 				if (list[i] == loginjs) {
-						if (loginjs) {
-							document.getElementById('coninfo').innerHTML += 'User already exists '+loginjs;
-						} else {
-							document.getElementById('coninfo').innerHTML = '&nbsp;';
-						}
-
+					// generate hit if email is the same
+					hit = 1;
 				} else {
 					
 				}
 			    
 			}
-			
+			if (hit > 0) {
+				// disable submit button if there is a hit
+				document.getElementById('coninfo').innerHTML += 'User already exists '+loginjs;
+				document.getElementById('subbutton').disabled = true;
+			} else {
+				document.getElementById('coninfo').innerHTML = '&nbsp;';
+				document.getElementById('subbutton').disabled = false;
+			}
 		}
 	</script>
 	
@@ -64,7 +68,7 @@ echo "
 					Email*:
 				</td>
 				<td>
-					<input type='text' id='login' name='user' onkeyup='checkLogin()'>
+					<input type='text' id='login' name='user' onchange='checkLogin()'>
 				</td>
 			</tr>
 			<tr>
@@ -118,12 +122,15 @@ echo "
 			
 			<tr>
 				<td colspan='2' style='text-align: center;'>
-					<input type='submit' value='Create'>
+					<input type='submit' id='subbutton' value='Create'>
 				</td>
 			</tr>
 		</table>
 		
 		</form>
+		<br/>
+		Problems?<br/>
+		<a href='mailto:info@uplink.fi'>Contact us!</a>
 	</div>
 	";
 ?>

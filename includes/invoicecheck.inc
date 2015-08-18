@@ -1,5 +1,4 @@
 <?php
-//$acco = "acc_test_3";
 	
 $datenow = date('Y-m-d');
 
@@ -233,6 +232,16 @@ while ($in_r = pg_fetch_array($in)) {
 			where	id=$inid
 			";
 			$iu = pg_query($conn, $query);
+		
+		if ($next >= $end_date) {
+			//change active to false if enddate is reached
+			$query = "
+			update $acco.invoice_def
+			set		active='f'	
+			where	id=$inid
+			";
+			$act = pg_query($conn, $query);
+		}
 		 
 	}
 }

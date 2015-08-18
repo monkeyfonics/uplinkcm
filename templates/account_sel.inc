@@ -46,6 +46,28 @@ echo "
 	</div>
 			
 	";
+	
+	/* contact for account*/
+	echo "
+	<div class='centercont' style='margin-top: 30px; min-height:50px;'>
+		<h2 class='header'>{$lng->__('New account')}</h2>
+		
+		<a href='index.php?template=request_acc'>
+			<div style='text-align: center; font-size: 120%;' class='cbutton bigstyle'>
+				<span>
+					{$lng->__('Request an account')}
+				</span>
+			</div>
+		</a>
+		
+		<a href='index.php?template=request_acc_help'>
+			<div style='text-align: center; padding: 10px;' class=''>
+				{$lng->__('What is an account')}?
+			</div>
+		</a>
+	</div>
+			
+	";
 		
 	
 ?>

@@ -1,0 +1,32 @@
+[25-Jun-2015 14:09:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.inc on line 254
+[25-Jun-2015 14:16:50 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.inc on line 254
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 14:  from  .contacts
+                ^ in /var/www/web/dev/cm/templates/main.inc on line 33
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:   select  .invoice_def.id as id,
+                  ^ in /var/www/web/dev/cm/templates/main.inc on line 60
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .contact_notes.id,
+                 ^ in /var/www/web/dev/cm/templates/main.inc on line 79
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .todo.id,
+                 ^ in /var/www/web/dev/cm/templates/main.inc on line 99
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/main.inc on line 114
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/main.inc on line 149
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/main.inc on line 182
+[17-Aug-2015 13:40:35 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/main.inc on line 212
+[18-Aug-2015 10:47:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;due_date&quot;
+LINE 4:      due_date=2015-08-25
+             ^ in /var/www/web/dev/cm/transaction/invoice_pub.inc on line 28
+[18-Aug-2015 10:48:18 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;due_date&quot;
+LINE 4:      due_date=2015-08-25
+             ^ in /var/www/web/dev/cm/transaction/invoice_pub.inc on line 28
+[18-Aug-2015 10:48:37 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;due_date&quot; is of type timestamp without time zone but expression is of type integer
+LINE 4:      due_date=2015-08-25
+                      ^
+HINT:  You will need to rewrite or cast the expression. in /var/www/web/dev/cm/transaction/invoice_pub.inc on line 28
+[18-Aug-2015 10:50:50 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;due_date&quot; is of type timestamp without time zone but expression is of type integer
+LINE 4:      due_date=2015-08-25
+                      ^
+HINT:  You will need to rewrite or cast the expression. in /var/www/web/dev/cm/transaction/invoice_pub.inc on line 28

@@ -190,7 +190,7 @@ while ($it_r = pg_fetch_array($it)) {
 
 
 //$logo ="";
-$logo="$apath/acc_img/".$acco."/logo_big.jpg";
+$logo="$apath/acc_img/".$acco."/logo.png";
 
 $tel = $acc_hold_r['tel'];
 $email = $acc_hold_r['email'];

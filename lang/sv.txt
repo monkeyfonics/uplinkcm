@@ -8,6 +8,7 @@ Yes=Ja
 No=Nej
 Back=Tillbaka
 Next=Nästa
+Delete=Radera
 /*/main/*/
 Dash=Panel
 New Todos=Nya Att göra
@@ -18,6 +19,9 @@ New Contacts=Nya Kontakter
 New password=Nytt Lösenord
 Email=Epost
 Select an account=Välj ett konto
+New account=Nytt konto
+Request an account=Be om konto
+What is an account=Vad är ett konto
 Demo account=Demo konto
 A generic demo account=Ett allmänt demo konto
 Account to recover=Konto att återhämta
@@ -55,6 +59,7 @@ Reference=Referens
 Add company=Lägg till firma
 None=Ingen
 Save Note=Spara Anteckning
+Show all=Visa alla
 /*/Company/*/
 Company=Firma
 New Company=Ny Firma
@@ -70,6 +75,7 @@ Edit Template=Editera Botten
 Recurring=Återkommande
 Amount=Summa
 Active=Aktiv
+Activate=Aktivera
 Deactivate=Deaktivera
 Publish=Publisera
 /*/Invoices/*/

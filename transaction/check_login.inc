@@ -36,6 +36,16 @@ if ($hasher->CheckPassword($pass, $hash)) {
 		$ret_url = 'index.php?template=account_sel';
 		$_SESSION['s_id'] = $ch_r['id'];
 		$icon = 'layout/img/icon_succ.png';
+		$suid = $_SESSION['s_id'];
+		/*update last login*/
+		$query = "
+			update public.users
+			set		last_login=now()
+					
+			where	id=$suid
+		";
+	$ch = pg_query($conn, $query);
+		
 } else {
 		$message = 'Authentication failed';
 		$ret_url = 'index.php?template=login';

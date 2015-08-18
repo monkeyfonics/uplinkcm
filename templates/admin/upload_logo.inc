@@ -46,7 +46,7 @@ echo "
 		</a>
 	</div>
 ";
-$logopath = 'acc_img/'.$ac_r[identy].'/logo.jpg';
+$logopath = 'acc_img/'.$ac_r[identy].'/logo.png';
 echo "
 	<div class='centercont'>
 		<h2 class='header'>Upload Logo</h2>

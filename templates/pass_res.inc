@@ -82,10 +82,10 @@ $hash = $ch_r[pass];
 			$message = 'Authentication failed';
 			$ret_url = 'index.php?template=login';
 			$icon = 'layout/img/icon_fail.png';
-			echo "No go";
+			echo "{$lng->__('Please try again')}";
 	}
 } else {
-	echo "Time expired on link, try resetting again.";
+	echo "{$lng->__('Time expired on link')}, {$lng->__('Please try again')}.";
 }
 
 

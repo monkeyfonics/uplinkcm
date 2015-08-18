@@ -14,7 +14,8 @@ $query = "
 				fname,
 				lname,
 				tel,
-				lang
+				lang,
+				last_login
 	from		users
 	where id = $usid
 	
@@ -40,6 +41,7 @@ $query = "
 $us = pg_query($conn, $query);
 
 $joined = strtotime($ac_r[create_date]);
+$last = strtotime($ac_r[last_login]);
 
 /*use buttons row */
 echo "
@@ -47,7 +49,9 @@ echo "
 		<a href='index.php?section=admin&template=main'>
 			<div class='header'>Admin</div>
 		</a>
-		
+		<a href='index.php?section=admin&template=user_list'>
+			<div class='header'>User List</div>
+		</a>
 		
 	</div>
 ";
@@ -147,6 +151,20 @@ echo "
 				</td>
 				<td>
 					$ac_r[lvl]
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Last login:
+				</td>
+				<td>
+					".date('Y-m-d', $last)."
+				</td>
+				<td>
+				
+				</td>
+				<td>
+				
 				</td>
 			</tr>
 			

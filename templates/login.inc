@@ -10,7 +10,7 @@ echo "
 					Email:
 				</td>
 				<td>
-					<input type='text' name='user'>
+					<input type='text' name='user' autofocus>
 				</td>
 			</tr>
 			<tr>

@@ -110,6 +110,11 @@ echo "
 		<a href='index.php?section=def&template=def_edit&suid=$ul_r[id]'>
 			<div>{$lng->__('New Invoice')}</div>
 		</a>
+		
+		<a href='transaction.php?t=del_contact&suid=$ul_r[id]&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
+			<div>{$lng->__('Delete')}</div>
+		</a>
+			
 	</div>
 ";
 
@@ -262,7 +267,7 @@ echo "
 		echo "
 			<tr>
 				<td colspan='2'>
-					Show All
+					{$lng->__('Show all')}
 				</td>
 			</tr>
 		</table>
@@ -321,7 +326,14 @@ echo "
 				<tr>
 					<td colspan='3'>
 						<a href='index.php?section=invoice&template=invoice_list&cfilter=$ul_r[id]'>
-							{$lng->__('Show all')}
+							{$lng->__('Show all')} {$lng->__('Published')}
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan='3'>
+						<a href='index.php?section=invoice&template=invoice_list_pend&cfilter=$ul_r[id]'>
+							{$lng->__('Show all')} {$lng->__('Pending')}
 						</a>
 					</td>
 				</tr>

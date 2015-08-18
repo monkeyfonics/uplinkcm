@@ -107,7 +107,14 @@ echo "
 					<div>{$lng->__('Publish')}</div>
 				</a>
 			";
+			/* only delete if not published */
+			echo "
+				<a href='transaction.php?t=del_invoice&ident=$in_r[ident]&inoid=$inoid&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
+					<div>{$lng->__('Delete')}</div>
+				</a>
+			";
 		}
+		
 echo "
 		
 	</div>

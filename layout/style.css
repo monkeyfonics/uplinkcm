@@ -172,6 +172,10 @@ div.div33 {
 	margin-top: 5px;
 	cursor: pointer;
 }
+.listbutton span {
+	font-size: 140%;
+	
+}
 .bigbutton {
 	display:block;
 	width: 90%;
@@ -193,10 +197,10 @@ div.div33 {
 	
 }
 .cbutton {
-	width: 100px;
+	width: 60%;
 	padding: 5px;
 	margin: auto;
-	
+	white-space: nowrap;
 }
 /*styling for buttons*/
 .bigstyle {
@@ -253,13 +257,13 @@ div.menu {
 	overflow: auto;
 	border-bottom: 1px solid #acbbac;
 	
-	background: #BFD8EF url('img/back_half.png'); /* fallback */
-	background: url('img/back_half.png'), -webkit-gradient(linear, left top, left bottom, from(#BFD8EF), to(#769CC1)); /* Saf4+, Chrome */
-	background: url('img/back_half.png'), -webkit-linear-gradient(top, #BFD8EF, #769CC1); /* Chrome 10+, Saf5.1+ */
-	background: url('img/back_half.png'),    -moz-linear-gradient(top, #dfe3e1, #f6faf8); /* FF3.6+ */
-	background: url('img/back_half.png'),     -ms-linear-gradient(top, #BFD8EF, #769CC1); /* IE10 */
-	background: url('img/back_half.png'),      -o-linear-gradient(top, #BFD8EF, #769CC1); /* Opera 11.10+ */
-	background: url('img/back_half.png'),         linear-gradient(top, #BFD8EF, #769CC1); /* W3C */
+	background: #BFD8EF; /* fallback */
+	background: -webkit-gradient(linear, left top, left bottom, from(#BFD8EF), to(#769CC1)); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, #BFD8EF, #769CC1); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, #dfe3e1, #f6faf8); /* FF3.6+ */
+	background: -ms-linear-gradient(top, #BFD8EF, #769CC1); /* IE10 */
+	background: -o-linear-gradient(top, #BFD8EF, #769CC1); /* Opera 11.10+ */
+	background: linear-gradient(top, #BFD8EF, #769CC1); /* W3C */
 	
 }
 .menuitem {
@@ -313,6 +317,14 @@ div.menu_lower {
 div.logout {
 	float: right;
 	
+}
+label.formheader {
+	display:inline-block;
+	background: #f0f0f0;
+	min-width: 40%;
+	font-size: 150%;
+	padding: 3px;
+	margin: 5px;
 }
 /* login */
 table.login {

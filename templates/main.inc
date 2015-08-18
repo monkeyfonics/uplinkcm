@@ -149,14 +149,14 @@ echo "
 		while ($in_r = pg_fetch_array($in)) {
 			$date = strtotime($in_r[dated_out]);
 			if ($in_r[pub] == f) {
-				$bolde = 'font-weight: bold;';
+				$bolde = 'color:#656565;';
 			} else {
-				$bolde = '';
+				$bolde = 'font-weight: bold;';
 			}
 			echo "
 				<tr>
 					<td style='$bolde'>
-						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  style='$bolde'>
 						$in_r[header] - $in_r[addhead]
 						</a>
 					</td>

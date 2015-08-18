@@ -61,7 +61,7 @@ if ($right == 0 and $wrong == 1) {
 	$subject = "Password Reset";
 	$email = "Hello!\r\n There has been a request for the password for this account on Uplink contact manager. \r\nClick here to reset your password: http://$wname/file.php?template=pass_res&login=".$addr."&passh=".$newhash."&expires=".$expires."\r\n Otherwise ignore this email.";
 	
-	$from = "info@uplink.fi";
+	$from = $system_email;
 	$headers = "From:" . $from;
 	mail($to,$subject,$email,$headers);
 }

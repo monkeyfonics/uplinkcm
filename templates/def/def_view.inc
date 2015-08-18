@@ -87,7 +87,7 @@ $in_r[end_date] = date('Y-m-d', strtotime($in_r[end_date]));
 if ($in_r[active] == t) {
 				$activate = "{$lng->__('Deactivate')}";
 			} else {
-				$activate = "{$lng->__('Publish')}";
+				$activate = "{$lng->__('Activate')}";
 			}
 
 			

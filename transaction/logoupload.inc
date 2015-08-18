@@ -1,6 +1,42 @@
 <?php
-/*wide image script */
-include 'includes/wideimage/WideImage.php';
+
+/*zebra image script (new)*/
+require 'includes/zebra/Zebra_Image.php';
+
+function show_error($error_code, $source_path, $target_path)
+    {
+
+        // if there was an error, let's see what the error is about
+        switch ($error_code) {
+
+            case 1:
+                echo 'Source file "' . $source_path . '" could not be found!';
+                break;
+            case 2:
+                echo 'Source file "' . $source_path . '" is not readable!';
+                break;
+            case 3:
+                echo 'Could not write target file "' . $source_path . '"!';
+                break;
+            case 4:
+                echo $source_path . '" is an unsupported source file format!';
+                break;
+            case 5:
+                echo $target_path . '" is an unsupported target file format!';
+                break;
+            case 6:
+                echo 'GD library version does not support target file format!';
+                break;
+            case 7:
+                echo 'GD library is not installed!';
+                break;
+            case 8:
+                echo '"chmod" command is disabled via configuration!';
+                break;
+
+        }
+
+	}
 
 $acid = $_POST[acid];
 $acco = $_POST[acco];
@@ -8,7 +44,7 @@ $acco = $_POST[acco];
 $filepath = 'acc_img/'.$acco.'/';
 $temppath = 'tempfiles/'.$acco.'/';
 
-/*check if folder exists else creat it */
+/*check if folder exists else create it */
 if (file_exists($filepath)) {
 	
 } else {
@@ -51,26 +87,32 @@ if (!empty($_FILES)) {
 	$newFile =  $temppath.$filename.$ext;
     rename($tempFile, $newFile);
 	
-	/*wideimage stuff*/
-    $image = WideImage::load($newFile);
-	$back = $image->allocateColor(255, 255, 255);
-    $resized = $image->resizeDown(800,800);
-    $resized->saveToFile($plainpath.$filename."_big.jpg");
-	/* check size */
-	$sizeh = $resized->getHeight();
-	$sizew = $resized->getWidth();
 	
-	/*make thumb*/
-	$thumb = $image->resizeDown(null, 150,'outside');
+
+    // create a new instance of the class
+    $image = new Zebra_Image();
+
+    // indicate a source image
+    $image->source_path = $newFile;
+
+    
+	/*if original ext is wanted*/
+    $ext = substr($image->source_path, strrpos($image->source_path, '.') + 1);
+
+    // indicate a target image for thumb
+    $image->target_path = $plainpath . 'logo.png';
+
+    // resize thumb
+    // and if there is an error, show the error message
+    if (!$image->resize(150, 150, ZEBRA_IMAGE_BOXED, -1)) show_error($image->error, $image->source_path, $image->target_path);
 	
-	/* check size */
-	$sizeth = $thumb->getHeight();
-	$sizetw = $thumb->getWidth();
+	// indicate a target image for bigger
+    $image->target_path = $plainpath . 'logo_big.png';
+
+    // resize thumb
+    // and if there is an error, show the error message
+    if (!$image->resize(400, 400, ZEBRA_IMAGE_BOXED, -1)) show_error($image->error, $image->source_path, $image->target_path);
 	
-	/* make used logo with cropped size as square */
-	
-	
-    $thumb->saveToFile($plainpath.$filename.".jpg");
 	
 	/*output */
 	$message = "
@@ -85,14 +127,7 @@ if (!empty($_FILES)) {
 				<p class='messagetext'>$message</p>
 			</div>
 			";
-		
 
-		
-
-
-		
-	
-	
 }
 header("Refresh: 2; URL=".$ret_url);
 

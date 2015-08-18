@@ -18,7 +18,8 @@ $query = "
 				lname,
 				lvl,
 				tel,
-				lang
+				lang,
+				last_login
 	from		users
 	where id = '$usid'
 	
@@ -28,7 +29,18 @@ $ac = pg_query($conn, $query);
 
 $ac_r = pg_fetch_array($ac);
 
-
+/*use buttons row */
+echo "
+	<div class='buttons'>
+		<a href='index.php?section=admin&template=main'>
+			<div class='header'>Admin</div>
+		</a>
+		<a href='index.php?section=admin&template=user_list'>
+			<div class='header'>User List</div>
+		</a>
+		
+	</div>
+";
 
 echo "
 	<div class='centercont'>

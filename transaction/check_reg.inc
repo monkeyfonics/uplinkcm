@@ -82,17 +82,19 @@ if ($au_r[login] == $user) {
 		$icon = 'layout/img/icon_succ.png';
 		
 		/* send mail to admin */
-		$to = "info@uplink-data.fi";
+		$charset = "Content-Type: text/plain; charset=UTF-8\r\n";
+		$to = $system_email;
 		$subject = "CM - New User";
 		$email = "New User registered: ".$user;
 		$from = "ContactManager";
-		$headers = "From:" . $from;
+		$headers = $charset."From:".$from;
 		mail($to,$subject,$email,$headers);
 		
 		/* send mail to user */
+		$charset = "Content-Type: text/plain; charset=UTF-8\r\n";
 		$to = $user;
 		$from = "ContactManager";
-		$headers = "From:" . $from;
+		$headers = $charset."From:" . $from;
 		$subject = "From Uplink Contact Manager to ".$fname;
 		$email = "New User registered: ".$user." \r\n You registered with your email".$user." \r\n ";
 		

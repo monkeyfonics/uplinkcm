@@ -12,10 +12,11 @@ $query = "
 				lvl,
 				create_date,
 				fname,
-				lname
+				lname,
+				last_login
 	from		users
 	where lvl != 1
-	order by 	create_date
+	order by 	create_date desc
 	
 ";
 
@@ -62,6 +63,9 @@ echo "
 					Date:
 				</th>
 				<th>
+					Login:
+				</th>
+				<th>
 					Acc:
 				</th>
 			</tr>
@@ -85,6 +89,7 @@ echo "
 				$countnr += 1;
 			}
 			$date = strtotime($ou_r[create_date]);
+			$last = strtotime($ou_r[last_login]);
 			echo "	
 				<tr>
 					
@@ -101,7 +106,10 @@ echo "
 						$ou_r[lname]
 					</td>
 					<td>
-						".date('Y-m-d H:i:s', $date)."
+						".date('Y-m-d', $date)."
+					</td>
+					<td>
+						".date('Y-m-d', $last)."
 					</td>
 					<td>
 						$countnr

@@ -86,10 +86,12 @@ if (isset($_POST['add_co'])) {
 		$query = "
 			insert into $acco.link_company_contact (
 			contact_id,
-			company_id
+			company_id,
+			prim
 			) values (
 			$suid,
-			$newcompany
+			$newcompany,
+			false
 			)
 		";
 	$co = pg_query($conn, $query);
