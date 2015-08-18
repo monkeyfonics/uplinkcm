@@ -37,8 +37,9 @@ $query = "
 					
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
-		$sqlfilt
 		where		$acco.invoice_out.pub = true
+		$sqlfilt
+		
 		order by	$acco.invoice_out.dated desc
 		
 		
@@ -237,7 +238,7 @@ echo "
 		";
 			if ($startrow > 0) {
 				echo "
-				<a href='index.php?section=invoice&template=invoice_list&startrow=$backrow'>
+				<a href='index.php?section=invoice&template=invoice_list&startrow=$backrow&cfilter=$filter'>
 					<div>{$lng->__('Back')}</div>
 				</a>
 				";
@@ -255,7 +256,7 @@ echo "
 			";
 			if ($totalrows  >= $newrow) {
 				echo "
-				<a href='index.php?section=invoice&template=invoice_list&startrow=$newrow'>
+				<a href='index.php?section=invoice&template=invoice_list&startrow=$newrow&cfilter=$filter'>
 					<div>{$lng->__('Next')}</div>
 				</a>
 				";

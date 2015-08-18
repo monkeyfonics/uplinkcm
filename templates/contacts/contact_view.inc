@@ -332,7 +332,7 @@ echo "
 				</tr>
 				<tr>
 					<td colspan='3'>
-						<a href='index.php?section=invoice&template=invoice_list_pend&cfilter=$ul_r[id]'>
+						<a href='index.php?section=invoice&template=invoice_list_pend&cfilter=$ul_r[id]' class='pub'>
 							{$lng->__('Show all')} {$lng->__('Pending')}
 						</a>
 					</td>

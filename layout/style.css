@@ -302,7 +302,7 @@ div.menu_lower {
 	float: left;
 	min-width: 100px;
 	font-size:110%;
-	color: #86a384;
+	color: #406b3d;
 	text-align: center;
 }
 .menuactive {
@@ -418,7 +418,7 @@ div.header {
 }
 /* list stuff */
 .pub {
-	color: #7c917b;
+	color: #919b38;
 }
 table.list {
 	width: 100%;
