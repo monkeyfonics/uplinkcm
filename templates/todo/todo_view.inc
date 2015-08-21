@@ -140,22 +140,15 @@ echo "
 					$comp
 				</td>
 			</tr>
-			<tr>
-				<td class='head' colspan='4'>
-					Content:
-				</td>
-				
-			</tr>
-			<tr>
-				<td colspan='4'>
-					$todo_r[cont]
-				</td>
-				
-			</tr>
 			
-		
-		
 		</table>
+		<div class='todocontent'>
+			<h3>Content:</h3>
+			<p>
+				$todo_r[cont]
+			</p>
+		</div>
+		
 		";
 echo "
 		

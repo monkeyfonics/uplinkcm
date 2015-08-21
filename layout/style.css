@@ -420,6 +420,9 @@ div.header {
 .pub {
 	color: #919b38;
 }
+.bold {
+	font-weight: bold;
+}
 table.list {
 	width: 100%;
 	
@@ -482,17 +485,42 @@ table.grid td.head {
 	
 	float: right;
 }
+/*todo*/
+.todocontent {
+	
+}
+.todocontent h3 {
+	text-align: center; 
+}
+.todocontent p {
+	text-align: center;
+}
 /*admin */
 .imgshow {
 	min-height: 150px;
 }
 .console {
 	position: absolute;
-	right: 10px;
-	top: 100px;
-	width: 100px;
-	min-height: 75px;
-	border: 1px solid #000;
+	z-index: 100;
+	left: 10px;
+	bottom: 0px;
+	min-width: 200px;
+	min-height: 30px;
+	border: 1px solid #f0f0f0;
+	border-radius: 8px 8px 0px 0px;
+	background: #f0f0f0;
+	opacity: 0.7;
+}
+.console div {
+	text-align: center; 
+	width: 100%; 
+	
+}
+.red {
+	color: red;
+}
+.green {
+	color: green;
 }
 /* footer */
 div.footer {
@@ -500,7 +528,7 @@ div.footer {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	height: 30px;
+	height: 40px;
 	background: #c1decf;
 	text-align: center;
 	

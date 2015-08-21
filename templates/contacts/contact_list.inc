@@ -91,7 +91,7 @@ echo "
 			$l = strtoupper(mb_substr($ul_r[lname],0,1,"UTF-8"));
 			if ($l != $letter && strlen($l)) {
 				$letter = $l;
-				$a = "<a id='$l' />";
+				$a = "<a id='$l'>";
 			} else {
 				$a = "";
 			}

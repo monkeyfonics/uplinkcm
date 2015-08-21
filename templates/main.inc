@@ -114,13 +114,13 @@ echo "
 		while ($todo_r = pg_fetch_array($todo)) {
 			$date = strtotime($todo_r[created]);
 			if ($todo_r[completed] == f) {
-				$bolde = 'font-weight: bold;';
+				$bolde = 'bold';
 			} else {
 				$bolde = '';
 			}
 			echo "
 				<tr>
-					<td style='$bolde'>
+					<td class='$bolde'>
 						<a href='index.php?section=todo&template=todo_view&tid=$todo_r[id]'>
 						";
 							echo substr($todo_r[cont], 0, 30);
@@ -149,14 +149,14 @@ echo "
 		while ($in_r = pg_fetch_array($in)) {
 			$date = strtotime($in_r[dated_out]);
 			if ($in_r[pub] == f) {
-				$bolde = 'color:#656565;';
+				$bolde = 'pub';
 			} else {
-				$bolde = 'font-weight: bold;';
+				$bolde = 'bold';
 			}
 			echo "
 				<tr>
-					<td style='$bolde'>
-						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  style='$bolde'>
+					<td class='$bolde'>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  class='$bolde'>
 						$in_r[header] - $in_r[addhead]
 						</a>
 					</td>

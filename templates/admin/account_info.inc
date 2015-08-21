@@ -4,6 +4,8 @@ if ($s_lvl < 5) {
     die();
 }
 
+
+
 $acd = $_GET['acid'];
 
 $query = "
@@ -79,6 +81,7 @@ echo "
 				<div class='bigbutton bigstyle'>
 					<span>Create database</span><br/>
 					Creates database for account.
+					
 				</div>
 			</a>
 		</div>

@@ -44,6 +44,6 @@ echo "
 		
 
 
-		//header("Refresh: 1; URL=".$ret_url);
+		header("Refresh: 1; URL=".$ret_url);
 
 ?>

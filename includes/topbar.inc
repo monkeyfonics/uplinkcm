@@ -180,7 +180,7 @@ if ($section == "def" or $section == "invoice") {
 				</div>
 			</a>
 			<a href='index.php?section=invoice&template=invoice_list_pend'>
-				<div class='loweritem $pendact'>
+				<div class='loweritem $pendact pub'>
 					{$lng->__('Pending')}
 				</div>
 			</a>

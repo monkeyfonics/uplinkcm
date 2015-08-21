@@ -3,8 +3,9 @@ if ($s_lvl < 5) {
 	header("Location: $rpath");
     die();
 }
-
-
+/*include for last update */
+require_once('includes/tables.inc');
+$tablefile = "includes/tables.inc";
 
 $query = "
 	select		id,
@@ -12,6 +13,7 @@ $query = "
 				vatnr,
 				bill_addr,
 				created,
+				updated,
 				active
 	from		accounts
 	
@@ -54,15 +56,32 @@ echo "
 					Created:
 				</th>
 				<th>
+					Updated:
+				</th>
+				<th>
 					Active:
+				</th>
+				<th>
+					DB:
 				</th>
 			</tr>
 		";
 		
 		
-		
+		$filetime = date ("Y-m-d H:i:s", filemtime($tablefile));
 		while ($ac_r = pg_fetch_array($ac)) {
-			$date = strtotime($ac_r[created]);
+			$created = strtotime($ac_r[created]);
+			$updated = strtotime($ac_r[updated]);
+			
+			
+			
+			if ($filetime > $ac_r[updated]) {
+				$nosync = "no sync";
+				$syncclass = "red";
+			} else {
+				$nosync = "synced";
+				$syncclass = "green";
+			}
 			echo "	
 				<tr>
 					
@@ -74,10 +93,16 @@ echo "
 					</td>
 					
 					<td>
-						".date('Y-m-d H:i:s', $date)."
+						".date('Y-m-d', $created)."
+					</td>
+					<td>
+						".date('Y-m-d', $updated)."
 					</td>
 					<td>
 						$ac_r[active]
+					</td>
+					<td class='$syncclass'>
+						$nosync
 					</td>
 				</tr>
 			";

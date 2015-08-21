@@ -30,3 +30,4 @@ HINT:  You will need to rewrite or cast the expression. in /var/www/web/dev/cm/t
 LINE 4:      due_date=2015-08-25
                       ^
 HINT:  You will need to rewrite or cast the expression. in /var/www/web/dev/cm/transaction/invoice_pub.inc on line 28
+[21-Aug-2015 10:29:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.inc on line 254

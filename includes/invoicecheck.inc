@@ -26,8 +26,10 @@ $query = "
 
 $in = pg_query($conn, $query);
 
-echo "<div class='console'>";
-echo "Console:<br/>";
+echo "
+		<div class='console'>
+			<div>Console:</div>
+	";
 while ($in_r = pg_fetch_array($in)) {
 	$inid = $in_r[id];
 	$ident = $in_r[ident];

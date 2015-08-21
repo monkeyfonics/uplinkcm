@@ -1,5 +1,8 @@
 <?php
 
+/* ***not in use*** check is done against file modified time*/
+$last_update = "2015-08-21 10:36:00";
+
 // Note default string values must be quoted.
 
 // Table definitions

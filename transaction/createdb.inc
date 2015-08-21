@@ -64,7 +64,17 @@ foreach ($tables as $tab) {
     $table->execute();
 }
 
-$ret_url = 'index.php?section=admin&template=main';
+/*update time stamp*/
+$query = "
+			update accounts
+			set		updated=now()
+					
+			where	id=$acd
+		";
+$au = pg_query($conn, $query);
+
+
+$ret_url = 'index.php?section=admin&template=account_list';
 $message = 'Update Successfull';
 $icon = 'layout/img/icon_succ.png';
 
