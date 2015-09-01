@@ -112,6 +112,8 @@ $tables = array(
             "ref" => array("type"=>"character varying"),
             "pub" => array("type"=>"boolean"),
             "cash" => array("type"=>"boolean"),
+            "printed" => array("type"=>"timestamp without time zone"),
+            "emailed" => array("type"=>"timestamp without time zone"),
             ),
         "index" => array( // List of indexes
 			"indexname" => array("table"=>"tablename","definition"=>"count(foo)"),

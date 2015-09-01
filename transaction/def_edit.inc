@@ -46,9 +46,9 @@ if ($blank == 1) {
 /* or if next creat is smaller then dated*/
 if ($next_create < $dated){
 	$next_create = $dated;
-	$yo = "yo2";
+	
 }
-echo "$next_create - $dated - $yo";
+
 
 if ($ongoing == 't') {
 	$on = 't';

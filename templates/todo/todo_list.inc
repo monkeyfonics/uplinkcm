@@ -59,7 +59,7 @@ echo "
 					Dated:
 				</th>
 				<th>
-					Contact:
+					Contact - Company:
 				</th>
 				<th>
 					Content:
@@ -79,10 +79,11 @@ echo "
 			}
 				
 			
-			/* users */
+			/* contacts */
 			$query = "
 				select		$acco.todo.id,
 							$acco.todo.contact_id as cid,
+							$acco.todo.company_id as comid,
 							$acco.contacts.fname as fname,
 							$acco.contacts.lname as lname
 				from		$acco.todo LEFT OUTER JOIN $acco.contacts ON ($acco.todo.contact_id = $acco.contacts.id)
@@ -90,16 +91,31 @@ echo "
 			";
 			$con = pg_query($conn, $query);
 			$con_r = pg_fetch_array($con);
+			/* companies */
+			$query = "
+				select		$acco.todo.id,
+							$acco.todo.contact_id as cid,
+							$acco.todo.company_id as comid,
+							$acco.company.name as name
+				from		$acco.todo LEFT OUTER JOIN $acco.company ON ($acco.todo.company_id = $acco.company.id)
+				where		$acco.company.id = $todo_r[company_id]
+			";
+			$com = pg_query($conn, $query);
+			$com_r = pg_fetch_array($com);
 			
 			
 			$date = strtotime($todo_r[created]);
 			
 			$pripath = "index.php?section=todo&template=todo_view&tid=$todo_r[tid]";
 			
-			if (!$todo_r[contact_id]) {
-				$person = "None";
+			if ($todo_r[contact_id] and $todo_r[company_id] == 0) {
+				$target = "$con_r[lname], $con_r[fname]";
+			} elseif ($todo_r[contact_id] == 0 and $todo_r[company_id]) {
+				$target = "$com_r[name]";
+			} elseif ($todo_r[contact_id] and $todo_r[company_id]) {
+				$target = "$con_r[lname], $con_r[fname] - $com_r[name]";
 			} else {
-				$person = "$con_r[lname], $con_r[fname]";
+				$target = "None";
 			}
 			
 			
@@ -115,7 +131,7 @@ echo "
 					</td>
 					<td style='$bolde'>
 						<a href='$pripath'>
-							$person
+							$target
 						</a>
 					</td>
 					<td style='overflow: hidden; $bolde' >

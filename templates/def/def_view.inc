@@ -111,6 +111,9 @@ echo "
 		<a href='transaction.php?t=def_act&ident=$in_r[ident]&acco=$acco'>
 			<div>$activate</div>
 		</a>
+		<a href='transaction.php?t=def_copy&ident=$in_r[ident]&acco=$acco'>
+			<div>{$lng->__('Copy Template')}</div>
+		</a>
 	</div>
 ";
 

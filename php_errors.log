@@ -31,3 +31,150 @@ LINE 4:      due_date=2015-08-25
                       ^
 HINT:  You will need to rewrite or cast the expression. in /var/www/web/dev/cm/transaction/invoice_pub.inc on line 28
 [21-Aug-2015 10:29:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.inc on line 254
+[24-Aug-2015 10:11:32 UTC] PHP Warning:  date() expects parameter 2 to be long, string given in /var/www/web/dev/cm/templates/todo/todo_edit.inc on line 153
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 17: 
+         ^ in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 33
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 35
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;order&quot;
+LINE 11:  order by  acc_test_3.link_company_contact.prim
+          ^ in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 61
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;order&quot;
+LINE 8:  order by created desc
+         ^ in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 76
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;order&quot;
+LINE 11:  order by dated desc
+          ^ in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 94
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 215
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 253
+[25-Aug-2015 06:56:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 299
+[25-Aug-2015 12:32:47 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column reference &quot;id&quot; is ambiguous
+LINE 9:  where  id = 9
+                ^ in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 51
+[25-Aug-2015 12:32:47 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 53
+[25-Aug-2015 12:33:37 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column reference &quot;id&quot; is ambiguous
+LINE 9:  where  id = 9
+                ^ in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 51
+[25-Aug-2015 12:33:37 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 53
+[25-Aug-2015 12:33:41 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column reference &quot;id&quot; is ambiguous
+LINE 9:  where  id = 9
+                ^ in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 51
+[25-Aug-2015 12:33:41 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 53
+[25-Aug-2015 12:34:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;from&quot;
+LINE 10:  from  acc_test_3.contact_notes left OUTER JOIN public.users...
+          ^ in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 53
+[25-Aug-2015 12:34:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 55
+[25-Aug-2015 13:37:57 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column invoice_out.printed does not exist
+LINE 17:      acc_demo_1.invoice_out.printed as printed
+              ^ in /var/www/web/dev/cm/templates/invoice/invoice_list.inc on line 80
+[25-Aug-2015 13:37:57 UTC] PHP Warning:  pg_num_rows() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list.inc on line 81
+[25-Aug-2015 13:37:57 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list.inc on line 128
+[26-Aug-2015 06:54:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;order&quot;
+LINE 11:  order by  acc_test_3.link_company_contact.prim
+          ^ in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 61
+[26-Aug-2015 06:54:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_view.inc on line 218
+[26-Aug-2015 06:55:10 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 16: 
+         ^ in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 33
+[26-Aug-2015 06:55:10 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_note.inc on line 35
+[26-Aug-2015 09:02:32 UTC] PHP Fatal error:  Call to undefined method PDF::Code128() in /var/www/web/dev/cm/includes/sepa_v2.inc on line 325
+[26-Aug-2015 09:03:23 UTC] PHP Fatal error:  Call to undefined method PDF::barcode() in /var/www/web/dev/cm/includes/sepa_v2.inc on line 246
+[26-Aug-2015 09:04:00 UTC] PHP Fatal error:  Class 'sepa' not found in /var/www/web/dev/cm/transaction/invoice_print.inc on line 13
+[26-Aug-2015 09:07:51 UTC] PHP Fatal error:  Call to undefined method PDF::Code128() in /var/www/web/dev/cm/includes/sepa_v2.inc on line 326
+[26-Aug-2015 09:16:55 UTC] PHP Fatal error:  Call to undefined method PDF::Code128() in /var/www/web/dev/cm/includes/sepa_v2.inc on line 326
+[26-Aug-2015 11:04:57 UTC] PHP Warning:  require_once(./tfpdf/rotate.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/includes/sepa_v2.inc on line 3
+[26-Aug-2015 11:04:57 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './tfpdf/rotate.php' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/includes/sepa_v2.inc on line 3
+[26-Aug-2015 12:57:45 UTC] PHP Warning:  require_once(./tfpdf/rotate.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/includes/sepa_v2.inc on line 3
+[26-Aug-2015 12:57:45 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './tfpdf/rotate.php' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/includes/sepa_v2.inc on line 3
+[26-Aug-2015 12:58:43 UTC] PHP Fatal error:  Call to undefined method tFPDF::FPDF() in /var/www/include/tfpdf/code128.php on line 58
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 16: 
+         ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 39
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 40
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_def.id as id,
+                 ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 65
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 67
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_out.cid,
+                 ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 86
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 87
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 11:  from  .invoice_out_item
+                ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 145
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 150
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:    update .invoice_out
+                  ^ in /var/www/web/dev/cm/transaction/invoice_print.inc on line 13
+[26-Aug-2015 12:59:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/web/dev/cm/includes/sepa_v2.inc on line 88
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 16: 
+         ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 39
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 40
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_def.id as id,
+                 ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 65
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 67
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_out.cid,
+                 ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 86
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 87
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 11:  from  .invoice_out_item
+                ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 145
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 150
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:    update .invoice_out
+                  ^ in /var/www/web/dev/cm/transaction/invoice_print.inc on line 13
+[26-Aug-2015 12:59:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/web/dev/cm/includes/sepa_v2.inc on line 88
+[26-Aug-2015 17:58:43 UTC] PHP Parse error:  syntax error, unexpected ';' in /var/www/web/dev/cm/includes/sepa_v2.inc on line 249
+[26-Aug-2015 17:58:53 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/web/dev/cm/includes/sepa_v2.inc on line 249
+[26-Aug-2015 18:50:25 UTC] PHP Warning:  number_format() expects parameter 1 to be double, string given in /var/www/web/dev/cm/includes/sepa_v2.inc on line 131
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 16: 
+         ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 39
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 40
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_def.id as id,
+                 ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 65
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 67
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_out.cid,
+                 ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 86
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 87
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 11:  from  .invoice_out_item
+                ^ in /var/www/web/dev/cm/transaction/invoice_gen.php on line 145
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 150
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:    update .invoice_out
+                  ^ in /var/www/web/dev/cm/transaction/invoice_print.inc on line 13
+[27-Aug-2015 05:52:33 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/web/dev/cm/includes/sepa_v2.inc on line 88
+[28-Aug-2015 09:11:41 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/web/dev/cm/templates/invoice/invoice_view.inc on line 83
+[28-Aug-2015 09:38:21 UTC] PHP Warning:  include(transaction/invoice_email.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/out.php on line 6
+[28-Aug-2015 09:38:21 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'transaction/invoice_email.inc' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/out.php on line 6
+[28-Aug-2015 12:15:05 UTC] PHP Fatal error:  Cannot use object of type sepa as array in /var/www/web/dev/cm/transaction/invoice_email.inc on line 47
+[28-Aug-2015 12:24:31 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.inc on line 254
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 9: 
+        ^ in /var/www/web/dev/cm/includes/accountcheck.inc on line 12
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/def_copy.inc on line 6
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 15:  from  .invoice_def
+                ^ in /var/www/web/dev/cm/transaction/def_copy.inc on line 32
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/def_copy.inc on line 34
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_def.cid,
+                 ^ in /var/www/web/dev/cm/transaction/def_copy.inc on line 47
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/def_copy.inc on line 48
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:  select  .invoice_def.cid,
+                 ^ in /var/www/web/dev/cm/transaction/def_copy.inc on line 60
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/def_copy.inc on line 61
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 2:    insert into .invoice_def (
+                       ^ in /var/www/web/dev/cm/transaction/def_copy.inc on line 101
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;.&quot;
+LINE 11:  from  .invoice_def_item
+                ^ in /var/www/web/dev/cm/transaction/def_copy.inc on line 122
+[31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/def_copy.inc on line 124

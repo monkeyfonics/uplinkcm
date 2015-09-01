@@ -16,8 +16,18 @@ if ($_GET['tid']) {
 } else {
 	$tid = 0;
 }
-
-
+if ($_GET['suid']) {
+	$suid = $_GET['suid'];
+	
+} else {
+	$suid = 0;
+}
+if ($_GET['comid']) {
+	$comid = $_GET['comid'];
+	
+} else {
+	$comid = 0;
+}
 
 /*todo*/
 $query = "
@@ -103,8 +113,12 @@ echo "
 		
 	</div>
 ";
+if ($todo_r[created]) {
+	$date = strtotime($todo_r[created]);
+} else {
+	$date = date("Y-m-d");
+}
 
-$date = strtotime($todo_r[created]);
 
 echo "
 	<div class='fullcont'>
@@ -122,7 +136,7 @@ echo "
 						</option>
 						";
 						while ($ul_r = pg_fetch_array($ul)) {
-							if ($ul_r[id] == $todo_r[contact_id]) $sel=" selected='selected'"; else $sel="";
+							if ($ul_r[id] == $todo_r[contact_id] or $ul_r[id] == $suid) $sel=" selected='selected'"; else $sel="";
 							echo "
 								<option value='$ul_r[id]' $sel>
 									$ul_r[lname], $ul_r[fname]
@@ -136,7 +150,7 @@ echo "
 					Created:
 				</td>
 				<td>
-					".date('Y-m-d', $date)."
+					$date
 				</td>
 				
 			</tr>
@@ -151,7 +165,7 @@ echo "
 						</option>
 						";
 						while ($cl_r = pg_fetch_array($cl)) {
-							if ($cl_r[id] == $todo_r[company_id]) $sel=" selected='selected'"; else $sel="";
+							if ($cl_r[id] == $todo_r[company_id] or $cl_r[id] == $comid) $sel=" selected='selected'"; else $sel="";
 							echo "
 								<option value='$cl_r[id]' $sel>
 									$cl_r[name]

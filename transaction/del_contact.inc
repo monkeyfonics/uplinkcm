@@ -17,7 +17,22 @@
 			";
 		pg_query($conn,$query);
 		
+		/*remove association to notes */
+		$query = "
+			delete
+			from		$acco.contact_notes
+			where		$acco.contact_notes.contact_id = $conid;
+			";
+		pg_query($conn,$query);
 		
+		/*remove association to todos */
+		$query = "
+			update		$acco.todo
+			set			contact_id=0
+					
+			where		contact_id=$conid
+		";
+		$todo = pg_query($conn, $query);
 		
 		$message = "Contact ".$ident." deleted";
 		$ret_url = 'index.php?section=contacts&template=contact_list';

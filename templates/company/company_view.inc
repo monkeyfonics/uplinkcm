@@ -76,7 +76,9 @@ echo "
 		<a href='index.php?section=company&template=company_edit&suid=$ul_r[id]'>
 			<div>{$lng->__('Edit Company')}</div>
 		</a>
-		
+		<a href='index.php?section=todo&template=todo_edit&comid=$ul_r[id]'>
+			<div>{$lng->__('New Todo')}</div>
+		</a>
 		<a href='transaction.php?t=del_company&suid=$ul_r[id]&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
 			<div>{$lng->__('Delete')}</div>
 		</a>

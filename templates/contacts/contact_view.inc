@@ -61,13 +61,16 @@ $query = "
 $cl = pg_query($conn, $query);
 
 
-/*contact notes*/
 $query = "
-	select		id,
-				contact_id,
-				created,
-				cont
-	from		$acco.contact_notes
+	select		$acco.contact_notes.id as id,
+				$acco.contact_notes.contact_id as contact_id,
+				$acco.contact_notes.created as created,
+				$acco.contact_notes.cont as cont,
+				$acco.contact_notes.created_by as created_by,
+				public.users.login as username,
+				public.users.fname as fname,
+				public.users.lname as lname
+	from		$acco.contact_notes left OUTER JOIN public.users ON ($acco.contact_notes.created_by = public.users.id)
 	where		contact_id = $suid
 	order by created desc
 	Limit 		15
@@ -106,6 +109,9 @@ echo "
 		</a>
 		<a href='index.php?section=contacts&template=contact_note&suid=$ul_r[id]'>
 			<div>{$lng->__('New Note')}</div>
+		</a>
+		<a href='index.php?section=todo&template=todo_edit&suid=$ul_r[id]'>
+			<div>{$lng->__('New Todo')}</div>
 		</a>
 		<a href='index.php?section=def&template=def_edit&suid=$ul_r[id]'>
 			<div>{$lng->__('New Invoice')}</div>
@@ -243,7 +249,10 @@ echo "
 					{$lng->__('Date')}:
 				</th>
 				<th>
-					{$lng->__('Note')}:
+					{$lng->__('Content')}:
+				</th>
+				<th>
+					{$lng->__('User')}:
 				</th>
 			</tr>
 			";
@@ -261,12 +270,17 @@ echo "
 						$con_not_r[cont]
 					</a>
 				</td>
+				<td>
+					<a href='index.php?section=contacts&template=contact_note&suid=$ul_r[id]&notid=$con_not_r[id]'>
+						$con_not_r[username]
+					</a>
+				</td>
 			</tr>
 			";
 		}
 		echo "
 			<tr>
-				<td colspan='2'>
+				<td colspan='3'>
 					{$lng->__('Show all')}
 				</td>
 			</tr>

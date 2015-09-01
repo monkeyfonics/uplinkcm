@@ -17,7 +17,14 @@
 			";
 		pg_query($conn,$query);
 		
-		
+		/*remove association to todos */
+		$query = "
+			update		$acco.todo
+			set			company_id=0
+					
+			where		company_id=$comid
+		";
+		$todo = pg_query($conn, $query);
 		
 		$message = "Company ".$ident." deleted";
 		$ret_url = 'index.php?section=company&template=company_list';

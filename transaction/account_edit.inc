@@ -92,7 +92,7 @@ if ($acd) {
 }
 
 		
-		$message = 'Account Saved';
+		$message = "{$lng->__('Account Saved')}";
 		$icon = 'layout/img/icon_succ.png';
 
 		

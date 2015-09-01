@@ -19,7 +19,7 @@ $query = "
 $co = pg_query($conn, $query);
 $co_r = pg_fetch_array($co);
 
-$message = 'Selected account ';
+$message = "{$lng->__('Selected account')} ";
 $ret_url = 'index.php?template=main';
 
 header("Refresh: 2; URL=".$ret_url);

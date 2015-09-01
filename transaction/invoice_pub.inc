@@ -17,7 +17,7 @@ $inoid = $_GET['inoid'];
 /*make due date one week from today*/
 $dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 
-/*update invoice print status */
+/*update invoice publish status */
 
 $query = "
 			update $acco.invoice_out

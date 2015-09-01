@@ -128,7 +128,7 @@ while ($in_r = pg_fetch_array($in)) {
 		}
 		
 		
-		echo "Update ".$in_r[header]." - ";
+		echo "{$lng->__('Invoice')}: ".$in_r[header]." - ".$in_r[due_date]."<br/>";
 		
 		
 		
@@ -140,7 +140,7 @@ while ($in_r = pg_fetch_array($in)) {
 		do {
 			$startTime = strtotime('+'.$rec.' months',$startTime); 
 			echo $startTime;
-			echo " - $endTime - $rec";
+			
 		
 			$dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 			
@@ -205,7 +205,7 @@ while ($in_r = pg_fetch_array($in)) {
 		/* check if day is more the max of month */
 		if ($nextbefore[2] > $next_m) {
 			$next = date("Y-m-d", mktime(0, 0, 0, $nextafter[1], $next_m, $nextafter[0]));
-			echo "too much $next_c";
+			
 		} else {
 			/* add recurring value to last created */	
 			$next = date('Y-m-d', strtotime("+".$rec." months", strtotime($next)));
@@ -214,19 +214,11 @@ while ($in_r = pg_fetch_array($in)) {
 		/* add recurring value to month */	
 		$month = date('F', strtotime("+".$rec." months", strtotime($month)));
 		
-		
-		echo "month:".$month." ";
-		echo "month_n:".$month_n." ";
-		
-		echo "end:".$end_n." ";
-		echo "next:".$next." ";
-		echo "<br/>";
-		
 		} while ($startTime < $endTime);
 		
 		
 		//echo "start".$month_n."i".$i."end".$end_n;
-		echo "<br/>now:".$datenow."nxt:".$next."end:".$end_date."<br/><br/>";
+		
 		
 		$query = "
 			update $acco.invoice_def

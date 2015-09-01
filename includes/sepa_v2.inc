@@ -71,9 +71,9 @@ class sepa {
 		$this->pdf->MultiCell(80,5,$invoice['payer']['name']."\n".(!empty($invoice['payer']['contact'])?$invoice['payer']['contact']."\n":'').$invoice['payer']['street']."\n".$invoice['payer']['zip']." ".$invoice['payer']['city']);
 		$this->pdf->SetFontSize(10);
 		$this->pdf->SetXY(110,33);
-		$this->pdf->MultiCell(35,4.5,$this->pdflang->__('Time').":\n".$this->pdflang->__('Due Date').":\n".$this->pdflang->__('Reference').":\n".$this->pdflang->__('Delay penalty').":\n".$this->pdflang->__('VAT-nr').":\n".$this->pdflang->__('Area').":");
+		$this->pdf->MultiCell(35,4.5,$this->pdflang->__('Time').":\n".$this->pdflang->__('Due Date').":\n".$this->pdflang->__('Reference').":\n".$this->pdflang->__('Delay penalty').":\n".$this->pdflang->__('VAT-nr').":");
 		$this->pdf->SetXY(150,33);
-		$this->pdf->MultiCell(35,4.5,$invoice['terms']." ".$this->pdflang->__('Days')."\n".$invoice['due']."\n".$invoice['custref']."\n".$invoice['rate']."%\n".$invoice['recipient']['vatnr']."\n".$invoice['home']);
+		$this->pdf->MultiCell(35,4.5,$invoice['terms']." ".$this->pdflang->__('Days')."\n".$invoice['due']."\n".$invoice['custref']."\n".$invoice['rate']."%\n".$invoice['recipient']['vatnr']);
 		$this->pdf->Line(5,65,205,65);
 
 		$y = 70;
@@ -185,6 +185,7 @@ class sepa {
 		$this->pdf->Cell(35,$h2,'','BL');
 		$this->pdf->Cell(0,$h2,'','BL');
 
+		
 		// Labels
 		$this->pdf->SetFontSize(6);
 		$l = $y+1;
@@ -197,6 +198,9 @@ class sepa {
 		$l += $h1;
 		$this->pdf->SetXY(5,$l);
 		$this->pdf->MultiCell(18,2.5,"Saaja\nMottagare",'','R');
+		$this->pdf->SetXY(120,$l);
+		$this->pdf->MultiCell(35,2.5,"Virtuaaliviivakoodi:\nVirtual referensnummer:",'','L');
+		
 		$l += $h1;
 		$this->pdf->SetXY(5,$l);
 		$this->pdf->MultiCell(18,2.5,"Maksajan nimi ja osoite\nBetalarens namn och adress",'','R');
@@ -214,7 +218,9 @@ class sepa {
 		$this->pdf->MultiCell(12,2.5,"Euro",'','L');
 		$this->pdf->SetFontSize(8);
 		$this->pdf->RotatedText(7,$l-4,"TILISIIRTO GIRERING",90);
-
+		
+		
+		
 		$this->pdf->SetFont('DejaVu','B',10);
 		$l = $y+2;
 		foreach ($invoice['accounts'] as $account) {
@@ -228,6 +234,7 @@ class sepa {
 		$l = $y+18;
 		$this->pdf->SetXY(23,$l);
 		$this->pdf->MultiCell(80,3.8,$invoice['recipient']['name']."\n".$invoice['recipient']['zip']." ".$invoice['recipient']['city']);
+		
 		$l = $y+64;
 		$this->pdf->SetXY(130,$l);
 		$this->pdf->Cell(80,3.8,$this->refFormat($invoice['ref'],4,"R"));
@@ -242,14 +249,23 @@ class sepa {
 		$this->pdf->SetFont('DejaVu','',10);
 		$this->pdf->SetXY(23,$l);
 		$this->pdf->MultiCell(80,4,$invoice['payer']['name']."\n".$invoice['payer']['street']."\n".$invoice['payer']['zip']." ".$invoice['payer']['city']);
-
-
+		
+		$this->pdf->SetFont('DejaVu','',7);
+		$this->pdf->SetXY(120,$l-12);
+		$this->pdf->MultiCell(85,2.5,$invoice['virtual'],'','L');
+		
+		$this->barcode($invoice['virtual'],283);
+		
+		
 	}
 
 	function display ($name) {
 		$this->pdf->Output($name.".pdf",'I');
 	}
-
+	function fetch () {
+ 		return $this->pdf->Output("",'S');
+ 	}
+	
 	function rf_ref ($nr) {
 		$nr = strtoupper($nr);
 		$tnr = $nr.'RF00';
@@ -317,6 +333,9 @@ class sepa {
 		$nr = $p1.ltrim($p2,"0");
 
 		return substr($nr,0,6)."-".substr($nr,6);
+	}
+	function barcode ($code,$y=120,$x=50) {
+ 		$this->pdf->Code128($x,$y,$code,105,12);
 	}
 
 }

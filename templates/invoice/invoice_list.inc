@@ -65,7 +65,8 @@ do {
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
-					$acco.invoice_out.pub as pub
+					$acco.invoice_out.pub as pub,
+					$acco.invoice_out.printed as printed
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.pub = true
@@ -120,7 +121,7 @@ echo "
 					{$lng->__('Amount')}:
 				</th>
 				<th>
-					{$lng->__('Published')}:
+					{$lng->__('Printed')}:
 				</th>
 			</tr>
 			";
@@ -157,6 +158,13 @@ echo "
 			$ca_r = pg_fetch_array($ca);
 			
 			$date = strtotime($in_r[dated_out]);
+			if ($in_r[printed]) {
+				$printed = date('Y-m-d', strtotime($in_r[printed]));
+			} else {
+				$printed = "Not printed";
+			}
+			
+			
 			
 			/*invoice items for counting total cost*/
 					
@@ -213,7 +221,7 @@ echo "
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
 					<td>
-						$in_r[pub]
+						$printed
 					</td>
 				</tr>
 			";

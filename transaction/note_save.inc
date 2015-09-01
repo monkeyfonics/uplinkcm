@@ -1,6 +1,7 @@
 <?php
 
 $acco = $_POST['acco'];
+$s_id = $_SESSION['s_id'];
 
 $suid = $_POST['suid'];
 $cont = $_POST['cont'];
@@ -26,11 +27,13 @@ if ($notid) {
 			insert into $acco.contact_notes (
 			created,
 			cont,
-			contact_id
+			contact_id,
+			created_by
 			) values (
 			now(),
 			'$cont',
-			$suid
+			$suid,
+			$s_id
 			)
 		";
 	$not = pg_query($conn, $query);

@@ -42,10 +42,11 @@ $in_r = pg_fetch_array($in);
 
 /*contact */
 $query = "
-	select		$acco.invoice_out.cid,
+	select		$acco.invoice_out.pid,
 				$acco.contacts.id as coid,
 				$acco.contacts.lname as lname,
-				$acco.contacts.fname as fname
+				$acco.contacts.fname as fname,
+				$acco.contacts.email as email
 	FROM 		$acco.contacts LEFT OUTER JOIN $acco.invoice_out ON ($acco.contacts.id = $acco.invoice_out.pid)
 	where		$acco.contacts.id = $in_r[pid]
 	
@@ -71,6 +72,7 @@ $co_r = pg_fetch_array($co);
 $in_r[created_out] = date('Y-m-d', strtotime($in_r[created_out]));
 $in_r[due_date_out] = date('Y-m-d', strtotime($in_r[due_date_out]));
 
+$email_id = $cl_r[coid];
 
 if ($in_r[cid]) {
 	$contact_link = "
@@ -78,6 +80,7 @@ if ($in_r[cid]) {
 			<div class='header'>$co_r[name]</div>
 		</a>
 	";
+	
 } else {
 	$contact_link = "
 		<a href='index.php?section=contacts&template=contact_view&suid=$cl_r[coid]'>
@@ -100,7 +103,15 @@ echo "
 				<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
 					<div>{$lng->__('Print')}</div>
 				</a>
-			";
+				";
+				if ($cl_r[email]) {
+					echo "
+					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id'>
+						<div>{$lng->__('Email')}</div>
+					</a>
+					";
+				}
+				
 		} else {
 			echo "
 				<a href='transaction.php?section=invoice&t=invoice_pub&ident=$in_r[ident]&inoid=$inoid'>
@@ -152,7 +163,9 @@ echo "
 					Person:
 				</td>
 				<td>
-					$cl_r[lname], $cl_r[fname]
+					<a href='index.php?section=contacts&template=contact_view&suid=$cl_r[coid]'>
+						$cl_r[lname], $cl_r[fname]
+					</a>
 				</td>
 			</tr>
 			<tr>

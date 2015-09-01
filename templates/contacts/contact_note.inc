@@ -37,12 +37,16 @@ $ul_r = pg_fetch_array($ul);
 
 	/*contact notes*/
 $query = "
-	select		id,
-				contact_id,
-				created,
-				cont
-	from		$acco.contact_notes
-	where		id = $notid
+	select		$acco.contact_notes.id as id,
+				$acco.contact_notes.contact_id as contact_id,
+				$acco.contact_notes.created as created,
+				$acco.contact_notes.cont as cont,
+				$acco.contact_notes.created_by as created_by,
+				public.users.login as username,
+				public.users.fname as fname,
+				public.users.lname as lname
+	from		$acco.contact_notes left OUTER JOIN public.users ON ($acco.contact_notes.created_by = public.users.id)
+	where		$acco.contact_notes.id = $notid
 	
 ";
 
@@ -69,7 +73,7 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					{$lng->__('Note')}:
+					{$lng->__('Note')} {$lng->__('by')} $con_not_r[lname], $con_not_r[fname]:
 				</td>
 			</tr>
 			<tr>
