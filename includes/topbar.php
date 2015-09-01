@@ -2,19 +2,19 @@
 
 
 
-include("includes/session.inc");
+include("includes/session.php");
 
 $s_lvl = $tu_r[lvl];
 
 if ($ac_id) {
-	require_once('includes/accountcheck.inc');
+	require_once('includes/accountcheck.php');
 	$ac_r = pg_fetch_array($ac);
 	$acco = $ac_r[identy];
 }
 
 /*check for unmade invoices*/
 if ($_SESSION['ac_id']) {
-	include('includes/invoicecheck.inc');
+	include('includes/invoicecheck.php');
 }
 
 //echo "$outputlanguage - $s_id - $ac_id";

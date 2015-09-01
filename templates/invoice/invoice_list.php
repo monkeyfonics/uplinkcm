@@ -3,7 +3,7 @@ if ($s_lvl < 1) {
 	header("Location: $rpath");
     die();
 }
-require 'includes/accountcheck.inc';
+require 'includes/accountcheck.php';
 
 
 $ac_r = pg_fetch_array($ac);

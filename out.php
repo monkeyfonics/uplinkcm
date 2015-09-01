@@ -1,9 +1,9 @@
 <?php
 
-include("globals/init.inc");
+include("globals/init.php");
 
 
-include("transaction/$_GET[t].inc");
+include("transaction/$_GET[t].php");
 
 
 ?>

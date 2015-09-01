@@ -3,6 +3,11 @@ if ($s_lvl < 1) {
 	header("Location: $rpath");
     die();
 }
+require 'includes/accountcheck.php';
+
+$ac_r = pg_fetch_array($ac);
+
+$acco = $ac_r[identy];
 
 $today = date('Y-m-d');
 

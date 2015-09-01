@@ -1,5 +1,5 @@
 <?php
-require 'includes/PasswordHash.inc';
+require 'includes/PasswordHash.php';
 
 
 $login = $_GET['login'];

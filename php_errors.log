@@ -178,3 +178,11 @@ LINE 2:    insert into .invoice_def (
 LINE 11:  from  .invoice_def_item
                 ^ in /var/www/web/dev/cm/transaction/def_copy.inc on line 122
 [31-Aug-2015 11:27:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/transaction/def_copy.inc on line 124
+[01-Sep-2015 08:32:38 UTC] PHP Warning:  require(includes/accountcheck.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/templates/main.php on line 5
+[01-Sep-2015 08:32:38 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/accountcheck.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/templates/main.php on line 5
+[01-Sep-2015 08:32:42 UTC] PHP Warning:  require(includes/accountcheck.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/templates/main.php on line 5
+[01-Sep-2015 08:32:42 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/accountcheck.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/templates/main.php on line 5
+[01-Sep-2015 08:32:47 UTC] PHP Warning:  require(includes/accountcheck.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/templates/main.php on line 5
+[01-Sep-2015 08:32:47 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/accountcheck.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/templates/main.php on line 5
+[01-Sep-2015 08:34:03 UTC] PHP Warning:  require(includes/accountcheck.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/templates/contacts/contact_list.php on line 6
+[01-Sep-2015 08:34:03 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/accountcheck.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/templates/contacts/contact_list.php on line 6

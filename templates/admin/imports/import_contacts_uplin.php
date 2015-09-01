@@ -1,6 +1,6 @@
 <?php
 
-include 'connds.inc';
+include 'connds.php';
 
 
 $query = "

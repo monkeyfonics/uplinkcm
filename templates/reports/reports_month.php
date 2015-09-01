@@ -1,8 +1,9 @@
 <?php
 if ($s_lvl < 1) {
-	
+	header("Location: $rpath");
+    die();
 } else {
-require 'includes/accountcheck.inc';
+require 'includes/accountcheck.php';
 
 
 $ac_r = pg_fetch_array($ac);

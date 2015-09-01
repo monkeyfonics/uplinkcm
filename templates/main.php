@@ -2,7 +2,7 @@
 if ($s_lvl < 1) {
 	
 } else {
-require 'includes/accountcheck.inc';
+require 'includes/accountcheck.php';
 
 
 $ac_r = pg_fetch_array($ac);

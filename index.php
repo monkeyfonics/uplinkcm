@@ -1,10 +1,10 @@
 <?php
 
-include("globals/init.inc");
+include("globals/init.php");
 
-include("headers/header.inc");
+include("headers/header.php");
 
-include("includes/topbar.inc");
+include("includes/topbar.php");
 
 if (!$_GET[section]) {
 
@@ -27,10 +27,10 @@ if (!$_GET[template]) {
 
 echo "<div class='main_box'>";
 
-include("templates/$_GET[section]/$_GET[template].inc");
+include("templates/$_GET[section]/$_GET[template].php");
 
 echo "</div>";
 
-include("headers/footer.inc");
+include("headers/footer.php");
 
 ?>

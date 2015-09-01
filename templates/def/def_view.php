@@ -3,7 +3,7 @@ if ($s_lvl < 1) {
 	header("Location: $rpath");
     die();
 }
-require 'includes/accountcheck.inc';
+require 'includes/accountcheck.php';
 
 
 $ac_r = pg_fetch_array($ac);
@@ -11,28 +11,24 @@ $ac_r = pg_fetch_array($ac);
 $acco = $ac_r[identy];
 
 $ident = $_GET['ident'];
-$inoid = $_GET['inoid'];
 	
 /* invoice */
 $query = "
-	select		$acco.invoice_def.id as id,
-				$acco.invoice_def.ident as ident,
-				$acco.invoice_def.end_date as end_date,
-  				$acco.invoice_def.recurring as recurring,
-				$acco.invoice_out.header as header,
-				$acco.invoice_out.pid as pid,
-				$acco.invoice_out.cid as cid,
-  				$acco.invoice_out.loc as loc,
-  				$acco.invoice_out.id as outid,
-  				$acco.invoice_out.addhead as addhead,
-  				$acco.invoice_out.invoice_id as invoice_id,
-  				$acco.invoice_out.created as created_out,
-  				$acco.invoice_out.due_date as due_date_out,
-  				$acco.invoice_out.ref as ref,
-  				$acco.invoice_out.pub as pub
-	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.invoice_id)
-	where		$acco.invoice_out.id = $inoid;
-	
+	select		id,
+				ident,
+				header,
+				pid,
+				cid,
+  				loc,
+  				created,
+  				dated,
+  				ongoing,
+  				end_date,
+  				next_create,
+  				recurring,
+  				active
+	from		$acco.invoice_def
+	where		ident = $ident
 	
 ";
 
@@ -42,12 +38,11 @@ $in_r = pg_fetch_array($in);
 
 /*contact */
 $query = "
-	select		$acco.invoice_out.pid,
+	select		$acco.invoice_def.cid,
 				$acco.contacts.id as coid,
 				$acco.contacts.lname as lname,
-				$acco.contacts.fname as fname,
-				$acco.contacts.email as email
-	FROM 		$acco.contacts LEFT OUTER JOIN $acco.invoice_out ON ($acco.contacts.id = $acco.invoice_out.pid)
+				$acco.contacts.fname as fname
+	FROM 		$acco.contacts LEFT OUTER JOIN $acco.invoice_def ON ($acco.contacts.id = $acco.invoice_def.pid)
 	where		$acco.contacts.id = $in_r[pid]
 	
 ";
@@ -57,10 +52,10 @@ $cl_r = pg_fetch_array($cl);
 
 /*company */
 $query = "
-	select		$acco.invoice_out.cid,
+	select		$acco.invoice_def.cid,
 				$acco.company.id as cmid,
 				$acco.company.name as name
-	FROM 		$acco.company LEFT OUTER JOIN $acco.invoice_out ON ($acco.company.id = $acco.invoice_out.cid)
+	FROM 		$acco.company LEFT OUTER JOIN $acco.invoice_def ON ($acco.company.id = $acco.invoice_def.cid)
 	where		$acco.company.id = $in_r[cid]
 	
 ";
@@ -68,70 +63,59 @@ $query = "
 $co = pg_query($conn, $query);
 $co_r = pg_fetch_array($co);
 
+/*invoice item category */
 
-$in_r[created_out] = date('Y-m-d', strtotime($in_r[created_out]));
-$in_r[due_date_out] = date('Y-m-d', strtotime($in_r[due_date_out]));
-
-$email_id = $cl_r[coid];
-
-if ($in_r[cid]) {
-	$contact_link = "
-		<a href='index.php?section=company&template=company_view&suid=$co_r[cmid]'>
-			<div class='header'>$co_r[name]</div>
-		</a>
-	";
+$query = "
+	select		id,
+				name,
+  				vat
+	from		public.list_invoice_group
+	order by 	id
 	
-} else {
-	$contact_link = "
-		<a href='index.php?section=contacts&template=contact_view&suid=$cl_r[coid]'>
-			<div class='header'>$cl_r[lname], $cl_r[fname]</div>
-		</a>
-	";
-}
+	
+";
 
+$ig = pg_query($conn, $query);
+
+
+
+$in_r[created] = date('Y-m-d', strtotime($in_r[created]));
+$in_r[dated] = date('Y-m-d', strtotime($in_r[dated]));
+$in_r[next_create] = date('Y-m-d', strtotime($in_r[next_create]));
+$in_r[end_date] = date('Y-m-d', strtotime($in_r[end_date]));
+
+if ($in_r[active] == t) {
+				$activate = "{$lng->__('Deactivate')}";
+			} else {
+				$activate = "{$lng->__('Activate')}";
+			}
+
+			
+/*checks to see if there is no end date */
+if ($in_r[ongoing] == t) {
+				$ongoing = "{$lng->__('Yes')}";
+				$end_date = " ";
+			} else {
+				$ongoing = "{$lng->__('No')}";
+				$end_date = $in_r[end_date];
+			}
 /*use buttons row */
 echo "
 	<div class='buttons'>
-		$contact_link
-		
-		<a href='index.php?section=invoice&template=invoice_view&inoid=$inoid&ident=$in_r[ident]'>
-			<div class='header'>{$lng->__('Invoices')} - $in_r[header]</div>
+		<a href='index.php?section=def&template=def_view&ident=$in_r[ident]'>
+			<div class='header'>{$lng->__('Invoice Templates')} - $in_r[header] - $in_r[ident]</div>
 		</a>
-		";
-		if ($in_r[pub] == t) {
-			echo "
-				<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
-					<div>{$lng->__('Print')}</div>
-				</a>
-				";
-				if ($cl_r[email]) {
-					echo "
-					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id'>
-						<div>{$lng->__('Email')}</div>
-					</a>
-					";
-				}
-				
-		} else {
-			echo "
-				<a href='transaction.php?section=invoice&t=invoice_pub&ident=$in_r[ident]&inoid=$inoid'>
-					<div>{$lng->__('Publish')}</div>
-				</a>
-			";
-			/* only delete if not published */
-			echo "
-				<a href='transaction.php?t=del_invoice&ident=$in_r[ident]&inoid=$inoid&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
-					<div>{$lng->__('Delete')}</div>
-				</a>
-			";
-		}
-		
-echo "
-		
+		<a href='index.php?section=def&template=def_edit&ident=$in_r[ident]'>
+			<div>{$lng->__('Edit Template')}</div>
+		</a>
+		<a href='transaction.php?t=def_act&ident=$in_r[ident]&acco=$acco'>
+			<div>$activate</div>
+		</a>
+		<a href='transaction.php?t=def_copy&ident=$in_r[ident]&acco=$acco'>
+			<div>{$lng->__('Copy Template')}</div>
+		</a>
 	</div>
 ";
-
-$refformat = chunk_split($in_r[ref], 5, ' ');
 
 echo "
 	<div class='fullcont'>
@@ -140,40 +124,38 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					Ref:
+					Dated:
 				</td>
 				<td>
-					$refformat
+					$in_r[dated]
 				</td>
 				<td class='head'>
 					Header:
 				</td>
 				<td>
-					<a href='index.php?section=def&template=def_view&ident=$in_r[invoice_id]'>$in_r[header]</a> - $in_r[addhead]
+					$in_r[header]
 				</td>
 			</tr>
 			<tr>
 				<td class='head'>
-					Created:
+					Next Invoice:
 				</td>
 				<td>
-					$in_r[created_out]
+					$in_r[next_create]
 				</td>
 				<td class='head'>
 					Person:
 				</td>
 				<td>
-					<a href='index.php?section=contacts&template=contact_view&suid=$cl_r[coid]'>
-						$cl_r[lname], $cl_r[fname]
-					</a>
+					$cl_r[lname], $cl_r[fname]
 				</td>
 			</tr>
 			<tr>
 				<td class='head'>
-					Due date:
+					Ongoing:
 				</td>
 				<td>
-					$in_r[due_date_out]
+					$ongoing
 				</td>
 				<td class='head'>
 					Company:
@@ -189,11 +171,26 @@ echo "
 				<td>
 					Every $in_r[recurring] month(s)
 				</td>
+				
 				<td class='head'>
 					Language:
 				</td>
 				<td>
 					$in_r[loc]
+				</td>
+			</tr>
+			<tr>
+				<td class='head'>
+					End date:
+				</td>
+				<td>
+					$end_date
+				</td>
+				<td class='head'>
+					
+				</td>
+				<td>
+					
 				</td>
 			</tr>
 		
@@ -204,7 +201,6 @@ echo "
 		
 $query = "
 	select		id,
-				def_id,
 				cat,
 				item,
 				invoice_id,
@@ -212,8 +208,9 @@ $query = "
   				qty,
   				unit,
   				vat
-	from		$acco.invoice_out_item
-	where		invoice_id = $in_r[ident]
+	from		$acco.invoice_def_item
+	where		invoice_id = $ident
+	order by	item
 	
 ";
 
@@ -263,7 +260,7 @@ $it = pg_query($conn, $query);
 				$unit = 'qty';
 			}
 			
-			/* category fetch */
+		/* category fetch */
 		
 
 		$query = "
@@ -279,7 +276,7 @@ $it = pg_query($conn, $query);
 		$ig = pg_query($conn, $query);
 		
 		$ig_r = pg_fetch_array($ig);
-			
+		
 		echo "
 			<tr>
 				<td>
@@ -298,7 +295,7 @@ $it = pg_query($conn, $query);
 					".number_format($fullprice,2,","," ")." &euro;
 				</td>
 				<td>
-					$it_r[vat] %
+					$it_r[vat]
 				</td>
 				<td>
 					".number_format($fullvatprice,2,","," ")." &euro;

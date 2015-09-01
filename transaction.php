@@ -1,12 +1,12 @@
 <?php
 
-include("globals/init.inc");
-include("headers/header.inc");
+include("globals/init.php");
+include("headers/header.php");
 
 
-//include("includes/topbar_plain.inc");
+//include("includes/topbar_plain.php");
 
-include("transaction/$_GET[t].inc");
+include("transaction/$_GET[t].php");
 
-include("headers/footer.inc");
+include("headers/footer.php");
 ?>

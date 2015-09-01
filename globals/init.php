@@ -2,8 +2,8 @@
 session_start();
 
 
-include("settings.inc");
-include("local_functions.inc");
+include("settings.php");
+include("local_functions.php");
 
 
 $conn = pg_connect("dbname=".$setting['db']['name']);
@@ -24,7 +24,7 @@ if (empty($_SESSION['lang'])) {
 
 /* translate */
 
-require_once("includes/trans.inc");
+require_once("includes/trans.php");
 
 
 $outputlanguage = $_SESSION['lang'];
