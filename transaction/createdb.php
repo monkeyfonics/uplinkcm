@@ -57,7 +57,7 @@ if ($accoun == $ca_r[schema_name]) {
 /* db creating */
 $GLOBALS['db']->schema($accoun);
 
-require "includes/tables.inc";
+require "includes/tables.php";
 
 foreach ($tables as $tab) {
     $table = new dbtable($tab);

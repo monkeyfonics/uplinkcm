@@ -1,14 +1,14 @@
 <?php
 
-require 'includes/session.inc';
-require 'includes/accountcheck.inc';
+require 'includes/session.php';
+require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
 $acco = $ac_r[identy];
 
 /* include pdf building function */
-include ("includes/sepa_v2.inc");
+include ("includes/sepa_v2.php");
 
 $invoice = new sepa();
 

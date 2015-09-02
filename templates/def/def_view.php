@@ -203,13 +203,13 @@ $query = "
 	select		id,
 				cat,
 				item,
-				invoice_id,
+				def_id,
 				price,
   				qty,
   				unit,
   				vat
 	from		$acco.invoice_def_item
-	where		invoice_id = $ident
+	where		def_id = $ident
 	order by	item
 	
 ";

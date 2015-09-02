@@ -36,7 +36,7 @@ $query = "
 		select		{$acco}.invoice_out.id as id
 					
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
-		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
+		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.pub = false
 		$sqlfilt
 		
@@ -61,6 +61,7 @@ do {
 					$acco.invoice_out.loc as loc,
 					$acco.invoice_out.id as outid,
 					$acco.invoice_out.addhead as addhead,
+					$acco.invoice_out.def_id as def_id,
 					$acco.invoice_out.invoice_id as invoice_id,
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
@@ -68,10 +69,10 @@ do {
 					$acco.invoice_out.ref as ref,
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
-		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
+		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.pub = false
 		$sqlfilt
-		order by	$acco.invoice_out.dated desc
+		order by	$acco.invoice_out.dated desc, $acco.invoice_out.id desc
 		limit 		{$rows}
 		offset		{$fetchrow}
 		
@@ -171,7 +172,7 @@ echo "
 			  				unit,
 			  				vat
 				from		$acco.invoice_out_item
-				where		invoice_id = $in_r[ident]
+				where		invoice_id = $in_r[invoice_id]
 				
 			";
 			
@@ -183,7 +184,7 @@ echo "
 					$tempprice2 = $tempprice1 * $it_r[vat];
 					$combprice += ($tempprice1 + $tempprice2);
 				}
-			$pripath = "index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]";
+			$pripath = "index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]&invid=$in_r[invoice_id]";
 			
 			$refformat = chunk_split($in_r[ref], 5, ' ');
 			

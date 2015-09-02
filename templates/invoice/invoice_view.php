@@ -25,12 +25,13 @@ $query = "
   				$acco.invoice_out.loc as loc,
   				$acco.invoice_out.id as outid,
   				$acco.invoice_out.addhead as addhead,
+  				$acco.invoice_out.def_id as def_id,
   				$acco.invoice_out.invoice_id as invoice_id,
   				$acco.invoice_out.created as created_out,
   				$acco.invoice_out.due_date as due_date_out,
   				$acco.invoice_out.ref as ref,
   				$acco.invoice_out.pub as pub
-	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.invoice_id)
+	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.def_id)
 	where		$acco.invoice_out.id = $inoid;
 	
 	
@@ -98,6 +99,7 @@ echo "
 			<div class='header'>{$lng->__('Invoices')} - $in_r[header]</div>
 		</a>
 		";
+		/* if invoice is published*/
 		if ($in_r[pub] == t) {
 			echo "
 				<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
@@ -118,9 +120,15 @@ echo "
 					<div>{$lng->__('Publish')}</div>
 				</a>
 			";
+			/* only edit if not published */
+			echo "
+				<a href='index.php?section=invoice&template=invoice_edit&inoid=$inoid&invid=$in_r[invoice_id]' onclick='return confirm(\"{$lng->__('Edit')}?\");'>
+					<div>{$lng->__('Edit')}</div>
+				</a>
+			";
 			/* only delete if not published */
 			echo "
-				<a href='transaction.php?t=del_invoice&ident=$in_r[ident]&inoid=$inoid&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
+				<a href='transaction.php?t=del_invoice&invid=$in_r[invoice_id]&inoid=$inoid&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
 					<div>{$lng->__('Delete')}</div>
 				</a>
 			";
@@ -140,10 +148,12 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					Ref:
+					{$lng->__('Invoice number')}:
 				</td>
 				<td>
-					$refformat
+					<a href='index.php?section=def&template=def_view&ident=$in_r[invoice_id]'>
+						$in_r[def_id] $in_r[invoice_id]
+					</a>
 				</td>
 				<td class='head'>
 					Header:
@@ -154,10 +164,10 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Created:
+					Reference:
 				</td>
 				<td>
-					$in_r[created_out]
+					$in_r[ref]
 				</td>
 				<td class='head'>
 					Person:
@@ -170,24 +180,26 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Due date:
+					Created:
 				</td>
 				<td>
-					$in_r[due_date_out]
+					$in_r[created_out]
 				</td>
 				<td class='head'>
 					Company:
 				</td>
 				<td>
-					$co_r[name]
+					<a href='index.php?section=company&template=company_view&suid=$co_r[cmid]'>
+						$co_r[name]
+					</a>
 				</td>
 			</tr>
 			<tr>
 				<td class='head'>
-					Recurring:
+					Due date:
 				</td>
 				<td>
-					Every $in_r[recurring] month(s)
+					$in_r[due_date_out]
 				</td>
 				<td class='head'>
 					Language:
@@ -196,7 +208,21 @@ echo "
 					$in_r[loc]
 				</td>
 			</tr>
-		
+			<tr>
+				
+				<td class='head'>
+					Recurring:
+				</td>
+				<td>
+					Every $in_r[recurring] month(s)
+				</td>
+				<td class='head'>
+					
+				</td>
+				<td>
+					
+				</td>
+			</tr>
 		
 		</table>
 		";
@@ -213,7 +239,7 @@ $query = "
   				unit,
   				vat
 	from		$acco.invoice_out_item
-	where		invoice_id = $in_r[ident]
+	where		invoice_id = $in_r[invoice_id]
 	
 ";
 

@@ -158,7 +158,7 @@ if (isset($_POST['add_item'])) {
 		$query = "
 			insert into $acco.invoice_def_item (
 			item,
-			invoice_id,
+			def_id,
 			price,
 			qty,
 			unit,
@@ -224,7 +224,7 @@ if (isset($_POST['ids'])) {
 		$query = "
 			update		$acco.invoice_def_item
 			set			item='$item[$i]',
-						invoice_id=$ident,
+						def_id=$ident,
 						qty=$qty[$i],
 						unit=$unit[$i],
 						price=$price[$i],

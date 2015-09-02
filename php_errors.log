@@ -186,3 +186,448 @@ LINE 11:  from  .invoice_def_item
 [01-Sep-2015 08:32:47 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/accountcheck.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/templates/main.php on line 5
 [01-Sep-2015 08:34:03 UTC] PHP Warning:  require(includes/accountcheck.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/templates/contacts/contact_list.php on line 6
 [01-Sep-2015 08:34:03 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/accountcheck.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/templates/contacts/contact_list.php on line 6
+[01-Sep-2015 09:40:34 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.php on line 254
+[01-Sep-2015 09:47:28 UTC] PHP Warning:  require(includes/session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/transaction/invoice_gen.php on line 3
+[01-Sep-2015 09:47:28 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/session.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/transaction/invoice_gen.php on line 3
+[01-Sep-2015 09:50:30 UTC] PHP Warning:  include(includes/sepa_v2.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/transaction/invoice_gen.php on line 11
+[01-Sep-2015 09:50:30 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'includes/sepa_v2.inc' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/transaction/invoice_gen.php on line 11
+[01-Sep-2015 09:50:30 UTC] PHP Fatal error:  Class 'sepa' not found in /var/www/web/dev/cm/transaction/invoice_gen.php on line 13
+[01-Sep-2015 09:50:39 UTC] PHP Warning:  include(includes/sepa_v2.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/transaction/invoice_gen.php on line 11
+[01-Sep-2015 09:50:39 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'includes/sepa_v2.inc' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/transaction/invoice_gen.php on line 11
+[01-Sep-2015 09:50:39 UTC] PHP Fatal error:  Class 'sepa' not found in /var/www/web/dev/cm/transaction/invoice_gen.php on line 13
+[02-Sep-2015 07:04:34 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;phone&quot; does not exist
+LINE 10:       phone,
+               ^ in /var/www/web/dev/cm/templates/invoice/invoice_edit.php on line 72
+[02-Sep-2015 07:04:34 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_edit.php on line 162
+[02-Sep-2015 10:21:49 UTC] PHP Warning:  require_once(includes/tables.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/templates/admin/account_list.php on line 7
+[02-Sep-2015 10:21:49 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/tables.inc' (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/templates/admin/account_list.php on line 7
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:31:54 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201509457
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201504564
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201504580
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201504890
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201508167
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201508991
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201506848
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201506259
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201506586
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201504828
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201504352
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201504164
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201504153
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201407875
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201408781
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201401507
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201401474
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201410375
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201409736
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201409620
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201407142
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201407907
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201405188
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201312764
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201312665
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201312361
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201301842
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201308235
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201312105
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201305393
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201301113
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 11:  where  invoice_id = 201301400
+                 ^ in /var/www/web/dev/cm/templates/def/def_list.php on line 161
+[02-Sep-2015 10:32:52 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_list.php on line 163
+[02-Sep-2015 10:33:11 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.php on line 254
+[02-Sep-2015 10:33:11 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_edit.php on line 380
+[02-Sep-2015 10:33:11 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_edit.php on line 437
+[02-Sep-2015 10:34:11 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.php on line 254
+[02-Sep-2015 10:34:47 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; of relation &quot;invoice_def_item&quot; does not exist
+LINE 4:    invoice_id,
+           ^ in /var/www/web/dev/cm/transaction/def_edit.php on line 177
+[02-Sep-2015 10:36:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  column &quot;invoice_id&quot; does not exist
+LINE 5:     invoice_id,
+            ^ in /var/www/web/dev/cm/templates/def/def_view.php on line 217
+[02-Sep-2015 10:36:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_view.php on line 248
+[02-Sep-2015 10:37:06 UTC] PHP Warning:  pg_query_params() [<a href='function.pg-query-params'>function.pg-query-params</a>]: Query failed: ERROR:  INSERT has more target columns than expressions
+LINE 15:     cash
+             ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 197
+[02-Sep-2015 10:38:29 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 178
+[02-Sep-2015 10:38:29 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 181
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 12:    
+            ^ in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 179
+[02-Sep-2015 10:40:00 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_list_pend.php on line 182
+[02-Sep-2015 10:41:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 55
+[02-Sep-2015 10:41:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[02-Sep-2015 10:41:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 68
+[02-Sep-2015 10:41:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[02-Sep-2015 10:41:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 245
+[02-Sep-2015 10:41:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 276
+[02-Sep-2015 10:56:51 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 13: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_edit.php on line 267
+[02-Sep-2015 10:56:51 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_edit.php on line 322
+[02-Sep-2015 11:13:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.php on line 254
+[02-Sep-2015 11:14:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[02-Sep-2015 11:14:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[02-Sep-2015 11:14:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[02-Sep-2015 11:14:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[02-Sep-2015 11:14:26 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[02-Sep-2015 11:14:26 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[02-Sep-2015 11:14:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[02-Sep-2015 11:14:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[02-Sep-2015 11:14:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[02-Sep-2015 11:14:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[02-Sep-2015 11:14:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[02-Sep-2015 11:14:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[02-Sep-2015 11:19:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[02-Sep-2015 11:19:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[02-Sep-2015 11:19:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[02-Sep-2015 11:19:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[02-Sep-2015 11:19:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[02-Sep-2015 11:19:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[02-Sep-2015 11:21:38 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[02-Sep-2015 11:21:38 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[02-Sep-2015 11:21:38 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[02-Sep-2015 11:21:38 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[02-Sep-2015 11:21:38 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[02-Sep-2015 11:21:38 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[02-Sep-2015 11:22:09 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[02-Sep-2015 11:22:09 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[02-Sep-2015 11:22:09 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[02-Sep-2015 11:22:09 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[02-Sep-2015 11:22:09 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[02-Sep-2015 11:22:09 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[02-Sep-2015 11:22:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[02-Sep-2015 11:22:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[02-Sep-2015 11:22:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[02-Sep-2015 11:22:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[02-Sep-2015 11:22:58 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[02-Sep-2015 11:22:58 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[02-Sep-2015 11:23:38 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.invoice_out&quot; does not exist
+LINE 8:  from  acc_uplin_2.invoice_out
+               ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 260
+[02-Sep-2015 11:23:41 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.invoice_out&quot; does not exist
+LINE 8:  from  acc_uplin_2.invoice_out
+               ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 260
+[02-Sep-2015 11:23:43 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.invoice_out&quot; does not exist
+LINE 8:  from  acc_uplin_2.invoice_out
+               ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 260

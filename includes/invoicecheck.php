@@ -33,6 +33,9 @@ echo "
 while ($in_r = pg_fetch_array($in)) {
 	$inid = $in_r[id];
 	$ident = $in_r[ident];
+	/*generate unique id for every invoice from template*/
+	$outrand = rand(100, 999);
+	$invout = $in_r[ident].$outrand;
 	$next = date('Y-m-d', strtotime($in_r[next_create]));
 	$dated = date('Y-m-d', strtotime($in_r[dated]));
 	$end_date = date('Y-m-d', strtotime($in_r[end_date]));
@@ -65,18 +68,14 @@ while ($in_r = pg_fetch_array($in)) {
 		select		id,
 					cat,
 					item,
-					invoice_id,
+					def_id,
 					price,
 					qty,
 					unit,
 					vat
 		from		$acco.invoice_def_item
-		where		invoice_id = $in_r[ident]
-		and			id not in (
-			select		$acco.invoice_out_item.def_id
-			from		$acco.invoice_out_item
-			
-		)
+		where		def_id = $in_r[ident]
+		
 		";
 
 		$ii = pg_query($conn, $query);
@@ -106,7 +105,7 @@ while ($in_r = pg_fetch_array($in)) {
 	
 			)
 		";
-		$ioi = pg_query_params($conn, $query, Array($ii_r[id],$ii_r[cat],$ii_r[item],$ii_r[invoice_id],$ii_r[price],$ii_r[qty],$ii_r[unit],$ii_r[vat]));
+		$ioi = pg_query_params($conn, $query, Array($ii_r[id],$ii_r[cat],$ii_r[item],$invout,$ii_r[price],$ii_r[qty],$ii_r[unit],$ii_r[vat]));
 			
 			
 		}
@@ -139,8 +138,10 @@ while ($in_r = pg_fetch_array($in)) {
 		
 		do {
 			$startTime = strtotime('+'.$rec.' months',$startTime); 
-			echo $startTime;
 			
+			
+			$monthtrans = "{$lng->__($month)}";
+			echo $monthtrans;
 		
 			$dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 			
@@ -164,6 +165,7 @@ while ($in_r = pg_fetch_array($in)) {
 				cid,
 				loc,
 				addhead,
+				def_id,
 				invoice_id,
 				created,
 				dated,
@@ -184,11 +186,12 @@ while ($in_r = pg_fetch_array($in)) {
 				$9,
 				$10,
 				$11,
-				$12
+				$12,
+				$13
 	
 			)
 		";
-		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$month,$ident,$datenow,$next,$dueplus,$compref,$pub,$cash));
+		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$month,$ident,$invout,$datenow,$next,$dueplus,$compref,$pub,$cash));
 		
 		
 		/* try to check if date exceeds max date for month*/

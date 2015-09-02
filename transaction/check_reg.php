@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/PasswordHash.inc';
+require 'includes/PasswordHash.php';
 
 // Base-2 logarithm of the iteration count used for password stretching
 $hash_cost_log2 = 8;

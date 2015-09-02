@@ -1,5 +1,5 @@
 <?php
-include("includes/session.inc");
+include("includes/session.php");
 
 
 if (!$_GET['usid']) {

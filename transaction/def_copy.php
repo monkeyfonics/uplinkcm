@@ -76,6 +76,8 @@ $it = pg_query($conn, $query);
 
 
 /* copy the old data into new record with a new ident number */
+	$newheader = $in_r[header]." - copy";
+
 
 	$idf = date('Ym', strtotime($in_r[dated]));
 	$ids = rand(100, 999);
@@ -98,7 +100,7 @@ $it = pg_query($conn, $query);
 			
 			) values (
 			$ident,
-			'$in_r[header]',
+			'$newheader',
 			$in_r[pid],
 			$in_r[cid],
 			now(),

@@ -51,7 +51,7 @@ $query = "
   				active,
   				next_create
 	from		$acco.invoice_def
-	order by	created desc, header desc
+	order by	created desc, id desc
 	
 ";
 
@@ -148,13 +148,13 @@ $query = "
 	select		id,
 				cat,
 				item,
-				invoice_id,
+				def_id,
 				price,
   				qty,
   				unit,
   				vat
 	from		$acco.invoice_def_item
-	where		invoice_id = $in_r[ident]
+	where		def_id = $in_r[ident]
 	
 ";
 

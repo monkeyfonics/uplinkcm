@@ -12,7 +12,7 @@ Delete=Radera
 /*/main/*/
 Dash=Panel
 New Todos=Nya Att göra
-New Invoices=Nya Räkningar
+New Invoices=Nya Fakturor
 New Notes= Nya Anteckningar
 New Contacts=Nya Kontakter
 /*/additonal pages/*/
@@ -84,12 +84,16 @@ Active=Aktiv
 Activate=Aktivera
 Deactivate=Deaktivera
 Publish=Publisera
+Edit=Editera
 Printed=Printad
+Hour=Timme
+Month=Månad
+Qty=St
 /*/Invoices/*/
 Pending=Obekräftade
 Published=Publiserade
 Virtual barcode=Virtuel referens
 Invoice number=Faktura nummer
 /*/Email/*/
-New invoice from=Ny faktura från
+New invoice from=Ny faktura av
 See attachment for pdf=Öppna bilagan för pdf fil

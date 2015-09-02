@@ -1,6 +1,7 @@
 <?php
 	$acco = $_GET['acco'];
-	$ident = $_GET['ident'];
+	
+	$invid = $_GET['invid'];
 	$inoid = $_GET['inoid'];
 	
 	
@@ -13,7 +14,7 @@
 		
 		
 		
-		$message = "Invoice ".$ident." deleted";
+		$message = "Invoice ".$invid." deleted";
 		$ret_url = 'index.php?section=invoice&template=invoice_list_pend';
 	
 	

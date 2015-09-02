@@ -322,9 +322,6 @@ echo "
 						if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
 						if ($in_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
 					
-				
-					
-					
 				echo "
 					<select name='loc'>
 						<option value='fi' $sel1>
@@ -369,13 +366,13 @@ $query = "
 	select		id,
 				cat,
 				item,
-				invoice_id,
+				def_id,
 				price,
   				qty,
   				unit,
   				vat
 	from		$acco.invoice_def_item
-	where		invoice_id = $ident
+	where		def_id = $ident
 	order by	item
 	
 ";
@@ -409,7 +406,7 @@ $ig = pg_query($conn, $query);
 					Item:
 				</th>
 				<th>
-					Qty:
+					Quantity:
 				</th>
 				<th>
 					Price:
@@ -425,9 +422,9 @@ $ig = pg_query($conn, $query);
 				</th>
 			</tr>
 		";
-		$unit1 = 'hour';
-		$unit2 = 'month';
-		$unit3 = 'qty';
+		$unit1 = "{$lng->__('Hour')}";
+		$unit2 = "{$lng->__('Month')}";
+		$unit3 = "{$lng->__('Qty')}";
 		
 		/* category fetch */
 			while ($ig_r = pg_fetch_array($ig)) {

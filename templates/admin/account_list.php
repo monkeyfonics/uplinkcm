@@ -4,8 +4,8 @@ if ($s_lvl < 5) {
     die();
 }
 /*include for last update */
-require_once('includes/tables.inc');
-$tablefile = "includes/tables.inc";
+require_once('includes/tables.php');
+$tablefile = "includes/tables.php";
 
 $query = "
 	select		id,
