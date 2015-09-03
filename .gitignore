@@ -1,0 +1,4 @@
+#ignore settings file
+globals/settings.inc
+acc_img/*
+tempfiles/*

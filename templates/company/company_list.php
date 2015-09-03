@@ -72,7 +72,9 @@ echo "
 				<th>
 					{$lng->__('Email')}:
 				</th>
-				
+				<th>
+					{$lng->__('www')}:
+				</th>
 			</tr>
 			";
 		pg_result_seek($ul,0);
@@ -102,6 +104,9 @@ echo "
 					</td>
 					<td>
 						$ul_r[email]
+					</td>
+					<td>
+						$ul_r[www]
 					</td>
 				</tr>
 			";

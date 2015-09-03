@@ -34,6 +34,9 @@ $ul = pg_query($conn, $query);
 
 $ul_r = pg_fetch_array($ul);
 
+/*get the first letter of lastname*/
+$firstletter = substr($ul_r[lname],0,1);
+
 /*language clean up */
 
 if ($ul_r[loc] == 'fi') {
@@ -101,6 +104,9 @@ $con_in = pg_query($conn, $query);
 /*use buttons row */
 echo "
 	<div class='buttons'>
+		<a href='index.php?section=contacts&template=contact_list#$firstletter'>
+			<div class='header'>{$lng->__('Contact List')}</div>
+		</a>
 		<a href='index.php?section=contacts&template=contact_view&suid=$ul_r[id]'>
 			<div class='header'>$ul_r[lname], $ul_r[fname]</div>
 		</a>

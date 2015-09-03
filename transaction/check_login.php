@@ -32,7 +32,7 @@ $ch_r = pg_fetch_array($ch);
 $hash = $ch_r[pass];
 
 if ($hasher->CheckPassword($pass, $hash)) {
-		$message = 'Authentication succeeded';
+		$message = "{$lng->__('Login Successfull')}";
 		$ret_url = 'index.php?template=account_sel';
 		$_SESSION['s_id'] = $ch_r['id'];
 		$icon = 'layout/img/icon_succ.png';
@@ -47,7 +47,7 @@ if ($hasher->CheckPassword($pass, $hash)) {
 	$ch = pg_query($conn, $query);
 		
 } else {
-		$message = 'Authentication failed';
+		$message = "{$lng->__('Login Failed')}";
 		$ret_url = 'index.php?template=login';
 		$icon = 'layout/img/icon_fail.png';
 }

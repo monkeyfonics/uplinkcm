@@ -631,3 +631,19 @@ LINE 8:  from  acc_uplin_2.invoice_out
 [02-Sep-2015 11:23:43 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.invoice_out&quot; does not exist
 LINE 8:  from  acc_uplin_2.invoice_out
                ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 260
+[02-Sep-2015 13:41:06 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;order&quot;
+LINE 11:  order by  acc_test_3.link_company_contact.prim
+          ^ in /var/www/web/dev/cm/templates/contacts/contact_view.php on line 61
+[02-Sep-2015 13:41:06 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/contacts/contact_view.php on line 218
+[02-Sep-2015 13:47:18 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.invoice_def&quot; does not exist
+LINE 15:  from  acc_uplin_2.invoice_def
+                ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[02-Sep-2015 13:47:18 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[02-Sep-2015 13:47:19 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.invoice_def&quot; does not exist
+LINE 15:  from  acc_uplin_2.invoice_def
+                ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[02-Sep-2015 13:47:19 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[02-Sep-2015 13:47:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  relation &quot;acc_uplin_2.invoice_def&quot; does not exist
+LINE 15:  from  acc_uplin_2.invoice_def
+                ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[02-Sep-2015 13:47:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33

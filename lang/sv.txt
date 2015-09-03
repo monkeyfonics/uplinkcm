@@ -9,6 +9,8 @@ No=Nej
 Back=Tillbaka
 Next=Nästa
 Delete=Radera
+Login Successfull=Inloggning Lyckades
+Login Failed=Inloggning Misslyckades
 /*/main/*/
 Dash=Panel
 New Todos=Nya Att göra

@@ -32,6 +32,9 @@ $ul = pg_query($conn, $query);
 
 $ul_r = pg_fetch_array($ul);
 
+/*get the first letter of lastname*/
+$firstletter = substr($ul_r[name],0,1);
+
 /* fetch contacts for company */
 $query = "
 	select		$acco.link_company_contact.contact_id,
@@ -70,6 +73,9 @@ $com_in = pg_query($conn, $query);
 /*use buttons row */
 echo "
 	<div class='buttons'>
+		<a href='index.php?section=company&template=company_list#$firstletter'>
+			<div class='header'>{$lng->__('Company List')}</div>
+		</a>
 		<a href='index.php?section=company&template=company_view&suid=$ul_r[id]'>
 			<div class='header'>$ul_r[name]</div>
 		</a>
