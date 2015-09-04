@@ -85,9 +85,16 @@ echo "
 		<a href='index.php?section=todo&template=todo_edit&comid=$ul_r[id]'>
 			<div>{$lng->__('New Todo')}</div>
 		</a>
+		";
+		/* check viability for deleting contacts */
+		/*
+		echo "
 		<a href='transaction.php?t=del_company&suid=$ul_r[id]&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
 			<div>{$lng->__('Delete')}</div>
 		</a>
+		 ";
+		 */
+		echo "
 	</div>
 ";
 

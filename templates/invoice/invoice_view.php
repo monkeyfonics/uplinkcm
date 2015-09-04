@@ -152,7 +152,7 @@ echo "
 				</td>
 				<td>
 					<a href='index.php?section=def&template=def_view&ident=$in_r[invoice_id]'>
-						$in_r[def_id] $in_r[invoice_id]
+						$in_r[invoice_id]
 					</a>
 				</td>
 				<td class='head'>

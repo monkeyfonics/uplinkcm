@@ -20,6 +20,8 @@ New Contacts=Nya Kontakter
 /*/additonal pages/*/
 New password=Nytt Lösenord
 Email=Epost
+Password=Lösenord
+Forgot Password=Glömt Lösenord
 Select an account=Välj ett konto
 New account=Nytt konto
 Account Saved=Kontot är sparat
@@ -32,6 +34,8 @@ Account to recover=Konto att återhämta
 Registration=Registrering
 Reset=Återhämta
 Date=Datum
+Register a new user=Registrera en ny användare
+Register=Registrera
 /*/menu/*/
 Contacts=Kontakter
 Companies=Firmor

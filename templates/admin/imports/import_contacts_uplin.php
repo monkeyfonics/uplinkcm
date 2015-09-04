@@ -14,7 +14,9 @@ $query = "
   				email,
   				mobile,
   				phone,
-  				www
+  				www,
+  				created,
+  				modified
 	from		uplink_cm.public.person
 	order by	id
 	

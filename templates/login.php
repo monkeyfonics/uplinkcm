@@ -7,7 +7,7 @@ echo "
 		<table class='login' align='center'>
 			<tr>
 				<td>
-					Email:
+					{$lng->__('Email')}:
 				</td>
 				<td>
 					<input type='text' name='user' autofocus>
@@ -15,7 +15,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Password:
+					{$lng->__('Password')}:
 				</td>
 				<td>
 					<input type='password' name='pass'>
@@ -38,8 +38,8 @@ echo "
 	</div>
 	
 	<div class='login'>
-		<h3>Register a new user.</h3>
-		<a href='file.php?template=registration'><div class='cbutton bstyle'>Register</div></a>
+		<h3>{$lng->__('Register a new user')}.</h3>
+		<a href='file.php?template=registration'><div class='cbutton bstyle'>{$lng->__('Register')}</div></a>
 	</div>
 	";
 ?>

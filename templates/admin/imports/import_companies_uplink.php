@@ -11,7 +11,9 @@ $query = "
 				post_addr,
   				post_zip,
   				post_city,
-  				country
+  				country,
+  				created,
+  				modified
 	from		uplink_cm.public.company
 	order by	id
 	

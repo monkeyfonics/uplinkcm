@@ -647,3 +647,43 @@ LINE 15:  from  acc_uplin_2.invoice_def
 LINE 15:  from  acc_uplin_2.invoice_def
                 ^ in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
 [02-Sep-2015 13:47:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[03-Sep-2015 10:52:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[03-Sep-2015 10:52:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[03-Sep-2015 10:52:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[03-Sep-2015 10:52:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[03-Sep-2015 10:52:21 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[03-Sep-2015 10:52:21 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[03-Sep-2015 10:52:28 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 56
+[03-Sep-2015 10:52:28 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 57
+[03-Sep-2015 10:52:28 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 69
+[03-Sep-2015 10:52:28 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 70
+[03-Sep-2015 10:52:28 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 246
+[03-Sep-2015 10:52:28 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 277
+[03-Sep-2015 10:53:52 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;,&quot;
+LINE 4:        invoice_id=,
+                          ^ in /var/www/web/dev/cm/transaction/invoice_edit.php on line 78
+[03-Sep-2015 13:18:19 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  duplicate key value violates unique constraint &quot;company_pkey&quot;
+DETAIL:  Key (id)=(1) already exists. in /var/www/web/dev/cm/transaction/company_edit.php on line 69
+[03-Sep-2015 13:25:54 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  duplicate key value violates unique constraint &quot;company_pkey&quot;
+DETAIL:  Key (id)=(118) already exists. in /var/www/web/dev/cm/transaction/company_edit.php on line 69
+[03-Sep-2015 13:30:07 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  duplicate key value violates unique constraint &quot;company_pkey&quot;
+DETAIL:  Key (id)=(119) already exists. in /var/www/web/dev/cm/transaction/company_edit.php on line 69
+[04-Sep-2015 11:14:18 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
+[04-Sep-2015 11:15:04 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
+[04-Sep-2015 11:15:10 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
+[04-Sep-2015 11:15:16 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
+[04-Sep-2015 11:15:23 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
+[04-Sep-2015 11:16:08 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
+[04-Sep-2015 11:16:13 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144

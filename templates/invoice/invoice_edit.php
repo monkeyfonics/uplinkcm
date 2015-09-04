@@ -135,7 +135,7 @@ echo "
 					Invoice Nr.:
 				</td>
 				<td>
-					 $in_r[ident]
+					 $in_r[invoice_id]
 				</td>
 				<td class='head'>
 					Header:

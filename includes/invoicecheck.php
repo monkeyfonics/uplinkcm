@@ -137,11 +137,19 @@ while ($in_r = pg_fetch_array($in)) {
 		$endTime = strtotime($end_n);
 		
 		do {
+			
+			/*test translate according to invoice language*/
+			$langu = $in_r['loc'];
+			$inlang = new Translator($langu);//$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
+			$inlang->setPath('lang/pdf');
+			/*translate month into invoice language*/
+			$monthtrans = "{$inlang->__($month)}";
+			echo $monthtrans;
+			
 			$startTime = strtotime('+'.$rec.' months',$startTime); 
 			
 			
-			$monthtrans = "{$lng->__($month)}";
-			echo $monthtrans;
+			
 		
 			$dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 			
@@ -191,7 +199,7 @@ while ($in_r = pg_fetch_array($in)) {
 	
 			)
 		";
-		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$month,$ident,$invout,$datenow,$next,$dueplus,$compref,$pub,$cash));
+		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$monthtrans,$ident,$invout,$datenow,$next,$dueplus,$compref,$pub,$cash));
 		
 		
 		/* try to check if date exceeds max date for month*/

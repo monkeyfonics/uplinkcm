@@ -21,3 +21,16 @@ hour=tim.
 month=mån.
 qty=st.
 Total=Totalt
+/*/months/*/
+January=Januari
+February=Februari
+March=Mars
+April=April
+May=Maj
+June=Juni
+July=Juli
+August=Augusti
+September=September
+October=Oktober
+November=November
+December=December

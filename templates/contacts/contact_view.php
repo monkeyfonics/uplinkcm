@@ -122,11 +122,16 @@ echo "
 		<a href='index.php?section=def&template=def_edit&suid=$ul_r[id]'>
 			<div>{$lng->__('New Invoice')}</div>
 		</a>
-		
+		";
+		/* check viability for deleting contacts */
+		/*
+		echo "
 		<a href='transaction.php?t=del_contact&suid=$ul_r[id]&acco=$acco' onclick='return confirm(\"{$lng->__('Delete')}?\");'>
 			<div>{$lng->__('Delete')}</div>
 		</a>
-			
+		";
+		 */
+		echo "	
 	</div>
 ";
 
