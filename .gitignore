@@ -1,4 +1,4 @@
 #ignore settings file
-globals/settings.inc
+globals/settings.php
 acc_img/*
 tempfiles/*
