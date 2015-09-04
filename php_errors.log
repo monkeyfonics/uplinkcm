@@ -687,3 +687,240 @@ DETAIL:  Key (id)=(119) already exists. in /var/www/web/dev/cm/transaction/compa
 [04-Sep-2015 11:15:23 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
 [04-Sep-2015 11:16:08 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
 [04-Sep-2015 11:16:13 UTC] PHP Fatal error:  Call to a member function setPath() on a non-object in /var/www/web/dev/cm/includes/invoicecheck.php on line 144
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:04 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:05 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  include(settings.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'settings.php' for inclusion (include_path='.:/var/www/functions:/var/www/include') in /var/www/web/dev/cm/globals/init.php on line 5
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_connect() [<a href='function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  no pg_hba.conf entry for host &quot;[local]&quot;, user &quot;www-data&quot;, database &quot;www-data&quot;, SSL off in /var/www/web/dev/cm/globals/init.php on line 9
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/session.php on line 36
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/session.php on line 38
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/accountcheck.php on line 12
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/topbar.php on line 11
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 27
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/includes/invoicecheck.php on line 33
+[04-Sep-2015 11:41:13 UTC] PHP Warning:  pg_query() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/includes/invoicecheck.php on line 268
+[04-Sep-2015 11:42:04 UTC] PHP Warning:  mkdir() [<a href='function.mkdir'>function.mkdir</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 51
+[04-Sep-2015 11:42:04 UTC] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 52
+[04-Sep-2015 11:42:04 UTC] PHP Warning:  mkdir() [<a href='function.mkdir'>function.mkdir</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 57
+[04-Sep-2015 11:42:04 UTC] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 58
+[04-Sep-2015 11:42:04 UTC] PHP Warning:  move_uploaded_file(tempfiles/acc_uplin_2/logo_neu_v2.png) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 83
+[04-Sep-2015 11:42:04 UTC] PHP Warning:  move_uploaded_file() [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: Unable to move '/tmp/phpnPmyab' to 'tempfiles/acc_uplin_2/logo_neu_v2.png' in /var/www/web/dev/cm/transaction/logoupload.php on line 83
+[04-Sep-2015 11:42:04 UTC] PHP Warning:  rename(tempfiles/acc_uplin_2/logo_neu_v2.png,tempfiles/acc_uplin_2/logo.png) [<a href='function.rename'>function.rename</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 88
+[04-Sep-2015 11:43:00 UTC] PHP Warning:  mkdir() [<a href='function.mkdir'>function.mkdir</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 57
+[04-Sep-2015 11:43:00 UTC] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 58
+[04-Sep-2015 11:43:00 UTC] PHP Warning:  move_uploaded_file(tempfiles/acc_uplin_2/logo_neu_v2.png) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 83
+[04-Sep-2015 11:43:00 UTC] PHP Warning:  move_uploaded_file() [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: Unable to move '/tmp/phpdrFxIO' to 'tempfiles/acc_uplin_2/logo_neu_v2.png' in /var/www/web/dev/cm/transaction/logoupload.php on line 83
+[04-Sep-2015 11:43:00 UTC] PHP Warning:  rename(tempfiles/acc_uplin_2/logo_neu_v2.png,tempfiles/acc_uplin_2/logo.png) [<a href='function.rename'>function.rename</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 88
+[04-Sep-2015 11:44:16 UTC] PHP Warning:  mkdir() [<a href='function.mkdir'>function.mkdir</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 57
+[04-Sep-2015 11:44:16 UTC] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 58
+[04-Sep-2015 11:44:16 UTC] PHP Warning:  move_uploaded_file(tempfiles/acc_uplin_2/logo_neu_v2.png) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 83
+[04-Sep-2015 11:44:16 UTC] PHP Warning:  move_uploaded_file() [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: Unable to move '/tmp/phpc4cgjJ' to 'tempfiles/acc_uplin_2/logo_neu_v2.png' in /var/www/web/dev/cm/transaction/logoupload.php on line 83
+[04-Sep-2015 11:44:16 UTC] PHP Warning:  rename(tempfiles/acc_uplin_2/logo_neu_v2.png,tempfiles/acc_uplin_2/logo.png) [<a href='function.rename'>function.rename</a>]: No such file or directory in /var/www/web/dev/cm/transaction/logoupload.php on line 88

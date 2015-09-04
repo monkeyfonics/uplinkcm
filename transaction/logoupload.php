@@ -129,7 +129,7 @@ if (!empty($_FILES)) {
 			";
 
 }
-header("Refresh: 2; URL=".$ret_url);
+//header("Refresh: 2; URL=".$ret_url);
 
 
 ?>
