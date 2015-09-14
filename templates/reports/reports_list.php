@@ -63,13 +63,14 @@ $query = "
 					$acco.invoice_out.loc as loc,
 					$acco.invoice_out.id as outid,
 					$acco.invoice_out.addhead as addhead,
+					$acco.invoice_out.def_id as def_id,
 					$acco.invoice_out.invoice_id as invoice_id,
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
-		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
+		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.dated between '$minus' and '$dated'
 		and			$acco.invoice_out.pub = true
 		order by	$acco.invoice_out.dated desc
@@ -120,7 +121,7 @@ $monthly = pg_query($conn, $query);
 			  				unit,
 			  				vat
 				from		$acco.invoice_out_item
-				where		invoice_id = $monthly_r[ident]
+				where		invoice_id = $monthly_r[invoice_id]
 				
 			";
 			
@@ -149,7 +150,7 @@ $monthly = pg_query($conn, $query);
 						
 					</td>
 					<td>
-						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&ident=$monthly_r[ident]'>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&ident=$monthly_r[invoice_id]'>
 						$monthly_r[header] - $monthly_r[addhead]
 						</a>
 					</td>

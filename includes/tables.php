@@ -176,6 +176,7 @@ $tables = array(
             "contact_id" => array("type"=>"integer"),
             "company_id" => array("type"=>"integer"),
             "created" => array("type"=>"timestamp without time zone"),
+            "due" => array("type"=>"timestamp without time zone"),
             "cont" => array("type"=>"character varying"),
             "completed" => array("type"=>"boolean"),
             "created_by" => array("type"=>"integer"),

@@ -18,13 +18,14 @@ $query = "
 					$acco.invoice_out.loc as loc,
 					$acco.invoice_out.id as outid,
 					$acco.invoice_out.addhead as addhead,
+					$acco.invoice_out.def_id as def_id,
 					$acco.invoice_out.invoice_id as invoice_id,
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
-		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
+		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.dated between '$minus' and '$dated'
 		and			$acco.invoice_out.pub = true
 		order by	$acco.invoice_out.dated desc
@@ -42,7 +43,7 @@ $file = fopen('php://output', 'w');
 
 /* write headers */
 
-$headers = array('Dated', 'Reference', 'Name', 'Amount', 'Header');
+$headers = array('Dated', 'Reference', 'Name', 'Header', 'Amount');
 fputcsv($file, $headers);
 $fields;
 while ($monthly_r = pg_fetch_assoc($monthly)) {
@@ -60,7 +61,30 @@ $query = "
 			
 $co = pg_query($conn, $query);
 $co_r = pg_fetch_array($co);
-		
+
+/*check for company*/
+if ($monthly_r[cid]) {
+	/*get name for company*/
+					
+$query = "
+	select		id,
+				name,
+				ytunnus
+	from		$acco.company
+	where		id = $monthly_r[cid]
+				
+";
+			
+$com = pg_query($conn, $query);
+$com_r = pg_fetch_array($com);
+
+/*combine contact company name */
+$contactcom = $co_r[lname].", ".$co_r[fname]." - ".$com_r[name];
+
+} else {
+/*combine contact name */
+$contactcom = $co_r[lname].", ".$co_r[fname];
+}	
 	
 	/*invoice items for counting total cost*/
 					
@@ -73,7 +97,7 @@ $co_r = pg_fetch_array($co);
 			  				unit,
 			  				vat
 				from		$acco.invoice_out_item
-				where		invoice_id = $monthly_r[ident]
+				where		invoice_id = $monthly_r[invoice_id]
 				
 			";
 			
@@ -105,13 +129,13 @@ $co_r = pg_fetch_array($co);
 	
 	
 	
-	$fields = array($date, $refformat, $co_r[lname].", ".$co_r[fname], $formatprice, $monthly_r[header]." - ".$monthly_r[addhead]);
+	$fields = array($date, $refformat, $contactcom, $monthly_r[header]." - ".$monthly_r[addhead], $formatprice);
 	/*input into csv */
 	fputcsv($file, $fields);
 }
 /*Write last line*/
 $formattotalprice =  number_format($totalprice, 2, ',', '');
-$endfield = array('Total', '', '', $formattotalprice, '');
+$endfield = array('Total', '', '', '', $formattotalprice);
 
 fputcsv($file, $endfield);
 

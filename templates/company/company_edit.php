@@ -154,15 +154,17 @@ echo "
 	    	var search = new RegExp('^'+firstjs, 'i');
 	    	var searchl = new RegExp('^'+lastjs, 'i');
 	    	var hits = 0;
+			var names = '';
 			
 			for (var i = 0; i < arrayLength; i++) {
 				
 				if (listn[i].match(search) && listy[i].match(searchl)) {
 					hits += 1;
+					names += ' - '+listn[i]+':'+listy[i];
 					if (hits <= 3){
 						if (firstjs || lastjs) {
-							document.getElementById('coninfo').innerHTML = 'Duplicate names: ';
-							document.getElementById('coninfo').innerHTML += hits+'. '+listn[i]+':'+listy[i]+' - ';
+							document.getElementById('coninfo').innerHTML = 'Duplicate names: '+hits+'. ';
+							document.getElementById('coninfo').innerHTML += names;
 						} else {
 							document.getElementById('coninfo').innerHTML = '&nbsp;';
 						}

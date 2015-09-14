@@ -31,8 +31,11 @@ echo "
 		<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
 			<div class='header'>{$lng->__('Month')} - $month</div>
 		</a>
-		<a href='out.php?section=reports&t=reports_print&dated=$dated&minus=$minus&acco=$acco' target='blank'>
-			<div>{$lng->__('Print')}</div>
+		<a href='out.php?section=reports&t=report_gen_csv&dated=$dated&minus=$minus&acco=$acco' target='blank'>
+			<div>{$lng->__('Print')} CSV</div>
+		</a>
+		<a href='out.php?section=reports&t=report_gen_pdf&dated=$dated&minus=$minus&acco=$acco' target='blank'>
+			<div>{$lng->__('Print')} PDF</div>
 		</a>
 	</div>
 ";
@@ -116,7 +119,29 @@ $monthly = pg_query($conn, $query);
 						
 			$co = pg_query($conn, $query);
 			$co_r = pg_fetch_array($co);
+			/*check for company*/
+			if ($monthly_r[cid]) {
+				/*get name for company*/
+								
+			$query = "
+				select		id,
+							name,
+							ytunnus
+				from		$acco.company
+				where		id = $monthly_r[cid]
+							
+			";
+						
+			$com = pg_query($conn, $query);
+			$com_r = pg_fetch_array($com);
 			
+			/*combine contact company name */
+			$contactcom = $co_r[lname].", ".$co_r[fname]." - ".$com_r[name];
+			
+			} else {
+			/*combine contact name */
+			$contactcom = $co_r[lname].", ".$co_r[fname];
+			}
 				
 			
 			 /*invoice items for counting total cost*/
@@ -169,7 +194,7 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td>
 						<a href='index.php?section=contacts&template=contact_view&suid=$co_r[id]'>
-						$co_r[lname], $co_r[fname]
+						$contactcom
 						</a>
 					</td>
 					<td>

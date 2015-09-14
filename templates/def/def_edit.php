@@ -62,6 +62,7 @@ $query = "
 
 $ul = pg_query($conn, $query);
 
+/* get the contact if defined*/
 if (!$_GET['suid']) {
 	$suid = 0;
 	
@@ -69,29 +70,41 @@ if (!$_GET['suid']) {
 	$suid = $_GET['suid'];
 	$in_r[pid] = $suid;
 }
-
+/* get the company if defined*/
+if (!$_GET['coid']) {
+	$coid = 0;
+	
+} else {
+	$coid = $_GET['coid'];
+	$in_r[cid] = $coid;
+}
 if ($in_r[pid]) {
-	
-	
-	
-	/* only companies for that contact*/
+/* only companies for that contact*/
 $query = "
 		select		{$acco}.company.id as id,
 					{$acco}.company.name as name,
-					{$acco}.company.ytunnus as ytunnus
-					
+					{$acco}.company.ytunnus as ytunnus		
 		from		$acco.company LEFT JOIN $acco.link_company_contact
 		ON			($acco.company.id = $acco.link_company_contact.company_id)
-		
 		where		{$acco}.link_company_contact.contact_id = $in_r[pid]
-		
-	
-		
+		order by	name
 ";
-
 $speccomp = pg_query($conn, $query);
+} else {
 	
-	
+}
+if ($in_r[cid]) {
+/* only companies for that contact*/
+$query = "
+		select		{$acco}.contacts.id as id,
+					{$acco}.contacts.fname as fname,
+					{$acco}.contacts.lname as lname		
+		from		$acco.contacts LEFT JOIN $acco.link_company_contact
+		ON			($acco.contacts.id = $acco.link_company_contact.contact_id)
+		where		{$acco}.link_company_contact.company_id = $in_r[cid]
+		order by	lname, fname	
+";
+$speccont = pg_query($conn, $query);
 } else {
 	
 }
@@ -210,6 +223,20 @@ echo "
 					<select name='pid'>
 						<option value='0'>
 							None
+						</option>
+						";
+						
+						while ($speccont_r = pg_fetch_array($speccont)) {
+							//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
+							echo "
+								<option value='$speccont_r[id]'>
+									$speccont_r[lname], $speccont_r[fname]
+								</option>
+							";
+						}
+					echo "
+						<option value='0' disabled>
+							----
 						</option>
 						";
 						while ($ul_r = pg_fetch_array($ul)) {

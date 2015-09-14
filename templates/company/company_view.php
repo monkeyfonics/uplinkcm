@@ -85,6 +85,9 @@ echo "
 		<a href='index.php?section=todo&template=todo_edit&comid=$ul_r[id]'>
 			<div>{$lng->__('New Todo')}</div>
 		</a>
+		<a href='index.php?section=def&template=def_edit&coid=$ul_r[id]'>
+			<div>{$lng->__('New Invoice')}</div>
+		</a>
 		";
 		/* check viability for deleting contacts */
 		/*

@@ -162,7 +162,7 @@ echo "
 			if ($in_r[printed]) {
 				$printed = date('Y-m-d', strtotime($in_r[printed]));
 			} else {
-				$printed = "Not printed";
+				$printed = "{$lng->__('Not printed')}";
 			}
 			
 			

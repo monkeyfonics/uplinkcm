@@ -18,6 +18,7 @@ $query = "
 				contact_id,
 				company_id,
 				created,
+				due,
   				cont,
   				completed
 	from		$acco.todo
@@ -88,7 +89,8 @@ echo "
 	</div>
 ";
 
-$date = strtotime($todo_r[created]);
+$date = date('Y-m-d', strtotime($todo_r[created]));
+$due = date('Y-m-d', strtotime($todo_r[due]));
 
 if (!$todo_r[contact_id]) {
 	$person = "None";
@@ -104,8 +106,10 @@ if (!$todo_r[company_id]) {
 
 if ($todo_r[completed] == t) {
 	$comp = "Yes";
+	$class = "green";
 } else {
 	$comp = "No";
+	$class = "red";
 }
 echo "
 	<div class='fullcont'>
@@ -123,7 +127,7 @@ echo "
 					Created:
 				</td>
 				<td>
-					".date('Y-m-d', $date)."
+					$date
 				</td>
 			</tr>
 			<tr>
@@ -134,10 +138,24 @@ echo "
 					$company
 				</td>
 				<td class='head'>
-					Completed:
+					Due:
 				</td>
 				<td>
+					$due
+				</td>
+			</tr>
+			<tr>
+				<td class='head'>
+					Completed:
+				</td>
+				<td class='$class'>
 					$comp
+				</td>
+				<td class='head'>
+					
+				</td>
+				<td>
+					
 				</td>
 			</tr>
 			

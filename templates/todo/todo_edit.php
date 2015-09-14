@@ -11,9 +11,10 @@ $ac_r = pg_fetch_array($ac);
 $acco = $ac_r[identy];
 
 if ($_GET['tid']) {
-	$tid = $_GET['tid'];
 	
+	$tid = $_GET['tid'];
 } else {
+	
 	$tid = 0;
 }
 if ($_GET['suid']) {
@@ -35,6 +36,7 @@ $query = "
 				contact_id,
 				company_id,
 				created,
+				due,
   				cont,
   				completed
 	from		$acco.todo
@@ -45,6 +47,16 @@ $query = "
 $todo = pg_query($conn, $query);
 
 $todo_r = pg_fetch_array($todo);
+
+if (!$todo_r[id]) {
+	$created = date('Y-m-d');
+	$due = date('Y-m-d');
+	$head = "New Todo";
+} else {
+	$created = date('Y-m-d', strtotime($todo_r[created]));
+	$due = date('Y-m-d', strtotime($todo_r[due]));
+	$head = substr($todo_r[cont], 0, 10);
+}
 
 
 /*contacts */
@@ -87,16 +99,13 @@ $query = "
 
 $cl = pg_query($conn, $query);
 
-if ($tid = 0) {
-	$head = "New Todo";
-} else {
-	$head = substr($todo_r[cont], 0, 10);
-}
+
 
 echo "
 	<form action='transaction.php?t=todo_edit' method='post' id='todosave'>
-	<input type='hidden' name='tid' value='$tid'/>
+	<input type='hidden' name='tid' value='$todo_r[id]'/>
 	<input type='hidden' name='acco' value='$acco'/>
+	<input type='hidden' name='created' value='$created'/>
 	
 ";
 
@@ -113,11 +122,7 @@ echo "
 		
 	</div>
 ";
-if ($todo_r[created]) {
-	$date = strtotime($todo_r[created]);
-} else {
-	$date = date("Y-m-d");
-}
+
 
 
 echo "
@@ -150,7 +155,7 @@ echo "
 					Created:
 				</td>
 				<td>
-					$date
+					<input type='text' name='created' value='$created'></input>
 				</td>
 				
 			</tr>
@@ -176,12 +181,14 @@ echo "
 					</select>
 				</td>
 				<td class='head'>
-					Completed:
+					Due:
 				</td>
 				<td>
-					$todo_r[completed]
+					<input type='text' name='due' value='$due'></input>
 				</td>
+				
 			</tr>
+			
 			<tr>
 				<td class='head' colspan='4'>
 					Content:

@@ -53,10 +53,11 @@ $query = "
   				$acco.invoice_out.id as outid,
   				$acco.invoice_out.addhead as addhead,
   				$acco.invoice_out.invoice_id as invoice_id,
+  				$acco.invoice_out.def_id as def_id,
   				$acco.invoice_out.created as created_out,
   				$acco.invoice_out.due_date as due_date_out,
   				$acco.invoice_out.ref as ref
-	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.invoice_id)
+	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.def_id)
 	where		$acco.invoice_out.id = $inoid;
 	
 	
@@ -138,7 +139,7 @@ $query = "
   				unit,
   				vat
 	from		$acco.invoice_out_item
-	where		invoice_id = $in_r[ident]
+	where		invoice_id = $in_r[invoice_id]
 	
 ";
 

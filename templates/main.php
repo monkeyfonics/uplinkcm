@@ -128,7 +128,9 @@ echo "
 						</a>
 					</td>
 					<td>
-						".date('Y-m-d', $date)."
+						<a href='index.php?section=todo&template=todo_view&tid=$todo_r[id]'>
+							".date('Y-m-d', $date)."
+						</a>
 					</td>
 				</tr>
 			";
@@ -161,7 +163,9 @@ echo "
 						</a>
 					</td>
 					<td>
-						".date('Y-m-d', $date)."
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  class='$bolde'>
+							".date('Y-m-d', $date)."
+						</a>
 					</td>
 				</tr>
 			";
@@ -192,7 +196,9 @@ echo "
 						</a>
 					</td>
 					<td>
-						".date('Y-m-d', $date)."
+						<a href='index.php?section=contacts&template=contact_view&suid=$note_r[contact_id]'>
+							".date('Y-m-d', $date)."
+						</a>
 					</td>
 				</tr>
 			";
@@ -219,7 +225,9 @@ echo "
 						</a>
 					</td>
 					<td>
-						".date('Y-m-d', $date)."
+						<a href='index.php?section=contacts&template=contact_view&suid=$ul_r[id]'>
+							".date('Y-m-d', $date)."
+						</a>
 					</td>
 				</tr>
 			";

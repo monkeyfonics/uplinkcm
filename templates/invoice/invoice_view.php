@@ -11,6 +11,7 @@ $ac_r = pg_fetch_array($ac);
 $acco = $ac_r[identy];
 
 $ident = $_GET['ident'];
+$invid = $_GET['invid'];
 $inoid = $_GET['inoid'];
 	
 /* invoice */
@@ -28,6 +29,7 @@ $query = "
   				$acco.invoice_out.def_id as def_id,
   				$acco.invoice_out.invoice_id as invoice_id,
   				$acco.invoice_out.created as created_out,
+  				$acco.invoice_out.dated as dated_out,
   				$acco.invoice_out.due_date as due_date_out,
   				$acco.invoice_out.ref as ref,
   				$acco.invoice_out.pub as pub
@@ -70,7 +72,7 @@ $co = pg_query($conn, $query);
 $co_r = pg_fetch_array($co);
 
 
-$in_r[created_out] = date('Y-m-d', strtotime($in_r[created_out]));
+$in_r[dated_out] = date('Y-m-d', strtotime($in_r[dated_out]));
 $in_r[due_date_out] = date('Y-m-d', strtotime($in_r[due_date_out]));
 
 $email_id = $cl_r[coid];
@@ -180,10 +182,10 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Created:
+					Dated:
 				</td>
 				<td>
-					$in_r[created_out]
+					$in_r[dated_out]
 				</td>
 				<td class='head'>
 					Company:

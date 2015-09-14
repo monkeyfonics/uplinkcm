@@ -100,6 +100,8 @@ Pending=Obekräftade
 Published=Publiserade
 Virtual barcode=Virtuel referens
 Invoice number=Faktura nummer
+Not printed=Inte Printad
+Due Date=Förfallodag
 /*/Email/*/
 New invoice from=Ny faktura av
 See attachment for pdf=Öppna bilagan för pdf fil

@@ -111,6 +111,7 @@ $in_r[due_date] = date('Y-m-d', strtotime($in_r[due_date]));
 echo "
 	<form action='transaction.php?t=invoice_edit' method='post' id='insave'>
 	<input type='hidden' name='inoid' value='$in_r[id_out]'/>
+	<input type='hidden' name='invid' value='$in_r[invoice_id]'/>
 	<input type='hidden' name='ident' value='$in_r[ident]'/>
 	<input type='hidden' name='acco' value='$acco'/>
 	<input type='hidden' name='ref' value='$in_r[ref]'/>

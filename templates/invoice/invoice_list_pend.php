@@ -160,6 +160,13 @@ echo "
 			
 			$date = strtotime($in_r[dated_out]);
 			$due_date = date('Y-m-d', strtotime($in_r[due_date]));
+			$today = date('Y-m-d');
+			
+			if ($due_date >= $today) {
+				$class= "green";
+			} else {
+				$class= "red";
+			}
 			
 			/*invoice items for counting total cost*/
 					
@@ -215,7 +222,7 @@ echo "
 					<td>
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
-					<td>
+					<td class='$class'>
 						$due_date
 					</td>
 				</tr>

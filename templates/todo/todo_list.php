@@ -25,6 +25,7 @@ $query = "
 				contact_id,
 				company_id,
 				created,
+				due,
   				cont,
   				completed
 	from		$acco.todo
@@ -40,7 +41,7 @@ echo "
 		<a href='index.php?section=todo&template=todo_list'>
 			<div class='header'>{$lng->__('Todo List')}</div>
 		</a>
-		<a href='index.php?section=todo&template=todo_edit'>
+		<a href='index.php?section=todo&template=todo_edit&tid=0'>
 			<div>{$lng->__('New Todo Item')}</div>
 		</a>
 	</div>
@@ -59,6 +60,9 @@ echo "
 					Dated:
 				</th>
 				<th>
+					Due Date:
+				</th>
+				<th>
 					Contact - Company:
 				</th>
 				<th>
@@ -73,9 +77,11 @@ echo "
 			if ($todo_r[completed] == f) {
 				$bolde = 'font-weight: bold;';
 				$tf = "No";
+				$comp= "red";
 			} else {
 				$bolde = '';
 				$tf = "Yes";
+				$comp= "green";
 			}
 				
 			
@@ -104,7 +110,8 @@ echo "
 			$com_r = pg_fetch_array($com);
 			
 			
-			$date = strtotime($todo_r[created]);
+			$date = date('Y-m-d',strtotime($todo_r[created]));
+			$due = date('Y-m-d',strtotime($todo_r[due]));
 			
 			$pripath = "index.php?section=todo&template=todo_view&tid=$todo_r[tid]";
 			
@@ -126,7 +133,12 @@ echo "
 					
 					<td class='first' style='$bolde'>
 						<a href='$pripath'>
-							".date('Y-m-d', $date)."
+							$date
+						</a>
+					</td>
+					<td style='$bolde'>
+						<a href='$pripath'>
+							$due
 						</a>
 					</td>
 					<td style='$bolde'>
@@ -140,7 +152,7 @@ echo "
 							echo " 
 						</a>
 					</td>
-					<td>
+					<td class='$comp'>
 						$tf
 					</td>
 				</tr>
