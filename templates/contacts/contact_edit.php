@@ -352,7 +352,7 @@ echo "
 					}	
 					echo "
 					</select>
-					<input type='submit' name='add_co' value='Add'></input>
+					<input type='submit' name='add_co' value='{$lng->__('Add')}'></input>
 				";
 	}
 		echo "

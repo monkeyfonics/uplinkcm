@@ -124,13 +124,13 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					Dated:
+					{$lng->__('Dated')}:
 				</td>
 				<td>
 					$in_r[dated]
 				</td>
 				<td class='head'>
-					Header:
+					{$lng->__('Header')}:
 				</td>
 				<td>
 					$in_r[header]
@@ -138,27 +138,29 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Next Invoice:
+					{$lng->__('Next invoice')}:
 				</td>
 				<td>
 					$in_r[next_create]
 				</td>
 				<td class='head'>
-					Person:
+					{$lng->__('Person')}:
 				</td>
 				<td>
-					$cl_r[lname], $cl_r[fname]
+					";
+						if($cl_r[pid]) { echo "$cl_r[lname], $cl_r[fname]"; }
+					echo "
 				</td>
 			</tr>
 			<tr>
 				<td class='head'>
-					Ongoing:
+					{$lng->__('Ongoing')}:
 				</td>
 				<td>
 					$ongoing
 				</td>
 				<td class='head'>
-					Company:
+					{$lng->__('Company')}:
 				</td>
 				<td>
 					$co_r[name]
@@ -166,14 +168,14 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Recurring:
+					{$lng->__('Recurring')}:
 				</td>
 				<td>
 					Every $in_r[recurring] month(s)
 				</td>
 				
 				<td class='head'>
-					Language:
+					{$lng->__('Language')}:
 				</td>
 				<td>
 					$in_r[loc]
@@ -181,7 +183,7 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					End date:
+					{$lng->__('End date')}:
 				</td>
 				<td>
 					$end_date
@@ -223,25 +225,25 @@ $it = pg_query($conn, $query);
 		<table class='list'>
 			<tr>
 				<th>
-					Cat.:
+					{$lng->__('Cat.')}:
 				</th>
 				<th>
-					Item:
+					{$lng->__('Product')}:
 				</th>
 				<th>
-					Qty:
+					{$lng->__('Qty.')}:
 				</th>
 				<th>
-					Price(0%):
+					{$lng->__('Price(0%)')}:
 				</th>
 				<th>
-					Full price(0%):
+					{$lng->__('Total (0%)')}:
 				</th>
 				<th>
-					Vat:
+					{$lng->__('Vat')}:
 				</th>
 				<th>
-					Price (Vat):
+					{$lng->__('Price (Vat)')}:
 				</th>
 			</tr>
 		";
@@ -295,7 +297,7 @@ $it = pg_query($conn, $query);
 					".number_format($fullprice,2,","," ")." &euro;
 				</td>
 				<td>
-					$it_r[vat]
+					$it_r[vat] %
 				</td>
 				<td>
 					".number_format($fullvatprice,2,","," ")." &euro;
@@ -306,7 +308,7 @@ $it = pg_query($conn, $query);
 		echo "
 			<tr>
 				<td class='bold'>
-					Total:
+					{$lng->__('Total')}::
 				</td>
 				<td>
 					

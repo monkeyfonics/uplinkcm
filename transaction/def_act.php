@@ -47,7 +47,7 @@ $query = "
 	
 	
 	$ret_url = 'index.php?section=def&template=def_view&ident='.$ident;
-	$message = 'Template Updated '.$in_r[active];
+	$message = "{$lng->__('Template Activated')}";
 	$icon = 'layout/img/icon_succ.png';
 		
 		echo "

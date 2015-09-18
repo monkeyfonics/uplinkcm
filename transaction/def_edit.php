@@ -75,7 +75,7 @@ if ($ident) {
 		";
 	$ch = pg_query($conn, $query);
 	
-	$message = 'Template Updated';
+	$message = "{$lng->__('Template Updated')}";
 	$icon = 'layout/img/icon_succ.png';
 	$ret_url = 'index.php?section=def&template=def_view&&ident='.$ident;
 	

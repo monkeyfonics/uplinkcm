@@ -215,7 +215,8 @@ echo "
 						</a>
 					</td>
 					<td>
-						$ua_r[lname], $ua_r[fname]"; 
+						";
+						if($in_r[pid]) { echo "$ua_r[lname], $ua_r[fname]"; }
 						if($in_r[cid]) { echo " - <span style='color:#656565;'>$ca_r[name]</span>"; }
 					echo "
 					</td>

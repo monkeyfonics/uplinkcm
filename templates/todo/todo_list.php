@@ -42,7 +42,7 @@ echo "
 			<div class='header'>{$lng->__('Todo List')}</div>
 		</a>
 		<a href='index.php?section=todo&template=todo_edit&tid=0'>
-			<div>{$lng->__('New Todo Item')}</div>
+			<div>{$lng->__('New Todo')}</div>
 		</a>
 	</div>
 ";
@@ -57,30 +57,30 @@ echo "
 		<table class='list large'>
 			<tr>
 				<th class='first'>
-					Dated:
+					{$lng->__('Dated')}:
 				</th>
 				<th>
-					Due Date:
+					{$lng->__('Due Date')}:
 				</th>
 				<th>
-					Contact - Company:
+					{$lng->__('Contact')} - {$lng->__('Company')}:
 				</th>
 				<th>
-					Content:
+					{$lng->__('Content')}:
 				</th>
 				<th>
-					Completed:
+					{$lng->__('Completed')}:
 				</th>
 			</tr>
 			";
 		while ($todo_r = pg_fetch_array($todo)) {
 			if ($todo_r[completed] == f) {
 				$bolde = 'font-weight: bold;';
-				$tf = "No";
+				$tf = "{$lng->__('No')}";
 				$comp= "red";
 			} else {
 				$bolde = '';
-				$tf = "Yes";
+				$tf = "{$lng->__('Yes')}";
 				$comp= "green";
 			}
 				

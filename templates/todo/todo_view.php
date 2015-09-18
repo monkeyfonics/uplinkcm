@@ -93,22 +93,22 @@ $date = date('Y-m-d', strtotime($todo_r[created]));
 $due = date('Y-m-d', strtotime($todo_r[due]));
 
 if (!$todo_r[contact_id]) {
-	$person = "None";
+	$person = "{$lng->__('None')}";
 } else {
 	$person = "$ul_r[lname], $ul_r[fname]";
 }
 
 if (!$todo_r[company_id]) {
-	$company = "None";
+	$company = "{$lng->__('None')}";
 } else {
 	$company = "$co_r[name]";
 }
 
 if ($todo_r[completed] == t) {
-	$comp = "Yes";
+	$comp = "{$lng->__('Yes')}";
 	$class = "green";
 } else {
-	$comp = "No";
+	$comp = "{$lng->__('No')}";
 	$class = "red";
 }
 echo "
@@ -118,13 +118,13 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					Contact:
+					{$lng->__('Contact')}:
 				</td>
 				<td>
 					$person
 				</td>
 				<td class='head'>
-					Created:
+					{$lng->__('Created')}:
 				</td>
 				<td>
 					$date
@@ -132,13 +132,13 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Company:
+					{$lng->__('Company')}:
 				</td>
 				<td>
 					$company
 				</td>
 				<td class='head'>
-					Due:
+					{$lng->__('Due Date')}:
 				</td>
 				<td>
 					$due
@@ -146,7 +146,7 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Completed:
+					{$lng->__('Completed')}:
 				</td>
 				<td class='$class'>
 					$comp
@@ -161,7 +161,7 @@ echo "
 			
 		</table>
 		<div class='todocontent'>
-			<h3>Content:</h3>
+			<h3>{$lng->__('Content')}:</h3>
 			<p>
 				$todo_r[cont]
 			</p>

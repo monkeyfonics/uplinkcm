@@ -132,12 +132,12 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					Contact:
+					{$lng->__('Contact')}:
 				</td>
 				<td>
 					<select name='pid'>
 						<option value='0'>
-							None
+							{$lng->__('None')}
 						</option>
 						";
 						while ($ul_r = pg_fetch_array($ul)) {
@@ -152,7 +152,7 @@ echo "
 					</select>
 				</td>
 				<td class='head'>
-					Created:
+					{$lng->__('Created')}:
 				</td>
 				<td>
 					<input type='text' name='created' value='$created'></input>
@@ -161,12 +161,12 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Company:
+					{$lng->__('Company')}:
 				</td>
 				<td>
 					<select name='cid'>
 						<option value='0'>
-							None
+							{$lng->__('None')}
 						</option>
 						";
 						while ($cl_r = pg_fetch_array($cl)) {
@@ -181,7 +181,7 @@ echo "
 					</select>
 				</td>
 				<td class='head'>
-					Due:
+					{$lng->__('Due Date')}:
 				</td>
 				<td>
 					<input type='text' name='due' value='$due'></input>
@@ -191,7 +191,7 @@ echo "
 			
 			<tr>
 				<td class='head' colspan='4'>
-					Content:
+					{$lng->__('Content')}:
 				</td>
 				
 			</tr>

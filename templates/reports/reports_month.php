@@ -94,13 +94,13 @@ $monthly = pg_query($conn, $query);
 						</a>
 					</td>
 					<td>
-						Invoice
+						{$lng->__('Invoice')}
 					</td>
 					<td>
-						Contact
+						{$lng->__('Contact')}
 					</td>
 					<td>
-						Amount
+						{$lng->__('Amount')}
 					</td>
 				</tr>
 			";
@@ -213,7 +213,7 @@ $monthly = pg_query($conn, $query);
 			echo "
 				<tr>
 					<td>
-						Total:
+						{$lng->__('Total')}:
 						
 					</td>
 					<td>

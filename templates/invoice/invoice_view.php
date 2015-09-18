@@ -72,8 +72,15 @@ $co = pg_query($conn, $query);
 $co_r = pg_fetch_array($co);
 
 
+$datedcount = new DateTime($in_r[dated_out]);
+$duecount = new DateTime($in_r[due_date_out]);
+
+$diff = $duecount->diff($datedcount)->format("%a");
+
 $in_r[dated_out] = date('Y-m-d', strtotime($in_r[dated_out]));
 $in_r[due_date_out] = date('Y-m-d', strtotime($in_r[due_date_out]));
+
+
 
 $email_id = $cl_r[coid];
 
@@ -153,42 +160,44 @@ echo "
 					{$lng->__('Invoice number')}:
 				</td>
 				<td>
-					<a href='index.php?section=def&template=def_view&ident=$in_r[invoice_id]'>
+					<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&invid=$in_r[invoice_id]'>
 						$in_r[invoice_id]
 					</a>
 				</td>
 				<td class='head'>
-					Header:
+					{$lng->__('Header')}:
 				</td>
 				<td>
-					<a href='index.php?section=def&template=def_view&ident=$in_r[invoice_id]'>$in_r[header]</a> - $in_r[addhead]
+					<a href='index.php?section=def&template=def_view&ident=$in_r[def_id]'>$in_r[header]</a> - $in_r[addhead]
 				</td>
 			</tr>
 			<tr>
 				<td class='head'>
-					Reference:
+					{$lng->__('Reference')}:
 				</td>
 				<td>
 					$in_r[ref]
 				</td>
 				<td class='head'>
-					Person:
+					{$lng->__('Person')}:
 				</td>
 				<td>
 					<a href='index.php?section=contacts&template=contact_view&suid=$cl_r[coid]'>
-						$cl_r[lname], $cl_r[fname]
+						";
+						if($cl_r[pid]) { echo "$cl_r[lname], $cl_r[fname]"; }
+						echo "
 					</a>
 				</td>
 			</tr>
 			<tr>
 				<td class='head'>
-					Dated:
+					{$lng->__('Dated')}:
 				</td>
 				<td>
 					$in_r[dated_out]
 				</td>
 				<td class='head'>
-					Company:
+					{$lng->__('Company')}:
 				</td>
 				<td>
 					<a href='index.php?section=company&template=company_view&suid=$co_r[cmid]'>
@@ -198,13 +207,13 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Due date:
+					{$lng->__('Due date')}:
 				</td>
 				<td>
 					$in_r[due_date_out]
 				</td>
 				<td class='head'>
-					Language:
+					{$lng->__('Language')}:
 				</td>
 				<td>
 					$in_r[loc]
@@ -213,7 +222,7 @@ echo "
 			<tr>
 				
 				<td class='head'>
-					Recurring:
+					{$lng->__('Recurring')}:
 				</td>
 				<td>
 					Every $in_r[recurring] month(s)
@@ -254,25 +263,25 @@ $it = pg_query($conn, $query);
 		<table class='list'>
 			<tr>
 				<th>
-					Cat.:
+					{$lng->__('Cat.')}:
 				</th>
 				<th>
-					Item:
+					{$lng->__('Product')}:
 				</th>
 				<th>
-					Qty:
+					{$lng->__('Qty.')}:
 				</th>
 				<th>
-					Price(0%):
+					{$lng->__('Price(0%)')}:
 				</th>
 				<th>
-					Full price(0%):
+					{$lng->__('Total (0%)')}:
 				</th>
 				<th>
-					Vat:
+					{$lng->__('Vat')}:
 				</th>
 				<th>
-					Price (Vat):
+					{$lng->__('Price (Vat)')}:
 				</th>
 			</tr>
 		";
@@ -337,7 +346,7 @@ $it = pg_query($conn, $query);
 		echo "
 			<tr>
 				<td class='bold'>
-					Total:
+					{$lng->__('Total')}:
 				</td>
 				<td>
 					

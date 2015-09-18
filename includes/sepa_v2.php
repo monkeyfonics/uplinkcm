@@ -104,8 +104,8 @@ class sepa {
 				$this->pdf->Cell($c[3],5,$this->pdflang->__('Unit price'),'B',0,'R');
 				$this->pdf->Cell($c[4],5,$this->pdflang->__('Tot. 0%'),'B',0,'R');
 				$this->pdf->Cell($c[5],5,$this->pdflang->__('Discount'),'B',0,'R');
-				$this->pdf->Cell($c[6],5,$this->pdflang->__('VAT'),'B',0,'R');
-				$this->pdf->Cell(0,5,$this->pdflang->__('Tot. inc. VAT'),'B',0,'R');
+				$this->pdf->Cell($c[6],5,$this->pdflang->__('VAT'),'B',0,'C');
+				$this->pdf->Cell(0,5,$this->pdflang->__('Total %'),'B',0,'R');
 				$this->pdf->Ln();
 			}
 			$this->pdf->Cell($c[0],5,($nr+1).".");

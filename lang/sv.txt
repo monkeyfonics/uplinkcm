@@ -11,6 +11,7 @@ Next=Nästa
 Delete=Radera
 Login Successfull=Inloggning Lyckades
 Login Failed=Inloggning Misslyckades
+Print=Printa
 /*/main/*/
 Dash=Panel
 New Todos=Nya Att göra
@@ -79,12 +80,20 @@ Invoices=Fakturor
 Invoice=Faktura
 Primary=Antagen
 Add Contact=Lägg till kontakt
+Add=Lägg till
 /*/Templates/*/
 New Invoice Template=Nytt Faktura Botten
 Edit Template=Editera Botten
 Copy Template=Kopiera Botten
 Template Copied=Botten Kopierat
+Template Updated=Botten Updaterat
+Template Saved=Botten Sparat
+Template Activated=Botten Aktiverat
 Recurring=Återkommande
+Next invoice=Nästa faktura
+Ongoing=Fortsättande
+End date=Slut datum
+Person=Person
 Amount=Summa
 Active=Aktiv
 Activate=Aktivera
@@ -94,7 +103,15 @@ Edit=Editera
 Printed=Printad
 Hour=Timme
 Month=Månad
-Qty=St
+Qty.=St.
+Cat.=Kat.
+Product=Produkt
+Price(0%)=Pris(0%)
+Total (0%)=Totalt (0%)
+Vat=Moms
+Price (Vat)=Pris (Moms)
+Invoice Updated=Faktura Updaterad
+Total=Totalt
 /*/Invoices/*/
 Pending=Obekräftade
 Published=Publiserade
@@ -105,3 +122,11 @@ Due Date=Förfallodag
 /*/Email/*/
 New invoice from=Ny faktura av
 See attachment for pdf=Öppna bilagan för pdf fil
+/*/Todo/*/
+Todo List=Todo Lista
+Todo=Todo
+New Todo=Ny Todo
+Save Todo=Spara Todo
+Edit Todo=Editera Todo
+Mark Completed=Märk som gjord
+Completed=Slutförd

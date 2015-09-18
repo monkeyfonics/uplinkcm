@@ -55,6 +55,7 @@ $query = "
   				$acco.invoice_out.invoice_id as invoice_id,
   				$acco.invoice_out.def_id as def_id,
   				$acco.invoice_out.created as created_out,
+  				$acco.invoice_out.dated as dated_out,
   				$acco.invoice_out.due_date as due_date_out,
   				$acco.invoice_out.ref as ref
 	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.def_id)
@@ -208,15 +209,21 @@ $tel = $acc_hold_r['tel'];
 $email = $acc_hold_r['email'];
 
 $created = date('d.m.Y', strtotime($in_r['created_out']));
+$dated = date('d.m.Y', strtotime($in_r['dated_out']));
 $due = date('d.m.Y', strtotime($in_r['due_date_out']));
-$difference = $due - $created;
+
+/*for counting days untill due*/
+$datedcount = new DateTime($in_r[dated_out]);
+$duecount = new DateTime($in_r[due_date_out]);
+
+$diff = $duecount->diff($datedcount)->format("%a");
 
 /* pass info to pdf creation */
 $info = Array(
 	"nr" => $in_r['ident'],
-	"dat" => $created,
+	"dat" => $dated,
 	"due" => $due,
-	"terms" => $difference,
+	"terms" => $diff,
 	"custref" => $in_r['ref'],
 	"ref" => $in_r['ref'],
 	"rate" => "8",

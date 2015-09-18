@@ -28,7 +28,7 @@ $query = "
 	$ch = pg_query($conn, $query);
 
 
-$message = $lng->__('Invoice')." ".$lng->__('Published').$dueplus;
+$message = $lng->__('Invoice')." ".$lng->__('Published');
 	$icon = 'layout/img/icon_succ.png';
 	$ret_url = 'index.php?section=invoice&template=invoice_list';
 

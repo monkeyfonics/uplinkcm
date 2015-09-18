@@ -1084,3 +1084,86 @@ LINE 8:
 LINE 14: 
          ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 248
 [14-Sep-2015 09:10:07 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 279
+[18-Sep-2015 06:09:49 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.php on line 281
+[18-Sep-2015 06:10:22 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, null given in /var/www/web/dev/cm/templates/def/def_edit.php on line 281
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:20:38 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/web/dev/cm/includes/trans.php on line 19
+[18-Sep-2015 06:43:17 UTC] PHP Warning:  date_diff() expects parameter 1 to be DateTime, string given in /var/www/web/dev/cm/transaction/invoice_gen.php on line 214
+[18-Sep-2015 06:45:03 UTC] PHP Catchable fatal error:  Object of class DateInterval could not be converted to string in /var/www/web/dev/cm/includes/sepa_v2.php on line 76
+[18-Sep-2015 10:05:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 9: 
+        ^ in /var/www/web/dev/cm/templates/def/def_view.php on line 50
+[18-Sep-2015 10:05:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_view.php on line 51
+[18-Sep-2015 10:05:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/def/def_view.php on line 63
+[18-Sep-2015 10:05:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_view.php on line 64
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;;&quot;
+LINE 20:  where  acc_test_3.invoice_out.id = ;
+                                             ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 42
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 44
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 58
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 59
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 71
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 72
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 257
+[18-Sep-2015 10:05:42 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 288
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at or near &quot;;&quot;
+LINE 20:  where  acc_test_3.invoice_out.id = ;
+                                             ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 42
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 44
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 10: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 58
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 59
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 71
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 72
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 14: 
+         ^ in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 257
+[18-Sep-2015 10:06:03 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/invoice/invoice_view.php on line 288
+[18-Sep-2015 10:07:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 9: 
+        ^ in /var/www/web/dev/cm/templates/def/def_view.php on line 50
+[18-Sep-2015 10:07:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_view.php on line 51
+[18-Sep-2015 10:07:53 UTC] PHP Warning:  pg_query() [<a href='function.pg-query'>function.pg-query</a>]: Query failed: ERROR:  syntax error at end of input
+LINE 8: 
+        ^ in /var/www/web/dev/cm/templates/def/def_view.php on line 63
+[18-Sep-2015 10:07:53 UTC] PHP Warning:  pg_fetch_array() expects parameter 1 to be resource, boolean given in /var/www/web/dev/cm/templates/def/def_view.php on line 64
