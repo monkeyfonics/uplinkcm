@@ -159,7 +159,7 @@ while ($it_r = pg_fetch_array($it)) {
 		$unit = 'qty';
 	}
 			
-	$itemprice = number_format($it_r['price'],2);
+	$itemprice = number_format($it_r['price'],2,",","");
 	$totalrow = $itemprice * $it_r['qty'];
 	$totalrowvat = $totalrow * $it_r['vat'];
 	$total += $itemprice * $it_r['qty'];

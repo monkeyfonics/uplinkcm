@@ -70,6 +70,8 @@ Add company=Lägg till firma
 None=Ingen
 Save Note=Spara Anteckning
 Show all=Visa alla
+Contact Added=Kontakt Sparad
+Contact Updated=Kontakt Updaterad
 /*/Company/*/
 Company=Firma
 New Company=Ny Firma
@@ -81,6 +83,7 @@ Invoice=Faktura
 Primary=Antagen
 Add Contact=Lägg till kontakt
 Add=Lägg till
+Company Saved=Firma Sparad
 /*/Templates/*/
 New Invoice Template=Nytt Faktura Botten
 Edit Template=Editera Botten

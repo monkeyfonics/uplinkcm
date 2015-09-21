@@ -102,7 +102,7 @@ if (isset($_POST['add_co'])) {
 	$ret_url = 'index.php?section=company&template=company_edit&suid='.$suid;
 }
 		
-		$message = 'Company Saved';
+		$message = "{$lng->__('Company Saved')}";
 		$icon = 'layout/img/icon_succ.png';
 		
 		echo "

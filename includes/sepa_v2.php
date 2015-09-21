@@ -83,8 +83,8 @@ class sepa {
 			$this->pdf->Ln();
 		}
 		$dhead = 0;
-		$c = Array(8,52,15,22,22,18,30);
-		
+		$c = Array(8,45,25,27,27,27);
+		$comb = $c[1]+$c[2]+$c[3]+$c[4];
 		foreach ($invoice['items'] as $nr => $item) {
 			$this->pdf->SetFontSize(10);
 			if ($this->pdf->GetY() > $bp) {
@@ -103,8 +103,7 @@ class sepa {
 				$this->pdf->Cell($c[2],5,$this->pdflang->__(''),'B',0,'R');
 				$this->pdf->Cell($c[3],5,$this->pdflang->__('Unit price'),'B',0,'R');
 				$this->pdf->Cell($c[4],5,$this->pdflang->__('Tot. 0%'),'B',0,'R');
-				$this->pdf->Cell($c[5],5,$this->pdflang->__('Discount'),'B',0,'R');
-				$this->pdf->Cell($c[6],5,$this->pdflang->__('VAT'),'B',0,'C');
+				$this->pdf->Cell($c[5],5,$this->pdflang->__('VAT'),'B',0,'C');
 				$this->pdf->Cell(0,5,$this->pdflang->__('Total %'),'B',0,'R');
 				$this->pdf->Ln();
 			}
@@ -113,14 +112,14 @@ class sepa {
 			$this->pdf->Cell($c[2],5,$item['qty'].' '.$this->pdflang->__($item['unit']),0,0,'R');
 			$this->pdf->Cell($c[3],5,number_format($item['price'],2,',',' ')."€",0,0,'R');
 			$this->pdf->Cell($c[4],5,"= ".number_format($item['price'] * $item['qty'],2,',',' ')."€",0,0,'R');
-			$this->pdf->Cell($c[5],5,$item['discount']."%",0,0,'R');
-			$this->pdf->Cell($c[6],5,number_format($item['vat'] * $item['qty'],2,',',' ')."€ (".$item['vatpros']."%)",0,0,'R');
+			$this->pdf->Cell($c[5],5,number_format($item['vat'] * $item['qty'],2,',',' ')."€ ",0,0,'R');
 			$this->pdf->Cell(0,5,number_format($item['total'],2,',',' ')."€",0,0,'R');
 			$this->pdf->Ln();
 			$this->pdf->SetTextColor(120);
 			$this->pdf->SetFontSize(9);
 			$this->pdf->Cell($c[0],5,'');
-			$this->pdf->Cell(0,5,$item['text']);
+			$this->pdf->Cell($comb,5,$item['text']);
+			$this->pdf->Cell($c[5],5,"(".$item['vatpros']."%)",0,0,'R');
 			$this->pdf->Ln();
 			$this->pdf->SetTextColor(0);
 		}

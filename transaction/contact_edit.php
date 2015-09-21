@@ -35,7 +35,7 @@ if ($suid) {
 		";
 	$ch = pg_query($conn, $query);
 	
-	$message = 'Contact Updated ';
+	$message = "{$lng->__('Contact Updated')}";
 	
 	
 	$ret_url = 'index.php?section=contacts&template=contact_view&suid='.$suid;
@@ -76,7 +76,7 @@ if ($suid) {
 		";
 	$ch = pg_query($conn, $query);
 	
-	$message = 'Contact Added ';
+	$message = "{$lng->__('Contact Added')}";
 	
 	$ret_url = 'index.php?section=contacts&template=contact_list';
 	
