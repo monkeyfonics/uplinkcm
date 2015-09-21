@@ -91,6 +91,7 @@ if ($cl) {
   				phone1,
   				www
 	from		$acco.contacts
+	order by	lname, fname
 	where		id not in (
 		select		$acco.link_company_contact.contact_id
 		from		$acco.link_company_contact
@@ -111,6 +112,7 @@ if ($cl) {
   				phone1,
   				www
 	from		$acco.contacts
+	order by	lname, fname
 	
 	
 	";
