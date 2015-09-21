@@ -111,7 +111,7 @@ if ($cl) {
   				phone1,
   				www
 	from		$acco.contacts
-	
+	order by	lname, fname
 	
 	";
 }
