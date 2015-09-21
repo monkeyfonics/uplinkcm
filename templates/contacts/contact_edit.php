@@ -104,12 +104,13 @@ if ($cl) {
 } else {
 	$query = "
 	select		
-				id,
-				name,
-				ytunnus,
-				email
-	FROM 		$acco.company 
-	order by	name
+					id,
+					name,
+					ytunnus,
+					email
+		FROM 		$acco.company
+		order by	name
+	
 	
 	";
 }

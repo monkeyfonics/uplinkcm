@@ -114,6 +114,7 @@ if ($cl) {
 	from		$acco.contacts
 	order by	lname, fname
 	
+	
 	";
 }
 
