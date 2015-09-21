@@ -92,7 +92,8 @@ if ($cl) {
 					name,
 					ytunnus,
 					email
-		FROM 		$acco.company 
+		FROM 		$acco.company
+		order by	name
 		where		id not in (
 			select		$acco.link_company_contact.company_id
 			from		$acco.link_company_contact

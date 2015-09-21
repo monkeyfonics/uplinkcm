@@ -27,7 +27,7 @@ while ($import_r = pg_fetch_array($import)) {
 	echo "$import_r[name]\n";
 	
 	$query = "
-			insert into cm_dev.acc_uplin_2.company (
+			insert into ucm.acc_uplin_678.company (
 			id,
 			name,
 			ytunnus,

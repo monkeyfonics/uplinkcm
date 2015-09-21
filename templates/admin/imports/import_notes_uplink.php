@@ -24,7 +24,7 @@ while ($import_r = pg_fetch_array($import)) {
 	echo "$import_r[pid]\n";
 	
 	$query = "
-			insert into cm_dev.acc_uplin_2.contact_notes (
+			insert into ucm.acc_uplin_678.contact_notes (
 			id,
 			contact_id,
 			created,
