@@ -93,10 +93,10 @@ if ($au_r[login] == $user) {
 		/* send mail to user */
 		$charset = "Content-Type: text/plain; charset=UTF-8\r\n";
 		$to = $user;
-		$from = "ContactManager";
-		$headers = $charset."From:" . $from;
-		$subject = "From Uplink Contact Manager to ".$fname;
-		$email = "New User registered: ".$user." \r\n You registered with your email".$user." \r\n ";
+		$from = "Contact Manager<$system_email>";
+		$headers = $charset."From:".$from."\r\nReply-To:".$system_email;
+		$subject = "{$lng->__('From Uplink Contact Manager to')} ".$fname;
+		$email = "{$lng->__('You registered with your email')} ".$user." \r\n{$lng->__('Please log in at')} $wname \r\n{$lng->__('If you did not register this adress please contact us at')} $system_email";
 		
 		mail($to,$subject,$email,$headers);
 		

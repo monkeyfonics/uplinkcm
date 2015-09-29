@@ -68,7 +68,7 @@ $body = $plainpart.$attachpart;
 /* send the mail */
 $mail_sent = @mail($to,$subject,$body,$headers);
 
-$mail_sent ? $message = "Mail sent" : $message = "Mail failed"; 
+$mail_sent ? $message = "{$lng->__('Mail sent')}" : $message = "{$lng->__('Mail failed')}"; 
 
 header("Refresh: 2; URL=".$ret_url);
 

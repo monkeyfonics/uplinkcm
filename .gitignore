@@ -2,3 +2,4 @@
 globals/settings.php
 acc_img/*
 tempfiles/*
+templates/admin/imports/*
