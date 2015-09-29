@@ -30,7 +30,7 @@ while ($import_r = pg_fetch_array($import)) {
 	echo "$import_r[lname], $import_r[fname]\n";
 	
 	$query = "
-			insert into cm_dev.acc_uplin_2.contacts (
+			insert into ucm.acc_uplin_678.contacts (
 			id,
 			fname,
 			lname,

@@ -27,7 +27,7 @@ while ($import_r = pg_fetch_array($import)) {
 	}
 	
 	$query = "
-			insert into cm_dev.acc_uplin_2.link_company_contact (
+			insert into ucm.acc_uplin_678.link_company_contact (
 			contact_id,
 			company_id,
 			prim
