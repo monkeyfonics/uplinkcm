@@ -117,7 +117,7 @@ echo "
 				";
 				if ($cl_r[email]) {
 					echo "
-					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id'>
+					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id' onclick='return confirm(\"{$lng->__('Send to')} $cl_r[email]?\");'>
 						<div>{$lng->__('Email')}</div>
 					</a>
 					";
@@ -168,7 +168,7 @@ echo "
 					{$lng->__('Header')}:
 				</td>
 				<td>
-					<a href='index.php?section=def&template=def_view&ident=$in_r[def_id]'>$in_r[header]</a> - $in_r[addhead]
+					<a href='index.php?section=def&template=def_view&ident=$in_r[def_id]'>$in_r[header]</a>
 				</td>
 			</tr>
 			<tr>
@@ -232,6 +232,19 @@ echo "
 				</td>
 				<td>
 					
+				</td>
+			</tr>
+			<tr>
+				<td colspan='4'>
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td class='head'>
+					{$lng->__('Specification')}:
+				</td>
+				<td colspan='3'>
+					$in_r[addhead]
 				</td>
 			</tr>
 		

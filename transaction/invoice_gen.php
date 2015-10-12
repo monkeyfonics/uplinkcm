@@ -235,6 +235,7 @@ $info = Array(
 	"home" => "Inkoo/Ingå",
 	"logo" => $logo,
 	"locale" => $in_r['loc'],
+	"specification" => $in_r['addhead'],
 	"recipient" => Array(
 		"name" => $acc_hold_r['name'],
 		"street" => $acc_hold_r['bill_addr'],

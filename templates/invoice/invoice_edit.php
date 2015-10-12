@@ -153,20 +153,6 @@ echo "
 					 $in_r[ref]
 				</td>
 				<td class='head'>
-					Add Header:
-				</td>
-				<td>
-					<input class='full' type='text' name='addheader' value='$in_r[addhead]'></input>
-				</td>
-			</tr>
-			<tr>
-				<td class='head'>
-					Dated:
-				</td>
-				<td>
-					<input type='text' name='dated' value='$in_r[dated]'></input>
-				</td>
-				<td class='head'>
 					Person:
 				</td>
 				<td>
@@ -189,11 +175,10 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Due Date:
+					Dated:
 				</td>
 				<td>
-					<input type='text' name='due_date' value='$in_r[due_date]'></input>
-						
+					<input type='text' name='dated' value='$in_r[dated]'></input>
 				</td>
 				<td class='head'>
 					Company:
@@ -218,10 +203,11 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					
+					Due Date:
 				</td>
 				<td>
-					
+					<input type='text' name='due_date' value='$in_r[due_date]'></input>
+						
 				</td>
 				<td class='head'>
 					Language:
@@ -247,7 +233,19 @@ echo "
 					</select>
 				</td>
 			</tr>
-			
+			<tr>
+				<td colspan='4'>
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td class='head'>
+					{$lng->__('Specification')}:
+				</td>
+				<td colspan='3'>
+					<input type='text' name='addheader' value='$in_r[addhead]'></input>
+				</td>
+			</tr>
 		
 		";
 		

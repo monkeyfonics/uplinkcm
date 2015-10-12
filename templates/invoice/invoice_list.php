@@ -116,7 +116,7 @@ echo "
 					{$lng->__('Header')}:
 				</th>
 				<th>
-					{$lng->__('Person')}:
+					{$lng->__('Contact')}:
 				</th>
 				<th>
 					{$lng->__('Amount')}:

@@ -75,9 +75,15 @@ class sepa {
 		$this->pdf->SetXY(150,38);
 		$this->pdf->MultiCell(35,4.5,$invoice['terms']." ".$this->pdflang->__('Days')."\n".$invoice['due']."\n".$invoice['custref']."\n".$invoice['rate']."%\n".$invoice['recipient']['vatnr']);
 		$this->pdf->Line(10,65,200,65);
+		
 
 		$y = 70;
 		$this->pdf->SetXY(10,70);
+		$this->pdf->SetFontSize(14);
+		$this->pdf->MultiCell(0,4.5,$invoice['specification'],0,'L');
+		$this->pdf->Ln();
+		$this->pdf->SetFontSize(10);
+		
 		if (!empty($invoice['text']['head'])) {
 			$this->pdf->MultiCell(200,4.5,$invoice['text']['head']);
 			$this->pdf->Ln();
@@ -85,6 +91,7 @@ class sepa {
 		$dhead = 0;
 		$c = Array(8,45,25,27,27,27);
 		$comb = $c[1]+$c[2]+$c[3]+$c[4];
+		
 		foreach ($invoice['items'] as $nr => $item) {
 			$this->pdf->SetFontSize(10);
 			if ($this->pdf->GetY() > $bp) {

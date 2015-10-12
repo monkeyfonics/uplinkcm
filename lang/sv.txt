@@ -87,6 +87,7 @@ Company Saved=Firma Sparad
 /*/Templates/*/
 New Invoice Template=Nytt Faktura Botten
 Edit Template=Editera Botten
+Save Template=Spara Botten
 Copy Template=Kopiera Botten
 Template Copied=Botten Kopierat
 Template Updated=Botten Updaterat
@@ -106,6 +107,8 @@ Edit=Editera
 Printed=Printad
 Hour=Timme
 Month=Månad
+Months=Månader
+Every=Varje
 Qty.=St.
 Cat.=Kat.
 Product=Produkt
@@ -115,6 +118,8 @@ Vat=Moms
 Price (Vat)=Pris (Moms)
 Invoice Updated=Faktura Updaterad
 Total=Totalt
+Modify=Ändra
+Add item=Lägg till
 /*/Invoices/*/
 Pending=Obekräftade
 Published=Publiserade
@@ -131,6 +136,7 @@ Please log in at=Inloggningen kan hittas på
 If you did not register this adress please contact us at=Om det inte var du som registrerade denna epost så kontakta oss på
 Mail sent=Epost skickad
 Mail failed=Epost skickning misslyckades
+Send to=Skicka till
 /*/Todo/*/
 Todo List=Todo Lista
 Todo=Todo

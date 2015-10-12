@@ -123,6 +123,16 @@ echo "
 			$ua = pg_query($conn, $query);
 			$ua_r = pg_fetch_array($ua);
 			
+			/* check for company */
+			$query = "
+				select		$acco.invoice_out.id,
+							$acco.invoice_out.cid as cid,
+							$acco.company.name as name
+				from		$acco.invoice_out LEFT OUTER JOIN $acco.company ON ($acco.invoice_out.cid = $acco.company.id)
+				where		$acco.company.id = $in_r[cid]
+			";
+			$ca = pg_query($conn, $query);
+			$ca_r = pg_fetch_array($ca);
 			
 			$created = date('Y-m-d', strtotime($in_r[created]));
 			$date = date('Y-m-d', strtotime($in_r[dated]));
@@ -190,7 +200,12 @@ $it = pg_query($conn, $query);
 						</a>
 					</td>
 					<td>
-						$ua_r[lname], $ua_r[fname]
+					";
+						if($in_r[pid]) { echo "$ua_r[lname], $ua_r[fname]"; }
+						
+						if($in_r[cid]) { echo " - <span style='color:#656565;'>$ca_r[name]</span>"; }
+					echo "
+						
 					</td>
 					<td>
 						<a href='$pripath'>

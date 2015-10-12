@@ -69,6 +69,27 @@ if (!$_GET['suid']) {
 } else {
 	$suid = $_GET['suid'];
 	$in_r[pid] = $suid;
+	
+	/* specific contact */
+$query = "
+	select		id,
+				fname,
+				lname,
+				bill_addr,
+  				bill_zip,
+  				bill_city,
+  				bill_country,
+  				email,
+  				phone1,
+  				phone2,
+  				www,
+  				loc
+	from		$acco.contacts
+	where		id = $in_r[pid]
+";
+
+$spco = pg_query($conn, $query);
+$spco_r = pg_fetch_array($spco);
 }
 /* get the company if defined*/
 if (!$_GET['coid']) {
@@ -94,7 +115,7 @@ $speccomp = pg_query($conn, $query);
 	
 }
 if ($in_r[cid]) {
-/* only companies for that contact*/
+/* only contacts for that company*/
 $query = "
 		select		{$acco}.contacts.id as id,
 					{$acco}.contacts.fname as fname,
@@ -195,13 +216,13 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					Dated:
+					{$lng->__('Dated')}:
 				</td>
 				<td>
 					<input type='text' name='dated' value='$in_r[dated]'></input>
 				</td>
 				<td class='head'>
-					Header:
+					{$lng->__('Header')}:
 				</td>
 				<td>
 					<input class='full' type='text' name='header' value='$in_r[header]'></input>
@@ -209,7 +230,7 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Next Invoice:
+					{$lng->__('Next invoice')}:
 				</td>
 				<td>
 					
@@ -217,12 +238,12 @@ echo "
 					<input type='text' name='next_create_show' disabled value='$in_r[next_create]'></input>
 				</td>
 				<td class='head'>
-					Person:
+					{$lng->__('Person')}:
 				</td>
 				<td>
 					<select name='pid'>
 						<option value='0'>
-							None
+							{$lng->__('None')}
 						</option>
 						";
 						
@@ -253,28 +274,28 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Ongoing:
+					{$lng->__('Ongoing')}:
 				</td>
 				<td>
 					
 					
 					<select id='ongoing' name='ongoing' onchange='disableEnd();'>
 						<option value='f' $ongoing1>
-							No
+							{$lng->__('No')}
 						</option>
 						<option value='t' $ongoing2>
-							Yes
+							{$lng->__('Yes')}
 						</option>
 						
 					</select>
 				</td>
 				<td class='head'>
-					Company:
+					{$lng->__('Company')}:
 				</td>
 				<td>
 					<select name='cid'>
 						<option value='0'>
-							None
+							{$lng->__('None')}
 						</option>
 						
 						";
@@ -305,7 +326,7 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Recurring:
+					{$lng->__('Recurring')}:
 				</td>
 				<td>
 				";
@@ -318,54 +339,62 @@ echo "
 				echo "
 					<select id='rec' name='recurring' onchange='disableEnd();'>
 						<option value='0'$sel0>
-							None
+							{$lng->__('None')}
 						</option>
 						
 						<option value='1'$sel1>
-							Every Month
+							{$lng->__('Every')} {$lng->__('Month')}
 						</option>
 						<option value='2'$sel2>
-							Every 2 Months
+							{$lng->__('Every')} 2 {$lng->__('Months')}
 						</option>
 						<option value='3'$sel3>
-							Every 3 Months
+							{$lng->__('Every')} 3 {$lng->__('Months')}
 						</option>
 						<option value='6'$sel6>
-							Every 6 Months
+							{$lng->__('Every')} 6 {$lng->__('Months')}
 						</option>
 						<option value='12'$sel12>
-							Every 12 Months
+							{$lng->__('Every')} 12 {$lng->__('Months')}
 						</option>
 					</select>
 				</td>
 				
 				<td class='head'>
-					Language:
+					{$lng->__('Language')}:
 				</td>
 				<td>
 				";
 					/*check users language somehow if new template*/
+					if (!$_GET['suid']) {
 						if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
 						if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
 						if ($in_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+					} else {
+						$userloc = $ul_r[loc];
+						if ($spco_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($spco_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($spco_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+					}
+						
 					
 				echo "
 					<select name='loc'>
 						<option value='fi' $sel1>
-							Suomi
+							{$lng->__('Finnish')}
 						</option>
 						<option value='sv' $sel2>
-							Svenska
+							{$lng->__('Swedish')}
 						</option>
 						<option value='en' $sel3>
-							English
+							{$lng->__('English')}
 						</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<td class='head'>
-					End Date:
+					{$lng->__('End date')}:
 				</td>
 				<td>
 					<input type='$enddate_display' id='end' name='end_date' value='$in_r[end_date]'></input>
@@ -427,25 +456,25 @@ $ig = pg_query($conn, $query);
 		<table class='list'>
 			<tr>
 				<th>
-					Cat.:
+					{$lng->__('Cat.')}:
 				</th>
 				<th>
-					Item:
+					{$lng->__('Product')}:
 				</th>
 				<th>
-					Quantity:
+					{$lng->__('Qty.')}:
 				</th>
 				<th>
-					Price:
+					{$lng->__('Price(0%)')}:
 				</th>
 				<th>
-					Vat:
+					{$lng->__('Vat')}:
 				</th>
 				<th>
-					Price %:
+					{$lng->__('Price (Vat)')}:
 				</th>
 				<th>
-					Add/Del
+					{$lng->__('Modify')}
 				</th>
 			</tr>
 		";
@@ -601,7 +630,7 @@ $ig = pg_query($conn, $query);
 					<input class='short' type='text' id='pricevatn' name='pricevatn' value='' onchange='stripVatn();'></input>
 				</td>
 				<td>
-					<input type='submit' name='add_item' value='{$lng->__('Add Item')}'></input>
+					<input type='submit' name='add_item' value='{$lng->__('Add item')}'></input>
 				</td>
 			</tr>
 			";
