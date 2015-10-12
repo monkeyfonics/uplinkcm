@@ -158,16 +158,21 @@ while ($it_r = pg_fetch_array($it)) {
 	} elseif ($it_r[unit] == 3) {
 		$unit = 'qty';
 	}
-			
-	$itemprice = number_format($it_r['price'],2,",","");
+	
+	/*amount per item, non vat*/	
+	$itemprice = number_format($it_r['price'],2,".","");
+	/*amount for all items, non vat*/
 	$totalrow = $itemprice * $it_r['qty'];
+	/*amount for all items, just vat*/
 	$totalrowvat = $totalrow * $it_r['vat'];
+	/*amount for all rows, non vat*/
 	$total += $itemprice * $it_r['qty'];
 	$vatpart = $itemprice * $it_r['vat'];
 	$totalpart = $itemprice + $vatpart;
 	$qtytotal = ($itemprice + $vatpart) * $it_r['qty'];
-	
+	/*amount for all vat*/
 	$vattot += $totalrowvat;
+	/*amount for all total*/
 	$totalvat = $total + $vat;
 	
 	$tx = explode(",",$it_r['item'],2);
