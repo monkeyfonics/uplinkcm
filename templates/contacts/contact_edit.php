@@ -93,13 +93,12 @@ if ($cl) {
 					ytunnus,
 					email
 		FROM 		$acco.company
-		order by	name
 		where		id not in (
 			select		$acco.link_company_contact.company_id
 			from		$acco.link_company_contact
 			where $acco.link_company_contact.contact_id = $ul_r[id]
 		)
-		
+		order by	name
 	";
 } else {
 	$query = "

@@ -91,12 +91,12 @@ if ($cl) {
   				phone1,
   				www
 	from		$acco.contacts
-	order by	lname, fname
 	where		id not in (
-		select		$acco.link_company_contact.contact_id
+		select		contact_id
 		from		$acco.link_company_contact
-		where company_id = $ul_r[id]
+		where 		company_id = $ul_r[id]
 	)
+	order by	lname, fname
 	
 	";
 } else {
