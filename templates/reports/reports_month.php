@@ -155,7 +155,7 @@ $monthly = pg_query($conn, $query);
 			  				unit,
 			  				vat
 				from		$acco.invoice_out_item
-				where		invoice_id = $monthly_r[ident]
+				where		invoice_id = $monthly_r[invoice_id]
 				
 			";
 			

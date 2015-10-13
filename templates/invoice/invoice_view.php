@@ -32,7 +32,9 @@ $query = "
   				$acco.invoice_out.dated as dated_out,
   				$acco.invoice_out.due_date as due_date_out,
   				$acco.invoice_out.ref as ref,
-  				$acco.invoice_out.pub as pub
+  				$acco.invoice_out.pub as pub,
+  				$acco.invoice_out.printed as printed,
+  				$acco.invoice_out.emailed as emailed
 	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.def_id)
 	where		$acco.invoice_out.id = $inoid;
 	
@@ -99,6 +101,16 @@ if ($in_r[cid]) {
 	";
 }
 
+if ($in_r[printed]) {
+	$prin = "&bull;";
+} else {
+	$prin = " ";
+}
+if ($in_r[emailed]) {
+	$emai = "&bull;";
+} else {
+	$emai = " ";
+}
 /*use buttons row */
 echo "
 	<div class='buttons'>
@@ -112,13 +124,13 @@ echo "
 		if ($in_r[pub] == t) {
 			echo "
 				<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
-					<div>{$lng->__('Print')}</div>
+					<div>{$lng->__('Print')} $prin</div>
 				</a>
 				";
 				if ($cl_r[email]) {
 					echo "
 					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id' onclick='return confirm(\"{$lng->__('Send to')} $cl_r[email]?\");'>
-						<div>{$lng->__('Email')}</div>
+						<div>{$lng->__('Email')} $emai</div>
 					</a>
 					";
 				}

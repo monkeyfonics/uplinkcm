@@ -67,7 +67,8 @@ do {
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
 					$acco.invoice_out.pub as pub,
-					$acco.invoice_out.printed as printed
+					$acco.invoice_out.printed as printed,
+					$acco.invoice_out.emailed as emailed
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.pub = true
@@ -124,6 +125,9 @@ echo "
 				<th>
 					{$lng->__('Printed')}:
 				</th>
+				<th>
+					@
+				</th>
 			</tr>
 			";
 		while ($in_r = pg_fetch_array($in)) {
@@ -164,7 +168,11 @@ echo "
 			} else {
 				$printed = "{$lng->__('Not printed')}";
 			}
-			
+			if ($in_r[emailed]) {
+				$emailed = "@";
+			} else {
+				$emailed = " ";
+			}
 			
 			
 			/*invoice items for counting total cost*/
@@ -225,6 +233,9 @@ echo "
 					</td>
 					<td>
 						$printed
+					</td>
+					<td>
+						$emailed
 					</td>
 				</tr>
 			";
