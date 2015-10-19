@@ -33,9 +33,7 @@ echo "
 while ($in_r = pg_fetch_array($in)) {
 	$inid = $in_r[id];
 	$ident = $in_r[ident];
-	/*generate unique id for every invoice from template*/
-	$outrand = rand(100, 999);
-	$invout = $in_r[ident].$outrand;
+	
 	$next = date('Y-m-d', strtotime($in_r[next_create]));
 	$dated = date('Y-m-d', strtotime($in_r[dated]));
 	$end_date = date('Y-m-d', strtotime($in_r[end_date]));
@@ -62,6 +60,10 @@ while ($in_r = pg_fetch_array($in)) {
 	}
 	
 	while ($in_r[active] == 't' && $datenow >= $next && $next <= $end_check) {
+		/*generate unique id for every invoice from template*/
+		$outrand = rand(100, 999);
+		$invout = $in_r[ident].$outrand;
+			
 		
 		/*fetch invoice items to copy if not exist*/
 		$query = "
@@ -127,7 +129,7 @@ while ($in_r = pg_fetch_array($in)) {
 		}
 		
 		
-		echo "{$lng->__('Invoice')}: ".$in_r[header]." - ".$in_r[due_date]."<br/>";
+		echo "<hr/>{$lng->__('Invoice')}: <br/>".$in_r[header]." - ";
 		
 		
 		
@@ -144,7 +146,8 @@ while ($in_r = pg_fetch_array($in)) {
 			$inlang->setPath('lang/pdf');
 			/*translate month into invoice language*/
 			$monthtrans = "{$inlang->__($month)}";
-			echo $monthtrans;
+			
+			echo $monthtrans."<br/>";
 			
 			$startTime = strtotime('+'.$rec.' months',$startTime); 
 			

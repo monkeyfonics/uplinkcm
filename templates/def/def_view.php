@@ -148,7 +148,7 @@ echo "
 				</td>
 				<td>
 					";
-						if($cl_r[pid]) { echo "$cl_r[lname], $cl_r[fname]"; }
+						if($cl_r[coid]) { echo "$cl_r[lname], $cl_r[fname]"; }
 					echo "
 				</td>
 			</tr>
