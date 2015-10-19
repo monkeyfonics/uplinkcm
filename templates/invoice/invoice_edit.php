@@ -133,13 +133,13 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					Invoice Nr.:
+					{$lng->__('Invoice number')}:
 				</td>
 				<td>
 					 $in_r[invoice_id]
 				</td>
 				<td class='head'>
-					Header:
+					{$lng->__('Header')}:
 				</td>
 				<td>
 					<input class='full' type='text' name='header' value='$in_r[header]'></input>
@@ -147,13 +147,13 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Reference:
+					{$lng->__('Reference')}:
 				</td>
 				<td>
 					 $in_r[ref]
 				</td>
 				<td class='head'>
-					Person:
+					{$lng->__('Person')}:
 				</td>
 				<td>
 					<select name='pid'>
@@ -175,13 +175,13 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Dated:
+					{$lng->__('Dated')}:
 				</td>
 				<td>
 					<input type='text' name='dated' value='$in_r[dated]'></input>
 				</td>
 				<td class='head'>
-					Company:
+					{$lng->__('Company')}:
 				</td>
 				<td>
 					<select name='cid'>
@@ -203,14 +203,14 @@ echo "
 			</tr>
 			<tr>
 				<td class='head'>
-					Due Date:
+					{$lng->__('Due date')}:
 				</td>
 				<td>
 					<input type='text' name='due_date' value='$in_r[due_date]'></input>
 						
 				</td>
 				<td class='head'>
-					Language:
+					{$lng->__('Language')}:
 				</td>
 				<td>
 				";
@@ -290,25 +290,25 @@ $ig = pg_query($conn, $query);
 		<table class='list'>
 			<tr>
 				<th>
-					Cat.:
+					{$lng->__('Cat.')}:
 				</th>
 				<th>
-					Item:
+					{$lng->__('Product')}:
 				</th>
 				<th>
-					Quantity:
+					{$lng->__('Qty.')}:
 				</th>
 				<th>
-					Price:
+					{$lng->__('Price(0%)')}:
 				</th>
 				<th>
-					Vat:
+					{$lng->__('Vat')}:
 				</th>
 				<th>
-					Price %:
+					{$lng->__('Price (Vat)')}:
 				</th>
 				<th>
-					Add/Del
+					{$lng->__('Modify')}
 				</th>
 			</tr>
 		";

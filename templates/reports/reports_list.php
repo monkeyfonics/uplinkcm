@@ -104,7 +104,7 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td class='bold'>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
-							Amount
+							{$lng->__('Amount')}
 						</a>
 					</td>
 				</tr>

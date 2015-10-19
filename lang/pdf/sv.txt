@@ -34,3 +34,12 @@ September=September
 October=Oktober
 November=November
 December=December
+/*Reports*/
+Report for=Rapport för
+Header=Rubrik
+Date=Datum
+Refenrence=Refenrens
+Contact=Kontakt
+Amount=Summa
+Invoice=Faktura
+Total=Totalt

@@ -21,6 +21,7 @@ class report {
 		
 	}
 	function content ($info) {
+		
 		$this->pdf->info = $info;
 		$this->pdf->SetFont('DejaVu','B',14);
 		$this->pdf->Cell(0,10,$info['account'],0,1,C);
@@ -66,7 +67,7 @@ class report {
 			}
 		}
 		$this->pdf->SetFont('DejaVu','B',10);
-		$this->pdf->Cell($collcomb,5,"Total",0,0,R);
+		$this->pdf->Cell($collcomb,5,$info['totalname'],0,0,R);
 		$this->pdf->Cell($cell5,5,$info['total'],0,0,R);
 	}
 	

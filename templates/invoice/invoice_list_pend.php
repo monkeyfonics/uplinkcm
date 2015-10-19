@@ -122,7 +122,7 @@ echo "
 					{$lng->__('Amount')}:
 				</th>
 				<th>
-					{$lng->__('Due Date')}:
+					{$lng->__('Due date')}:
 				</th>
 			</tr>
 			";

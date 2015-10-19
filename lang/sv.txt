@@ -41,7 +41,7 @@ Register=Registrera
 Contacts=Kontakter
 Companies=Firmor
 Templates=Botten
-Reports=Raporter
+Reports=Rapporter
 Todo=Att göra
 /*/kontakter/*/
 Contact=Kontakt
@@ -126,7 +126,9 @@ Published=Publiserade
 Virtual barcode=Virtuel referens
 Invoice number=Faktura nummer
 Not printed=Inte Printad
-Due Date=Förfallodag
+Due date=Förfallodag
+/*/Reports/*/
+Monthly Report=Månads Rapport
 /*/Email/*/
 New invoice from=Ny faktura av
 See attachment for pdf=Öppna bilagan för pdf fil
@@ -143,5 +145,6 @@ Todo=Todo
 New Todo=Ny Todo
 Save Todo=Spara Todo
 Edit Todo=Editera Todo
-Mark Completed=Märk som gjord
+Mark Completed=Märk som slutförd
+Created=Skapad
 Completed=Slutförd

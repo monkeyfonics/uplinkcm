@@ -10,6 +10,14 @@ $acco = $ac_r[identy];
 /* include pdf building function */
 include ("includes/reports.php");
 
+/*language*/
+$l = $_SESSION['lang'];
+
+$lngpdf = new Translator($l);//$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
+ 
+$lngpdf->setPath('lang/pdf/');
+
+
 /*fetch timespan*/
 $dated = $_GET['dated'];
 $minus = $_GET['minus'];
@@ -53,9 +61,7 @@ $monthly = pg_query($conn, $query);
 
 
 
-/* write headers */
 
-$headers = array('Dated', 'Reference', 'Name', 'Amount', 'Header');
 
 
 while ($monthly_r = pg_fetch_assoc($monthly)) {
@@ -153,7 +159,7 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 }
 /*Write last line*/
 $formattotalprice =  number_format($totalprice, 2, ',', '');
-$endfield = array('Total', '', '', $formattotalprice, '');
+$endfield = array("{$lngpdf->__('Total')}", '', '', $formattotalprice, '');
 
 
 
@@ -161,20 +167,22 @@ $report = new report();
 
 /* pass info to pdf creation */
 $info = Array(
-	"header" => "Report for ".$month,
+	"header" => "{$lngpdf->__('Report for')} {$lngpdf->__($month)}",
 	"account" => $accountname,
+	"locale" => $accountname,
 	"from" => $minus,
 	"to" => $dated,
 	"hitem" => Array(
 		Array(
-			"date" => "Date",
-			"ref" => "Reference",
-			"contact" => "Contact",
-			"amount" => "Amount",
-			"name" => "Invoice",
+			"date" => "{$lngpdf->__('Date')}",
+			"ref" => "{$lngpdf->__('Reference')}",
+			"contact" => "{$lngpdf->__('Contact')}",
+			"amount" => "{$lngpdf->__('Amount')}",
+			"name" => "{$lngpdf->__('Invoice')}",
 			),
 		),
 	"items" => $fields,
+	"totalname" => "{$lngpdf->__('Total')}",
 	"total" => $formattotalprice,
 	);
 

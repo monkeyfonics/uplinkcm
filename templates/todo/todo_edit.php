@@ -181,7 +181,7 @@ echo "
 					</select>
 				</td>
 				<td class='head'>
-					{$lng->__('Due Date')}:
+					{$lng->__('Due date')}:
 				</td>
 				<td>
 					<input type='text' name='due' value='$due'></input>

@@ -60,7 +60,7 @@ echo "
 					{$lng->__('Dated')}:
 				</th>
 				<th>
-					{$lng->__('Due Date')}:
+					{$lng->__('Due date')}:
 				</th>
 				<th>
 					{$lng->__('Contact')} - {$lng->__('Company')}:

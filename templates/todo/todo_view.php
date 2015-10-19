@@ -138,7 +138,7 @@ echo "
 					$company
 				</td>
 				<td class='head'>
-					{$lng->__('Due Date')}:
+					{$lng->__('Due date')}:
 				</td>
 				<td>
 					$due
