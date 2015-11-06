@@ -6,6 +6,7 @@ $inoid = $_POST['inoid'];
 $invid = $_POST['invid'];
 $ref = $_POST['ref'];
 $header = $_POST['header'];
+$addheader = $_POST['addheader'];
 $dated = $_POST['dated'];
 $pid = $_POST['pid'];
 $cid = $_POST['cid'];
@@ -18,6 +19,7 @@ if ($inoid) {
 			update $acco.invoice_out
 			set		
 					header='$header',
+					addhead='$addheader',
 					pid=$pid,
 					cid=$cid,
 					dated='$dated',
