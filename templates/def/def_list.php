@@ -243,7 +243,7 @@ $it = pg_query($conn, $query);
 		";
 			if ($startrow > 0) {
 				echo "
-				<a href='index.php?section=invoice&template=invoice_list&startrow=$backrow'>
+				<a href='index.php?section=def&template=def_list&startrow=$backrow'>
 					<div>{$lng->__('Back')}</div>
 				</a>
 				";
@@ -261,7 +261,7 @@ $it = pg_query($conn, $query);
 			";
 			if ($totalrows  >= $newrow) {
 				echo "
-				<a href='index.php?section=invoice&template=invoice_list&startrow=$newrow'>
+				<a href='index.php?section=def&template=def_list&startrow=$newrow'>
 					<div>{$lng->__('Next')}</div>
 				</a>
 				";
