@@ -147,6 +147,6 @@ Todo=Todo
 New Todo=Ny Todo
 Save Todo=Spara Todo
 Edit Todo=Editera Todo
-Mark Completed=Märk som slutförd
+Mark Completed=Markera som slutförd
 Created=Skapad
 Completed=Slutförd
