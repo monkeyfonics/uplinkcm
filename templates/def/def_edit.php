@@ -119,7 +119,8 @@ if ($in_r[cid]) {
 $query = "
 		select		{$acco}.contacts.id as id,
 					{$acco}.contacts.fname as fname,
-					{$acco}.contacts.lname as lname		
+					{$acco}.contacts.lname as lname,
+					{$acco}.link_company_contact.prim as prim
 		from		$acco.contacts LEFT JOIN $acco.link_company_contact
 		ON			($acco.contacts.id = $acco.link_company_contact.contact_id)
 		where		{$acco}.link_company_contact.company_id = $in_r[cid]
@@ -248,9 +249,14 @@ echo "
 						";
 						
 						while ($speccont_r = pg_fetch_array($speccont)) {
+							if ($speccont_r[prim] == t) {
+								$sel = " selected='selected'";
+							} else {
+								$sel = " ";
+							}
 							//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
 							echo "
-								<option value='$speccont_r[id]'>
+								<option value='$speccont_r[id]' $sel>
 									$speccont_r[lname], $speccont_r[fname]
 								</option>
 							";

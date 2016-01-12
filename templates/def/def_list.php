@@ -86,7 +86,7 @@ echo "
 		<table class='list large'>
 			<tr>
 				<th>
-					&nbsp;
+					{$lng->__('Active')}:
 				</th>
 				<th class='first'>
 					{$lng->__('Dated')}:
@@ -98,15 +98,11 @@ echo "
 				<th>
 					{$lng->__('Contact')}:
 				</th>
-				<th>
-					{$lng->__('Recurring')}:
-				</th>
+				
 				<th>
 					{$lng->__('Amount')} €:
 				</th>
-				<th>
-					{$lng->__('Active')}:
-				</th>
+				
 			</tr>
 			";
 		while ($in_r = pg_fetch_array($in)) {
@@ -140,15 +136,23 @@ echo "
 			$end = date('Y-m-d', strtotime($in_r[end_date]));
 			
 			/* check if the template has expired */
+			if ($in_r[active] == t) {
+				$active = "{$lng->__('Yes')}";
+				$expired = "color: green;";
+			} else {
+				$active = "{$lng->__('No')}";
+				$expired = "color: red;";
+			}
+			
 			if ($in_r[recurring] > 0) {
 				if ($in_r[ongoing] == t or $next <= $end and $end >= $today) {
-					$expired = "color: green;";
+					$marker = "&raquo; $in_r[recurring]";
 				} else {
-					$expired = "color: red;";
+					$marker = "x";
 				}
 				
 			} else {
-				$expired = "color: red;";
+				$marker = "x";
 			}
 			
 			
@@ -176,17 +180,13 @@ $it = pg_query($conn, $query);
 					$combprice += ($tempprice1 + $tempprice2);
 				}
 			
-			if ($in_r[active] == t) {
-				$active = "{$lng->__('Yes')}";
-			} else {
-				$active = "{$lng->__('No')}";
-			}
+			
 			$pripath = "index.php?section=def&template=def_view&ident=$in_r[ident]";
 			
 			echo "	
 				<tr>
 					<td style='$expired text-align: center;'>
-						&raquo;
+						$marker
 					</td>
 					<td class='first'>
 						<a href='$pripath'>
@@ -201,23 +201,17 @@ $it = pg_query($conn, $query);
 					</td>
 					<td>
 					";
-						if($in_r[pid]) { echo "$ua_r[lname], $ua_r[fname]"; }
+						if($in_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
 						
-						if($in_r[cid]) { echo " - <span style='color:#656565;'>$ca_r[name]</span>"; }
+						if($in_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
 					echo "
 						
 					</td>
-					<td>
-						<a href='$pripath'>
-							$in_r[recurring]
-						</a>
-					</td>
+					
 					<td>
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
-					<td>
-						$active
-					</td>
+					
 					
 				</tr>
 			";

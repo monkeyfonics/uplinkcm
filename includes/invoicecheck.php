@@ -240,8 +240,9 @@ while ($in_r = pg_fetch_array($in)) {
 			where	id=$inid
 			";
 			$iu = pg_query($conn, $query);
-		
-		if ($next >= $end_date) {
+		/*
+		 * must check to see that template isnt ongoing */
+		if ($in_r[ongoing] == 'f' && $next >= $end_date) {
 			//change active to false if enddate is reached
 			$query = "
 			update $acco.invoice_def
