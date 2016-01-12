@@ -12,7 +12,6 @@ $acco = $ac_r[identy];
 
 if (!$_GET['ident']) {
 	$ident = 0;
-	
 } else {
 	$ident = $_GET['ident'];
 }
@@ -120,6 +119,7 @@ $query = "
 		select		{$acco}.contacts.id as id,
 					{$acco}.contacts.fname as fname,
 					{$acco}.contacts.lname as lname,
+					{$acco}.contacts.loc as loc,
 					{$acco}.link_company_contact.prim as prim
 		from		$acco.contacts LEFT JOIN $acco.link_company_contact
 		ON			($acco.contacts.id = $acco.link_company_contact.contact_id)
@@ -251,6 +251,7 @@ echo "
 						while ($speccont_r = pg_fetch_array($speccont)) {
 							if ($speccont_r[prim] == t) {
 								$sel = " selected='selected'";
+								$conlang = $speccont_r[loc];
 							} else {
 								$sel = " ";
 							}
@@ -372,19 +373,21 @@ echo "
 				<td>
 				";
 					/*check users language somehow if new template*/
-					if (!$_GET['suid']) {
+					if ($blank == 1) {
+					
+						if ($conlang == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($conlang == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($conlang == 'en') $sel3=" selected='selected'"; else $sel3="";
+					} else {
 						if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
 						if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
 						if ($in_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
-					} else {
-						$userloc = $ul_r[loc];
-						if ($spco_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
-						if ($spco_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
-						if ($spco_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+						
 					}
 						
 					
 				echo "
+				
 					<select name='loc'>
 						<option value='fi' $sel1>
 							{$lng->__('Finnish')}
