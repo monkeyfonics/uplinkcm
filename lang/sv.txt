@@ -127,6 +127,8 @@ Virtual barcode=Virtuel referens
 Invoice number=Faktura nummer
 Not printed=Inte Printad
 Due date=Förfallodag
+Every=Varje
+Month(s)=Månad(er)
 /*/Reports/*/
 Monthly Report=Månads Rapport
 /*/Email/*/

@@ -171,7 +171,15 @@ echo "
 					{$lng->__('Recurring')}:
 				</td>
 				<td>
-					Every $in_r[recurring] month(s)
+				";
+				if ($in_r[recurring] == 0) {
+					echo "{$lng->__('No')}";
+				} else {
+					echo "{$lng->__('Every')} $in_r[recurring] {$lng->__('Month(s)')}";
+				}
+					
+					
+				echo "
 				</td>
 				
 				<td class='head'>
