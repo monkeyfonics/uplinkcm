@@ -197,12 +197,13 @@ while ($it_r = pg_fetch_array($it)) {
 //virtual barcode
 /*spec: version1 + iban16 + euro6 + cent2 + 000 + ref20 + due6yymmdd + check2 */
 $t = $total+$vattot;
+$t = round($t, 2);
 $ver = 4;
 $iban =  trim($acc_hold_r['bank_account'],"fiFI");
 $amount = explode(".", $t);
 $eur = str_pad($amount[0], 6, "0", STR_PAD_LEFT);
-$cnt = $amount[1];
-$mdl = 000;
+$cnt = str_pad($amount[1], 2, "0", STR_PAD_LEFT);
+$mdl = '000';
 $refvir = str_pad($in_r['ref'], 20, "0", STR_PAD_LEFT);
 $duevir = date('ymd', strtotime($in_r['due_date_out']));
 $virtual = $ver.$iban.$eur.$cnt.$mdl.$refvir.$duevir;

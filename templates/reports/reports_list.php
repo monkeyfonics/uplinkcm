@@ -35,21 +35,36 @@ echo "
 			<table class='list'>
 				
 	";
-		$daynow = "01";
+		$daynow = date(d);
+		$dayfirst = "01";
 		$monthnow = date(m);
 		$yearnow = date(Y);
 		$yearlast = $yearnow - 1;
 		$count = $monthnow;
+		
+		/* test for current month*/
+		
+		
 		/* i = amount of months to show */
 		for ($i = 1; $i <= 6; $i++) {
-			$dated =  date("Y-m-d", strtotime("$yearnow-$count-$daynow"));
+			if ($i == 1) {
+				$f = "first";
+				$dated =  date("Y-m-d", strtotime("$yearnow-$count-$daynow"));
+				$minus =  date("Y-m-d", strtotime("$yearnow-$count-$dayfirst"));
+			} else {
+				$f = "others";
+				$dated =  date("Y-m-d", strtotime("$yearnow-$count-$dayfirst"));
 						
-			$minus = strtotime ( '-1 month' , strtotime ( $dated ) ) ;
-			$minus = date ( 'Y-m-d' , $minus );
-			
-			/* subtract a day to make it the last of same month */
-			$dated = strtotime ( '-1 day' , strtotime ( $dated ) ) ;
+				$minus = strtotime ( '-1 month' , strtotime ( $dated ) ) ;
+				
+				
+				/* subtract a day to make it the last of same month */
+				$dated = strtotime ( '-1 day' , strtotime ( $dated ) ) ;
+				
+				$minus = date ( 'Y-m-d' , $minus );
 			$dated = date ( 'Y-m-d' , $dated );
+			}
+			
 			
 /* invoice */
 $query = "
@@ -94,7 +109,7 @@ $monthly = pg_query($conn, $query);
 				<tr>
 					<td class='bold'>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
-							$month $yearnow
+							$month $yearnow $i $f 
 						</a>
 					</td>
 					<td class='bold'>

@@ -216,8 +216,9 @@ echo "
 					</td>
 					<td>
 						";
-						if($in_r[pid]) { echo "$ua_r[lname], $ua_r[fname]"; }
-						if($in_r[cid]) { echo " - <span style='color:#656565;'>$ca_r[name]</span>"; }
+						if($in_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
+						
+						if($in_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
 					echo "
 					</td>
 					<td>
