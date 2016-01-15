@@ -40,31 +40,34 @@ echo "
 		$monthnow = date(m);
 		$yearnow = date(Y);
 		$yearlast = $yearnow - 1;
-		$count = $monthnow;
 		
-		/* test for current month*/
+		
+		/* test for current month
+		$dated =  date("Y-m-d", strtotime("$yearnow-$count-$daynow"));
+		$minus =  date("Y-m-d", strtotime("$yearnow-$count-$dayfirst"));
+		*/
+		
 		
 		
 		/* i = amount of months to show */
-		for ($i = 1; $i <= 6; $i++) {
+		for ($i = 1; $i <= 15; $i++) {
 			if ($i == 1) {
-				$f = "first";
-				$dated =  date("Y-m-d", strtotime("$yearnow-$count-$daynow"));
-				$minus =  date("Y-m-d", strtotime("$yearnow-$count-$dayfirst"));
+				$marker = "style='font-style: italic;'";
+				$dated =  date("Y-m-d", strtotime("$yearnow-$monthnow-$daynow"));
+				$minus =  date("Y-m-d", strtotime("$yearnow-$monthnow-$dayfirst"));
 			} else {
-				$f = "others";
-				$dated =  date("Y-m-d", strtotime("$yearnow-$count-$dayfirst"));
-						
+				$marker = "others";
+				$dated = $minus;
 				$minus = strtotime ( '-1 month' , strtotime ( $dated ) ) ;
 				
-				
-				/* subtract a day to make it the last of same month */
+				/* subtract a day to make it the last of same month as minus */
 				$dated = strtotime ( '-1 day' , strtotime ( $dated ) ) ;
 				
+				/*reformat them after subtractions*/
 				$minus = date ( 'Y-m-d' , $minus );
-			$dated = date ( 'Y-m-d' , $dated );
+				$dated = date ( 'Y-m-d' , $dated );
 			}
-			
+
 			
 /* invoice */
 $query = "
@@ -94,30 +97,27 @@ $query = "
 		
 	";
 
-$monthly = pg_query($conn, $query);	
-			/*subtract 1 for month */	
-			$count = $count - 1;
-			if ($count <= 0) {
-				$count = $count + 12;
-				$yearnow = $yearlast;
-			}
-
+$monthly = pg_query($conn, $query);
 			
-			$month = date(F,strtotime("2000-".$count."-01"));
+			
+			
+			$yearnow = date(Y,strtotime($minus));
+			$monthtext = date(F,strtotime($minus));
 			$now = date(n-Y);
+			
 			echo "
 				<tr>
-					<td class='bold'>
+					<td class='bold' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
-							$month $yearnow $i $f 
+							$monthtext $yearnow $i 
 						</a>
 					</td>
-					<td class='bold'>
+					<td class='bold' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
 							$minus - $dated
 						</a>
 					</td>
-					<td class='bold'>
+					<td class='bold' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
 							{$lng->__('Amount')}
 						</a>
@@ -165,7 +165,7 @@ $monthly = pg_query($conn, $query);
 						
 					</td>
 					<td>
-						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&ident=$monthly_r[invoice_id]'>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&invid=$monthly_r[invoice_id]'>
 						$monthly_r[header] - $monthly_r[addhead]
 						</a>
 					</td>
