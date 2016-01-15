@@ -111,13 +111,25 @@ if ($in_r[emailed]) {
 } else {
 	$emai = " ";
 }
+
+$query = "
+		SELECT MAX(id) as id
+		from		$acco.invoice_out
+		ORDER BY 	id DESC 
+		LIMIT 1
+		";
+		$invmaxid = pg_query($conn, $query);
+		$invmaxid_r = pg_fetch_array($invmaxid);
+		
+		$invnextid = $invmaxid_r[id]+1;
+
 /*use buttons row */
 echo "
 	<div class='buttons'>
 		$contact_link
 		
 		<a href='index.php?section=invoice&template=invoice_view&inoid=$inoid&ident=$in_r[ident]'>
-			<div class='header'>{$lng->__('Invoices')} - $in_r[header]</div>
+			<div class='header'>{$lng->__('Invoices')} - $in_r[header] $in_r[outid] $invnextid</div>
 		</a>
 		";
 		/* if invoice is published*/

@@ -46,7 +46,7 @@ $query = "
 	
 	
 	
-	$ret_url = 'index.php?section=def&template=def_list';
+	$ret_url = 'index.php?section=invoice&template=invoice_list_pend';
 	$message = "{$lng->__('Template Activated')}";
 	$icon = 'layout/img/icon_succ.png';
 		

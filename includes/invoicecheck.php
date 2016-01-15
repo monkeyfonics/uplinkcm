@@ -60,12 +60,25 @@ while ($in_r = pg_fetch_array($in)) {
 	}
 	
 	while ($in_r[active] == 't' && $datenow >= $next && $next <= $end_check) {
-		/*generate unique id for every invoice from template*/
-		$outrand = rand(100, 999);
-		$invout = $in_r[ident].$outrand;
+		/*generate unique running id for every invoice from template*/
+		$query = "
+		SELECT MAX(id) as id
+		from		$acco.invoice_out
+		ORDER BY 	id DESC 
+		LIMIT 1
+		";
+		$invmaxid = pg_query($conn, $query);
+		$invmaxid_r = pg_fetch_array($invmaxid);
+		
+		
+		$invnextid = $invmaxid_r[id]+1;
+		/*$outrand = rand(100, 999);*/
+		
+		/*adding id to invoice number to get a running rumber in sequence*/
+		$invout = $in_r[ident].$invnextid;
 			
 		
-		/*fetch invoice items to copy if not exist*/
+		/*fetch invoice items to copy even if they exist*/
 		$query = "
 		select		id,
 					cat,
@@ -147,7 +160,7 @@ while ($in_r = pg_fetch_array($in)) {
 			/*translate month into invoice language*/
 			$monthtrans = "{$inlang->__($month)}";
 			
-			echo $monthtrans."<br/>";
+			echo $monthtrans." $invnextid<br/>";
 			
 			$startTime = strtotime('+'.$rec.' months',$startTime); 
 			

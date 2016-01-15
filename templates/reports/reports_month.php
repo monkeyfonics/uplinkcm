@@ -94,8 +94,12 @@ $monthly = pg_query($conn, $query);
 						</a>
 					</td>
 					<td>
+						{$lng->__('Invoice number')}
+					</td>
+					<td>
 						{$lng->__('Invoice')}
 					</td>
+					
 					<td>
 						{$lng->__('Contact')}
 					</td>
@@ -189,6 +193,11 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td>
 						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&ident=$monthly_r[ident]'>
+							$monthly_r[invoice_id]
+						</a>
+					</td>
+					<td>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&ident=$monthly_r[ident]'>
 						$monthly_r[header] - $monthly_r[addhead]
 						</a>
 					</td>
@@ -214,6 +223,9 @@ $monthly = pg_query($conn, $query);
 				<tr>
 					<td>
 						{$lng->__('Total')}:
+						
+					</td>
+					<td>
 						
 					</td>
 					<td>

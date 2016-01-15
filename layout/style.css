@@ -421,9 +421,6 @@ div.header {
 .pub {
 	color: #919b38;
 }
-.bold {
-	font-weight: bold;
-}
 table.list {
 	width: 100%;
 	
@@ -434,7 +431,6 @@ table.list td {
 }
 table.list tr td:first-child {
 	text-align: left;
-	
 	
 }
 table.list tr:nth-child(odd) {
@@ -472,6 +468,13 @@ table.grid td {
 table.grid td.head {
 	color: #108143;
 	width: 150px;
+	text-align: center;
+}
+/*reports*/
+table.list tr td.report_header {
+	font-weight: bold;
+	font-size: 140%;
+	background: #fff;
 	text-align: center;
 }
 /* container for small boxes */

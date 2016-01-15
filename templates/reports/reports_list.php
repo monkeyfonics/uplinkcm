@@ -42,21 +42,14 @@ echo "
 		$yearlast = $yearnow - 1;
 		
 		
-		/* test for current month
-		$dated =  date("Y-m-d", strtotime("$yearnow-$count-$daynow"));
-		$minus =  date("Y-m-d", strtotime("$yearnow-$count-$dayfirst"));
-		*/
-		
-		
-		
 		/* i = amount of months to show */
-		for ($i = 1; $i <= 15; $i++) {
+		for ($i = 1; $i <= 8; $i++) {
 			if ($i == 1) {
 				$marker = "style='font-style: italic;'";
 				$dated =  date("Y-m-d", strtotime("$yearnow-$monthnow-$daynow"));
 				$minus =  date("Y-m-d", strtotime("$yearnow-$monthnow-$dayfirst"));
 			} else {
-				$marker = "others";
+				$marker = "style=' '";
 				$dated = $minus;
 				$minus = strtotime ( '-1 month' , strtotime ( $dated ) ) ;
 				
@@ -107,12 +100,16 @@ $monthly = pg_query($conn, $query);
 			
 			echo "
 				<tr>
-					<td class='bold' $marker>
+					<td class='report_header' $marker colspan='4'>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
-							$monthtext $yearnow $i 
+							$monthtext $yearnow
 						</a>
 					</td>
-					<td class='bold' $marker>
+					
+				</tr>
+				<tr>
+					
+					<td colspan='2' class='bold' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
 							$minus - $dated
 						</a>
@@ -159,10 +156,9 @@ $monthly = pg_query($conn, $query);
 			
 			echo "
 				<tr>
+					
 					<td>
-						
-						
-						
+						$monthly_r[invoice_id]
 					</td>
 					<td>
 						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&invid=$monthly_r[invoice_id]'>
@@ -183,17 +179,17 @@ $monthly = pg_query($conn, $query);
 			echo "
 				<tr>
 					<td>
-						
-						
-						
+
 					</td>
 					<td>
 						
 					</td>
+					
 					<td>
 						<b>$totalformat €</b>
 					</td>
 				</tr>
+				
 			";
 			
 			$total = 0;
