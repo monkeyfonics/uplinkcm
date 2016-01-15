@@ -41,6 +41,7 @@ $query = "
 					$acco.invoice_out.addhead as addhead,
 					$acco.invoice_out.def_id as def_id,
 					$acco.invoice_out.invoice_id as invoice_id,
+					$acco.invoice_out.runid as runid,
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
@@ -142,6 +143,8 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	$refformat = chunk_split($monthly_r[ref], 5, ' ');
 	/*format date */
 	$date = strtotime($monthly_r[dated_out]);
+	/*format invoice id */
+	$invidformat = chunk_split($monthly_r[invoice_id].$monthly_r[runid], 6, ' ');
 	$month = date('F', $date);
 	$date = date('Y-m-d', $date);
 	
@@ -150,7 +153,7 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	/*fields of data for report*/
 	$fields[] = array(
 	"date"=>$date,
-	"ref"=>$refformat, 
+	"invid"=>$invidformat, 
 	"contact"=>$contactcom,
 	"amount"=>$formatprice, 
 	"name"=>$monthly_r[header]." - ".$monthly_r[addhead]
@@ -175,7 +178,7 @@ $info = Array(
 	"hitem" => Array(
 		Array(
 			"date" => "{$lngpdf->__('Date')}",
-			"ref" => "{$lngpdf->__('Reference')}",
+			"invid" => "{$lngpdf->__('Invoice number')}",
 			"contact" => "{$lngpdf->__('Contact')}",
 			"amount" => "{$lngpdf->__('Amount')}",
 			"name" => "{$lngpdf->__('Invoice')}",

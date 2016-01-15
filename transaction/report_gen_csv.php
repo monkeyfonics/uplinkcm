@@ -20,6 +20,7 @@ $query = "
 					$acco.invoice_out.addhead as addhead,
 					$acco.invoice_out.def_id as def_id,
 					$acco.invoice_out.invoice_id as invoice_id,
+					$acco.invoice_out.runid as runid,
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
@@ -43,7 +44,7 @@ $file = fopen('php://output', 'w');
 
 /* write headers */
 
-$headers = array('Dated', 'Reference', 'Name', 'Header', 'Amount');
+$headers = array('Dated', 'Invoice number', 'Name', 'Header', 'Amount');
 fputcsv($file, $headers);
 $fields;
 while ($monthly_r = pg_fetch_assoc($monthly)) {
@@ -121,6 +122,8 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	$formatprice = number_format($combprice, 2, ',', '');
 	/*format ref number*/
 	$refformat = chunk_split($monthly_r[ref], 5, ' ');
+	/*format invoice id */
+	$invidformat = chunk_split($monthly_r[invoice_id].$monthly_r[runid], 6, ' ');
 	/*format date */
 	$date = strtotime($monthly_r[dated_out]);
 	$date = date('Y-m-d', $date);
@@ -129,7 +132,7 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	
 	
 	
-	$fields = array($date, $refformat, $contactcom, $monthly_r[header]." - ".$monthly_r[addhead], $formatprice);
+	$fields = array($date, $invidformat, $contactcom, $monthly_r[header]." - ".$monthly_r[addhead], $formatprice);
 	/*input into csv */
 	fputcsv($file, $fields);
 }

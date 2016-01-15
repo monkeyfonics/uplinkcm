@@ -63,6 +63,7 @@ do {
 					$acco.invoice_out.addhead as addhead,
 					$acco.invoice_out.def_id as def_id,
 					$acco.invoice_out.invoice_id as invoice_id,
+					$acco.invoice_out.runid as runid,
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
@@ -111,7 +112,7 @@ echo "
 					{$lng->__('Dated')}:
 				</th>
 				<th>
-					{$lng->__('Reference')}:
+					{$lng->__('Invoice')}:
 				</th>
 				<th>
 					{$lng->__('Header')}:
@@ -201,6 +202,8 @@ echo "
 			$pripath = "index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]&invid=$in_r[invoice_id]";
 			
 			$refformat = chunk_split($in_r[ref], 5, ' ');
+			/*format invoice id*/
+			$invidformat = chunk_split($in_r[invoice_id].$in_r[runid], 6, ' ');
 			
 			echo "	
 			
@@ -213,7 +216,7 @@ echo "
 					</td>
 					<td>
 						<a href='$pripath'>
-							$refformat
+							$invidformat
 						</a>
 					</td>
 					<td>

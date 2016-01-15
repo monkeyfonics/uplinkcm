@@ -28,6 +28,7 @@ $query = "
   				$acco.invoice_out.addhead as addhead,
   				$acco.invoice_out.def_id as def_id,
   				$acco.invoice_out.invoice_id as invoice_id,
+  				$acco.invoice_out.runid as runid,
   				$acco.invoice_out.created as created_out,
   				$acco.invoice_out.dated as dated_out,
   				$acco.invoice_out.due_date as due_date_out,
@@ -112,16 +113,6 @@ if ($in_r[emailed]) {
 	$emai = " ";
 }
 
-$query = "
-		SELECT MAX(id) as id
-		from		$acco.invoice_out
-		ORDER BY 	id DESC 
-		LIMIT 1
-		";
-		$invmaxid = pg_query($conn, $query);
-		$invmaxid_r = pg_fetch_array($invmaxid);
-		
-		$invnextid = $invmaxid_r[id]+1;
 
 /*use buttons row */
 echo "
@@ -129,7 +120,7 @@ echo "
 		$contact_link
 		
 		<a href='index.php?section=invoice&template=invoice_view&inoid=$inoid&ident=$in_r[ident]'>
-			<div class='header'>{$lng->__('Invoices')} - $in_r[header] $in_r[outid] $invnextid</div>
+			<div class='header'>{$lng->__('Invoices')} - $in_r[header]</div>
 		</a>
 		";
 		/* if invoice is published*/
@@ -149,7 +140,7 @@ echo "
 				
 		} else {
 			echo "
-				<a href='transaction.php?section=invoice&t=invoice_pub&ident=$in_r[ident]&inoid=$inoid'>
+				<a href='transaction.php?section=invoice&t=invoice_pub&invid=$in_r[invoice_id]&inoid=$inoid'>
 					<div>{$lng->__('Publish')}</div>
 				</a>
 			";
@@ -173,7 +164,7 @@ echo "
 ";
 
 $refformat = chunk_split($in_r[ref], 5, ' ');
-
+$invidformat = chunk_split($in_r[invoice_id].$in_r[runid], 6, ' ');
 echo "
 	<div class='fullcont'>
 		
@@ -185,7 +176,7 @@ echo "
 				</td>
 				<td>
 					<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&invid=$in_r[invoice_id]'>
-						$in_r[invoice_id]
+						$invidformat
 					</a>
 				</td>
 				<td class='head'>

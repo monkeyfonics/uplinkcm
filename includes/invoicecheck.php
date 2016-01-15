@@ -60,22 +60,11 @@ while ($in_r = pg_fetch_array($in)) {
 	}
 	
 	while ($in_r[active] == 't' && $datenow >= $next && $next <= $end_check) {
-		/*generate unique running id for every invoice from template*/
-		$query = "
-		SELECT MAX(id) as id
-		from		$acco.invoice_out
-		ORDER BY 	id DESC 
-		LIMIT 1
-		";
-		$invmaxid = pg_query($conn, $query);
-		$invmaxid_r = pg_fetch_array($invmaxid);
 		
+		$outrand = rand(100, 999);
 		
-		$invnextid = $invmaxid_r[id]+1;
-		/*$outrand = rand(100, 999);*/
-		
-		/*adding id to invoice number to get a running rumber in sequence*/
-		$invout = $in_r[ident].$invnextid;
+		/*adding random nr to invoice number, running number is added once its published*/
+		$invout = $in_r[ident].$outrand;
 			
 		
 		/*fetch invoice items to copy even if they exist*/

@@ -42,7 +42,7 @@ class report {
 		//loop header names
 		foreach ($info['hitem'] as $hitems) {
 			$this->pdf->Cell($cell1,5,$hitems['date'],B,0,C);
-			$this->pdf->Cell($cell2,5,$hitems['ref'],B,0,C);
+			$this->pdf->Cell($cell2,5,$hitems['invid'],B,0,C);
 			$this->pdf->Cell($cell4,5,$hitems['name'],B,0,C);
 			$this->pdf->Cell($cell3,5,$hitems['contact'],B,0,C);
 			$this->pdf->Cell($cell5,5,$hitems['amount'],B,0,C);
@@ -54,7 +54,7 @@ class report {
 		//loop content
 		foreach ($info['items'] as $nr => $item) {
 			$this->pdf->Cell($cell1,5,$item['date'],1,0,C,$oddeven);
-			$this->pdf->Cell($cell2,5,$item['ref'],1,0,L,$oddeven);
+			$this->pdf->Cell($cell2,5,$item['invid'],1,0,L,$oddeven);
 			$this->pdf->Cell($cell4,5,$item['name'],1,0,L,$oddeven);
 			$this->pdf->Cell($cell3,5,$item['contact'],1,0,L,$oddeven);
 			$this->pdf->Cell($cell5,5,$item['amount'],1,0,R,$oddeven);

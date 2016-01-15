@@ -181,7 +181,8 @@ $monthly = pg_query($conn, $query);
 	
 	
 	$formatprice = number_format($combprice, 2, ',', '');
-	
+	/*format invoice id */
+	$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
 				
 			
 			$dated = date ( 'Y-m-d' , strtotime($monthly_r[dated_out]));
@@ -193,7 +194,7 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td>
 						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&ident=$monthly_r[ident]'>
-							$monthly_r[invoice_id]
+							$invidformat
 						</a>
 					</td>
 					<td>

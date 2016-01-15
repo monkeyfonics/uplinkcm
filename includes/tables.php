@@ -115,7 +115,7 @@ $tables = array(
             "cash" => array("type"=>"boolean"),
             "printed" => array("type"=>"timestamp without time zone"),
             "emailed" => array("type"=>"timestamp without time zone"),
-            
+            "runid" => array("type"=>"integer"),
             ),
         "index" => array( // List of indexes
 			"indexname" => array("table"=>"tablename","definition"=>"count(foo)"),

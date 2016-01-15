@@ -42,4 +42,5 @@ Refenrence=Refenrens
 Contact=Kontakt
 Amount=Summa
 Invoice=Faktura
+Invoice number=Faktura nummer
 Total=Totalt

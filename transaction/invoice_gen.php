@@ -53,6 +53,7 @@ $query = "
   				$acco.invoice_out.id as outid,
   				$acco.invoice_out.addhead as addhead,
   				$acco.invoice_out.invoice_id as invoice_id,
+  				$acco.invoice_out.runid as runid,
   				$acco.invoice_out.def_id as def_id,
   				$acco.invoice_out.created as created_out,
   				$acco.invoice_out.dated as dated_out,
@@ -223,6 +224,8 @@ $datedcount = new DateTime($in_r[dated_out]);
 $duecount = new DateTime($in_r[due_date_out]);
 
 $diff = $duecount->diff($datedcount)->format("%a");
+/*format invoice id*/
+$invidformat = chunk_split($in_r[invoice_id].$in_r[runid], 6, ' ');
 
 /* pass info to pdf creation */
 $info = Array(
