@@ -374,10 +374,11 @@ echo "
 				";
 					/*check users language somehow if new template*/
 					if ($blank == 1) {
-					
-						if ($conlang == 'fi') $sel1=" selected='selected'"; else $sel1="";
-						if ($conlang == 'sv') $sel2=" selected='selected'"; else $sel2="";
-						if ($conlang == 'en') $sel3=" selected='selected'"; else $sel3="";
+						/*if company is selected with primary or contact selected*/
+						if ($conlang or $spco_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($conlang or $spco_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($conlang or $spco_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+						
 					} else {
 						if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
 						if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
