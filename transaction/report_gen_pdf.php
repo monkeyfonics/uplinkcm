@@ -144,7 +144,7 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	/*format date */
 	$date = strtotime($monthly_r[dated_out]);
 	/*format invoice id */
-	$invidformat = chunk_split($monthly_r[invoice_id].$monthly_r[runid], 6, ' ');
+	$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
 	$month = date('F', $date);
 	$date = date('Y-m-d', $date);
 	

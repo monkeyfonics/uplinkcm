@@ -11,11 +11,14 @@ $datenow = date('Y-m-d');
 
 /* fetch info for invoice */
 
-$invid = $_GET['invid'];
+$invpend = $_GET['invid'];
 $inoid = $_GET['inoid'];
 
 /*make due date one week from today*/
 $dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
+
+/*create new invoice id from date and runnng number */
+$id_date = date('Ym');
 
 
 /* create running number for invoices once they are published */
@@ -31,20 +34,31 @@ $dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 		
 		/* add 1 to get the next free number*/
 		$invnextid = $invmaxid_r[runid]+1;
-
+		$invnextid = str_pad($invnextid, 3, "0", STR_PAD_LEFT);
 /* adding running number to invoice when its published*/
- 		$invoice_id_add = $invid.$invnextid;
+ 		$invoice_id = $id_date.$invnextid;
 		
 /*update invoice publish status */
 
 $query = "
 			update $acco.invoice_out
 			set		pub=true,
+					dated='$datenow',
 					due_date='$dueplus',
+					invoice_id=$invoice_id,
 					runid=$invnextid
 			where	id=$inoid
 		";
-	$ch = pg_query($conn, $query);
+$ch = pg_query($conn, $query);
+	
+/*update invoice items to same invoiceid*/
+$query = "
+			update $acco.invoice_out_item
+			set		invoice_id=$invoice_id
+					
+			where	invoice_id=$invpend
+		";
+$ui = pg_query($conn, $query);
 
 
 $message = $lng->__('Invoice')." ".$lng->__('Published');

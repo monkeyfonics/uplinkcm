@@ -203,7 +203,7 @@ echo "
 			
 			$refformat = chunk_split($in_r[ref], 5, ' ');
 			/*format invoice id*/
-			$invidformat = chunk_split($in_r[invoice_id].$in_r[runid], 6, ' ');
+			$invidformat = chunk_split($in_r[invoice_id], 6, ' ');
 			
 			echo "	
 			

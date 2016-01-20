@@ -76,6 +76,7 @@ $query = "
 					$acco.invoice_out.addhead as addhead,
 					$acco.invoice_out.def_id as def_id,
 					$acco.invoice_out.invoice_id as invoice_id,
+					$acco.invoice_out.runid as runid,
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,

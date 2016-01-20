@@ -64,8 +64,8 @@ while ($in_r = pg_fetch_array($in)) {
 		$outrand = rand(100, 999);
 		
 		/*adding random nr to invoice number, running number is added once its published*/
-		$invout = $in_r[ident].$outrand;
-			
+		$invpend = $in_r[ident].$outrand;
+		
 		
 		/*fetch invoice items to copy even if they exist*/
 		$query = "
@@ -109,7 +109,7 @@ while ($in_r = pg_fetch_array($in)) {
 	
 			)
 		";
-		$ioi = pg_query_params($conn, $query, Array($ii_r[id],$ii_r[cat],$ii_r[item],$invout,$ii_r[price],$ii_r[qty],$ii_r[unit],$ii_r[vat]));
+		$ioi = pg_query_params($conn, $query, Array($ii_r[id],$ii_r[cat],$ii_r[item],$invpend,$ii_r[price],$ii_r[qty],$ii_r[unit],$ii_r[vat]));
 			
 			
 		}
@@ -204,7 +204,7 @@ while ($in_r = pg_fetch_array($in)) {
 	
 			)
 		";
-		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$monthtrans,$ident,$invout,$datenow,$next,$dueplus,$compref,$pub,$cash));
+		$io = pg_query_params($conn, $query, Array($header,$pid,$cid,$loco,$monthtrans,$ident,$invpend,$datenow,$next,$dueplus,$compref,$pub,$cash));
 		
 		
 		/* try to check if date exceeds max date for month*/

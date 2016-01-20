@@ -36,6 +36,31 @@ $in = pg_query($conn, $query);
 
 $in_r = pg_fetch_array($in);
 
+
+/* fecth invoices for selected template */
+$query = "
+	select		id,
+				header,
+				addhead,
+				pid,
+				cid,
+  				loc,
+  				invoice_id,
+  				def_id,
+  				created,
+  				dated,
+  				due_date,
+  				ref,
+  				pub
+	from		$acco.invoice_out
+	where		def_id = $in_r[ident]
+	order by	dated desc
+	
+";
+
+$def = pg_query($conn, $query);
+
+
 /*contact */
 $query = "
 	select		$acco.invoice_def.cid,
@@ -340,5 +365,51 @@ $it = pg_query($conn, $query);
 		</table>
 		
 	</div>
+	";
+	
+	echo "
+		<div class='fullcont'>
+			<h3 class='header'>{$lng->__('Invoices')}</h3>
+			<table class='list'>
+				<tr>
+						<th>
+							{$lng->__('Dated')}
+						</th>
+						<th>
+							{$lng->__('Header')}
+						</th>
+						<th>
+							{$lng->__('Invoice number')}
+						</th>
+					</tr>
+			
+		";
+		while ($def_r = pg_fetch_array($def)) {
+			/* format dates*/
+			$def_r[dated] = date('Y-m-d', strtotime($def_r[dated]));
+				echo "
+					<tr>
+						<td>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$def_r[id]&ident=$def_r[def_id]&invid=$def_r[invoice_id]'>
+								$def_r[dated]
+							</a>
+						</td>
+						<td>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$def_r[id]&ident=$def_r[def_id]&invid=$def_r[invoice_id]'>
+								$def_r[header] - $def_r[addhead]
+							</a>
+						</td>
+						<td>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$def_r[id]&ident=$def_r[def_id]&invid=$def_r[invoice_id]'>
+								$def_r[invoice_id]
+							</a>
+						</td>
+					</tr>
+					
+					";
+			}
+	echo "
+			</table>
+		</div>
 	";
 ?>

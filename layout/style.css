@@ -393,6 +393,7 @@ div.fullcont {
 	width: 95%;
 	min-height: 300px;
 	margin: auto;
+	margin-bottom: 10px;
 	background: #fff;
 	overflow:hidden;
 	padding: 8px;

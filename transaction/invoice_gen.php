@@ -225,7 +225,7 @@ $duecount = new DateTime($in_r[due_date_out]);
 
 $diff = $duecount->diff($datedcount)->format("%a");
 /*format invoice id*/
-$invidformat = chunk_split($in_r[invoice_id].$in_r[runid], 6, ' ');
+$invidformat = chunk_split($in_r[invoice_id], 6, ' ');
 
 /* pass info to pdf creation */
 $info = Array(

@@ -111,7 +111,7 @@ echo "
 					{$lng->__('Dated')}:
 				</th>
 				<th>
-					{$lng->__('Invoice')}:
+					{$lng->__('Template')}:
 				</th>
 				<th>
 					{$lng->__('Header')}:
@@ -209,7 +209,7 @@ echo "
 					</td>
 					<td>
 						<a href='$pripath' class='pub'>
-							$invidformat
+							$in_r[ident]
 						</a>
 					</td>
 					<td>

@@ -123,7 +123,7 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	/*format ref number*/
 	$refformat = chunk_split($monthly_r[ref], 5, ' ');
 	/*format invoice id */
-	$invidformat = chunk_split($monthly_r[invoice_id].$monthly_r[runid], 6, ' ');
+	$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
 	/*format date */
 	$date = strtotime($monthly_r[dated_out]);
 	$date = date('Y-m-d', $date);

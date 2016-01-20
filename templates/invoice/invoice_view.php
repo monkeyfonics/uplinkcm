@@ -20,6 +20,7 @@ $query = "
 				$acco.invoice_def.ident as ident,
 				$acco.invoice_def.end_date as end_date,
   				$acco.invoice_def.recurring as recurring,
+  				$acco.invoice_def.header as defhead,
 				$acco.invoice_out.header as header,
 				$acco.invoice_out.pid as pid,
 				$acco.invoice_out.cid as cid,
@@ -80,6 +81,7 @@ $duecount = new DateTime($in_r[due_date_out]);
 
 $diff = $duecount->diff($datedcount)->format("%a");
 
+$in_r[created_out] = date('Y-m-d', strtotime($in_r[created_out]));
 $in_r[dated_out] = date('Y-m-d', strtotime($in_r[dated_out]));
 $in_r[due_date_out] = date('Y-m-d', strtotime($in_r[due_date_out]));
 
@@ -118,6 +120,8 @@ if ($in_r[emailed]) {
 echo "
 	<div class='buttons'>
 		$contact_link
+		
+		
 		
 		<a href='index.php?section=invoice&template=invoice_view&inoid=$inoid&ident=$in_r[ident]'>
 			<div class='header'>{$lng->__('Invoices')} - $in_r[header]</div>
@@ -164,7 +168,7 @@ echo "
 ";
 
 $refformat = chunk_split($in_r[ref], 5, ' ');
-$invidformat = chunk_split($in_r[invoice_id].$in_r[runid], 6, ' ');
+$invidformat = chunk_split($in_r[invoice_id], 6, ' ');
 echo "
 	<div class='fullcont'>
 		
@@ -180,7 +184,7 @@ echo "
 					</a>
 				</td>
 				<td class='head'>
-					{$lng->__('Header')}:
+					{$lng->__('Template header')}:
 				</td>
 				<td>
 					<a href='index.php?section=def&template=def_view&ident=$in_r[def_id]'>$in_r[header]</a>
@@ -205,12 +209,28 @@ echo "
 				</td>
 			</tr>
 			<tr>
-				<td class='head'>
-					{$lng->__('Dated')}:
-				</td>
-				<td>
-					$in_r[dated_out]
-				</td>
+			";
+				if ($in_r[pub] == f) {
+					echo "
+					<td class='head'>
+						{$lng->__('Created')}:
+					</td>
+					<td>
+						$in_r[created_out]
+					</td>
+					";
+				} else {
+					echo "
+					<td class='head'>
+						{$lng->__('Dated')}:
+					</td>
+					<td>
+						$in_r[dated_out]
+					</td>
+					";
+				}
+				
+				echo "			
 				<td class='head'>
 					{$lng->__('Company')}:
 				</td>

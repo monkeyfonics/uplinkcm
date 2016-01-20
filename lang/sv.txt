@@ -85,6 +85,7 @@ Add Contact=Lägg till kontakt
 Add=Lägg till
 Company Saved=Firma Sparad
 /*/Templates/*/
+Template=Botten
 New Invoice Template=Nytt Faktura Botten
 Edit Template=Editera Botten
 Save Template=Spara Botten
@@ -129,6 +130,7 @@ Not printed=Inte Printad
 Due date=Förfallodag
 Every=Varje
 Month(s)=Månad(er)
+Template header=Bottnets Rubrik
 /*/Reports/*/
 Monthly Report=Månads Rapport
 /*/Email/*/
