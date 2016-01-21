@@ -1,1 +1,14 @@
 English=Suomi
+/*/months/*/
+January=Tammikuu
+February=Helmikuu
+March=Maaliskuu
+April=Huhtikuu
+May=Toukokuu
+June=Kesäkuu
+July=Heinäkuu
+August=Elokuu
+September=Syyskuu
+October=Lokakuu
+November=Marraskuu
+December=Joulukuu

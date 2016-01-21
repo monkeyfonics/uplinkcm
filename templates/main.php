@@ -52,7 +52,7 @@ $query = "
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
-		order by	$acco.invoice_out.dated desc
+		order by	$acco.invoice_out.dated desc, $acco.invoice_out.id desc
 		limit 		10
 		
 	";

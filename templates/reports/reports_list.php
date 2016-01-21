@@ -85,7 +85,7 @@ $query = "
 		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.dated between '$minus' and '$dated'
 		and			$acco.invoice_out.pub = true
-		order by	$acco.invoice_out.dated desc
+		order by	$acco.invoice_out.dated desc, $acco.invoice_out.invoice_id desc
 		
 				
 		
@@ -110,7 +110,7 @@ $monthly = pg_query($conn, $query);
 				</tr>
 				<tr>
 					
-					<td colspan='2' class='bold' $marker>
+					<td colspan='3' class='bold' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
 							$minus - $dated
 						</a>
@@ -156,10 +156,14 @@ $monthly = pg_query($conn, $query);
 			$formatprice = number_format($combprice, 2, ',', '');
 			/*format invoice id */
 			$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
+			/*format date*/
+			$dated_out = date('Y-m-d',strtotime($monthly_r[dated_out]));
 			
 			echo "
 				<tr>
-					
+					<td>
+						$dated_out
+					</td>
 					<td>
 						$invidformat
 					</td>
@@ -187,7 +191,9 @@ $monthly = pg_query($conn, $query);
 					<td>
 						
 					</td>
-					
+					<td>
+						
+					</td>
 					<td>
 						<b>$totalformat €</b>
 					</td>
