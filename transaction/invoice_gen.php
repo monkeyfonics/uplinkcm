@@ -229,7 +229,7 @@ $invidformat = chunk_split($in_r[invoice_id], 6, ' ');
 
 /* pass info to pdf creation */
 $info = Array(
-	"nr" => $in_r['ident'],
+	"nr" => $invidformat,
 	"dat" => $dated,
 	"due" => $due,
 	"terms" => $diff,
