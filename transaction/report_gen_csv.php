@@ -24,6 +24,7 @@ $query = "
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
+					$acco.invoice_out.cash as cash,
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
@@ -44,11 +45,15 @@ $file = fopen('php://output', 'w');
 
 /* write headers */
 
-$headers = array('Dated', 'Invoice number', 'Name', 'Header', 'Amount');
+$headers = array('Dated', 'Invoice number', 'Name', 'Header', 'Amount', 'Cash');
 fputcsv($file, $headers);
 $fields;
 while ($monthly_r = pg_fetch_assoc($monthly)) {
-	
+			if ($monthly_r[cash] == t) {
+				$cash = 'x';
+			} else {
+				$cash = ' ';
+			}
 /*get name for contact*/
 					
 $query = "
@@ -132,7 +137,7 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	
 	
 	
-	$fields = array($date, $invidformat, $contactcom, $monthly_r[header]." - ".$monthly_r[addhead], $formatprice);
+	$fields = array($date, $invidformat, $contactcom, $monthly_r[header]." - ".$monthly_r[addhead], $formatprice, $cash);
 	/*input into csv */
 	fputcsv($file, $fields);
 }

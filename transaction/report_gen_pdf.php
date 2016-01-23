@@ -45,6 +45,7 @@ $query = "
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
+					$acco.invoice_out.cash as cash,
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
@@ -66,7 +67,11 @@ $monthly = pg_query($conn, $query);
 
 
 while ($monthly_r = pg_fetch_assoc($monthly)) {
-	
+			if ($monthly_r[cash] == t) {
+				$cash = 'x';
+			} else {
+				$cash = ' ';
+			}
 /*get name for contact*/
 					
 $query = "
@@ -155,7 +160,8 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 	"date"=>$date,
 	"invid"=>$invidformat, 
 	"contact"=>$contactcom,
-	"amount"=>$formatprice, 
+	"amount"=>$formatprice,
+	"cash"=>$cash,
 	"name"=>$monthly_r[header]." - ".$monthly_r[addhead]
 	);
 	
@@ -182,6 +188,7 @@ $info = Array(
 			"contact" => "{$lngpdf->__('Contact')}",
 			"amount" => "{$lngpdf->__('Amount')}",
 			"name" => "{$lngpdf->__('Invoice')}",
+			"cash" => "{$lngpdf->__('Cash')}",
 			),
 		),
 	"items" => $fields,

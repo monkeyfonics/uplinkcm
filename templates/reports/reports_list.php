@@ -80,7 +80,8 @@ $query = "
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
-					$acco.invoice_out.pub as pub
+					$acco.invoice_out.pub as pub,
+					$acco.invoice_out.cash as cash
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.dated between '$minus' and '$dated'
@@ -120,9 +121,21 @@ $monthly = pg_query($conn, $query);
 							{$lng->__('Amount')}
 						</a>
 					</td>
+					<td class='bold' $marker>
+						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
+							{$lng->__('Cash')}
+						</a>
+					</td>
 				</tr>
 			";
 		while ($monthly_r = pg_fetch_array($monthly)) {
+			if ($monthly_r[cash] == t) {
+				$cash = "&#10004;";
+			} else {
+				$cash = " ";
+			}
+				
+			
 			 /*invoice items for counting total cost*/
 					
 			$query = "
@@ -173,7 +186,10 @@ $monthly = pg_query($conn, $query);
 						</a>
 					</td>
 					<td>
-						$formatprice €
+						$formatprice € 
+					</td>
+					<td style='text-align:center;'>
+						$cash
 					</td>
 				</tr>
 			";
@@ -196,6 +212,9 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td>
 						<b>$totalformat €</b>
+					</td>
+					<td>
+						
 					</td>
 				</tr>
 				

@@ -35,6 +35,7 @@ $query = "
   				$acco.invoice_out.due_date as due_date_out,
   				$acco.invoice_out.ref as ref,
   				$acco.invoice_out.pub as pub,
+  				$acco.invoice_out.cash as cash,
   				$acco.invoice_out.printed as printed,
   				$acco.invoice_out.emailed as emailed
 	from		$acco.invoice_def left OUTER JOIN $acco.invoice_out ON ($acco.invoice_def.ident = $acco.invoice_out.def_id)
@@ -114,7 +115,11 @@ if ($in_r[emailed]) {
 } else {
 	$emai = " ";
 }
-
+if ($in_r[cash] == t) {
+	$cash = "&bull;";
+} else {
+	$cash = " ";
+}
 
 /*use buttons row */
 echo "
@@ -141,6 +146,11 @@ echo "
 					</a>
 					";
 				}
+			echo "
+				<a href='transaction.php?section=invoice&t=invoice_cash&ident=$in_r[ident]&inoid=$inoid'>
+					<div>{$lng->__('Cash')} $cash</div>
+				</a>
+				";
 				
 		} else {
 			echo "

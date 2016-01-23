@@ -131,6 +131,8 @@ Due date=Förfallodag
 Every=Varje
 Month(s)=Månad(er)
 Template header=Bottnets Rubrik
+Cash=Kontant
+updated to=uppdaterad till
 /*/Reports/*/
 Monthly Report=Månads Rapport
 /*/Email/*/

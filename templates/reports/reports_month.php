@@ -71,6 +71,7 @@ $query = "
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
+					$acco.invoice_out.cash as cash,
 					$acco.invoice_out.pub as pub
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
@@ -89,28 +90,35 @@ $monthly = pg_query($conn, $query);
 			
 			echo "
 				<tr>
-					<td>
+					<th>
 						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'>
 						$month
 						</a>
-					</td>
-					<td>
+					</th>
+					<th>
 						{$lng->__('Invoice number')}
-					</td>
-					<td>
+					</th>
+					<th>
 						{$lng->__('Invoice')}
-					</td>
+					</th>
 					
-					<td>
+					<th>
 						{$lng->__('Contact')}
-					</td>
-					<td>
+					</th>
+					<th>
 						{$lng->__('Amount')}
-					</td>
+					</th>
+					<th>
+						{$lng->__('Cash')}
+					</th>
 				</tr>
 			";
 		while ($monthly_r = pg_fetch_array($monthly)) {
-			
+			if ($monthly_r[cash] == t) {
+				$cash = "&#10004;";
+			} else {
+				$cash = " ";
+			}
 			 /*get name for contact*/
 					
 			$query = "
@@ -211,6 +219,9 @@ $monthly = pg_query($conn, $query);
 					<td>
 						$formatprice €
 					</td>
+					<td style='text-align:center;'>
+						$cash
+					</td>
 				</tr>
 			";
 			
@@ -238,6 +249,9 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td>
 						<b>$totalformat €</b>
+					</td>
+					<td>
+						
 					</td>
 				</tr>
 			";

@@ -44,3 +44,4 @@ Amount=Summa
 Invoice=Faktura
 Invoice number=Faktura nummer
 Total=Totalt
+Cash=Kontant

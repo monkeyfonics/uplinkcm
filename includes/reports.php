@@ -33,19 +33,21 @@ class report {
 		$this->pdf->Cell(0,10,$info['from']." - ".$info['to'],0,1,C);
 		
 		//cell widths
-		$cell1 = 40;
-		$cell2 = 40;
+		$cell1 = 35;
+		$cell2 = 35;
 		$cell3 = 75;
-		$cell4 = 85;
+		$cell4 = 80;
 		$cell5 = 30;
+		$cell6 = 15;
 		$collcomb = $cell1+$cell2+$cell3+$cell4;
 		//loop header names
 		foreach ($info['hitem'] as $hitems) {
 			$this->pdf->Cell($cell1,5,$hitems['date'],B,0,C);
 			$this->pdf->Cell($cell2,5,$hitems['invid'],B,0,C);
-			$this->pdf->Cell($cell4,5,$hitems['name'],B,0,C);
-			$this->pdf->Cell($cell3,5,$hitems['contact'],B,0,C);
+			$this->pdf->Cell($cell3,5,$hitems['name'],B,0,C);
+			$this->pdf->Cell($cell4,5,$hitems['contact'],B,0,C);
 			$this->pdf->Cell($cell5,5,$hitems['amount'],B,0,C);
+			$this->pdf->Cell($cell6,5,$hitems['cash'],B,0,C);
 		}
 		$this->pdf->Ln();
 		$this->pdf->SetFont('DejaVu','',10);
@@ -55,9 +57,10 @@ class report {
 		foreach ($info['items'] as $nr => $item) {
 			$this->pdf->Cell($cell1,5,$item['date'],1,0,C,$oddeven);
 			$this->pdf->Cell($cell2,5,$item['invid'],1,0,L,$oddeven);
-			$this->pdf->Cell($cell4,5,$item['name'],1,0,L,$oddeven);
-			$this->pdf->Cell($cell3,5,$item['contact'],1,0,L,$oddeven);
+			$this->pdf->Cell($cell3,5,$item['name'],1,0,L,$oddeven);
+			$this->pdf->Cell($cell4,5,$item['contact'],1,0,L,$oddeven);
 			$this->pdf->Cell($cell5,5,$item['amount'],1,0,R,$oddeven);
+			$this->pdf->Cell($cell6,5,$item['cash'],1,0,C,$oddeven);
 			$this->pdf->Ln();
 			if ($oddeven == 0) {
 				$oddeven = 1;

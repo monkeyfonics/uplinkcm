@@ -68,13 +68,14 @@ do {
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
 					$acco.invoice_out.pub as pub,
+					$acco.invoice_out.cash as cash,
 					$acco.invoice_out.printed as printed,
 					$acco.invoice_out.emailed as emailed
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.def_id = $acco.invoice_def.ident)
 		where		$acco.invoice_out.pub = true
 		$sqlfilt
-		order by	$acco.invoice_out.dated desc, $acco.invoice_out.id desc
+		order by	$acco.invoice_out.dated desc, $acco.invoice_out.invoice_id desc
 		limit 		{$rows}
 		offset		{$fetchrow}
 		
@@ -124,10 +125,11 @@ echo "
 					{$lng->__('Amount')}:
 				</th>
 				<th>
-					{$lng->__('Printed')}:
+					{$lng->__('Printed')} / @:
 				</th>
+				
 				<th>
-					@
+					€
 				</th>
 			</tr>
 			";
@@ -174,7 +176,11 @@ echo "
 			} else {
 				$emailed = " ";
 			}
-			
+			if ($in_r[cash] == t) {
+				$cash = "&#10004;";
+			} else {
+				$cash = " ";
+			}
 			
 			/*invoice items for counting total cost*/
 					
@@ -235,10 +241,11 @@ echo "
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
 					<td>
-						$printed
+						$printed $emailed
 					</td>
+					
 					<td>
-						$emailed
+						$cash
 					</td>
 				</tr>
 			";
