@@ -34,10 +34,10 @@ $id_date = date('Ym');
 		
 		/* add 1 to get the next free number*/
 		$invnextid = $invmaxid_r[runid]+1;
-		if ($invnextid >= 1000) {
-			$invnextid = '001';
+		if ($invnextid >= 10000) {
+			$invnextid = '0001';
 		}
-		$invnextid = str_pad($invnextid, 3, "0", STR_PAD_LEFT);
+		$invnextid = str_pad($invnextid, 4, "0", STR_PAD_LEFT);
 /* adding running number to invoice when its published*/
  		$invoice_id = $id_date.$invnextid;
 		

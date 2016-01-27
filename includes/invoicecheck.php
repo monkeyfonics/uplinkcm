@@ -159,9 +159,14 @@ while ($in_r = pg_fetch_array($in)) {
 			$dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 			
 			/* reference gen */
+			if ($in_r[ongoing] == 't') {
+				$firstdigit = '2';
+			} else {
+				$firstdigit = '1';
+			}
 			$rand = rand(100, 999);
 			$refdat = date('Ymd', strtotime($next));
-			$ref = "1".$refdat.$rand;
+			$ref = $firstdigit.$refdat.$rand;
 			
 			$compref = $ref.viite($ref);
 			
