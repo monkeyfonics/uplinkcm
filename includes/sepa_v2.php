@@ -30,14 +30,14 @@ class sepa {
 		if (file_exists($invoice['logo']))		
 			$this->pdf->Image($invoice['logo'],15,5,0,25);
 		$this->pdf->SetFontSize(8);
-		$this->pdf->SetX(50);
+		$this->pdf->SetXY(45,7);
 		$this->pdf->MultiCell(80,3.5,
 			$invoice['recipient']['name']."\n".
 			$invoice['recipient']['street']."\n".
 			$invoice['recipient']['zip']." ".$invoice['recipient']['city']."\n\n".
 			$this->pdflang->__('Telephone').": ".$invoice['recipient']['phone']."\n".
 			$this->pdflang->__('VAT-nr').": ".$invoice['recipient']['vatnr']
-			);
+			,0,L,0);
 		$this->pdf->SetFontSize(16);
 		$this->pdf->SetXY(130,5);
 		$this->pdf->MultiCell(30,3.8,$this->pdflang->__('Invoice'));
