@@ -135,6 +135,8 @@ Month(s)=Månad(er)
 Template header=Bottnets Rubrik
 Cash=Kontant
 updated to=uppdaterad till
+or=eller
+Emailed=Epostad
 /*/Reports/*/
 Monthly Report=Månads Rapport
 /*/Email/*/

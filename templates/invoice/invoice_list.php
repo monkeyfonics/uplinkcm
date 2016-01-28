@@ -124,7 +124,7 @@ echo "
 				<th>
 					{$lng->__('Amount')}:
 				</th>
-				<th>
+				<th title='{$lng->__('Printed')} {$lng->__('or')} {$lng->__('Emailed')}'>
 					{$lng->__('Printed')} / @:
 				</th>
 				

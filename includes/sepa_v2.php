@@ -28,7 +28,7 @@ class sepa {
 	
 	function header ($invoice) {
 		if (file_exists($invoice['logo']))		
-			$this->pdf->Image($invoice['logo'],15,5,0,20);
+			$this->pdf->Image($invoice['logo'],15,5,0,25);
 		$this->pdf->SetFontSize(8);
 		$this->pdf->SetX(50);
 		$this->pdf->MultiCell(80,3.5,
@@ -52,7 +52,7 @@ class sepa {
 		$this->pdf->MultiCell(40,3.8,$invoice['nr'],0,L,0);
 		$this->pdf->SetXY(160,20);
 		$this->pdf->MultiCell(40,3.8,$invoice['dat'],0,L,0);
-		$this->pdf->Line(10,27,200,27);
+		$this->pdf->Line(10,31,200,31);
 	}
 	
 	function invoice ($invoice) {
