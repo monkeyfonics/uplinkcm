@@ -80,6 +80,7 @@ $query = "
 				$acco.contacts.bill_city as bill_city,
 				$acco.contacts.bill_country as bill_country,
 				$acco.contacts.email as email,
+				$acco.contacts.loc as loc,
 				$acco.contacts.phone1 as phone1
 	FROM 		$acco.contacts LEFT OUTER JOIN $acco.invoice_out ON ($acco.contacts.id = $acco.invoice_out.pid)
 	where		$acco.contacts.id = $in_r[pid]
@@ -127,6 +128,13 @@ $co_r = pg_fetch_array($co);
 		
 	
 }
+
+/*creating customer language */
+$customerlang = $cl_r[loc];
+
+$custlng = new Translator($customerlang);//$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
+ 
+$custlng->setPath('lang/');
 
 /*invoice items*/
 		

@@ -41,16 +41,16 @@ $charset = "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"P
 $from = $sent;
 $to = $tocontact;
 $headers = "From:" . $from.$charset;
-$subject = "{$lng->__('New invoice from')} ".$accountname;
+$subject = "{$custlng->__('New invoice from')} ".$accountname;
 $plainpart = "
 --PHP-mixed-$random_hash
 Content-Type: text/plain; charset=UTF-8\r\n
-{$lng->__('New invoice from')} ".$accountname." \r\n
-{$lng->__('Invoice number')}: $in_r[invoice_id] \r\n
-{$lng->__('Due date')}: $due \r
-{$lng->__('Amount')}: $amount €\r\n
-{$lng->__('See attachment for pdf')}\r\n
-{$lng->__('Virtual barcode')}: $virtual";
+{$custlng->__('New invoice from')} ".$accountname." \r\n
+{$custlng->__('Invoice number')}: $in_r[invoice_id] \r\n
+{$custlng->__('Due date')}: $due \r
+{$custlng->__('Amount')}: $amount €\r\n
+{$custlng->__('See attachment for pdf')}\r\n
+{$custlng->__('Virtual barcode')}: $virtual";
 $attachpart = "
 --PHP-mixed-$random_hash
 Content-Type: application/pdf; name=invoice_".$acc_hold_r[id]."_".$in_r[invoice_id].".pdf
@@ -66,18 +66,28 @@ $mail_sent = @mail($to,$subject,$body,$headers);
 
 
 /* send mail to user */
+$to2 = $sent;
+$subject2 = "{$custlng->__('Confirmation of sent invoice to')} ".$tocontact;
 
-$subject2 = "{$lng->__('Confirmation of sent invoice from')} ".$accountname;
+$plainpart2 = "
+--PHP-mixed-$random_hash
+Content-Type: text/plain; charset=UTF-8\r\n
+{$lng->__('New invoice from')} ".$accountname." \r\n
+{$lng->__('Invoice number')}: $in_r[invoice_id] \r\n
+{$lng->__('Due date')}: $due \r
+{$lng->__('Amount')}: $amount €\r\n
+{$lng->__('See attachment for pdf')}\r\n
+{$lng->__('Virtual barcode')}: $virtual";
 
-
+$body2 = $plainpart2.$attachpart;
 
 /*send confirmation to site user*/
-$mail_sent2 = @mail($to,$subject2,$body,$headers);
+$mail_sent2 = @mail($to2,$subject2,$body2,$headers);
 
 $mail_sent ? $message = "{$lng->__('Mail sent')}" : $message = "{$lng->__('Mail failed')}"; 
 
 /*exit*/
-$ret_url = 'index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]&invid=$in_r[invoice_id]';
+$ret_url = 'index.php?section=invoice&template=invoice_view&inoid='.$in_r[outid].'&ident='.$in_r[ident].'&invid='.$in_r[invoice_id];
 $icon = 'layout/img/icon_succ.png';
 
 header("Refresh: 2; URL=".$ret_url);
