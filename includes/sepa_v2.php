@@ -45,9 +45,13 @@ class sepa {
 		$this->pdf->SetXY(180,5);
 		$this->pdf->MultiCell(30,3.8,$this->pdflang->__('Page')." ".$this->pdf->pgnr);
 		$this->pdf->SetXY(130,15);
-		$this->pdf->MultiCell(25,3.8,$this->pdflang->__('Number').":\n".$this->pdflang->__('Date').":");
-		$this->pdf->SetXY(155,15);
-		$this->pdf->MultiCell(25,3.8,$invoice['nr']."\n".$invoice['dat']);
+		$this->pdf->MultiCell(25,3.8,$this->pdflang->__('Number').":",0,R,0);
+		$this->pdf->SetXY(130,20);
+		$this->pdf->MultiCell(25,3.8,$this->pdflang->__('Date').":",0,R,0);
+		$this->pdf->SetXY(160,15);
+		$this->pdf->MultiCell(40,3.8,$invoice['nr'],0,L,0);
+		$this->pdf->SetXY(160,20);
+		$this->pdf->MultiCell(40,3.8,$invoice['dat'],0,L,0);
 		$this->pdf->Line(10,27,200,27);
 	}
 	
