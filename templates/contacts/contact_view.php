@@ -316,9 +316,37 @@ echo "
 						<th>
 							{$lng->__('Reference')}:
 						</th>
+						<th>
+							{$lng->__('Amount')}:
+						</th>
 					</tr>
 			";
 			while ($con_in_r = pg_fetch_array($con_in)) {
+				/*invoice items*/
+		
+				$query = "
+					select		id,
+								def_id,
+								cat,
+								item,
+								invoice_id,
+								price,
+				  				qty,
+				  				unit,
+				  				vat
+					from		$acco.invoice_out_item
+					where		invoice_id = $con_in_r[invoice_id]
+					
+				";
+				
+				$con_it = pg_query($conn, $query);
+				$combprice ='';
+				while ($con_it_r = pg_fetch_array($con_it)) {
+						$tempprice1 = $con_it_r[price] * $con_it_r[qty];
+						$tempprice2 = $tempprice1 * $con_it_r[vat];
+						$combprice += ($tempprice1 + $tempprice2);
+					}
+				
 				$date = date('Y-m-d', strtotime($con_in_r[dated]));
 				if ($con_in_r[pub] == f) {
 					$pub = "class='pub'";
@@ -344,19 +372,25 @@ echo "
 								$con_in_r[ref]
 							</a>
 						</td>
+						<td>
+							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]' $pub>
+								".number_format($combprice,2,","," ")." &euro;
+							</a>
+						</td>
 					</tr>
 					";
+					
 			}
 		echo "
 				<tr>
-					<td colspan='3'>
+					<td colspan='4'>
 						<a href='index.php?section=invoice&template=invoice_list&cfilter=$ul_r[id]'>
 							{$lng->__('Show all')} {$lng->__('Published')}
 						</a>
 					</td>
 				</tr>
 				<tr>
-					<td colspan='3'>
+					<td colspan='4'>
 						<a href='index.php?section=invoice&template=invoice_list_pend&cfilter=$ul_r[id]' class='pub'>
 							{$lng->__('Show all')} {$lng->__('Pending')}
 						</a>

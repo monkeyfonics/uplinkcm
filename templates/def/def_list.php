@@ -183,9 +183,20 @@ $it = pg_query($conn, $query);
 			
 			$pripath = "index.php?section=def&template=def_view&ident=$in_r[ident]";
 			
+			/*active tooltip*/
+			if ($in_r[active] == t) {
+				$activetip = "{$lng->__('Active')}";
+			} else {
+				$activetip = "{$lng->__('Inactive')}";
+			}
+			if ($in_r[ongoing] == t) {
+				$ongoingtip = "{$lng->__('Ongoing')}";
+			} else {
+				$ongoingtip = "{$lng->__('Not ongoing')}";
+			}
 			echo "	
 				<tr>
-					<td style='$expired text-align: center;'>
+					<td style='$expired text-align: center;' title='$activetip, $ongoingtip'>
 						$marker
 					</td>
 					<td class='first'>
