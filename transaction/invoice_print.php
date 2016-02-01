@@ -15,7 +15,7 @@ $ch = pg_query($conn, $query);
 $invoice->invoice($info);
 
 
-$invoice->display($acc_hold_r[name]."_".$in_r[ident]);
+$invoice->display("{$custlng->__('Invoice')}_".$acc_hold_r[name]."_".$in_r[invoice_id]);
 
 
 
