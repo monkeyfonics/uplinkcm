@@ -74,6 +74,7 @@ $query = "
   				www,
   				loc
 	from		$acco.contacts
+	order by lname asc, fname asc
 	
 ";
 
@@ -94,12 +95,43 @@ $query = "
   				email,
   				phone
 	from		$acco.company
-
+	order by	name
 ";
 
 $cl = pg_query($conn, $query);
 
-
+if ($suid != 0) {
+/* only companies for that contact*/
+$query = "
+		select		{$acco}.company.id as id,
+					{$acco}.company.name as name,
+					{$acco}.company.ytunnus as ytunnus		
+		from		$acco.company LEFT JOIN $acco.link_company_contact
+		ON			($acco.company.id = $acco.link_company_contact.company_id)
+		where		{$acco}.link_company_contact.contact_id = $suid
+		order by	name
+";
+$speccomp = pg_query($conn, $query);
+} else {
+	
+}
+if ($comid != 0) {
+/* only contacts for that company*/
+$query = "
+		select		{$acco}.contacts.id as id,
+					{$acco}.contacts.fname as fname,
+					{$acco}.contacts.lname as lname,
+					{$acco}.contacts.loc as loc,
+					{$acco}.link_company_contact.prim as prim
+		from		$acco.contacts LEFT JOIN $acco.link_company_contact
+		ON			($acco.contacts.id = $acco.link_company_contact.contact_id)
+		where		{$acco}.link_company_contact.company_id = $comid
+		order by	lname, fname	
+";
+$speccont = pg_query($conn, $query);
+} else {
+	
+}
 
 echo "
 	<form action='transaction.php?t=todo_edit' method='post' id='todosave'>
@@ -139,7 +171,27 @@ echo "
 						<option value='0'>
 							{$lng->__('None')}
 						</option>
+					";
+						while ($speccont_r = pg_fetch_array($speccont)) {
+							if ($speccont_r[prim] == t) {
+								$sel = " selected='selected'";
+								$conlang = $speccont_r[loc];
+							} else {
+								$sel = " ";
+							}
+							//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
+							echo "
+								<option value='$speccont_r[id]' $sel>
+									$speccont_r[lname], $speccont_r[fname]
+								</option>
+							";
+						}
+					echo "
+						<option value='0' disabled>
+							----
+						</option>
 						";
+						
 						while ($ul_r = pg_fetch_array($ul)) {
 							if ($ul_r[id] == $todo_r[contact_id] or $ul_r[id] == $suid) $sel=" selected='selected'"; else $sel="";
 							echo "
@@ -167,6 +219,20 @@ echo "
 					<select name='cid'>
 						<option value='0'>
 							{$lng->__('None')}
+						</option>
+						";
+						
+						while ($speccomp_r = pg_fetch_array($speccomp)) {
+							//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
+							echo "
+								<option value='$speccomp_r[id]'>
+									$speccomp_r[name]
+								</option>
+							";
+						}
+					echo "
+						<option value='0' disabled>
+							----
 						</option>
 						";
 						while ($cl_r = pg_fetch_array($cl)) {

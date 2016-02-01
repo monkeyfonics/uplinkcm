@@ -53,7 +53,7 @@ Content-Type: text/plain; charset=UTF-8\r\n
 {$custlng->__('Virtual barcode')}: $virtual";
 $attachpart = "
 --PHP-mixed-$random_hash
-Content-Type: application/pdf; name=invoice_".$acc_hold_r[id]."_".$in_r[invoice_id].".pdf
+Content-Type: application/pdf; name={$custlng->__('Invoice')}_".$acc_hold_r[name]."_".$in_r[invoice_id].".pdf
 Content-Transfer-Encoding: base64 
 Content-Disposition: attachment 
 
