@@ -92,7 +92,7 @@ $query = "
 				pub
 	from		$acco.invoice_out
 	where		pid = $suid
-	order by dated desc
+	order by dated desc, invoice_id desc
 	Limit 		15
 	
 ";
@@ -314,7 +314,7 @@ echo "
 							{$lng->__('Header')}:
 						</th>
 						<th>
-							{$lng->__('Reference')}:
+							{$lng->__('Invoice number')}:
 						</th>
 						<th>
 							{$lng->__('Amount')}:
@@ -346,7 +346,7 @@ echo "
 						$tempprice2 = $tempprice1 * $con_it_r[vat];
 						$combprice += ($tempprice1 + $tempprice2);
 					}
-				
+				$invidformat = chunk_split($con_in_r[invoice_id], 6, ' ');
 				$date = date('Y-m-d', strtotime($con_in_r[dated]));
 				if ($con_in_r[pub] == f) {
 					$pub = "class='pub'";
@@ -369,7 +369,7 @@ echo "
 						</td>
 						<td>
 							<a href='index.php?section=invoice&template=invoice_view&inoid=$con_in_r[id]&ident=$con_in_r[invoice_id]' $pub>
-								$con_in_r[ref]
+								$invidformat
 							</a>
 						</td>
 						<td>
