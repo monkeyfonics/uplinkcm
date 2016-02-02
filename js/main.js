@@ -44,7 +44,8 @@ function stripVat(id) {
 	var defprice = 'price_'+id;
 	var vatprice=document.getElementById(pricevat).value;
 	var vat=+document.getElementById(defvat).value + 1;
-	
+	/*converting price to use dot instead of comma*/
+	vatprice=vatprice.replace(",", ".");
 	var newprice = vatprice / vat;
 	
 	document.getElementById(defprice).value=newprice;
@@ -56,16 +57,19 @@ function addVat(id) {
 	var defprice = 'price_'+id;
 	var price=document.getElementById(defprice).value;
 	var vat=+document.getElementById(defvat).value + 1;
+	/*converting price to use dot instead of comma*/
+	price=price.replace(",", ".");
 	
 	var newprice = price * vat;
-	
+
 	document.getElementById(pricevat).value=newprice;
 	
 }
 function stripVatn() {
 	var vatprice=document.getElementById('pricevatn').value;
 	var vat=+document.getElementById('vatn').value + 1;
-	
+	/*converting price to use dot instead of comma*/
+	vatprice=vatprice.replace(",", ".");
 	var newprice = vatprice / vat;
 	
 	document.getElementById('pricen').value=newprice;
@@ -76,7 +80,8 @@ function stripVatn() {
 function addVatn() {
 	var price=document.getElementById('pricen').value;
 	var vat=+document.getElementById('vatn').value + 1;
-	
+	/*converting price to use dot instead of comma*/
+	price=price.replace(",", ".");
 	var newprice = price * vat;
 	
 	document.getElementById('pricevatn').value=newprice;
