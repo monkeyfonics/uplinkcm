@@ -105,7 +105,7 @@ $con_in = pg_query($conn, $query);
 echo "
 	<div class='buttons'>
 		<a href='index.php?section=contacts&template=contact_list#$firstletter'>
-			<div class='header'>{$lng->__('Contact List')}</div>
+			<div class='header'>{$lng->__('Contacts')}</div>
 		</a>
 		<a href='index.php?section=contacts&template=contact_view&suid=$ul_r[id]'>
 			<div class='header'>$ul_r[lname], $ul_r[fname]</div>

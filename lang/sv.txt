@@ -84,6 +84,7 @@ Primary=Antagen
 Add Contact=Lägg till kontakt
 Add=Lägg till
 Company Saved=Firma Sparad
+Company List=Firma Lista
 /*/Templates/*/
 Template=Botten
 New Invoice Template=Nytt Faktura Botten

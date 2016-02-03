@@ -67,7 +67,7 @@ $mail_sent = @mail($to,$subject,$body,$headers);
 
 /* send mail to user */
 $to2 = $sent;
-$subject2 = "{$custlng->__('Confirmation of sent invoice to')} ".$tocontact;
+$subject2 = "{$lng->__('Confirmation of sent invoice to')} ".$tocontact;
 
 $plainpart2 = "
 --PHP-mixed-$random_hash

@@ -74,7 +74,7 @@ $com_in = pg_query($conn, $query);
 echo "
 	<div class='buttons'>
 		<a href='index.php?section=company&template=company_list#$firstletter'>
-			<div class='header'>{$lng->__('Company List')}</div>
+			<div class='header'>{$lng->__('Companies')}</div>
 		</a>
 		<a href='index.php?section=company&template=company_view&suid=$ul_r[id]'>
 			<div class='header'>$ul_r[name]</div>

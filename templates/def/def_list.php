@@ -52,7 +52,8 @@ $query = "
   				next_create
 	from		$acco.invoice_def
 	order by	created desc, id desc
-	
+	limit 		{$rows}
+	offset		{$fetchrow}
 ";
 
 $in = pg_query($conn, $query);
