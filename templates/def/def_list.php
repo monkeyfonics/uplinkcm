@@ -51,7 +51,7 @@ $query = "
   				active,
   				next_create
 	from		$acco.invoice_def
-	order by	created desc, id desc
+	order by	active desc, created desc
 	limit 		{$rows}
 	offset		{$fetchrow}
 ";
