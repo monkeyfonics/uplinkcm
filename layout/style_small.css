@@ -1,0 +1,11 @@
+html {
+	font-size: 120%;
+}
+
+div.logo {
+	background: #000;
+}
+/*hidden items for small display */
+.small_hide {
+	display: none;
+}

@@ -110,6 +110,11 @@ div.account {
 	padding: 5px;
 	
 }
+/*hidden items for small display */
+.small_hide {
+	
+}
+
 /* Action buttons */
 div.buttons {
 	
@@ -259,12 +264,12 @@ div.menu {
 	border-bottom: 1px solid #acbbac;
 	
 	background: #BFD8EF; /* fallback */
-	background: -webkit-gradient(linear, left top, left bottom, from(#BFD8EF), to(#769CC1)); /* Saf4+, Chrome */
-	background: -webkit-linear-gradient(top, #BFD8EF, #769CC1); /* Chrome 10+, Saf5.1+ */
+	background: -webkit-gradient(linear, left top, left bottom, from(#dfe3e1), to(#f6faf8)); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, #dfe3e1, #f6faf8); /* Chrome 10+, Saf5.1+ */
 	background: -moz-linear-gradient(top, #dfe3e1, #f6faf8); /* FF3.6+ */
-	background: -ms-linear-gradient(top, #BFD8EF, #769CC1); /* IE10 */
-	background: -o-linear-gradient(top, #BFD8EF, #769CC1); /* Opera 11.10+ */
-	background: linear-gradient(top, #BFD8EF, #769CC1); /* W3C */
+	background: -ms-linear-gradient(top, #dfe3e1, #f6faf8); /* IE10 */
+	background: -o-linear-gradient(top, #dfe3e1, #f6faf8); /* Opera 11.10+ */
+	background: linear-gradient(top, #dfe3e1, #f6faf8); /* W3C */
 	
 }
 .menuitem {
@@ -357,8 +362,9 @@ div.reg {
 .abc_container {
 	background: #f0f0f0;
 	position: absolute;
-	right: 5px;
-	
+	right: 15px;
+	width: 25px;
+	clear: both;
 }
 .abc_item {
 	background: #fff;

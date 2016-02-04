@@ -69,7 +69,7 @@ echo "
 				<th>
 					{$lng->__('VAT-nr')}:
 				</th>
-				<th>
+				<th class='small_hide'>
 					{$lng->__('Email')}:
 				</th>
 				<th>
@@ -102,7 +102,7 @@ echo "
 					<td>
 						$ul_r[ytunnus]
 					</td>
-					<td>
+					<td class='small_hide'>
 						$ul_r[email]
 					</td>
 					<td>

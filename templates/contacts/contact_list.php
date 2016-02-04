@@ -73,7 +73,7 @@ echo "
 				<th class='first'>
 					{$lng->__('Namn')}:
 				</th>
-				<th>
+				<th class='small_hide'>
 					{$lng->__('Email')}:
 				</th>
 				<th>
@@ -107,7 +107,7 @@ echo "
 							$ul_r[lname], $ul_r[fname]
 						</a>
 					</td>
-					<td>
+					<td class='small_hide'>
 						<a href='index.php?section=contacts&template=contact_view&suid=$ul_r[id]'>
 						$ul_r[email]
 						</a>
