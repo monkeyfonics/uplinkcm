@@ -492,7 +492,9 @@ table.list tr td.report_header {
 }
 /*todo*/
 .todocontent {
-	
+	background: #f0f0f0;
+	padding: 5px;
+	margin-top: 10px;
 }
 .todocontent h3 {
 	text-align: center; 

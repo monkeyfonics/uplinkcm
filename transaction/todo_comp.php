@@ -38,7 +38,7 @@ $ch = pg_query($conn, $query);
 	
 	
 	$ret_url = 'index.php?section=todo&template=todo_view&tid='.$tid;
-	$message = 'Todo Updated '.$todo_r[completed];
+	$message = 'Todo Updated';
 	$icon = 'layout/img/icon_succ.png';
 		
 		echo "

@@ -140,20 +140,22 @@ echo "
 			if ($in_r[active] == t) {
 				$active = "{$lng->__('Yes')}";
 				$expired = "color: green;";
+				$icon = "&#10003;";
 			} else {
 				$active = "{$lng->__('No')}";
 				$expired = "color: red;";
+				$icon = "x";
 			}
 			
 			if ($in_r[recurring] > 0) {
 				if ($in_r[ongoing] == t or $next <= $end and $end >= $today) {
 					$marker = "&raquo; $in_r[recurring]";
 				} else {
-					$marker = "x";
+					$marker = $icon;
 				}
-				
+			
 			} else {
-				$marker = "x";
+				$marker = $icon;
 			}
 			
 			
