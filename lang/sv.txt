@@ -12,6 +12,7 @@ Delete=Radera
 Login Successfull=Inloggning Lyckades
 Login Failed=Inloggning Misslyckades
 Print=Printa
+Never=Aldrig
 /*/main/*/
 Dash=Panel
 New Todos=Nya Att göra

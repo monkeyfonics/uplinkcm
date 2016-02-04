@@ -124,10 +124,12 @@ echo "
 				<th>
 					{$lng->__('Amount')}:
 				</th>
-				<th title='{$lng->__('Printed')} {$lng->__('or')} {$lng->__('Emailed')}'>
-					{$lng->__('Printed')} / @:
+				<th title='{$lng->__('Printed')}'>
+					{$lng->__('Printed')}:
 				</th>
-				
+				<th title='{$lng->__('Emailed')}'>
+					{$lng->__('Emailed')}:
+				</th>
 				<th>
 					€
 				</th>
@@ -173,8 +175,10 @@ echo "
 			}
 			if ($in_r[emailed]) {
 				$emailed = "@";
+				$email_date = date('Y-m-d', strtotime($in_r[emailed]));
 			} else {
 				$emailed = " ";
+				$email_date = " ";
 			}
 			if ($in_r[cash] == t) {
 				$cash = "&#10004;";
@@ -241,9 +245,11 @@ echo "
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
 					<td>
-						$printed $emailed
+						$printed
 					</td>
-					
+					<td title='$email_date'>
+						$email_date
+					</td>
 					<td>
 						$cash
 					</td>

@@ -107,13 +107,17 @@ if ($in_r[cid]) {
 
 if ($in_r[printed]) {
 	$prin = "&bull;";
+	$print_date = date('Y-m-d', strtotime($in_r[printed]));
 } else {
 	$prin = " ";
+	$print_date = "{$lng->__('Never')}";
 }
 if ($in_r[emailed]) {
 	$emai = "&bull;";
+	$email_date = date('Y-m-d', strtotime($in_r[emailed]));
 } else {
 	$emai = " ";
+	$email_date = "{$lng->__('Never')}";
 }
 if ($in_r[cash] == t) {
 	$cash = "&bull;";
@@ -136,13 +140,13 @@ echo "
 		if ($in_r[pub] == t) {
 			echo "
 				<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
-					<div>{$lng->__('Print')} $prin</div>
+					<div title='{$lng->__('Printed')}: $print_date'>{$lng->__('Print')} $prin</div>
 				</a>
 				";
 				if ($cl_r[email]) {
 					echo "
 					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id' onclick='return confirm(\"{$lng->__('Send to')} $cl_r[email]?\");'>
-						<div>{$lng->__('Email')} $emai</div>
+						<div title='{$lng->__('Emailed')}: $email_date'>{$lng->__('Email')} $emai</div>
 					</a>
 					";
 				}
