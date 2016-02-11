@@ -30,8 +30,10 @@ $in_r = pg_fetch_array($in);
 
 if ($in_r[active] == 't') {
 	$act = 0;
+	$message = "{$lng->__('Template')} {$lng->__('Deactivated')}";
 } else {
 	$act = 1;
+	$message = "{$lng->__('Template')} {$lng->__('Activated')}";
 }
 
 
@@ -47,7 +49,7 @@ $query = "
 	
 	
 	$ret_url = 'index.php?section=invoice&template=invoice_list_pend';
-	$message = "{$lng->__('Template Activated')}";
+	
 	$icon = 'layout/img/icon_succ.png';
 		
 		echo "

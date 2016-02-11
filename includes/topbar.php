@@ -69,13 +69,7 @@ if ($section == "") {
 
 echo "
 	<div class='topcont'>
-		<div class='logo'>
-			<a href='$rpath'>Uplink Contact Manager</a>
-		</div>
 		
-		<div class='account bstyle'>
-			 <a href='?template=account_sel'>{$lng->__('Account')}: $ac_r[name]</a>
-		</div>
 		";
 
 		
@@ -85,24 +79,35 @@ echo "
 			";
 		} else {
 			echo "
-				<div class='logout'>
-				
+			
+					<div class='logout sbar'>
 					
-					<a href='index.php?section=admin&template=userman'><div class='button bstyle'><span class='settingtext'>{$lng->__('User')}: $tu_r[login]</span><span class='settingicon'><img src='layout/img/cog_grey.png' alt='Settings'/></span></div></a>
+						
+						<a href='index.php?section=admin&template=userman'><div class='button bstyle'><span class='settingtext'>{$lng->__('User')}: $tu_r[login]</span><span class='settingicon'><img src='layout/img/cog_grey.png' alt='Settings'/></span></div></a>
+						
+						<a href='transaction.php?t=logout'><div class='button bstyle'>{$lng->__('Logout')}</div></a>
+						";
 					
-					<a href='transaction.php?t=logout'><div class='button bstyle'>{$lng->__('Logout')}</div></a>
-					";
+					
+						if ($tu_r[lvl] >= 5) {
+							echo "<a href='index.php?section=admin&template=main'><div class='button bstyle'>Admin</div></a>";
+						}
+						echo "
+					</div>
 				
-				
-					if ($tu_r[lvl] >= 5) {
-						echo "<a href='index.php?section=admin&template=main'><div class='button bstyle'>Admin</div></a>";
-					}
-					echo "
-				</div>
 			";
 		}
 		
 	echo "
+		<div class='logoandtext'>
+			<div class='logo'>
+				<a href='$rpath'>Uplink Contact Manager</a>
+			</div>
+			
+			<div class='account bstyle'>
+				 <a href='?template=account_sel'>{$lng->__('Account')}: $ac_r[name]</a>
+			</div>
+		</div>
 	</div>
 	";
 	

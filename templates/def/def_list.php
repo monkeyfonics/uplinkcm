@@ -51,7 +51,7 @@ $query = "
   				active,
   				next_create
 	from		$acco.invoice_def
-	order by	active desc, created desc
+	order by	next_create desc, created desc
 	limit 		{$rows}
 	offset		{$fetchrow}
 ";
@@ -89,7 +89,7 @@ echo "
 				<th>
 					{$lng->__('Active')}:
 				</th>
-				<th class='first'>
+				<th class='first' title='{$lng->__('Last created invoice')}'>
 					{$lng->__('Dated')}:
 				</th>
 				
@@ -182,8 +182,29 @@ $it = pg_query($conn, $query);
 					$tempprice2 = $tempprice1 * $it_r[vat];
 					$combprice += ($tempprice1 + $tempprice2);
 				}
+
+/*check for newest created invoice for specific template*/
+		
+$query = "
+	select		dated,
+				created
+	from		$acco.invoice_out
+	where		def_id = $in_r[ident]
+	order by	dated desc
+	limit 		1
+";
+
+$inl = pg_query($conn, $query);
+			
+$inl_r = pg_fetch_array($inl);
+			if ($inl_r[dated]) {
+				$lastinvoice = date('Y-m-d', strtotime($inl_r[dated]));
+			} else {
+				$lastinvoice = "{$lng->__('None')}";
+			}
 			
 			
+				
 			$pripath = "index.php?section=def&template=def_view&ident=$in_r[ident]";
 			
 			/*active tooltip*/
@@ -202,9 +223,9 @@ $it = pg_query($conn, $query);
 					<td style='$expired text-align: center;' title='$activetip, $ongoingtip'>
 						$marker
 					</td>
-					<td class='first'>
+					<td class='first' title='{$lng->__('Last created invoice')}'>
 						<a href='$pripath'>
-							$date
+							$lastinvoice
 						</a>
 					</td>
 					

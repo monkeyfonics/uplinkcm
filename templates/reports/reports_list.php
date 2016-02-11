@@ -30,7 +30,7 @@ echo "
 
 /* widget invoice report*/
 echo "
-		<div class='widget'>
+		
 			
 			<table class='list'>
 				
@@ -118,6 +118,11 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td class='bold' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
+							{$lng->__('Contact')}
+						</a>
+					</td>
+					<td class='bold' $marker>
+						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
 							{$lng->__('Amount')}
 						</a>
 					</td>
@@ -135,6 +140,42 @@ $monthly = pg_query($conn, $query);
 				$cash = " ";
 			}
 				
+			 /*get name for contact*/
+					
+			$query = "
+				select		id,
+							lname,
+							fname
+				from		$acco.contacts
+				where		id = $monthly_r[pid]
+							
+			";
+						
+			$co = pg_query($conn, $query);
+			$co_r = pg_fetch_array($co);
+			/*check for company*/
+			if ($monthly_r[cid]) {
+				/*get name for company*/
+								
+			$query = "
+				select		id,
+							name,
+							ytunnus
+				from		$acco.company
+				where		id = $monthly_r[cid]
+							
+			";
+						
+			$com = pg_query($conn, $query);
+			$com_r = pg_fetch_array($com);
+			
+			/*combine contact company name */
+			$contactcom = $co_r[lname].", ".$co_r[fname]." - ".$com_r[name];
+			
+			} else {
+			/*combine contact name */
+			$contactcom = $co_r[lname].", ".$co_r[fname];
+			}
 			
 			 /*invoice items for counting total cost*/
 					
@@ -178,12 +219,17 @@ $monthly = pg_query($conn, $query);
 						$dated_out
 					</td>
 					<td>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&invid=$monthly_r[invoice_id]'>
 						$invidformat
+						</a>
 					</td>
 					<td>
 						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&invid=$monthly_r[invoice_id]'>
 						$monthly_r[header] - $monthly_r[addhead]
 						</a>
+					</td>
+					<td>
+						$contactcom
 					</td>
 					<td>
 						$formatprice € 
@@ -211,6 +257,9 @@ $monthly = pg_query($conn, $query);
 						
 					</td>
 					<td>
+						
+					</td>
+					<td>
 						<b>$totalformat €</b>
 					</td>
 					<td>
@@ -225,7 +274,7 @@ $monthly = pg_query($conn, $query);
 echo "
 			</table>
 			
-		</div>
+		
 ";		
 		
 }

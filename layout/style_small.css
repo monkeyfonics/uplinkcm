@@ -9,3 +9,35 @@ div.logo {
 .small_hide {
 	display: none;
 }
+/*user settings with logout for small displays*/
+.sbar {
+	width: 100%;
+	background: #000;
+	margin-top: -5px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	
+}
+.sbar div {
+	
+	float: right;
+}
+table.login {
+	
+}
+table.login td {
+
+	
+}
+div.login {
+	
+	width: 90%;
+	font-size: 140%;
+	
+}
+div.login input {
+	margin-bottom: 25px;
+	height: 50px;
+	vertical-align: middle;
+}

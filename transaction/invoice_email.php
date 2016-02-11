@@ -34,6 +34,7 @@ $attachment = chunk_split(base64_encode($invoice->fetch()));
 
 $due = date('d.m.Y', strtotime($in_r['due_date_out']));
 $amount = $total+$vattot;
+$amount = number_format($amount,2,".","");
 
 /* send mail to recipient */
 $random_hash = md5(date('r', time()));
