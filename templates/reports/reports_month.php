@@ -212,9 +212,11 @@ $monthly = pg_query($conn, $query);
 						</a>
 					</td>
 					<td>
-						<a href='index.php?section=contacts&template=contact_view&suid=$co_r[id]'>
-						$contactcom
-						</a>
+						";
+						if($monthly_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$co_r[id]'><span style='color:#000;'>$co_r[lname], $co_r[fname]</span></a>"; }
+						
+						if($monthly_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$com_r[id]'><span style='color:#656565;'>$com_r[name]</span></a>"; }
+					echo "
 					</td>
 					<td>
 						$formatprice €

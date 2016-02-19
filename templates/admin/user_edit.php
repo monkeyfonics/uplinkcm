@@ -36,7 +36,7 @@ echo "
 			<div class='header'>Admin</div>
 		</a>
 		<a href='index.php?section=admin&template=user_list'>
-			<div class='header'>User List</div>
+			<div class='header'>{$lng->__('User list')}</div>
 		</a>
 		
 	</div>
@@ -49,7 +49,7 @@ echo "
 		";
 		if ($usid) {
 			echo "
-			<h2>Edit $ac_r[login]</h2>
+			<h2>{$lng->__('Edit')} $ac_r[login]</h2>
 			<input type='hidden' name='no' value='old'/>
 			<input type='hidden' name='usid' value='$usid'/>
 			
@@ -73,7 +73,7 @@ echo "
 			</tr>
 			<tr>
 				<td class='first'>
-					First Name:
+					{$lng->__('First name')}:
 				</td>
 				<td>
 					<input type='text' name='fname' value='$ac_r[fname]'/>
@@ -81,7 +81,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Last Name:
+					{$lng->__('Last name')}:
 				</td>
 				<td>
 					<input type='text' name='lname' value='$ac_r[lname]'/>
@@ -89,7 +89,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Tel:
+					{$lng->__('Phone')}:
 				</td>
 				<td>
 					<input type='text' name='tel' value='$ac_r[tel]'/>

@@ -169,12 +169,10 @@ $monthly = pg_query($conn, $query);
 			$com = pg_query($conn, $query);
 			$com_r = pg_fetch_array($com);
 			
-			/*combine contact company name */
-			$contactcom = $co_r[lname].", ".$co_r[fname]." - ".$com_r[name];
+			
 			
 			} else {
-			/*combine contact name */
-			$contactcom = $co_r[lname].", ".$co_r[fname];
+						
 			}
 			
 			 /*invoice items for counting total cost*/
@@ -212,11 +210,18 @@ $monthly = pg_query($conn, $query);
 			$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
 			/*format date*/
 			$dated_out = date('Y-m-d',strtotime($monthly_r[dated_out]));
+			$dated_out_s = date('d.m',strtotime($monthly_r[dated_out]));
 			
 			echo "
 				<tr>
 					<td>
-						$dated_out
+						<span class='small_screen'>
+							$dated_out_s 
+						</span>
+						<span class='big_screen'>
+							$dated_out
+						</span>
+						
 					</td>
 					<td>
 						<a href='index.php?section=invoice&template=invoice_view&inoid=$monthly_r[outid]&invid=$monthly_r[invoice_id]'>
@@ -229,7 +234,12 @@ $monthly = pg_query($conn, $query);
 						</a>
 					</td>
 					<td>
-						$contactcom
+					";
+						if($monthly_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$co_r[id]'><span style='color:#000;'>$co_r[lname], $co_r[fname]</span></a>"; }
+						
+						if($monthly_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$com_r[id]'><span style='color:#656565;'>$com_r[name]</span></a>"; }
+					echo "
+						
 					</td>
 					<td>
 						$formatprice € 

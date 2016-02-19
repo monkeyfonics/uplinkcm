@@ -118,8 +118,11 @@ div.logout {
 	
 }
 /*hidden items for small display */
-.small_hide {
+.big_screen {
 	
+}
+.small_screen {
+	display:none;
 }
 /*user settings with logout for small displays*/
 .sbar {
@@ -497,7 +500,7 @@ table.list tr td.report_header {
 	width: 47%; 
 	float: left;
 	margin: 1%;
-	
+	min-height: 150px;
 }
 .smbox:nth-last-child(even) {
 	

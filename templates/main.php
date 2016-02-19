@@ -49,7 +49,9 @@ $query = "
 					$acco.invoice_out.created as created_out,
 					$acco.invoice_out.dated as dated_out,
 					$acco.invoice_out.ref as ref,
-					$acco.invoice_out.pub as pub
+					$acco.invoice_out.pub as pub,
+					$acco.invoice_out.printed as printed,
+					$acco.invoice_out.emailed as emailed
 		from		$acco.invoice_out LEFT JOIN $acco.invoice_def
 		ON			($acco.invoice_out.invoice_id = $acco.invoice_def.ident)
 		order by	$acco.invoice_out.dated desc, $acco.invoice_out.id desc
@@ -151,19 +153,25 @@ echo "
 		while ($in_r = pg_fetch_array($in)) {
 			$date = strtotime($in_r[dated_out]);
 			if ($in_r[pub] == f) {
-				$bolde = 'pub';
+				$pub = 'pub';
 			} else {
+				$pub = ' ';
+			}
+			/* check for printed flag*/
+			if ($in_r[printed] == '') {
 				$bolde = 'bold';
+			} else {
+				$bolde = ' ';
 			}
 			echo "
 				<tr>
 					<td class='$bolde'>
-						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  class='$bolde'>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  class='$pub $bolde'>
 						$in_r[header] - $in_r[addhead]
 						</a>
 					</td>
 					<td>
-						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  class='$bolde'>
+						<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]'  class='$pub $bolde'>
 							".date('Y-m-d', $date)."
 						</a>
 					</td>

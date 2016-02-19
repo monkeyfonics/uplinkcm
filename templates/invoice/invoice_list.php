@@ -130,7 +130,7 @@ echo "
 				<th title='{$lng->__('Emailed')}'>
 					{$lng->__('Emailed')}:
 				</th>
-				<th>
+				<th title='{$lng->__('Cash')}'>
 					€
 				</th>
 			</tr>
@@ -169,8 +169,10 @@ echo "
 			
 			$date = strtotime($in_r[dated_out]);
 			if ($in_r[printed]) {
+				$printed_s = 'P';
 				$printed = date('Y-m-d', strtotime($in_r[printed]));
 			} else {
+				$printed_s = ' ';
 				$printed = "{$lng->__('Not printed')}";
 			}
 			if ($in_r[emailed]) {
@@ -244,11 +246,23 @@ echo "
 					<td>
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
-					<td>
-						$printed
+					<td title='$printed'>
+						<span class='small_screen'>
+							$printed_s
+						</span>
+						<span class='big_screen'>
+							$printed
+						</span>
+						
 					</td>
 					<td title='$email_date'>
-						$email_date
+						<span class='small_screen'>
+							$emailed
+						</span>
+						<span class='big_screen'>
+							$email_date
+						</span>
+						
 					</td>
 					<td>
 						$cash

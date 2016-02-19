@@ -261,11 +261,20 @@ echo "
 				<td>
 					$in_r[due_date_out]
 				</td>
+			";
+			if ($in_r[loc] == 'fi') {
+				$locout = "{$lng->__('Finnish')}";
+			} elseif ($in_r[loc] == 'sv') {
+				$locout = "{$lng->__('Swedish')}";
+			} else {
+				$locout = "{$lng->__('English')}";
+			}
+			echo "
 				<td class='head'>
 					{$lng->__('Language')}:
 				</td>
 				<td>
-					$in_r[loc]
+					$locout
 				</td>
 			</tr>
 			<tr>

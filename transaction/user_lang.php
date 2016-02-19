@@ -11,16 +11,23 @@ $query = "
 		";
 $ch = pg_query($conn, $query);
 
-$message = 'Selected language ';
-$ret_url = 'index.php?template=main';
-$icon = 'layout/img/icon_succ.png';
+if ($lang == 'sv') {
+	$langout = "{$lng->__('Swedish')}";
+} elseif ($lang == 'fi') {
+	$langout = "{$lng->__('Finnish')}";
+} else {
+	$langout = "{$lng->__('English')}";
+}
 
+$message = "{$lng->__('Selected language')} $langout";
+$ret_url = 'index.php?section=admin&template=user_lang';
+$icon = 'layout/img/icon_succ.png';
 header("Refresh: 1; URL=".$ret_url);
 
 echo "
 			<div class='messagebox'>
 				<img class='messageicon' src='$icon' alt='$message'>
-				<p class='messagetext'>$message $lang</p>
+				<p class='messagetext'>$message</p>
 			</div>
 			";
 

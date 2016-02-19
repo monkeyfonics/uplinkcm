@@ -19,7 +19,7 @@ if ($notid) {
 	
 
 	$ret_url = 'index.php?section=contacts&template=contact_view&suid='.$suid;
-	
+	$message = "{$lng->__('Note')} {$lng->__('updated')}";
 } else {
 
 	
@@ -39,11 +39,11 @@ if ($notid) {
 	$not = pg_query($conn, $query);
 	
 	$ret_url = 'index.php?section=contacts&template=contact_view&suid='.$suid;
-	
+	$message = "{$lng->__('Note')} {$lng->__('saved')}";
 }
 
 		
-		$message = 'Note Saved ';
+		
 		$icon = 'layout/img/icon_succ.png';
 		
 		echo "

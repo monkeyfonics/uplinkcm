@@ -8,9 +8,39 @@ if ($s_lvl < 1) {
 $suid = $_GET['suid'];
 
 if ($_GET['notid']) {
-$notid = $_GET['notid'];
+	$notid = $_GET['notid'];
+	/*contact notes*/
+	$query = "
+		select		$acco.contact_notes.id as id,
+					$acco.contact_notes.contact_id as contact_id,
+					$acco.contact_notes.created as created,
+					$acco.contact_notes.cont as cont,
+					$acco.contact_notes.created_by as created_by,
+					public.users.login as username,
+					public.users.fname as fname,
+					public.users.lname as lname
+		from		$acco.contact_notes left OUTER JOIN public.users ON ($acco.contact_notes.created_by = public.users.id)
+		where		$acco.contact_notes.id = $notid
+		
+	";
+	
+	$con_not = pg_query($conn, $query);
+	
+	$con_not_r = pg_fetch_array($con_not);
 } else {
 	$notid = 0;
+	$query = "
+		select		public.users.login as username,
+					public.users.fname as fname,
+					public.users.lname as lname
+		from		public.users 
+		where		public.users.id = $s_id
+		
+	";
+	
+	$con_not = pg_query($conn, $query);
+	
+	$con_not_r = pg_fetch_array($con_not);
 }
 
 $query = "
@@ -35,24 +65,7 @@ $ul = pg_query($conn, $query);
 $ul_r = pg_fetch_array($ul);
 
 
-	/*contact notes*/
-$query = "
-	select		$acco.contact_notes.id as id,
-				$acco.contact_notes.contact_id as contact_id,
-				$acco.contact_notes.created as created,
-				$acco.contact_notes.cont as cont,
-				$acco.contact_notes.created_by as created_by,
-				public.users.login as username,
-				public.users.fname as fname,
-				public.users.lname as lname
-	from		$acco.contact_notes left OUTER JOIN public.users ON ($acco.contact_notes.created_by = public.users.id)
-	where		$acco.contact_notes.id = $notid
-	
-";
 
-$con_not = pg_query($conn, $query);
-
-$con_not_r = pg_fetch_array($con_not);
 echo "
 <form action='transaction.php?t=note_save' method='post' id='notesave'>
 	<input type='hidden' name='suid' value='$ul_r[id]'/>

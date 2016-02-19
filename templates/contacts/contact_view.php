@@ -340,7 +340,7 @@ echo "
 				";
 				
 				$con_it = pg_query($conn, $query);
-				$combprice ='';
+				$combprice =0;
 				while ($con_it_r = pg_fetch_array($con_it)) {
 						$tempprice1 = $con_it_r[price] * $con_it_r[qty];
 						$tempprice2 = $tempprice1 * $con_it_r[vat];

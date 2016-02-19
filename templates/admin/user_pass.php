@@ -21,14 +21,14 @@ $ch_r = pg_fetch_array($ch);
 
 echo "
 	<div class='login'>
-		<h2>Choose new password</h2>
+		<h2>{$lng->__('Choose new password')}</h2>
 		<form action='transaction.php?t=check_reg' method='post'>
 		<input type='hidden' name='op' value='change'/>
 		<input type='hidden' name='usid' value='$usid'/>
 		<table align='center'>
 			<tr>
 				<td>
-					User:
+					{$lng->__('User')}:
 				</td>
 				<td>
 					$ch_r[login]
@@ -36,7 +36,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					New Password:
+					{$lng->__('New password')}:
 				</td>
 				<td>
 					<input id='pass1' type='password' name='pass'/>
@@ -44,7 +44,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Retype Password:
+					{$lng->__('Retype password')}:
 				</td>
 				<td>
 					<input id='pass2' type='password' name='pass2' onkeyup='checkpass()'/>

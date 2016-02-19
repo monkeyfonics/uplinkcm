@@ -6,8 +6,11 @@ div.logo {
 	background: #000;
 }
 /*hidden items for small display */
-.small_hide {
+.big_screen {
 	display: none;
+}
+.small_screen {
+	display:inherit;
 }
 /*user settings with logout for small displays*/
 .sbar {

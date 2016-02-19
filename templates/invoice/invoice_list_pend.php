@@ -253,7 +253,7 @@ echo "
 		";
 			if ($startrow > 0) {
 				echo "
-				<a href='index.php?section=invoice&template=invoice_list_pend&startrow=$backrow'>
+				<a href='index.php?section=invoice&template=invoice_list_pend&startrow=$backrow&cfilter=$filter'>
 					<div>{$lng->__('Back')}</div>
 				</a>
 				";
@@ -271,7 +271,7 @@ echo "
 			";
 			if ($totalrows  >= $newrow) {
 				echo "
-				<a href='index.php?section=invoice&template=invoice_list_pend&startrow=$newrow'>
+				<a href='index.php?section=invoice&template=invoice_list_pend&startrow=$newrow&cfilter=$filter'>
 					<div>{$lng->__('Next')}</div>
 				</a>
 				";
