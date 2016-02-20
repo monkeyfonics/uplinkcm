@@ -198,6 +198,6 @@ $info = Array(
 
 $report->content($info);
 
-$report->display("_report");
+$report->display("{$lngpdf->__(Report)}_".$accountname."_{$lngpdf->__($month)}");
 
 ?>

@@ -149,6 +149,7 @@ or=eller
 Emailed=Epostad
 /*/Reports/*/
 Monthly Report=Månads Rapport
+Report=Rapport
 /*/Email/*/
 New invoice from=Ny faktura av
 Confirmation of sent invoice to=Bekräftelse på skickad faktura till
