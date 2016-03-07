@@ -39,7 +39,7 @@ echo "
 					{$lng->__('New password')}:
 				</td>
 				<td>
-					<input id='pass1' type='password' name='pass'/>
+					<input id='pass1' type='password' name='pass1'/>
 				</td>
 			</tr>
 			<tr>

@@ -8,7 +8,7 @@ $hash_cost_log2 = 8;
 $hash_portable = FALSE;
 
 $user = $_POST['user'];
-$pass = $_POST['pass'];
+$pass = $_POST['pass1'];
 $pass2 = $_POST['pass2'];
 $op = $_POST['op'];
 $fname = $_POST['fname'];

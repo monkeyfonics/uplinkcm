@@ -63,7 +63,7 @@ $attachment
 
 $body = $plainpart.$attachpart;
 /* send the mail */
-$mail_sent = @mail($to,'=?utf-8?B?'.base64_encode($subject).'?=',$body,$headers);
+$mail_sent = @mail($to,$subject,$body,$headers);
 
 
 /* send mail to user */
@@ -83,7 +83,7 @@ Content-Type: text/plain; charset=UTF-8\r\n
 $body2 = $plainpart2.$attachpart;
 
 /*send confirmation to site user*/
-$mail_sent2 = @mail($to2,'=?utf-8?B?'.base64_encode($subject2).'?=',$body2,$headers);
+$mail_sent2 = @mail($to2,$subject2,$body2,$headers);
 
 $mail_sent ? $message = "{$lng->__('Mail sent')}" : $message = "{$lng->__('Mail failed')}"; 
 

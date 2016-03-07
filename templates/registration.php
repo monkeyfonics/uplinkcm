@@ -43,11 +43,30 @@ echo "
 			}
 			if (hit > 0) {
 				// disable submit button if there is a hit
-				document.getElementById('coninfo').innerHTML += 'User already exists '+loginjs;
+				document.getElementById('coninfo').innerHTML += '{$lng->__('User already exists')} '+loginjs;
 				document.getElementById('subbutton').disabled = true;
 			} else {
 				document.getElementById('coninfo').innerHTML = '&nbsp;';
 				document.getElementById('subbutton').disabled = false;
+			}
+		}
+		
+		function checkpassw()
+		{
+			var jspas1 = document.getElementById('pass1').value;
+			var jspas2 = document.getElementById('pass2').value;
+			
+			if (jspas1 == jspas2)
+			{
+				document.getElementById('pass2').setAttribute('class', 'correct');
+				document.getElementById('subbutton').disabled=false;
+				document.getElementById('coninfo').innerHTML = '&nbsp;';
+			}
+			else
+			{
+				document.getElementById('subbutton').disabled=true;
+				document.getElementById('pass2').setAttribute('class', ' ');
+				document.getElementById('coninfo').innerHTML = '{$lng->__('Passwords dont match')} ';
 			}
 		}
 	</script>
@@ -65,7 +84,7 @@ echo "
 		<table align='center'>
 			<tr>
 				<td>
-					Email*:
+					{$lng->__('Email')}*:
 				</td>
 				<td>
 					<input type='text' id='login' name='user' onchange='checkLogin()'>
@@ -73,16 +92,23 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Password*:
+					{$lng->__('Password')}*:
 				</td>
 				<td>
-					<input type='password' name='pass'>
+					<input type='password' id='pass1' name='pass1'>
 				</td>
 			</tr>
-			
 			<tr>
 				<td>
-					First Name:
+					{$lng->__('Confirm')}*:
+				</td>
+				<td>
+					<input type='password' id='pass2' name='pass2' onkeyup='checkpassw()'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{$lng->__('First Name')}:
 				</td>
 				<td>
 					<input type='text' name='fname'>
@@ -90,7 +116,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Last Name:
+					{$lng->__('Last Name')}:
 				</td>
 				<td>
 					<input type='text' name='lname'>
@@ -98,7 +124,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Telephone:
+					{$lng->__('Phone')}:
 				</td>
 				<td>
 					<input type='text' name='tel'>
@@ -106,7 +132,7 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Language:
+					{$lng->__('Language')}:
 				</td>
 				<td>
 					<select name='lang'>
@@ -122,15 +148,15 @@ echo "
 			
 			<tr>
 				<td colspan='2' style='text-align: center;'>
-					<input type='submit' id='subbutton' value='Create'>
+					<input type='submit' id='subbutton' value='{$lng->__('Create')}' disabled/>
 				</td>
 			</tr>
 		</table>
 		
 		</form>
 		<br/>
-		Problems?<br/>
-		<a href='mailto:info@uplink.fi'>Contact us!</a>
+		{$lng->__('Problems')}?<br/>
+		<a href='mailto:info@uplink.fi'>{$lng->__('Contact us')}!</a>
 	</div>
 	";
 ?>

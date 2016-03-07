@@ -14,6 +14,10 @@ Login Successfull=Inloggning Lyckades
 Login Failed=Inloggning Misslyckades
 Print=Printa
 Never=Aldrig
+language=språk
+Create=Skapa
+Problems=Problem
+Contact us=Kontakta oss
 /*/main/*/
 Dash=Panel
 New Todos=Nya Att göra
@@ -41,6 +45,8 @@ Reset=Återhämta
 Date=Datum
 Register a new user=Registrera en ny användare
 Register=Registrera
+Passwords dont match=Lösenorden stämmer inte överens
+User already exists=Användaren finns redan
 /*/menu/*/
 Contacts=Kontakter
 Companies=Firmor

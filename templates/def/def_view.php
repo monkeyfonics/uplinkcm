@@ -341,7 +341,7 @@ $it = pg_query($conn, $query);
 		echo "
 			<tr>
 				<td class='bold'>
-					{$lng->__('Total')}::
+					{$lng->__('Total')}:
 				</td>
 				<td>
 					

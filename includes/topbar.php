@@ -107,6 +107,9 @@ echo "
 			<div class='account bstyle'>
 				 <a href='?template=account_sel'>{$lng->__('Account')}: $ac_r[name]</a>
 			</div>
+			<div class='account bstyle'>
+				 <a href='?template=account_info'>&nbsp;i&nbsp;</a>
+			</div>
 		</div>
 	</div>
 	";
