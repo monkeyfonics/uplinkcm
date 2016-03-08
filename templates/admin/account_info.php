@@ -110,71 +110,61 @@ echo "
 		echo "
 		<table class='grid'>
 			
+			
 			<tr>
+				
 				<td>
-					Id:
-				</td>
-				<td>
-					$ac_r[id]
-				</td>
-				<td>
-					Active:
-				</td>
-				<td>
-					$ac_r[active]
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Vatnr:
-				</td>
-				<td>
-					$ac_r[vatnr]
-				</td>
-				<td>
-					Ident:
+					{$lng->__('Identyfier')}:
 				</td>
 				<td>
 					$ac_r[identy]
 				</td>
+				<td>
+					{$lng->__('VAT-nr')}:
+				</td>
+				<td>
+					$ac_r[vatnr]
+				</td>
 			</tr>
 			<tr>
 				<td>
-					Address:
+					{$lng->__('Address')}:
 				</td>
 				<td>
 					$ac_r[bill_addr]
 				</td>
 				<td>
-					Zip:
+					{$lng->__('Telephone')}:
+				</td>
+				<td>
+					$ac_r[bill_tel]
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{$lng->__('Zip')}:
 				</td>
 				<td>
 					$ac_r[bill_zip]
 				</td>
-			</tr>
-			<tr>
 				<td>
-					City:
-				</td>
-				<td>
-					$ac_r[bill_city]
-				</td>
-				<td>
-					Country:
-				</td>
-				<td>
-					$ac_r[bill_country]
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Email:
+					{$lng->__('Email')}:
 				</td>
 				<td>
 					$ac_r[bill_email]
 				</td>
+				
+			</tr>
+			<tr>
 				<td>
-					Bank Account:
+					{$lng->__('City')}:
+				</td>
+				<td>
+					$ac_r[bill_city]
+				</td>
+				
+				<td>
+					{$lng->__('Bank Account')}:
 				</td>
 				<td>
 					$ac_r[bank_account]
@@ -182,13 +172,14 @@ echo "
 			</tr>
 			<tr>
 				<td>
-					Tel:
+					{$lng->__('Country')}:
 				</td>
 				<td>
-					$ac_r[bill_tel]
+					$ac_r[bill_country]
 				</td>
+				
 				<td>
-					Bic:
+					{$lng->__('Bic')}:
 				</td>
 				<td>
 					$ac_r[bic]
