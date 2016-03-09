@@ -98,6 +98,7 @@ if ($in_r[cid] == 0) {
 	$addr = $cl_r['bill_addr'];
 	$zip = $cl_r['bill_zip'];
 	$city = $cl_r['bill_city'];
+	$country = $cl_r['bill_country'];
 		
 	
 } else {
@@ -125,6 +126,7 @@ $co_r = pg_fetch_array($co);
 	$addr = $co_r['bill_addr'];
 	$zip = $co_r['bill_zip'];
 	$city = $co_r['bill_city'];
+	$country = $co_r['bill_country'];
 		
 	
 }
@@ -253,6 +255,7 @@ $info = Array(
 		"street" => $acc_hold_r['bill_addr'],
 		"zip" => $acc_hold_r['bill_zip'],
 		"city" => $acc_hold_r['bill_city'],
+		"country" => $acc_hold_r['bill_country'],
 		"phone" => $tel,
 		"email" => $email,
 		"vatnr" => $acc_hold_r['vatnr'],
@@ -263,6 +266,7 @@ $info = Array(
 		"street" => $addr,
 		"zip" => $zip,
 		"city" => $city,
+		"country" => $country,
 		),
 	"accounts" => Array(
 		Array(

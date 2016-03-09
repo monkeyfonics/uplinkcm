@@ -28,14 +28,19 @@ class sepa {
 	
 	function header ($invoice) {
 		if (file_exists($invoice['logo']))		
-			$this->pdf->Image($invoice['logo'],15,5,0,25);
+			$this->pdf->Image($invoice['logo'],15,3,0,24);
 		$this->pdf->SetFontSize(8);
-		$this->pdf->SetXY(45,7);
-		$this->pdf->MultiCell(80,3.5,
+		$this->pdf->SetXY(45,5);
+		$this->pdf->MultiCell(35,3.5,
 			$invoice['recipient']['name']."\n".
 			$invoice['recipient']['street']."\n".
-			$invoice['recipient']['zip']." ".$invoice['recipient']['city']."\n\n".
+			$invoice['recipient']['zip']." ".$invoice['recipient']['city']."\n"
+			.$invoice['recipient']['country']
+			,0,L,0);
+		$this->pdf->SetXY(85,8);
+		$this->pdf->MultiCell(40,3.5,
 			$this->pdflang->__('Telephone').": ".$invoice['recipient']['phone']."\n".
+			$this->pdflang->__('Email').": ".$invoice['recipient']['email']."\n".
 			$this->pdflang->__('VAT-nr').": ".$invoice['recipient']['vatnr']
 			,0,L,0);
 		$this->pdf->SetFontSize(16);
@@ -52,7 +57,7 @@ class sepa {
 		$this->pdf->MultiCell(40,3.8,$invoice['nr'],0,L,0);
 		$this->pdf->SetXY(160,20);
 		$this->pdf->MultiCell(40,3.8,$invoice['dat'],0,L,0);
-		$this->pdf->Line(10,31,200,31);
+		$this->pdf->Line(10,27,200,27);
 	}
 	
 	function invoice ($invoice) {
@@ -70,19 +75,19 @@ class sepa {
 		
 
 
-		$this->pdf->SetXY(23,39);
+		$this->pdf->SetXY(23,32);
 		$this->pdf->SetFontSize(14);
-		$this->pdf->MultiCell(80,5,$invoice['payer']['name']."\n".(!empty($invoice['payer']['contact'])?$invoice['payer']['contact']."\n":'').$invoice['payer']['street']."\n".$invoice['payer']['zip']." ".$invoice['payer']['city']);
+		$this->pdf->MultiCell(80,5,$invoice['payer']['name']."\n".(!empty($invoice['payer']['contact'])?$invoice['payer']['contact']."\n":'').$invoice['payer']['street']."\n".$invoice['payer']['zip']." ".$invoice['payer']['city']."\n".$invoice['payer']['country']);
 		$this->pdf->SetFontSize(10);
-		$this->pdf->SetXY(110,38);
+		$this->pdf->SetXY(110,32);
 		$this->pdf->MultiCell(35,4.5,$this->pdflang->__('Time').":\n".$this->pdflang->__('Due Date').":\n".$this->pdflang->__('Reference').":\n".$this->pdflang->__('Delay penalty').":\n".$this->pdflang->__('VAT-nr').":");
-		$this->pdf->SetXY(150,38);
+		$this->pdf->SetXY(150,32);
 		$this->pdf->MultiCell(35,4.5,$invoice['terms']." ".$this->pdflang->__('Days')."\n".$invoice['due']."\n".$invoice['custref']."\n".$invoice['rate']."%\n".$invoice['recipient']['vatnr']);
-		$this->pdf->Line(10,65,200,65);
+		$this->pdf->Line(10,60,200,60);
 		
 
 		$y = 70;
-		$this->pdf->SetXY(10,70);
+		$this->pdf->SetXY(10,65);
 		$this->pdf->SetFontSize(14);
 		$this->pdf->MultiCell(0,4.5,$invoice['specification'],0,'L');
 		$this->pdf->Ln();
