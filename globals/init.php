@@ -4,7 +4,8 @@ session_start();
 
 include("settings.php");
 include("local_functions.php");
-
+/*encoding for site*/
+mb_internal_encoding("UTF-8");
 
 $conn = pg_connect("dbname=".$setting['db']['name']);
 

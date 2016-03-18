@@ -117,6 +117,16 @@ div.logout {
 	float: right;
 	
 }
+div.logo_holder {
+	float: left; 
+	background: #f0f0f0;
+	border-radius: 4px;
+	border: 0px solid #000;
+	min-width: 150px;
+	min-height: 150px;
+	padding: 4px;
+	margin: 5px;
+}
 /*hidden items for small display */
 .big_screen {
 	

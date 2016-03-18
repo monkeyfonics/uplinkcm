@@ -29,7 +29,8 @@ $ac_r = pg_fetch_array($ac);
 echo "
 	<div class='centercont'>
 <div style='clear:both;'>
-		<h2 class='header'>$ac_r[name]</h2>
+		
+		<div class='logo_holder'>
 		";
 		$logopath = "acc_img/".$ac_r[identy]."/logo.png";
 		if (file_exists($logopath)) {
@@ -38,10 +39,13 @@ echo "
 			";
 		} else {
 			echo "
-			No image
+			{$lng->__('No image')}
+			
 			";
 		}
 		echo "
+		</div>
+		<h2 class='header'>$ac_r[name]</h2>
 		<table class='grid'>
 			
 			

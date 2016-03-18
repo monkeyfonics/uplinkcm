@@ -192,3 +192,4 @@ Language selection=Språk val
 Chosen language for user=Valt språk för användare
 Selected language=Valt språk
 Identyfier=Identifierare
+No image=Ingen bild

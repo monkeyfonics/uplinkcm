@@ -118,7 +118,7 @@ echo "
 	
 	<div class='buttons'>
 		<a href='index.php?section=invoice&template=invoice_view&inoid=$in_r[id]'>
-			<div class='header'>$header</div>
+			<div class='header'>$in_r[header]</div>
 		</a>
 		
 			<button formid='insave' class='usebutton'>{$lng->__('Save Invoice')}</button>

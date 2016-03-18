@@ -43,6 +43,9 @@ $from = $sent;
 $to = $tocontact;
 $headers = "From:" . $from.$charset;
 $subject = "{$custlng->__('New invoice from')} ".$accountname;
+$subject = mb_encode_mimeheader($subject,'UTF-8','Q');
+
+
 $plainpart = "
 --PHP-mixed-$random_hash
 Content-Type: text/plain; charset=UTF-8\r\n
@@ -69,6 +72,7 @@ $mail_sent = @mail($to,$subject,$body,$headers);
 /* send mail to user */
 $to2 = $sent;
 $subject2 = "{$lng->__('Confirmation of sent invoice to')} ".$tocontact;
+$subject2 = mb_encode_mimeheader($subject2,'UTF-8','Q');
 
 $plainpart2 = "
 --PHP-mixed-$random_hash
