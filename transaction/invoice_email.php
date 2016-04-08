@@ -45,6 +45,8 @@ $headers = "From:" . $from.$charset;
 $subject = "{$custlng->__('New invoice from')} ".$accountname;
 $subject = mb_encode_mimeheader($subject,'UTF-8','Q');
 
+$accnameformat = preg_replace("/[^A-Za-z0-9]/", '', $acc_hold_r[name]);
+$attachname = "{$custlng->__('Invoice')}_".$accnameformat."_".$in_r[invoice_id]."";
 
 $plainpart = "
 --PHP-mixed-$random_hash
@@ -57,7 +59,7 @@ Content-Type: text/plain; charset=UTF-8\r\n
 {$custlng->__('Virtual barcode')}: $virtual";
 $attachpart = "
 --PHP-mixed-$random_hash
-Content-Type: application/pdf; name={$custlng->__('Invoice')}_".$acc_hold_r[name]."_".$in_r[invoice_id].".pdf
+Content-Type: application/pdf; name=".$attachname.".pdf
 Content-Transfer-Encoding: base64 
 Content-Disposition: attachment 
 
