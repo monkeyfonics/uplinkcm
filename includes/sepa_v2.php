@@ -20,8 +20,8 @@ class sepa {
 		$this->pdf->SetAutoPageBreak(false);
 		$this->pdf->SetMargins(10, 5);
 		$this->pdf->SetDrawColor(0,0,0);
-		$this->pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
-		$this->pdf->AddFont('DejaVu','B','DejaVuSansCondensed-Bold.ttf',true);
+		$this->pdf->AddFont('DejaVu','','DejaVuSerifCondensed.ttf',true);
+		$this->pdf->AddFont('DejaVu','B','DejaVuSerifCondensed-Bold.ttf',true);
 		$this->pdf->SetFont('DejaVu','',10);
 		
 	}
