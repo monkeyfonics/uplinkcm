@@ -192,13 +192,13 @@ echo "
 					{$lng->__('First Name')}:
 				</td>
 				<td>
-					 <input type='text' id='fname' name='fname' value='$ul_r[fname]' onkeyup='checkNames()'></input>
+					 <input type='text' id='fname' name='fname' value='$ul_r[fname]' onkeyup='checkNames()' tabindex='1' autofocus/>
 				</td>
 				<td class='head'>
 					{$lng->__('Address')}:
 				</td>
 				<td>
-					<input type='text' name='bill_addr' value='$ul_r[bill_addr]'></input>
+					<input type='text' name='bill_addr' value='$ul_r[bill_addr]' tabindex='8'/>
 				</td>
 			</tr>
 			<tr>
@@ -206,13 +206,13 @@ echo "
 					{$lng->__('Last Name')}:
 				</td>
 				<td>
-					<input type='text' id='lname' name='lname' value='$ul_r[lname]' onkeyup='checkNames()'></input>
+					<input type='text' id='lname' name='lname' value='$ul_r[lname]' onkeyup='checkNames()' tabindex='2'/>
 				</td>
 				<td class='head'>
 					{$lng->__('Zip')}:
 				</td>
 				<td>
-					<input type='text' name='bill_zip' value='$ul_r[bill_zip]'> </input> 
+					<input type='text' name='bill_zip' value='$ul_r[bill_zip]' tabindex='9'/>
 				</td>
 			</tr>
 			<tr>
@@ -220,13 +220,13 @@ echo "
 					{$lng->__('Phone')} 1:
 				</td>
 				<td>
-					<input type='text' name='phone1' value='$ul_r[phone1]'></input>
+					<input type='text' name='phone1' value='$ul_r[phone1]' tabindex='3'/>
 				</td>
 				<td class='head'>
 					{$lng->__('City')}:
 				</td>
 				<td>
-					<input type='text' name='bill_city' value='$ul_r[bill_city]'></input>
+					<input type='text' name='bill_city' value='$ul_r[bill_city]' tabindex='10'/>
 				</td>
 			</tr>
 			<tr>
@@ -234,14 +234,13 @@ echo "
 					{$lng->__('Phone')} 2:
 				</td>
 				<td>
-					<input type='text' name='phone2' value='$ul_r[phone2]'></input>
+					<input type='text' name='phone2' value='$ul_r[phone2]' tabindex='4'/>
 				</td>
 				<td class='head'>
 					{$lng->__('Country')}:
 				</td>
 				<td>
-					<input type='text' name='bill_country' value='$ul_r[bill_country]'></input>
-				</td>
+					<input type='text' name='bill_country' value='$ul_r[bill_country]' tabindex='11'/>
 			</tr>
 			
 			<tr>
@@ -249,7 +248,7 @@ echo "
 					{$lng->__('Email')}:
 				</td>
 				<td>
-					<input type='text' name='email' value='$ul_r[email]'></input>
+					<input type='text' name='email' value='$ul_r[email]' tabindex='5'/>
 				</td>
 				<td class='head'>
 					{$lng->__('Language')}:
@@ -261,7 +260,7 @@ echo "
 					if ($ul_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
 					
 				echo "
-					<select name='loco'>
+					<select name='loco' tabindex='12'>
 						<option value='fi' $sel1>
 							{$lng->__('Finnish')}
 						</option>
@@ -279,7 +278,7 @@ echo "
 					www:
 				</td>
 				<td>
-					<input type='text' name='www' value='$ul_r[www]'></input>
+					<input type='text' name='www' value='$ul_r[www]' tabindex='7'/>
 				</td>
 				<td class='head'>
 					

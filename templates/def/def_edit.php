@@ -220,13 +220,13 @@ echo "
 					{$lng->__('Dated')}:
 				</td>
 				<td>
-					<input type='text' name='dated' value='$in_r[dated]'></input>
+					<input type='text' name='dated' value='$in_r[dated]'/>
 				</td>
 				<td class='head'>
 					{$lng->__('Header')}:
 				</td>
 				<td>
-					<input class='full' type='text' name='header' value='$in_r[header]'></input>
+					<input class='full' type='text' name='header' value='$in_r[header]'/>
 				</td>
 			</tr>
 			<tr>
@@ -235,8 +235,8 @@ echo "
 				</td>
 				<td>
 					
-					<input type='hidden' name='next_create' value='$in_r[next_create]'></input>
-					<input type='text' name='next_create_show' disabled value='$in_r[next_create]'></input>
+					<input type='hidden' name='next_create' value='$in_r[next_create]'/>
+					<input type='text' name='next_create_show' disabled value='$in_r[next_create]'/>
 				</td>
 				<td class='head'>
 					{$lng->__('Person')}:
@@ -375,9 +375,9 @@ echo "
 					/*check users language somehow if new template*/
 					if ($blank == 1) {
 						/*if company is selected with primary or contact selected*/
-						if ($conlang or $spco_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
-						if ($conlang or $spco_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
-						if ($conlang or $spco_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+						if ($conlang == 'fi' or $spco_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($conlang == 'sv' or $spco_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($conlang == 'en' or $spco_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
 						
 					} else {
 						if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";

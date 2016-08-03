@@ -11,6 +11,9 @@ echo "
 <head>
 	<link href='layout/style.css' rel='stylesheet'>
 	<link href='layout/style_small.css' rel='stylesheet' type='text/css' media='screen and (max-width: 1000px)' />
+	
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	
 	<title>Contact Manager</title>
 	<link rel='shortcut icon' href='layout/img/fav.png' type='image/x-icon' />
 	

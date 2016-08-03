@@ -3,7 +3,8 @@ html {
 	font-family: serif, Times;
 }
 body {
-	background: #e7f2ec;
+	
+	background: url("img/ps_neutral.png");
 	margin: 0;
 	border: 0;
 	height: 100%;
@@ -91,18 +92,24 @@ p.messagetext {
 div.topcont {
 	
 	min-height: 30px;
-	background: #c1decf;
 	padding: 5px;
 	overflow:hidden;
+	
+	background: #c1decf; /* fallback */
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(193,222,207,0.9)), to(rgba(193,222,207,0.7))); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* FF3.6+ */
+	background: -ms-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* IE10 */
+	background: -o-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* Opera 11.10+ */
+	background: linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* W3C */
 }
 div.logoandtext {
-	
+	font-family: 'Lobster', cursive;
 }
 div.logo {
 	float: left;
 	margin-top: 5px;
 	font-size: 140%;
-	font-family: sans-serif;
 	font-weight: bold;
 }
 div.account {
@@ -284,15 +291,16 @@ div.menu {
 	width: 100%;
 	min-height: 35px;
 	overflow: auto;
+	
 	border-bottom: 1px solid #acbbac;
 	
 	background: #BFD8EF; /* fallback */
-	background: -webkit-gradient(linear, left top, left bottom, from(#dfe3e1), to(#f6faf8)); /* Saf4+, Chrome */
-	background: -webkit-linear-gradient(top, #dfe3e1, #f6faf8); /* Chrome 10+, Saf5.1+ */
-	background: -moz-linear-gradient(top, #dfe3e1, #f6faf8); /* FF3.6+ */
-	background: -ms-linear-gradient(top, #dfe3e1, #f6faf8); /* IE10 */
-	background: -o-linear-gradient(top, #dfe3e1, #f6faf8); /* Opera 11.10+ */
-	background: linear-gradient(top, #dfe3e1, #f6faf8); /* W3C */
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(223,227,225,0.5)), to(rgba(246,250,248,0.5))); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* FF3.6+ */
+	background: -ms-linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* IE10 */
+	background: -o-linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* Opera 11.10+ */
+	background: linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* W3C */
 	
 }
 .menuitem {
@@ -335,7 +343,7 @@ div.menu_lower {
 	text-align: center;
 }
 .menuactive {
-	background: #99dc95;
+	background: #c1decf;
 }
 
 .right {
@@ -411,18 +419,20 @@ div.centercont {
 	width: 800px;
 	min-height: 300px;
 	margin: auto;
+	margin-bottom: 20px;
 	background: #fff;
 	overflow:hidden;
-	
+	border-radius: 8px;
 }
 div.fullcont {
 	width: 95%;
 	min-height: 300px;
 	margin: auto;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	background: #fff;
 	overflow:hidden;
 	padding: 8px;
+	border-radius: 8px;
 }
 
 div.widget {
@@ -563,6 +573,7 @@ div.footer {
 	right: 0px;
 	height: 40px;
 	background: #c1decf;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.0)), url("img/stripes.png");
 	text-align: center;
-	
+	border-top: 1px solid #acbbac;
 }

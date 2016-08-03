@@ -197,13 +197,13 @@ echo "
 					{$lng->__('Name')}:
 				</td>
 				<td>
-					 <input type='text' id='name' name='name' value='$ul_r[name]' onkeyup='checkNames()'></input>
+					 <input type='text' id='name' name='name' value='$ul_r[name]' onkeyup='checkNames()' tabindex='1' autofocus/>
 				</td>
 				<td class='head'>
 					{$lng->__('Address')}:
 				</td>
 				<td>
-					<input type='text' name='bill_addr' value='$ul_r[bill_addr]'></input>
+					<input type='text' name='bill_addr' value='$ul_r[bill_addr]' tabindex='6'/>
 				</td>
 			</tr>
 			<tr>
@@ -211,13 +211,13 @@ echo "
 					{$lng->__('VAT-nr')}:
 				</td>
 				<td>
-					<input type='text' id='ytun' name='ytunnus' value='$ul_r[ytunnus]' onkeyup='checkNames()'></input>
+					<input type='text' id='ytun' name='ytunnus' value='$ul_r[ytunnus]' onkeyup='checkNames()' tabindex='2'/>
 				</td>
 				<td class='head'>
 					{$lng->__('Zip')}:
 				</td>
 				<td>
-					<input type='text' name='bill_zip' value='$ul_r[bill_zip]'> </input> 
+					<input type='text' name='bill_zip' value='$ul_r[bill_zip]' tabindex='7'/>
 				</td>
 			</tr>
 			<tr>
@@ -225,13 +225,13 @@ echo "
 					{$lng->__('Phone')}:
 				</td>
 				<td>
-					<input type='text' name='phone' value='$ul_r[phone]'></input>
+					<input type='text' name='phone' value='$ul_r[phone]' tabindex='3'/>
 				</td>
 				<td class='head'>
 					{$lng->__('City')}:
 				</td>
 				<td>
-					<input type='text' name='bill_city' value='$ul_r[bill_city]'></input>
+					<input type='text' name='bill_city' value='$ul_r[bill_city]' tabindex='8'/>
 				</td>
 			</tr>
 			<tr>
@@ -239,13 +239,13 @@ echo "
 					{$lng->__('Email')}:
 				</td>
 				<td>
-					<input type='text' name='email' value='$ul_r[email]'></input>
+					<input type='text' name='email' value='$ul_r[email]' tabindex='4'/>
 				</td>
 				<td class='head'>
 					{$lng->__('Country')}:
 				</td>
 				<td>
-					<input type='text' name='bill_country' value='$ul_r[bill_country]'></input>
+					<input type='text' name='bill_country' value='$ul_r[bill_country]' tabindex='9'/>
 				</td>
 			</tr>
 			<tr>
@@ -253,7 +253,7 @@ echo "
 					www:
 				</td>
 				<td>
-					<input type='text' name='www' value='$ul_r[www]'></input>
+					<input type='text' name='www' value='$ul_r[www]' tabindex='5'/>
 				</td>
 				<td class='head'>
 					
