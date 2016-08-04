@@ -76,8 +76,11 @@ div.messagebox {
 	margin: auto;
 	overflow: hidden;
 	width: 400px;
+	min-height: 100px;
 	background: #fff;
 	margin-top: 25px;
+	border-radius: 8px;
+	border: 1px solid #ADCABB;
 }
 img.messageicon {
 	margin: 10px;
@@ -96,12 +99,12 @@ div.topcont {
 	overflow:hidden;
 	
 	background: #c1decf; /* fallback */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(193,222,207,0.9)), to(rgba(193,222,207,0.7))); /* Saf4+, Chrome */
-	background: -webkit-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* Chrome 10+, Saf5.1+ */
-	background: -moz-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* FF3.6+ */
-	background: -ms-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* IE10 */
-	background: -o-linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* Opera 11.10+ */
-	background: linear-gradient(top, rgba(193,222,207,0.9), rgba(193,222,207,0.7)); /* W3C */
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(193,222,207,0.6)), to(rgba(193,222,207,0.3))), url('img/green_cup.png'); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, rgba(193,222,207,0.6), rgba(193,222,207,0.3)), url('img/green_cup.png'); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, rgba(193,222,207,0.6), rgba(193,222,207,0.3)), url('img/green_cup.png'); /* FF3.6+ */
+	background: -ms-linear-gradient(top, rgba(193,222,207,0.6), rgba(193,222,207,0.3)), url('img/green_cup.png'); /* IE10 */
+	background: -o-linear-gradient(top, rgba(193,222,207,0.6), rgba(193,222,207,0.3)), url('img/green_cup.png'); /* Opera 11.10+ */
+	background: linear-gradient(to bottom, rgba(193,222,207,0.6), rgba(193,222,207,0.3)), url('img/green_cup.png'); /* W3C */
 }
 div.logoandtext {
 	font-family: 'Lobster', cursive;
@@ -109,7 +112,7 @@ div.logoandtext {
 div.logo {
 	float: left;
 	margin-top: 5px;
-	font-size: 140%;
+	font-size: 150%;
 	font-weight: bold;
 }
 div.account {
@@ -246,7 +249,7 @@ div.div33 {
 	background: -moz-linear-gradient(top, #f6faf8, #dfe3e1); /* FF3.6+ */
 	background: -ms-linear-gradient(top, #f6faf8, #dfe3e1); /* IE10 */
 	background: -o-linear-gradient(top, #f6faf8, #dfe3e1); /* Opera 11.10+ */
-	background: linear-gradient(top, #f6faf8, #dfe3e1); /* W3C */
+	background: linear-gradient(to bottom, #f6faf8, #dfe3e1); /* W3C */
 	border: 1px solid #bbc0cc;
 	border-radius: 8px;
 	color: #225237;
@@ -265,7 +268,7 @@ div.div33 {
 	background: -moz-linear-gradient(top, #f6faf8, #dfe3e1); /* FF3.6+ */
 	background: -ms-linear-gradient(top, #f6faf8, #dfe3e1); /* IE10 */
 	background: -o-linear-gradient(top, #f6faf8, #dfe3e1); /* Opera 11.10+ */
-	background: linear-gradient(top, #f6faf8, #dfe3e1); /* W3C */
+	background: linear-gradient(to bottom, #f6faf8, #dfe3e1); /* W3C */
 	border: 1px solid #bbc0cc;
 	border-radius: 8px;
 	color: #225237;
@@ -300,7 +303,7 @@ div.menu {
 	background: -moz-linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* FF3.6+ */
 	background: -ms-linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* IE10 */
 	background: -o-linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* Opera 11.10+ */
-	background: linear-gradient(top, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* W3C */
+	background: linear-gradient(to bottom, rgba(223,227,225,0.5), rgba(246,250,248,0.5)); /* W3C */
 	
 }
 .menuitem {
@@ -343,7 +346,7 @@ div.menu_lower {
 	text-align: center;
 }
 .menuactive {
-	background: #c1decf;
+	background: #CDDCCD;
 }
 
 .right {
@@ -366,7 +369,7 @@ table.login {
 }
 div.login {
 	margin:auto;
-	background: #c1decf;
+	background: #CDDCCD;
 	border: 1px solid #000;
 	border-radius: 8px;
 	width: 400px;
@@ -389,9 +392,15 @@ div.reg {
 /*abc links*/
 .abc_container {
 	background: #f0f0f0;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(225,225,225,1)), to(rgba(225,225,225,0))); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, rgba(225,225,225,1), rgba(225,225,225,0)); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, rgba(225,225,225,1), rgba(225,225,225,0)); /* FF3.6+ */
+	background: -ms-linear-gradient(top, rgba(225,225,225,1), rgba(225,225,225,0)); /* IE10 */
+	background: -o-linear-gradient(top, rgba(225,225,225,1), rgba(225,225,225,0)); /* Opera 11.10+ */
+	background: linear-gradient(to left, rgba(225,225,225,1), rgba(225,225,225,0)); /* W3C */
 	position: absolute;
-	right: 15px;
-	width: 25px;
+	right: 0px;
+	width: 40px;
 	clear: both;
 }
 .abc_item {
@@ -423,6 +432,7 @@ div.centercont {
 	background: #fff;
 	overflow:hidden;
 	border-radius: 8px;
+	border: 1px solid #E0E9E3;
 }
 div.fullcont {
 	width: 95%;
@@ -433,6 +443,7 @@ div.fullcont {
 	overflow:hidden;
 	padding: 8px;
 	border-radius: 8px;
+	border: 1px solid #E0E9E3;
 }
 
 div.widget {
@@ -573,7 +584,14 @@ div.footer {
 	right: 0px;
 	height: 40px;
 	background: #c1decf;
-	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.0)), url("img/stripes.png");
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(193,222,207,0.4)), to(rgba(193,222,207,0.2))), url('img/green_cup.png'); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(top, rgba(193,222,207,0.4), rgba(193,222,207,0.2)), url('img/green_cup.png'); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(top, rgba(193,222,207,0.4), rgba(193,222,207,0.2)), url('img/green_cup.png'); /* FF3.6+ */
+	background: -ms-linear-gradient(top, rgba(193,222,207,0.4), rgba(193,222,207,0.2)), url('img/green_cup.png'); /* IE10 */
+	background: -o-linear-gradient(top, rgba(193,222,207,0.4), rgba(193,222,207,0.2)), url('img/green_cup.png'); /* Opera 11.10+ */
+	background: linear-gradient(to bottom, rgba(193,222,207,0.4), rgba(193,222,207,0.2)), url('img/green_cup.png'); /* W3C */
+	
 	text-align: center;
-	border-top: 1px solid #acbbac;
+	border-top: 1px solid #839283;
+	padding-top: 10px;
 }

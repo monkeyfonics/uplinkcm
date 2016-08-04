@@ -3,7 +3,7 @@ html {
 }
 
 div.logo {
-	background: #000;
+	
 }
 /*hidden items for small display */
 .big_screen {
@@ -15,7 +15,7 @@ div.logo {
 /*user settings with logout for small displays*/
 .sbar {
 	width: 100%;
-	background: #000;
+	background: #607D6E;
 	margin-top: -5px;
 	margin-left: 0px;
 	margin-right: 0px;
