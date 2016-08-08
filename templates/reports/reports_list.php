@@ -110,8 +110,12 @@ $monthly = pg_query($conn, $query);
 					
 				</tr>
 				<tr>
-					
-					<td colspan='3' class='bold' $marker>
+					<td class='bold' $marker>
+						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
+							Date
+						</a>
+					</td>
+					<td colspan='2' class='bold' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
 							$minus - $dated
 						</a>
@@ -126,9 +130,11 @@ $monthly = pg_query($conn, $query);
 							{$lng->__('Amount')}
 						</a>
 					</td>
-					<td class='bold' $marker>
+					<td class='bold' title='{$lng->__('Cash')}' $marker>
 						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
-							{$lng->__('Cash')}
+							
+							€
+				
 						</a>
 					</td>
 				</tr>
@@ -210,7 +216,7 @@ $monthly = pg_query($conn, $query);
 			$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
 			/*format date*/
 			$dated_out = date('Y-m-d',strtotime($monthly_r[dated_out]));
-			$dated_out_s = date('d.m',strtotime($monthly_r[dated_out]));
+			$dated_out_s = date('d',strtotime($monthly_r[dated_out]));
 			
 			echo "
 				<tr>

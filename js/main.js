@@ -109,4 +109,37 @@ function disableEnd()
 		}
 	}
 	
-
+function popItPrint(id)
+	{
+		var lastpopit = localStorage.getItem("popitid");
+		//clear all popits first
+		var popits = document.getElementsByClassName('popitbox');
+		for(var i=0; i<popits.length; i++) { 
+		  popits[i].style.display='none';
+		}
+		//show selected popit
+		document.getElementById('infopopprint_'+id).style.display='block';
+		//remove if same id is clicked
+		if (lastpopit == id) {
+			document.getElementById('infopopprint_'+id).style.display='none';
+		}
+		localStorage.setItem("popitid", id);
+		
+	}
+function popItEmail(id)
+	{
+		var lastpopit = localStorage.getItem("popitid");
+		//clear all popits first
+		var popits = document.getElementsByClassName('popitbox');
+		for(var i=0; i<popits.length; i++) { 
+		  popits[i].style.display='none';
+		}
+		//show selected popit
+		document.getElementById('infopopemail_'+id).style.display='block';
+		//remove if same id is clicked
+		if (lastpopit == id) {
+			document.getElementById('infopopemail_'+id).style.display='none';
+		}
+		localStorage.setItem("popitid", id);
+		
+	}

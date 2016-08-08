@@ -1,6 +1,6 @@
 html {
 	height: 100%;
-	font-family: serif, Times;
+	font-family: 'Droid Serif', serif, Times;
 }
 body {
 	
@@ -518,6 +518,15 @@ table.grid td.head {
 	width: 150px;
 	text-align: center;
 }
+.popitbox {
+	display: none;
+	position: absolute;
+	background: #F0F0C4;
+	border: 1px solid #4A4A1E;
+	padding: 6px;
+	right: 10px;
+}
+
 /*reports*/
 table.list tr td.report_header {
 	font-weight: bold;

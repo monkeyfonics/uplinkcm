@@ -10,7 +10,7 @@ echo "
 					{$lng->__('Email')}:
 				</td>
 				<td>
-					<input type='text' name='user' autofocus>
+					<input type='email' name='user' autocapitalize='none' autofocus>
 				</td>
 			</tr>
 			<tr>

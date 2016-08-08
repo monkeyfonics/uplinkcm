@@ -145,6 +145,7 @@ Published=Publiserade
 Virtual barcode=Virtuel referens
 Invoice number=Faktura nummer
 Not printed=Inte Printad
+Not emailed=Inte Epostad
 Due date=Förfallodag
 Every=Varje
 Month(s)=Månad(er)

@@ -125,10 +125,10 @@ echo "
 					{$lng->__('Amount')}:
 				</th>
 				<th title='{$lng->__('Printed')}'>
-					{$lng->__('Printed')}:
+					<img style='width: 20px;' src='../layout/img/printer.png' alt='{$lng->__('Printed')}'>
 				</th>
 				<th title='{$lng->__('Emailed')}'>
-					{$lng->__('Emailed')}:
+					<img style='width: 20px;' src='../layout/img/email.png' alt='{$lng->__('Emailed')}'>
 				</th>
 				<th title='{$lng->__('Cash')}'>
 					€
@@ -169,18 +169,22 @@ echo "
 			
 			$date = strtotime($in_r[dated_out]);
 			if ($in_r[printed]) {
-				$printed_s = 'P';
+				$printed_s = "<img style='width: 20px;' src='../layout/img/printer.png' alt='Printed'>";
 				$printed = date('Y-m-d', strtotime($in_r[printed]));
+				$print_hover = date('Y-m-d', strtotime($in_r[printed]));
 			} else {
-				$printed_s = ' ';
-				$printed = "{$lng->__('Not printed')}";
+				$printed_s = " ";
+				$printed = "<span style='color: #B2B2B2; font-size: 70%;'>{$lng->__('Not printed')}</span>";
+				$print_hover = "{$lng->__('Not printed')}";
 			}
 			if ($in_r[emailed]) {
-				$emailed = "@";
+				$emailed = "<img style='width: 20px;' src='../layout/img/email.png' alt='Email'>";
 				$email_date = date('Y-m-d', strtotime($in_r[emailed]));
+				$email_hover = date('Y-m-d', strtotime($in_r[emailed]));
 			} else {
 				$emailed = " ";
-				$email_date = " ";
+				$email_date = "<span style='color: #B2B2B2; font-size: 70%;'>{$lng->__('Not emailed')}</span>";
+				$email_hover = "{$lng->__('Not emailed')}";
 			}
 			if ($in_r[cash] == t) {
 				$cash = "&#10004;";
@@ -246,23 +250,27 @@ echo "
 					<td>
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
-					<td title='$printed'>
+					<td title='{$lng->__('Printed')} $print_hover'  onclick = 'popItPrint($in_r[invoice_id]);'>
 						<span class='small_screen'>
 							$printed_s
 						</span>
 						<span class='big_screen'>
 							$printed
 						</span>
-						
+						<div class='popitbox' id='infopopprint_$in_r[invoice_id]'>
+							$printed
+						</div>
 					</td>
-					<td title='$email_date'>
+					<td title='{$lng->__('Emailed')} $email_hover' onclick = 'popItEmail($in_r[invoice_id]);'>
 						<span class='small_screen'>
 							$emailed
 						</span>
 						<span class='big_screen'>
 							$email_date
 						</span>
-						
+						<div class='popitbox' id='infopopemail_$in_r[invoice_id]'>
+							$email_date
+						</div>
 					</td>
 					<td>
 						$cash
