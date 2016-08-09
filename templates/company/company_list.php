@@ -89,6 +89,8 @@ echo "
 				$a = "";
 			}
 				
+			// format webaddress
+			$webadr = str_replace("http://","",$ul_r[www]);
 			
 			echo "	
 				<tr>
@@ -106,7 +108,9 @@ echo "
 						$ul_r[email]
 					</td>
 					<td>
-						$ul_r[www]
+						<a href='http://$webadr' target='_blank'>
+							$ul_r[www]
+						</a>
 					</td>
 				</tr>
 			";

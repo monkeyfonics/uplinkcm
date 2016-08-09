@@ -526,6 +526,9 @@ table.grid td.head {
 	padding: 6px;
 	right: 10px;
 }
+.selclass {
+	background: #99D99C;
+}
 
 /*reports*/
 table.list tr td.report_header {

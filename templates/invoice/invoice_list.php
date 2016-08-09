@@ -250,7 +250,7 @@ echo "
 					<td>
 						".number_format($combprice,2,","," ")." &euro;
 					</td>
-					<td title='{$lng->__('Printed')} $print_hover'  onclick = 'popItPrint($in_r[invoice_id]);'>
+					<td id='print_td_$in_r[invoice_id]' title='{$lng->__('Printed')} $print_hover'  onclick = 'popItPrint($in_r[invoice_id]);'>
 						<span class='small_screen'>
 							$printed_s
 						</span>
@@ -261,7 +261,7 @@ echo "
 							$printed
 						</div>
 					</td>
-					<td title='{$lng->__('Emailed')} $email_hover' onclick = 'popItEmail($in_r[invoice_id]);'>
+					<td id='email_td_$in_r[invoice_id]' title='{$lng->__('Emailed')} $email_hover' onclick = 'popItEmail($in_r[invoice_id]);'>
 						<span class='small_screen'>
 							$emailed
 						</span>

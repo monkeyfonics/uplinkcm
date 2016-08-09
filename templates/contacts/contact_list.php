@@ -118,8 +118,9 @@ echo "
 						</a>
 					</td>
 					<td>
-						
-						$ul_r[bill_addr] $ul_r[bill_zip] $ul_r[bill_city]
+						<a href='http://maps.google.com/maps?q=$ul_r[bill_addr]%20$ul_r[bill_zip]%20$ul_r[bill_city]%20$ul_r[bill_country]' target='_blank'>
+							$ul_r[bill_addr] $ul_r[bill_zip] $ul_r[bill_city]
+						</a>
 					</td>
 				</tr>
 			";

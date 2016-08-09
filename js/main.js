@@ -117,11 +117,17 @@ function popItPrint(id)
 		for(var i=0; i<popits.length; i++) { 
 		  popits[i].style.display='none';
 		}
+		var tds = document.getElementsByClassName('selclass');
+		for(var i=0; i<tds.length; i++) { 
+		  tds[i].className = "";
+		}
 		//show selected popit
 		document.getElementById('infopopprint_'+id).style.display='block';
+		document.getElementById('print_td_'+id).className += " selclass";
 		//remove if same id is clicked
 		if (lastpopit == id) {
 			document.getElementById('infopopprint_'+id).style.display='none';
+			document.getElementById('print_td_'+id).className = "";
 		}
 		localStorage.setItem("popitid", id);
 		
@@ -134,11 +140,17 @@ function popItEmail(id)
 		for(var i=0; i<popits.length; i++) { 
 		  popits[i].style.display='none';
 		}
+		var tds = document.getElementsByClassName('selclass');
+		for(var i=0; i<tds.length; i++) { 
+		  tds[i].className = "";
+		}
 		//show selected popit
 		document.getElementById('infopopemail_'+id).style.display='block';
+		document.getElementById('email_td_'+id).className += " selclass";
 		//remove if same id is clicked
 		if (lastpopit == id) {
 			document.getElementById('infopopemail_'+id).style.display='none';
+			document.getElementById('email_td_'+id).className = "";
 		}
 		localStorage.setItem("popitid", id);
 		
