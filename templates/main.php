@@ -112,9 +112,9 @@ $lastofmonth = date ( 'Y-m-d' , $lastofmonth );
 $lastofmonth01 = strtotime ( '-1 month' , strtotime ( $minus ) ) ;
 $lastofmonth01 = date ( 'Y-m-d' , $lastofmonth01 );
 //remove one month to make 3 month comparison
-$twomonthlast = strtotime ( '-1 month' , strtotime ( $lastofmonth ) ) ;
+$twomonthlast = strtotime ( '-1 months, -1 day' , strtotime ( $minus ) ) ;
 $twomonthlast = date ( 'Y-m-d' , $twomonthlast );
-$twomonthlast01 = strtotime ( '-1 month' , strtotime ( $lastofmonth ) ) ;
+$twomonthlast01 = strtotime ( '-2 months' , strtotime ( $minus ) ) ;
 $twomonthlast01 = date ( 'Y-m-d' , $twomonthlast01 );
 
 $monthnowtext = date(F);
@@ -203,12 +203,7 @@ echo "
 					$unpubcount3++;
 				} else {
 					$pubcount3++;
-					/*check how many are unsent of the published*/
-					if ($in_r[printed] == '' and $in_r[emailed] == '') {
-						
-					} else {
-						
-					}
+					
 				}
 				
 			} //end of 3rd month
@@ -309,9 +304,7 @@ echo "
 			
 echo "		
 			<h4 title='{$lng->__('Invoices compared to last month')}'>{$lng->__('Chart')}</h4>
-			$highpros
-			$mediumpros 
-			$lowpros
+			
 			<div class='chartcont'>
 				<div class='linecont'>
 					<div class='chartheader'>{$lng->__($monthnowtext)}</div>
