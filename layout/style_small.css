@@ -44,3 +44,9 @@ div.login input {
 	height: 50px;
 	vertical-align: middle;
 }
+/*frontpage widgets*/
+div.widgetcont {
+	float: left;
+	width: 50%;
+	margin: auto;
+}

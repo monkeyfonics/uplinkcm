@@ -432,6 +432,8 @@ div.frontcont {
 	margin-bottom: 20px;
 	background: #fff;
 	overflow:hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	border-radius: 8px;
 	border: 1px solid #E0E9E3;
 }
@@ -456,14 +458,19 @@ div.fullcont {
 	border-radius: 8px;
 	border: 1px solid #E0E9E3;
 }
-
-div.widget {
+div.widgetcont {
 	float: left;
+	width: 25%;
+	margin: auto;
+}
+div.widget {
+	border-radius:8px;
 	border: 1px solid #f0f0f0;
-	width: 250px;
+	width: 95%;
 	min-height: 400px;
 	padding: 0.5%;
-	margin: 1%;
+	margin: auto;
+	margin-bottom: 8px;
 	font-size: 90%;
 }
 .itemheader {

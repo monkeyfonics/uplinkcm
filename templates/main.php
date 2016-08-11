@@ -132,6 +132,7 @@ echo "
 
 /* widget new invoice*/
 echo "
+		<div class='widgetcont'>
 		<div class='widget'>
 			<div class='header'><a href='index.php?section=invoice&template=invoice_list'>{$lng->__('New Invoices')}</a></div>
 			<h4>$minus - $today</h4>
@@ -320,12 +321,14 @@ echo "
 				</div>
 			</div>	
 		</div>
+		</div>
 ";		
 		
 
 	
 	/* widget new contact*/
 echo "
+		<div class='widgetcont'>
 		<div class='widget'>
 			<div class='header'><a href='index.php?section=contacts&template=contact_list'>{$lng->__('New Contacts')}</a></div>
 			<table class='list'>
@@ -348,10 +351,12 @@ echo "
 echo "
 			</table>
 		</div>
+		</div>
 ";		
 
 /* widget new todo*/
 echo "
+		<div class='widgetcont'>
 		<div class='widget'>
 			<div class='header'><a href='index.php?section=todo&template=todo_list'>{$lng->__('New Todos')}</a></div>
 			<table class='list'>
@@ -385,10 +390,12 @@ echo "
 			</table>
 			
 		</div>
+		</div>
 ";
 
 		/* widget new notes*/
 echo "
+		<div class='widgetcont'>
 		<div class='widget'>
 			<div class='header'><a href='index.php?section=contacts&template=contact_list'>{$lng->__('New Notes')}</a></div>
 			<table class='list'>
@@ -413,6 +420,7 @@ echo "
 		}
 echo "
 			</table>
+		</div>
 		</div>
 ";	
 
