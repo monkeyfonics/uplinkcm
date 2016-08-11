@@ -353,7 +353,9 @@ div.menu_lower {
 	
 	float: right
 }
-
+.center {
+	text-align: center;
+}
 
 label.formheader {
 	display:inline-block;
@@ -423,7 +425,16 @@ div.main_box {
 	padding-bottom: 40px; /* for footer */
 }
 
-
+div.frontcont {
+	width: 95%;
+	min-height: 300px;
+	margin: auto;
+	margin-bottom: 20px;
+	background: #fff;
+	overflow:hidden;
+	border-radius: 8px;
+	border: 1px solid #E0E9E3;
+}
 div.centercont {
 	width: 800px;
 	min-height: 300px;
@@ -449,11 +460,16 @@ div.fullcont {
 div.widget {
 	float: left;
 	border: 1px solid #f0f0f0;
-	width: 46%;
+	width: 250px;
 	min-height: 400px;
 	padding: 0.5%;
 	margin: 1%;
-	
+	font-size: 90%;
+}
+.itemheader {
+	font-size: 90%;
+	border-top: 1px solid #225237;
+	margin: 3px;
 }
 div.header {
 	background: none;
@@ -464,6 +480,41 @@ div.header {
 	padding: 6px;
 	font-size: 140%;
 	margin: 8px;
+}
+/*chart items*/
+.chartcont {
+	width: 95%;
+	margin: auto;
+	background: #f0f0f0;
+	border-radius: 8px;
+}
+.linecont {
+	width: 95%;
+	padding: 2px;
+	overflow: hidden;
+}
+.chartheader {
+	margin: 4px;
+	float: left;
+	width: 40%;
+	border-bottom: 1px solid #000;
+	
+}
+.chartbarcont {
+	float: left;
+	width: 53%
+	
+}
+.chartbar {
+	background: #4A864D;
+	float: left;
+	text-align: right;
+	font-size: 70%
+	padding: 4px;
+	padding-right: 5px;
+	margin: 2px;
+	min-width: 10px;
+	
 }
 /* list stuff */
 .pub {
