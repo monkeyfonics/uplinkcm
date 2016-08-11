@@ -139,13 +139,17 @@ $monthly = pg_query($conn, $query);
 					</td>
 				</tr>
 			";
+		$nrofinv = 0;
+		
 		while ($monthly_r = pg_fetch_array($monthly)) {
 			if ($monthly_r[cash] == t) {
 				$cash = "&#10004;";
 			} else {
 				$cash = " ";
 			}
-				
+			if ($monthly_r[pub] == t) {
+				$nrofinv++;
+			}
 			 /*get name for contact*/
 					
 			$query = "
@@ -261,14 +265,16 @@ $monthly = pg_query($conn, $query);
 			
 			$totalformat = number_format($total, 2, ',', '');
 			
+			
 			echo "
 				<tr>
 					<td>
-
+						<b>{$lng->__('Total')}:</b>
 					</td>
 					<td>
-						
+						$nrofinv
 					</td>
+					
 					<td>
 						
 					</td>

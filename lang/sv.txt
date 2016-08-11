@@ -28,6 +28,7 @@ Invoices compared to last month=Fakturor jämnfört med förra månaden
 Number of invoices=Antal fakturor
 Chart=Diagram
 Empty=Tom
+for=för
 /*/months/*/
 January=Januari
 February=Februari

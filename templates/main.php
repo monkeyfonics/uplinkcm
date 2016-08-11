@@ -26,7 +26,7 @@ $query = "
   				created
 	from		$acco.contacts
 	order by	created desc
-	limit 		10
+	limit 		6
 	
 ";
 
@@ -375,7 +375,7 @@ echo "
 							echo substr($todo_r[cont], 0, 30);
 							echo " 
 						
-							<div class='itemheader'>".date('Y-m-d', $date)."<br/> {$lng->__('by')} $todo_r[lname], $todo_r[fname]</div>
+							<div class='itemheader'>".date('Y-m-d', $date)."<br/> {$lng->__('for')} $todo_r[lname], $todo_r[fname]</div>
 						</a>
 					</td>
 				</tr>
