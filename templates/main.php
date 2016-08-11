@@ -273,28 +273,45 @@ echo "
 					$high = $pubcount;
 					$medium = $pubcountlast;
 					$low = $pubcount3;
+					if ($high != 0) {
+					$highpros = 100;
+					$mediumpros = ($medium / $high)*100;
+					$lowpros = ($low / $high)*100;
+					}
+					$month1pros = $highpros;
+					$month2pros = $mediumpros;
+					$month3pros = $lowpros;
 				} elseif ($pubcountlast >= $pubcount and $pubcountlast >= $pubcount3) {
 					$high = $pubcountlast;
 					$medium = $pubcount;
 					$low = $pubcount3;
+					if ($high != 0) {
+					$highpros = 100;
+					$mediumpros = ($medium / $high)*100;
+					$lowpros = ($low / $high)*100;
+					}
+					$month1pros = $mediumpros;
+					$month2pros = $highpros;
+					$month3pros = $lowpros;
 				} elseif ($pubcount3 >= $pubcount and $pubcount3 >= $pubcountlast) {
 					$high = $pubcount3;
 					$medium = $pubcount;
 					$low = $pubcountlast;
+					if ($high != 0) {
+					$highpros = 100;
+					$mediumpros = ($medium / $high)*100;
+					$lowpros = ($low / $high)*100;
+					}
+					$month1pros = $lowpros;
+					$month2pros = $mediumpros;
+					$month3pros = $highpros;
 				}
 			
-			if ($pubcount != 0) {
-				$thismonthpros = $pubcount / 100;
-				$month1pros = 100;
-				$month2pros = ($pubcountlast / $high)*100;
-				$month2pros = $pubcountlast * $month2pros;
-				$month3pros = ($pubcount3 / $high)*100;
-				$month3pros = $pubcount3 * $month3pros;
-			} else {
-				
-			}
 echo "		
 			<h4 title='{$lng->__('Invoices compared to last month')}'>{$lng->__('Chart')}</h4>
+			$highpros
+			$mediumpros 
+			$lowpros
 			<div class='chartcont'>
 				<div class='linecont'>
 					<div class='chartheader'>{$lng->__($monthnowtext)}</div>
