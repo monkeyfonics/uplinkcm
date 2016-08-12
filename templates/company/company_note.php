@@ -13,6 +13,7 @@ if ($_GET['notid']) {
 	$query = "
 		select		$acco.contact_notes.id as id,
 					$acco.contact_notes.contact_id as contact_id,
+					$acco.contact_notes.company_id as company_id,
 					$acco.contact_notes.created as created,
 					$acco.contact_notes.cont as cont,
 					$acco.contact_notes.created_by as created_by,
@@ -45,17 +46,16 @@ if ($_GET['notid']) {
 
 $query = "
 	select		id,
-				fname,
-				lname,
+				name,
+				ytunnus,
 				bill_addr,
   				bill_zip,
   				bill_city,
   				bill_country,
   				email,
-  				phone1,
-  				phone2,
+  				phone,
   				www
-	from		$acco.contacts
+	from		$acco.company
 	where		id = $suid
 	
 ";
@@ -68,14 +68,14 @@ $ul_r = pg_fetch_array($ul);
 
 echo "
 <form action='transaction.php?t=note_save' method='post' id='notesave'>
-	<input type='hidden' name='consuid' value='$ul_r[id]'/>
-	<input type='hidden' name='comsuid' value=''/>
+	<input type='hidden' name='consuid' value=''/>
+	<input type='hidden' name='comsuid' value='$ul_r[id]'/>
 	<input type='hidden' name='acco' value='$acco'/>
 	<input type='hidden' name='notid' value='$con_not_r[id]'/>
 	
 	<div class='buttons'>
 		<a href='index.php?section=contacts&template=contact_view&suid=$ul_r[id]'>
-			<div class='header'>$ul_r[lname], $ul_r[fname]</div>
+			<div class='header'>$ul_r[name]</div>
 		</a>
 		
 			<button formid='notesave' class='usebutton'>{$lng->__('Save Note')}</button>
@@ -87,7 +87,7 @@ echo "
 		<table class='grid'>
 			<tr>
 				<td class='head'>
-					{$lng->__('Note')} {$lng->__('by')} $con_not_r[lname], $con_not_r[fname]:
+					{$lng->__('Note')} {$lng->__('by')} $con_not_r[name]:
 				</td>
 			</tr>
 			<tr>

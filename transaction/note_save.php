@@ -3,7 +3,19 @@
 $acco = $_POST['acco'];
 $s_id = $_SESSION['s_id'];
 
-$suid = $_POST['suid'];
+$consuid = $_POST['consuid'];
+$comsuid = $_POST['comsuid'];
+
+if ($_POST['consuid']) {
+	$consuid = $_POST['consuid'];
+	$comsuid = 0;
+	$ret_url = 'index.php?section=contacts&template=contact_view&suid='.$consuid;
+} else {
+	$consuid = 0;
+	$comsuid = $_POST['comsuid'];
+	$ret_url = 'index.php?section=company&template=company_view&suid='.$comsuid;
+}
+
 $cont = $_POST['cont'];
 $notid = $_POST['notid'];
 
@@ -28,17 +40,19 @@ if ($notid) {
 			created,
 			cont,
 			contact_id,
+			company_id,
 			created_by
 			) values (
 			now(),
 			'$cont',
-			$suid,
+			$consuid,
+			$comsuid,
 			$s_id
 			)
 		";
 	$not = pg_query($conn, $query);
 	
-	$ret_url = 'index.php?section=contacts&template=contact_view&suid='.$suid;
+	
 	$message = "{$lng->__('Note')} {$lng->__('saved')}";
 }
 
@@ -48,6 +62,7 @@ if ($notid) {
 		
 		echo "
 			<div class='messagebox'>
+			
 				<img class='messageicon' src='$icon' alt='$message'>
 				<p class='messagetext'>$message</p>
 			</div>

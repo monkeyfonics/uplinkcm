@@ -66,13 +66,17 @@ $in = pg_query($conn, $query);
 
 $query = "
 	select		$acco.contact_notes.id,
-				$acco.contact_notes.contact_id,
+				$acco.contact_notes.contact_id as contact_id,
+				$acco.contact_notes.company_id as company_id,
 				$acco.contact_notes.cont as cont,
   				$acco.contact_notes.created as created,
   				$acco.contacts.fname as fname,
-  				$acco.contacts.lname as lname
+  				$acco.contacts.lname as lname,
+  				$acco.company.name as name
 	from		$acco.contact_notes LEFT JOIN $acco.contacts
 	ON			($acco.contact_notes.contact_id = $acco.contacts.id)
+				LEFT JOIN $acco.company
+	ON			($acco.contact_notes.company_id = $acco.company.id)
 	order by	created desc
 	limit 		5
 	
@@ -401,17 +405,25 @@ echo "
 			<table class='list'>
 				
 	";
+		
 		while ($note_r = pg_fetch_array($note)) {
 			$date = strtotime($note_r[created]);
+			if ($note_r[contact_id] > 0) {
+				$notcon = "$note_r[lname], $note_r[fname]";
+				$href = "index.php?section=contacts&template=contact_view&suid=$note_r[contact_id]";
+			} else {
+				$notcon = "$note_r[name]";
+				$href = "index.php?section=company&template=company_view&suid=$note_r[company_id]";
+			}
 			echo "
 				<tr>
 					
 					<td>
-						<a href='index.php?section=contacts&template=contact_view&suid=$note_r[contact_id]'>
+						<a href='$href'>
 						";
 						echo substr($note_r[cont], 0, 30);
 						echo "
-							<div class='itemheader'>".date('Y-m-d', $date)."<br/> {$lng->__('by')} $note_r[lname], $note_r[fname]</div>
+							<div class='itemheader'>".date('Y-m-d', $date)."<br/> {$lng->__('for')} $notcon</div>
 						</a>
 					</td>
 				</tr>

@@ -160,6 +160,7 @@ $tables = array(
         "cols" => array( // List the columns
             "id" => array("type"=>"serial"),
             "contact_id" => array("type"=>"integer"),
+            "company_id" => array("type"=>"integer"),
             "created" => array("type"=>"timestamp without time zone"),
             "cont" => array("type"=>"character varying"),
             "created_by" => array("type"=>"integer"),
