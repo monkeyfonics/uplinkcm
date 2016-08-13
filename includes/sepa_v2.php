@@ -246,10 +246,11 @@ class sepa {
 			
 			$l += 3.8;
 		}
-		$l = $y+18;
+		$l = $y+17;
 		$this->pdf->SetXY(28,$l);
-		$this->pdf->MultiCell(80,3.8,$invoice['recipient']['name']."\n".$invoice['recipient']['zip']." ".$invoice['recipient']['city']);
-		
+		$this->pdf->SetFont('DejaVu','',10);
+		$this->pdf->MultiCell(80,3.8,$invoice['recipient']['name']."\n".$invoice['recipient']['street']."\n".$invoice['recipient']['zip']." ".$invoice['recipient']['city']);
+		$this->pdf->SetFont('DejaVu','B',10);
 		$l = $y+64;
 		$this->pdf->SetXY(130,$l);
 		$this->pdf->Cell(80,3.8,$this->refFormat($invoice['ref'],4,"R"));
