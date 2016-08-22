@@ -122,6 +122,9 @@ echo "
 	</div>
 ";
 
+// format webaddress
+$webadr = str_replace("http://","",$ul_r[www]);
+
 echo "
 	<div class='fullcont'>
 		
@@ -138,7 +141,9 @@ echo "
 					{$lng->__('Address')}:
 				</td>
 				<td>
-					$ul_r[bill_addr]
+					<a href='http://maps.google.com/maps?q=$ul_r[bill_addr]%20$ul_r[bill_zip]%20$ul_r[bill_city]%20$ul_r[bill_country]' target='_blank'>
+							$ul_r[bill_addr]
+					</a>
 				</td>
 			</tr>
 			<tr>
@@ -152,7 +157,9 @@ echo "
 					{$lng->__('City')}:
 				</td>
 				<td>
-					$ul_r[bill_zip] $ul_r[bill_city]
+					<a href='http://maps.google.com/maps?q=$ul_r[bill_addr]%20$ul_r[bill_zip]%20$ul_r[bill_city]%20$ul_r[bill_country]' target='_blank'>
+						$ul_r[bill_zip] $ul_r[bill_city]
+					</a>
 				</td>
 			</tr>
 			<tr>
@@ -160,13 +167,17 @@ echo "
 					{$lng->__('Email')}:
 				</td>
 				<td>
-					$ul_r[email]
+					<a href='mailto:$ul_r[email]' target='_blank'>
+						$ul_r[email]
+					</a>
 				</td>
 				<td class='head'>
 					{$lng->__('Country')}:
 				</td>
 				<td>
-					$ul_r[bill_country]
+					<a href='http://maps.google.com/maps?q=$ul_r[bill_addr]%20$ul_r[bill_zip]%20$ul_r[bill_city]%20$ul_r[bill_country]' target='_blank'>
+						$ul_r[bill_country]
+					</a>
 				</td>
 			</tr>
 			<tr>
@@ -174,7 +185,9 @@ echo "
 					www:
 				</td>
 				<td>
-					$ul_r[www]
+					<a href='http://$webadr' target='_blank'>
+						$ul_r[www]
+					</a>
 				</td>
 				<td class='head'>
 					{$lng->__('Phone')}:

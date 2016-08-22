@@ -158,7 +158,7 @@ while ($in_r = pg_fetch_array($in)) {
 		
 			$dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 			
-			/* reference gen */
+			/* reference gen place holder, make real when published */
 			if ($in_r[ongoing] == 't') {
 				$firstdigit = '2';
 			} else {

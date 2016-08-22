@@ -158,7 +158,7 @@ echo "
 				
 		} else {
 			echo "
-				<a href='transaction.php?section=invoice&t=invoice_pub&invid=$in_r[invoice_id]&inoid=$inoid'>
+				<a href='transaction.php?section=invoice&t=invoice_pub&ident=$in_r[ident]&invid=$in_r[invoice_id]&inoid=$inoid'>
 					<div>{$lng->__('Publish')}</div>
 				</a>
 			";

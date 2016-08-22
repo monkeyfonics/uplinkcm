@@ -13,11 +13,36 @@ $datenow = date('Y-m-d');
 
 $invpend = $_GET['invid'];
 $inoid = $_GET['inoid'];
+$ident = $_GET['ident'];
+
+/*fetch invoice info */
+/* invoice */
+$query = "
+	select		id,
+				ident,
+				header,
+				pid,
+				cid,
+  				loc,
+  				created,
+  				dated,
+  				ongoing,
+  				end_date,
+  				next_create,
+  				recurring,
+  				active
+	from		$acco.invoice_def
+	where		ident = $ident
+	
+";
+
+$in = pg_query($conn, $query);
+$in_r = pg_fetch_array($in);
 
 /*make due date one week from today*/
 $dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 
-/*create new invoice id from date and runnng number */
+/*create new invoice id from date and running number */
 $id_date = date('Ym');
 
 
@@ -41,6 +66,17 @@ $id_date = date('Ym');
 /* adding running number to invoice when its published*/
  		$invoice_id = $id_date.$invnextid;
 		
+		/* make reference based on invoice number */
+			if ($in_r[ongoing] == 't') {
+				$firstdigit = '2';
+			} else {
+				$firstdigit = '1';
+			}
+			$refdat = $id_date;
+			$ref = $firstdigit.$refdat.$invnextid;
+			
+			$newref = $ref.viite($ref);
+		
 /*update invoice publish status */
 
 $query = "
@@ -49,7 +85,8 @@ $query = "
 					dated='$datenow',
 					due_date='$dueplus',
 					invoice_id=$invoice_id,
-					runid=$invnextid
+					runid=$invnextid,
+					ref=$newref
 			where	id=$inoid
 		";
 $ch = pg_query($conn, $query);
