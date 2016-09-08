@@ -295,8 +295,8 @@ echo "
 					$month3pros = $lowpros;
 				} elseif ($pubcount3 >= $pubcount and $pubcount3 >= $pubcountlast) {
 					$high = $pubcount3;
-					$medium = $pubcount;
-					$low = $pubcountlast;
+					$medium = $pubcountlast;
+					$low = $pubcount;
 					if ($high != 0) {
 					$highpros = 100;
 					$mediumpros = ($medium / $high)*100;
