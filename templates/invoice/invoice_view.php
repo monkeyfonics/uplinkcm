@@ -227,10 +227,10 @@ echo "
 				if ($in_r[pub] == f) {
 					echo "
 					<td class='head'>
-						{$lng->__('Created')}:
+						{$lng->__('Dated')}:
 					</td>
 					<td>
-						$in_r[created_out]
+						$in_r[dated_out]
 					</td>
 					";
 				} else {

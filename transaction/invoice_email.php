@@ -79,6 +79,7 @@ $subject2 = mb_encode_mimeheader($subject2,'UTF-8','Q');
 $plainpart2 = "
 --PHP-mixed-$random_hash
 Content-Type: text/plain; charset=UTF-8\r\n
+{$lng->__('Confirmation of sent invoice to')} ".$tocontact." \r\n
 {$lng->__('New invoice from')} ".$accountname." \r\n
 {$lng->__('Invoice number')}: $in_r[invoice_id] \r\n
 {$lng->__('Due date')}: $due \r

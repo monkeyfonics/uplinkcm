@@ -157,7 +157,7 @@ echo "
 		while ($in_r = pg_fetch_array($in)) {
 			$date = date('Y-m-d', strtotime($in_r[dated_out]));
 			
-			if ($date > $minus) {
+			if ($date >= $minus) {
 				if ($in_r[pub] == f) {
 					$pub = 'pub';
 					$unpubcount++;
