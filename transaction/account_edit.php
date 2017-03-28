@@ -8,10 +8,10 @@ $bill_addr = $_POST['bill_addr'];
 $bill_zip = $_POST['bill_zip'];
 $bill_city = $_POST['bill_city'];
 $bill_country = $_POST['bill_country'];
-$bill_email = $_POST['bill_email'];
+$bill_email = trim($_POST['bill_email']);
 $bill_tel = $_POST['bill_tel'];
-$bank_account = $_POST['bank_account'];
-$bic = $_POST['bic'];
+$bank_account = trim($_POST['bank_account']);
+$bic = trim($_POST['bic']);
 
 /*fetch accounts list to check for nr */
 

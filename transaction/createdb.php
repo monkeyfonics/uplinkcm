@@ -1,9 +1,10 @@
 
 <?php
-include "dbtable.class.php";
-include "dbview.class.php";
+include "includes/foondb/dbtable.class.php";
+include "includes/foondb/dbview.class.php";
 
-include "db.class.inc";
+include "includes/foondb/db.class.php";
+
 
 $dsn = "{$setting['db']['type']}:dbname={$setting['db']['name']};host={$setting['db']['server']}";
 $GLOBALS['db'] = new db($dsn,$setting['db']['user'],$setting['db']['password']);

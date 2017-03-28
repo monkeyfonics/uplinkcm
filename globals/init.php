@@ -7,7 +7,7 @@ include("local_functions.php");
 /*encoding for site*/
 mb_internal_encoding("UTF-8");
 
-$conn = pg_connect("dbname=".$setting['db']['name']);
+$conn = pg_connect("dbname=".$setting['db']['name']." user=".$setting['db']['user']." password=".$setting['db']['password']);
 
 if (empty($_SESSION['s_id'])) {
    $_SESSION['s_id'] = 0;
