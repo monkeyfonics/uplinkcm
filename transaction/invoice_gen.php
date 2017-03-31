@@ -175,13 +175,13 @@ while ($it_r = pg_fetch_array($it)) {
 	/*amount for all items, non vat*/
 	$totalrow = $itemprice * $it_r['qty'];
 	/*amount for all items, just vat*/
-	$totalrowvat = $totalrow * $it_r['vat'];
+	$totalrowvat = number_format($totalrow * $it_r['vat'],2,".","");
 	/*amount for all rows, non vat*/
 	$total += $itemprice * $it_r['qty'];
 	$vatpart = $itemprice * $it_r['vat'];
 	$totalpart = $itemprice + $vatpart;
 	$qtytotal = ($itemprice + $vatpart) * $it_r['qty'];
-	/*amount for all vat*/
+	/*amount for all vat rounded by 2*/
 	$vattot += $totalrowvat;
 	/*amount for all total*/
 	$totalvat = $total + $vat;

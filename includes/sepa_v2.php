@@ -102,6 +102,7 @@ class sepa {
 		$comb = $c[1]+$c[2]+$c[3]+$c[4];
 		
 		foreach ($invoice['items'] as $nr => $item) {
+			$clearvat = $item['vatpros'] * 100;
 			$this->pdf->SetFontSize(10);
 			if ($this->pdf->GetY() > $bp) {
 				$this->pdf->Ln();
@@ -135,7 +136,7 @@ class sepa {
 			$this->pdf->SetFontSize(9);
 			$this->pdf->Cell($c[0],5,'');
 			$this->pdf->Cell($comb,5,$item['text']);
-			$this->pdf->Cell($c[5],5,"(".$item['vatpros']."%)",0,0,'R');
+			$this->pdf->Cell($c[5],5,"(".$clearvat."%)",0,0,'R');
 			$this->pdf->Ln();
 			$this->pdf->SetTextColor(0);
 		}

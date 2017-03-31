@@ -394,6 +394,8 @@ $it = pg_query($conn, $query);
 		
 		$ig_r = pg_fetch_array($ig);
 			
+		$vat_clear = $it_r[vat] * 10;	
+		
 		echo "
 			<tr>
 				<td>
@@ -412,7 +414,7 @@ $it = pg_query($conn, $query);
 					".number_format($fullprice,2,","," ")." &euro;
 				</td>
 				<td>
-					$it_r[vat] %
+					$vat_clear %
 				</td>
 				<td>
 					".number_format($fullvatprice,2,","," ")." &euro;
