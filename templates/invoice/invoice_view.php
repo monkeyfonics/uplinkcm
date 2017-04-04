@@ -394,7 +394,7 @@ $it = pg_query($conn, $query);
 		
 		$ig_r = pg_fetch_array($ig);
 			
-		$vat_clear = $it_r[vat] * 10;	
+		$vat_clear = $it_r[vat] * 100;	
 		
 		echo "
 			<tr>

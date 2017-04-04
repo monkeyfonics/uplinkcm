@@ -297,7 +297,8 @@ $it = pg_query($conn, $query);
 			
 		/* category fetch */
 		
-
+		$vat_clear = $it_r[vat] * 100;
+		
 		$query = "
 			select		id,
 						name,
@@ -330,7 +331,7 @@ $it = pg_query($conn, $query);
 					".number_format($fullprice,2,","," ")." &euro;
 				</td>
 				<td>
-					$it_r[vat] %
+					$vat_clear %
 				</td>
 				<td>
 					".number_format($fullvatprice,2,","," ")." &euro;
