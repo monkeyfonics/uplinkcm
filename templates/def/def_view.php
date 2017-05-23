@@ -285,7 +285,8 @@ $it = pg_query($conn, $query);
 			$fullprice = $it_r[price] * $it_r[qty];
 			$vatprice = $fullprice * $it_r[vat];
 			$fullvatprice = $fullprice + $vatprice;
-			$invoiceprice += $fullvatprice;
+			$fullvatround = number_format($fullvatprice,2,","," ");
+			$invoiceprice += $fullvatround;
 			
 			if ($it_r[unit] == 1) {
 				$unit = 'hour(s)';
@@ -360,7 +361,7 @@ $it = pg_query($conn, $query);
 					
 				</td>
 				<td class='bold'>
-					".number_format($invoiceprice,2,","," ")." &euro;
+					$invoiceprice &euro;
 				</td>
 			</tr>
 		</table>
