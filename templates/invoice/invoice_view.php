@@ -444,7 +444,7 @@ $it = pg_query($conn, $query);
 					
 				</td>
 				<td class='bold'>
-					$invoiceprice &euro;
+					".number_format($invoiceprice,2,","," ")." &euro;
 				</td>
 			</tr>
 		</table>
