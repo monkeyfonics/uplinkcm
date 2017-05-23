@@ -285,8 +285,8 @@ $it = pg_query($conn, $query);
 			$fullprice = $it_r[price] * $it_r[qty];
 			$vatprice = number_format($fullprice * $it_r[vat],2,".","");
 			$fullvatprice = $fullprice + $vatprice;
-			$fullvatround = number_format($fullvatprice,2,","," ");
-			$invoiceprice += $fullvatround;
+			
+			$invoiceprice += $fullvatprice;
 			
 			if ($it_r[unit] == 1) {
 				$unit = 'hour(s)';
