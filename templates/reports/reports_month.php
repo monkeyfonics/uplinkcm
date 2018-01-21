@@ -178,7 +178,6 @@ $monthly = pg_query($conn, $query);
 			while ($it_r = pg_fetch_array($it)) {
 					$tempprice1 = $it_r[price] * $it_r[qty];
 					$tempprice2 = number_format($tempprice1 * $it_r[vat],2,".","");
-					
 					if ($it_r[invoice_id]== $last_id) {
 						$combprice += ($tempprice1 + $tempprice2);
 					} else {
@@ -187,12 +186,10 @@ $monthly = pg_query($conn, $query);
 					
 					$last_id = $it_r[invoice_id];
 				}
-	/*format price */
-	
-	
-	$formatprice = number_format($combprice, 2, ',', '');
-	/*format invoice id */
-	$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
+			/*format price */
+			$formatprice = number_format($combprice, 2, '.', '');
+			/*format invoice id */
+			$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
 				
 			
 			$dated = date ( 'Y-m-d' , strtotime($monthly_r[dated_out]));
@@ -220,7 +217,7 @@ $monthly = pg_query($conn, $query);
 					echo "
 					</td>
 					<td>
-						$formatprice €
+						".number_format($formatprice,2,","," ")." € 
 					</td>
 					<td style='text-align:center;'>
 						$cash
