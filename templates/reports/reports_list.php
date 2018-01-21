@@ -215,7 +215,7 @@ $monthly = pg_query($conn, $query);
 					$last_id = $it_r[invoice_id];
 				}
 			/*format price */
-			$formatprice = number_format($combprice, 2, ',', '');
+			$formatprice = number_format($combprice, 2, '.', '');
 			/*format invoice id */
 			$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
 			/*format date*/
@@ -252,7 +252,7 @@ $monthly = pg_query($conn, $query);
 						
 					</td>
 					<td>
-						$formatprice € 
+						".number_format($formatprice,2,","," ")." € 
 					</td>
 					<td style='text-align:center;'>
 						$cash
