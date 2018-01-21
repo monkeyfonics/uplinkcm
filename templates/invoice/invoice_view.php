@@ -143,6 +143,13 @@ echo "
 					<div title='{$lng->__('Printed')}: $print_date'>{$lng->__('Print')} $prin</div>
 				</a>
 				";
+				/*
+				echo "
+				<a href='public.php?section=invoice&t=pdf_view&invoice_id=$in_r[invoice_id]&inoid=$inoid&acco=$acco' target='blank'>
+					<div title='{$lng->__('Printed')}: $print_date'>{$lng->__('Pdf')} $prin</div>
+				</a>
+				";
+				 */
 				if ($cl_r[email]) {
 					echo "
 					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id' onclick='return confirm(\"{$lng->__('Send to')} $cl_r[email]?\");'>
@@ -367,6 +374,7 @@ $it = pg_query($conn, $query);
 			$fullprice = $it_r[price] * $it_r[qty];
 			$vatprice = number_format($fullprice * $it_r[vat],2,".","");
 			$fullvatprice = $fullprice + $vatprice;
+			$fullvatprice = number_format($fullvatprice,2,".","");
 			
 			$invoiceprice += $fullvatprice;
 			

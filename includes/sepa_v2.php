@@ -275,9 +275,13 @@ class sepa {
 		
 		
 	}
-
+	/* I for opeing in browser or D for forcing download of pdf*/
 	function display ($name) {
 		$this->pdf->Output($name.".pdf",'I');
+	}
+	/* F saves to file */
+	function savef ($name) {
+		$this->pdf->Output($name.".pdf",'F');
 	}
 	function fetch () {
  		return $this->pdf->Output("",'S');

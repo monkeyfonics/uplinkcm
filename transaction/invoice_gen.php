@@ -285,8 +285,9 @@ $info = Array(
 	);
 
 
+$invoice->invoice($info);
 
 
-
+require 'invoice_pdf_gen.php';
 
 ?>

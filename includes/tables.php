@@ -142,6 +142,24 @@ $tables = array(
         ),
         array(
         "type" => 2, // 1 - temporary (re-created each time), 2 - May delete columns, 3 - rename columns, 4 - do not delete
+        "name" => "invoice_pdf_link", // Name of table
+        "pkey" => "id", // Primary key column(s) (comma separated)
+        "cols" => array( // List the columns
+            "id" => array("type"=>"serial"),
+            "invoice_id" => array("type"=>"bigint"),
+            "filename" => array("type"=>"character varying"),
+            "recipient" => array("type"=>"character varying"),
+            "pin" => array("type"=>"integer"),
+            "clicked" => array("type"=>"boolean"),
+            "sent" => array("type"=>"timestamp without time zone"),
+            "recieved" => array("type"=>"timestamp without time zone"),
+            ),
+        "index" => array( // List of indexes
+			"indexname" => array("table"=>"tablename","definition"=>"count(foo)"),
+			)
+        ),
+        array(
+        "type" => 2, // 1 - temporary (re-created each time), 2 - May delete columns, 3 - rename columns, 4 - do not delete
         "name" => "link_company_contact", // Name of table
         "pkey" => "contact_id,company_id", // Primary key column(s) (comma separated)
         "cols" => array( // List the columns

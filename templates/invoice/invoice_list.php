@@ -212,7 +212,8 @@ echo "
 			$combprice;
 			while ($it_r = pg_fetch_array($it)) {
 					$tempprice1 = $it_r[price] * $it_r[qty];
-					$tempprice2 = $tempprice1 * $it_r[vat];
+					$tempprice2 = number_format($tempprice1 * $it_r[vat],2,".","");
+					
 					$combprice += ($tempprice1 + $tempprice2);
 				}
 			$pripath = "index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]&invid=$in_r[invoice_id]";
