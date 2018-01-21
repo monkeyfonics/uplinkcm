@@ -131,7 +131,7 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 			$combprice;
 			while ($it_r = pg_fetch_array($it)) {
 					$tempprice1 = $it_r[price] * $it_r[qty];
-					$tempprice2 = $tempprice1 * $it_r[vat];
+					$tempprice2 = number_format($tempprice1 * $it_r[vat],2,".","");
 					if ($it_r[invoice_id]== $last_id) {
 						$combprice += ($tempprice1 + $tempprice2);
 					} else {
@@ -141,9 +141,8 @@ $contactcom = $co_r[lname].", ".$co_r[fname];
 					$last_id = $it_r[invoice_id];
 				}
 	/*format price */
+	$formatprice = number_format($combprice, 2, ',', ' ');
 	
-	//$formatprice =  str_replace('.', ',', $combprice);
-	$formatprice = number_format($combprice, 2, ',', '');
 	/*format ref number*/
 	$refformat = chunk_split($monthly_r[ref], 5, ' ');
 	/*format date */
