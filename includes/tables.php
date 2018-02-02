@@ -146,13 +146,15 @@ $tables = array(
         "pkey" => "id", // Primary key column(s) (comma separated)
         "cols" => array( // List the columns
             "id" => array("type"=>"serial"),
+            "send_id" => array("type"=>"bigint"),
             "invoice_id" => array("type"=>"bigint"),
             "filename" => array("type"=>"character varying"),
             "recipient" => array("type"=>"character varying"),
             "pin" => array("type"=>"integer"),
-            "clicked" => array("type"=>"boolean"),
+            "downloaded" => array("type"=>"boolean"),
             "sent" => array("type"=>"timestamp without time zone"),
             "recieved" => array("type"=>"timestamp without time zone"),
+            "active" => array("type"=>"boolean"),
             ),
         "index" => array( // List of indexes
 			"indexname" => array("table"=>"tablename","definition"=>"count(foo)"),

@@ -137,6 +137,13 @@ $monthly = pg_query($conn, $query);
 				
 						</a>
 					</td>
+					<td class='bold' title='{$lng->__('Downloaded')}' $marker>
+						<a href='index.php?section=reports&template=reports_month&dated=$dated&minus=$minus'>
+							
+							DL
+				
+						</a>
+					</td>
 				</tr>
 			";
 		$nrofinv = 0;
@@ -179,11 +186,28 @@ $monthly = pg_query($conn, $query);
 			$com = pg_query($conn, $query);
 			$com_r = pg_fetch_array($com);
 			
-			
-			
 			} else {
 						
 			}
+			
+			/*pdf link items */
+			$query = "
+			select		$acco.invoice_pdf_link.id as id,
+						$acco.invoice_pdf_link.filename as filename,
+		  				$acco.invoice_pdf_link.invoice_id as invoice_id,
+		  				$acco.invoice_pdf_link.send_id as send_id,
+		  				$acco.invoice_pdf_link.sent as sent,
+		  				$acco.invoice_pdf_link.pin as pin,
+		  				$acco.invoice_pdf_link.downloaded as downloaded,
+		  				$acco.invoice_pdf_link.recieved as recieved,
+		  				$acco.invoice_pdf_link.recipient as recipient
+			from		$acco.invoice_pdf_link
+			where		$acco.invoice_pdf_link.invoice_id = $monthly_r[invoice_id]
+		";
+		
+		$pdf = pg_query($conn, $query);
+		
+		$pdf_r = pg_fetch_array($pdf);
 			
 			 /*invoice items for counting total cost*/
 					
@@ -222,6 +246,25 @@ $monthly = pg_query($conn, $query);
 			$dated_out = date('Y-m-d',strtotime($monthly_r[dated_out]));
 			$dated_out_s = date('d',strtotime($monthly_r[dated_out]));
 			
+			/*format date for dowanloads*/
+			$recieved_date = date('Y-m-d H:m:i',strtotime($pdf_r[recieved]));
+			$sent_date = date('Y-m-d H:m:i',strtotime($pdf_r[sent]));
+			
+			
+			/*logic for pdf link*/
+			if ($pdf_r[sent]) {
+				if ($pdf_r[downloaded] == t) {
+					$linkoutput = "DL";
+					$title = "{$lng->__('Downloaded at')} $recieved_date";
+				} else {
+					$linkoutput = "{$lng->__('Sent')}";
+					$title = "{$lng->__('Sent at')} $sent_date";
+				}
+			} else {
+				$linkoutput = "N/A";
+				$title = "{$lng->__('Not sent yet')}";
+			}
+			
 			echo "
 				<tr>
 					<td>
@@ -257,6 +300,9 @@ $monthly = pg_query($conn, $query);
 					<td style='text-align:center;'>
 						$cash
 					</td>
+					<td title='$title' style='text-align:center;'>
+						$linkoutput
+					</td>
 				</tr>
 			";
 			$total += $combprice;
@@ -283,6 +329,9 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td>
 						<b>$totalformat €</b>
+					</td>
+					<td>
+						
 					</td>
 					<td>
 						
