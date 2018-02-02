@@ -69,6 +69,8 @@ $in = pg_query($conn, $query);
 
 $in_r = pg_fetch_array($in);
 
+
+
 /*contact */
 $query = "
 	select		$acco.invoice_out.cid,
@@ -174,13 +176,16 @@ while ($it_r = pg_fetch_array($it)) {
 	$itemprice = number_format($it_r['price'],2,".","");
 	/*amount for all items, non vat*/
 	$totalrow = $itemprice * $it_r['qty'];
+	$totalrow = number_format($totalrow,2,".","");
 	/*amount for all items, just vat*/
 	$totalrowvat = number_format($totalrow * $it_r['vat'],2,".","");
 	/*amount for all rows, non vat*/
 	$total += $itemprice * $it_r['qty'];
 	$vatpart = $itemprice * $it_r['vat'];
+	$vatqty = $vatpart * $it_r['qty'];
+	$vatqty = number_format($vatqty,2,".","");
 	$totalpart = $itemprice + $vatpart;
-	$qtytotal = ($itemprice + $vatpart) * $it_r['qty'];
+	$qtytotal = $totalrow + $vatqty;
 	/*amount for all vat rounded by 2*/
 	$vattot += $totalrowvat;
 	/*amount for all total*/

@@ -143,17 +143,17 @@ echo "
 					<div title='{$lng->__('Printed')}: $print_date'>{$lng->__('Print')} $prin</div>
 				</a>
 				";
-				/*
+				/*hide until it works
 				echo "
 				<a href='public.php?section=invoice&t=pdf_view&invoice_id=$in_r[invoice_id]&inoid=$inoid&acco=$acco' target='blank'>
-					<div title='{$lng->__('Printed')}: $print_date'>{$lng->__('Pdf')} $prin</div>
+					<div title='{$lng->__('Downloaded')}: '>{$lng->__('Downloads')}</div>
 				</a>
 				";
 				 */
 				if ($cl_r[email]) {
 					echo "
 					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id' onclick='return confirm(\"{$lng->__('Send to')} $cl_r[email]?\");'>
-						<div title='{$lng->__('Emailed')}: $email_date'>{$lng->__('Email')} $emai</div>
+						<div title='{$lng->__('Emailed')}: $email_date , $cl_r[email]'>{$lng->__('Email')} $emai</div>
 					</a>
 					";
 				}
@@ -423,7 +423,7 @@ $it = pg_query($conn, $query);
 					".number_format($fullprice,2,","," ")." &euro;
 				</td>
 				<td>
-					$vat_clear %
+					".number_format($vatprice,2,","," ")." &euro; ($vat_clear %)
 				</td>
 				<td>
 					".number_format($fullvatprice,2,","," ")." &euro;

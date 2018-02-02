@@ -175,6 +175,8 @@ Emailed=Epostad
 /*/Reports/*/
 Monthly Report=Månads Rapport
 Report=Rapport
+Downloaded=Nerladdad
+Downloaded at=Nerladdad
 /*/Email/*/
 Email=Epost
 New invoice from=Ny faktura av
@@ -188,6 +190,10 @@ Mail sent=Epost skickad
 Mail failed=Epost skickning misslyckades
 Send to=Skicka till
 Unsent=Oskickade
+Download PDF=Ladda ner PDF
+Not sent yet=Inte ännu skickad
+Wrong pin=Fel pin
+Sent=Skickad
 /*/ Todo /*/
 Todo List=Todo Lista
 Todo=Todo
