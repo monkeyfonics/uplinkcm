@@ -34,7 +34,7 @@ $pdf_r = pg_fetch_array($pdf);
 $email_id= $_GET['eid'];
 
 /*account email*/
-$sent = "$acc_hold_r[email]";
+$sender = "$acc_hold_r[email]";
 $accountname = "$acc_hold_r[name]";
 /*customer email */
 if ($cl_r[email]) {
@@ -107,7 +107,7 @@ try {
     //Recipients
     $mailu->setFrom('cm@uplink.fi', 'Contact Manager');
     $mailu->addAddress($tocontact, $name);     // Add a recipient
-    $mailu->addReplyTo('info@uplink-data.fi', 'Information');
+    $mailu->addReplyTo($sender, $accountname);
 
     //Attachments
     $mailu->addAttachment($attachment);         // Add attachments
