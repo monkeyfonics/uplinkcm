@@ -123,8 +123,8 @@ try {
 	{$custlng->__('See attachment for pdf')}<br>
 	{$custlng->__('Virtual barcode')}: $virtual<br>
 	<br>
-	<div style='background: #B0F3BA; border: 1px solid green; border-radius: 8px; padding: 3px; color: #729D78;'>
-		<a href='$pdflink'>{$custlng->__('Go to my invoice')}</a>
+	<div style='background: #B0F3BA; border: 1px solid green; border-radius: 8px; padding: 12px; color: #729D78; float: left;'>
+		<a href='$pdflink' style='color: #729D78; text-decoration: none;'>{$custlng->__('Go to my invoice')}</a>
 	</div>
 	<br>
 	<p>{$custlng->__('In case of problems please contact')} $sender</p>
