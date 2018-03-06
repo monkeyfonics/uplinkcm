@@ -191,9 +191,11 @@ Mail failed=Epost skickning misslyckades
 Send to=Skicka till
 Unsent=Oskickade
 Download PDF=Ladda ner PDF
+Go to my invoice=Öppna min faktura
 Not sent yet=Inte ännu skickad
 Wrong pin=Fel pin
 Sent=Skickad
+In case of problems please contact=Ifall du stöter på problem kan du kontakta
 /*/ Todo /*/
 Todo List=Todo Lista
 Todo=Todo
