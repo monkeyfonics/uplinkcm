@@ -123,7 +123,11 @@ try {
 	{$custlng->__('See attachment for pdf')}<br>
 	{$custlng->__('Virtual barcode')}: $virtual<br>
 	<br>
-	<a href='$pdflink'>{$custlng->__('Download PDF')}</a>
+	<div style='background: #B0F3BA; border: 1px solid green; border-radius: 8px; padding: 3px; color: #729D78;'>
+		<a href='$pdflink'>{$custlng->__('Go to my invoice')}</a>
+	</div>
+	<br>
+	<p>{$custlng->__('In case of problems please contact')} $sender</p>
 	";
 	//if client cant accept html
     $mailu->AltBody = "
@@ -133,7 +137,8 @@ try {
 	{$custlng->__('Amount')}: $amount €\r\n
 	{$custlng->__('See attachment for pdf')}\r\n
 	{$custlng->__('Virtual barcode')}: $virtual\r\n
-	$pdflink
+	$pdflink\r\n
+	{$custlng->__('In case of problems please contact')} $sender
 	";
 
     $mailu->send();
