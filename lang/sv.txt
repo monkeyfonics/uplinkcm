@@ -167,6 +167,7 @@ Not emailed=Inte Epostad
 Due date=Förfallodag
 Every=Varje
 Month(s)=Månad(er)
+Hour(s)=Månad(er)
 Template header=Bottnets Rubrik
 Cash=Kontant
 updated to=uppdaterad till
@@ -180,6 +181,7 @@ Downloaded at=Nerladdad
 /*/Email/*/
 Email=Epost
 New invoice from=Ny faktura av
+New invoice to=Ny faktura till
 Confirmation of sent invoice to=Bekräftelse på skickad faktura till
 See attachment for pdf=Öppna bilagan för pdf fil
 From Uplink Contact Manager to=Från Uplink Contact Manager till

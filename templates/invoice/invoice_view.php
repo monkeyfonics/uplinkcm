@@ -379,11 +379,11 @@ $it = pg_query($conn, $query);
 			$invoiceprice += $fullvatprice;
 			
 			if ($it_r[unit] == 1) {
-				$unit = 'hour(s)';
+				$unit = "{$lng->__('Hour(s)')}";
 			} elseif ($it_r[unit] == 2) {
-				$unit = 'month(s)';
+				$unit = "{$lng->__('Month(s)')}";
 			} elseif ($it_r[unit] == 3) {
-				$unit = 'qty';
+				$unit = "{$lng->__('Qty.')}";
 			}
 			
 			/* category fetch */
