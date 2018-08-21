@@ -127,6 +127,7 @@ try {
 		<a href='$pdflink' style='color: #729D78; text-decoration: none;'>{$custlng->__('Go to my invoice')}</a>
 	</div>
 	<br>
+	<br><br>
 	<p>{$custlng->__('In case of problems please contact')} $sender</p>
 	";
 	//if client cant accept html
@@ -143,6 +144,21 @@ try {
 
     $mailu->send();
     $message = "{$lng->__('Mail sent')}";
+    
+    // clear addresses
+    $mailu->clearAddresses();
+    //Set who the message is to be sent to
+    $mailu->addAddress($sender, $accountname);
+    $mailu->Subject = "{$custlng->__('Confirmation of sent invoice to ')}".$tocontact;
+    $mailu->Body = "{$custlng->__('Confirmation of sent invoice to ')}".$tocontact." <br/>
+    {$custlng->__('Invoice number')}: $in_r[invoice_id] <br>
+	{$custlng->__('Due date')}: $due <br>
+	{$custlng->__('Amount')}: $amount €<br>
+    
+    ";
+    // send email
+    $mailu->send();
+    
 } catch (Exception $e) {
     //echo "{$lng->__('Mail failed')}", $mailu->ErrorInfo;
     $message = "{$lng->__('Mail failed')}";
