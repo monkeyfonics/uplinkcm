@@ -109,8 +109,6 @@ try {
     $mailu->addAddress($tocontact, $name);     // Add a recipient
     $mailu->addReplyTo($sender, $accountname);
 
-    //Attachments
-    $mailu->addAttachment($attachment);         // Add attachments
 
     //Content
     $mailu->isHTML(true);                                  // Set email format to HTML
@@ -120,15 +118,16 @@ try {
 	{$custlng->__('Invoice number')}: $in_r[invoice_id] <br>
 	{$custlng->__('Due date')}: $due <br>
 	{$custlng->__('Amount')}: $amount €<br>
-	{$custlng->__('See attachment for pdf')}<br>
 	{$custlng->__('Virtual barcode')}: $virtual<br>
+	{$custlng->__('Download the invoice below')}<br>
+	
 	<br>
-	<div style='background: #B0F3BA; border: 1px solid green; border-radius: 8px; padding: 12px; color: #729D78; float: left;'>
-		<a href='$pdflink' style='color: #729D78; text-decoration: none;'>{$custlng->__('Go to my invoice')}</a>
+	<div style='background: #B0F3BA; border: 1px solid green; border-radius: 8px; padding: 12px; color: #1A7D3C; float: left;'>
+		<a style='color: #1A7D3C; text-decoration: none;' href='$pdflink' style='color: #729D78; text-decoration: none;'>{$custlng->__('Go to my invoice')}</a>
 	</div>
 	<br>
 	<br><br>
-	<p>{$custlng->__('In case of problems please contact')} $sender</p>
+	<p>{$custlng->__('In case of problems please contact')} <a href='mailto:$sender'>$sender</a> {$custlng->__('or reply to this email')}.</p>
 	";
 	//if client cant accept html
     $mailu->AltBody = "
@@ -136,8 +135,8 @@ try {
 	{$custlng->__('Invoice number')}: $in_r[invoice_id] \r\n
 	{$custlng->__('Due date')}: $due \r
 	{$custlng->__('Amount')}: $amount €\r\n
-	{$custlng->__('See attachment for pdf')}\r\n
 	{$custlng->__('Virtual barcode')}: $virtual\r\n
+	{$custlng->__('Download the invoice below')}\r\n
 	$pdflink\r\n
 	{$custlng->__('In case of problems please contact')} $sender
 	";
@@ -147,6 +146,10 @@ try {
     
     // clear addresses
     $mailu->clearAddresses();
+    
+    //Attachments
+    $mailu->addAttachment($attachment);         // Add attachments for confirmation email
+    
     //Set who the message is to be sent to
     $mailu->addAddress($sender, $accountname);
     $mailu->Subject = "{$custlng->__('Confirmation of sent invoice to ')}".$tocontact;
