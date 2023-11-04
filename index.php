@@ -3,7 +3,7 @@
 include("globals/init.php");
 
 include("headers/header.php");
-
+echo "Under construction";
 include("includes/topbar.php");
 
 if (!$_GET['section']) {
