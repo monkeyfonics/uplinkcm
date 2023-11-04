@@ -4,12 +4,12 @@
 
 include("includes/session.php");
 
-$s_lvl = $tu_r[lvl];
+$s_lvl = $tu_r['lvl'];
 
 if ($ac_id) {
 	require_once('includes/accountcheck.php');
 	$ac_r = pg_fetch_array($ac);
-	$acco = $ac_r[identy];
+	$acco = $ac_r['identy'];
 }
 
 /*check for unmade invoices*/
