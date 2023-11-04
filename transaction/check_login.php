@@ -29,7 +29,7 @@ $ch = pg_query($conn, $query);
 
 $ch_r = pg_fetch_array($ch);
 
-$hash = $ch_r[pass];
+$hash = $ch_r['pass'];
 
 if ($hasher->CheckPassword($pass, $hash)) {
 		$message = "{$lng->__('Login Successfull')}";
@@ -54,7 +54,7 @@ if ($hasher->CheckPassword($pass, $hash)) {
 unset($hasher);
 
 /*set language */
-$_SESSION['lang'] = $ch_r[lang];
+$_SESSION['lang'] = $ch_r['lang'];
 
 header("Refresh: 2; URL=".$ret_url);
 
