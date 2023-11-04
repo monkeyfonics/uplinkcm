@@ -31,21 +31,21 @@ echo "
 			<div>Console:</div>
 	";
 while ($in_r = pg_fetch_array($in)) {
-	$inid = $in_r[id];
-	$ident = $in_r[ident];
+	$inid = $in_r['id'];
+	$ident = $in_r['ident'];
 	
-	$next = date('Y-m-d', strtotime($in_r[next_create]));
-	$dated = date('Y-m-d', strtotime($in_r[dated]));
-	$end_date = date('Y-m-d', strtotime($in_r[end_date]));
+	$next = date('Y-m-d', strtotime($in_r['next_create']));
+	$dated = date('Y-m-d', strtotime($in_r['dated']));
+	$end_date = date('Y-m-d', strtotime($in_r['end_date']));
 	
 	
 	/*copying values from invoice def */
-	$header = $in_r[header];
-	$pid = $in_r[pid];
-	$cid = $in_r[cid];
-	$loco = $in_r[loc];
+	$header = $in_r['header'];
+	$pid = $in_r['pid'];
+	$cid = $in_r['cid'];
+	$loco = $in_r['loc'];
 	
-	$rec = $in_r[recurring];
+	$rec = $in_r['recurring'];
 	if ($rec == 0) {
 		$rec = 1;
 	}
@@ -53,18 +53,18 @@ while ($in_r = pg_fetch_array($in)) {
 	$dateplus = date('Y-m-d', strtotime("+".$rec." month")); 
 	
 	/* if ongoing then assume end date is today */
-	if ($in_r[ongoing] == 't') {
+	if ($in_r['ongoing'] == 't') {
 		$end_check = $dateplus;
 	} else {
 		$end_check = $end_date;
 	}
 	
-	while ($in_r[active] == 't' && $datenow >= $next && $next <= $end_check) {
+	while ($in_r['active'] == 't' && $datenow >= $next && $next <= $end_check) {
 		
 		$outrand = rand(100, 999);
 		
 		/*adding random nr to invoice number, running number is added once its published*/
-		$invpend = $in_r[ident].$outrand;
+		$invpend = $in_r['ident'].$outrand;
 		
 		
 		/*fetch invoice items to copy even if they exist*/
@@ -78,7 +78,7 @@ while ($in_r = pg_fetch_array($in)) {
 					unit,
 					vat
 		from		$acco.invoice_def_item
-		where		def_id = $in_r[ident]
+		where		def_id = $in_r['ident']
 		
 		";
 
@@ -109,7 +109,7 @@ while ($in_r = pg_fetch_array($in)) {
 	
 			)
 		";
-		$ioi = pg_query_params($conn, $query, Array($ii_r[id],$ii_r[cat],$ii_r[item],$invpend,$ii_r[price],$ii_r[qty],$ii_r[unit],$ii_r[vat]));
+		$ioi = pg_query_params($conn, $query, Array($ii_r['id'],$ii_r['cat'],$ii_r['item'],$invpend,$ii_r['price'],$ii_r['qty'],$ii_r['unit'],$ii_r['vat']));
 			
 			
 		}
@@ -131,7 +131,7 @@ while ($in_r = pg_fetch_array($in)) {
 		}
 		
 		
-		echo "<hr/>{$lng->__('Invoice')}: <br/>".$in_r[header]." - ";
+		echo "<hr/>{$lng->__('Invoice')}: <br/>".$in_r['header']." - ";
 		
 		
 		
@@ -159,7 +159,7 @@ while ($in_r = pg_fetch_array($in)) {
 			$dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 			
 			/* reference gen place holder, make real when published */
-			if ($in_r[ongoing] == 't') {
+			if ($in_r['ongoing'] == 't') {
 				$firstdigit = '2';
 			} else {
 				$firstdigit = '1';
@@ -249,7 +249,7 @@ while ($in_r = pg_fetch_array($in)) {
 			$iu = pg_query($conn, $query);
 		/*
 		 * must check to see that template isnt ongoing */
-		if ($in_r[ongoing] == 'f' && $next >= $end_date) {
+		if ($in_r['ongoing'] == 'f' && $next >= $end_date) {
 			//change active to false if enddate is reached
 			$query = "
 			update $acco.invoice_def
