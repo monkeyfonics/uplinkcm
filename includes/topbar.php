@@ -83,13 +83,13 @@ echo "
 					<div class='logout sbar'>
 					
 						
-						<a href='index.php?section=admin&template=userman'><div class='button bstyle'><span class='settingtext'>{$lng->__('User')}: $tu_r[login]</span><span class='settingicon'><img src='layout/img/cog_grey.png' alt='Settings'/></span></div></a>
+						<a href='index.php?section=admin&template=userman'><div class='button bstyle'><span class='settingtext'>{$lng->__('User')}: $tu_r['login']</span><span class='settingicon'><img src='layout/img/cog_grey.png' alt='Settings'/></span></div></a>
 						
 						<a href='transaction.php?t=logout'><div class='button bstyle'>{$lng->__('Logout')}</div></a>
 						";
 					
 					
-						if ($tu_r[lvl] >= 5) {
+						if ($tu_r['lvl']' >= 5) {
 							echo "<a href='index.php?section=admin&template=main'><div class='button bstyle'>Admin</div></a>";
 						}
 						echo "
@@ -105,7 +105,7 @@ echo "
 			</div>
 			
 			<div class='account bstyle'>
-				 <a href='?template=account_sel'>{$lng->__('Account')}: $ac_r[name]</a>
+				 <a href='?template=account_sel'>{$lng->__('Account')}: $ac_r['name']</a>
 			</div>
 			<div class='account bstyle'>
 				 <a href='?template=account_info'>&nbsp;i&nbsp;</a>
@@ -121,7 +121,7 @@ echo "
 		";
 			
 			if ($_SESSION['ac_id'] != 0) {
-				if ($tu_r[lvl] >= 1) {
+				if ($tu_r['lvl'] >= 1) {
 				echo "		
 					<a href='index.php?template=main'>
 						<div class='menuitem $dashact'>
