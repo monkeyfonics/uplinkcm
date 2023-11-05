@@ -15,6 +15,6 @@ $ch = pg_query($conn, $query);
 
 
 /*output pdf to browser*/
-$invoice->display("{$custlng->__('Invoice')}_".$acc_hold_r[name]."_".$in_r[invoice_id]);
+$invoice->display("{$custlng->__('Invoice')}_".$acc_hold_r['name']."_".$in_r['invoice_id']);
 
 ?>

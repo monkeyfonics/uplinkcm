@@ -30,13 +30,13 @@ $pdf = pg_query($conn, $query);
 $pdf_r = pg_fetch_array($pdf);
 
 /*remove whitespace*/
-$accnameformat = preg_replace("/[^A-Za-z0-9]/", '', $acc_hold_r[name]);
+$accnameformat = preg_replace("/[^A-Za-z0-9]/", '', $acc_hold_r['name']);
 
-$pdfname = "{$custlng->__('Invoice')}_".$accnameformat."_".$in_r[invoice_id];
+$pdfname = "{$custlng->__('Invoice')}_".$accnameformat."_".$in_r['invoice_id'];
 $pdfoutput = $filepath.$pdfname;
 
  /*check if entry exists in link */
- if ($pdf_r[invoice_id]) {
+ if ($pdf_r['invoice_id']) {
  	// do not create link if it exists
  } else {
  	/*create link to download file for customer if it doesnt exist*/

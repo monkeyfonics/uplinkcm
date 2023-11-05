@@ -5,7 +5,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 /* include pdf building function */
 include ("includes/sepa_v2.php");
@@ -93,7 +93,7 @@ $cl = pg_query($conn, $query);
 $cl_r = pg_fetch_array($cl);
 
 
-if ($in_r[cid] == 0) {
+if ($in_r['cid'] == 0) {
 	/*payer without company*/
 	$name = $cl_r['fname']." ".$cl_r['lname'];
 	$contact = "";
@@ -134,7 +134,7 @@ $co_r = pg_fetch_array($co);
 }
 
 /*creating customer language */
-$customerlang = $cl_r[loc];
+$customerlang = $cl_r['loc'];
 
 $custlng = new Translator($customerlang);//$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
  
@@ -164,11 +164,11 @@ $it = pg_query($conn, $query);
 /* items def */
 while ($it_r = pg_fetch_array($it)) {
 		
-	if ($it_r[unit] == 1) {
+	if ($it_r['unit'] == 1) {
 		$unit = 'hour';
-	} elseif ($it_r[unit] == 2) {
+	} elseif ($it_r['unit'] == 2) {
 		$unit = 'month';
-	} elseif ($it_r[unit] == 3) {
+	} elseif ($it_r['unit'] == 3) {
 		$unit = 'qty';
 	}
 	
@@ -197,7 +197,7 @@ while ($it_r = pg_fetch_array($it)) {
 	if (count($tx) < 2 && strlen(trim($it_r['item'])) > 15)
 		$tx = Array('',$it_r['item']);
 	$items[] = Array(
-		"date"=>date("d.m.Y",$in_r['created_out']),
+		"date"=>date("d.m.Y",intval($in_r['created_out'])),
 		"prod"=>trim($tx[0]),
 		"text"=>trim($tx[1]),
 		"qty"=>$it_r['qty'],
@@ -235,12 +235,12 @@ $dated = date('d.m.Y', strtotime($in_r['dated_out']));
 $due = date('d.m.Y', strtotime($in_r['due_date_out']));
 
 /*for counting days untill due*/
-$datedcount = new DateTime($in_r[dated_out]);
-$duecount = new DateTime($in_r[due_date_out]);
+$datedcount = new DateTime($in_r['dated_out']);
+$duecount = new DateTime($in_r['due_date_out']);
 
 $diff = $duecount->diff($datedcount)->format("%a");
 /*format invoice id*/
-$invidformat = chunk_split($in_r[invoice_id], 6, ' ');
+$invidformat = chunk_split($in_r['invoice_id'], 6, ' ');
 
 /* pass info to pdf creation */
 $info = Array(
