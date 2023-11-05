@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 
 /* nr of rows to diplay */
@@ -74,7 +74,7 @@ echo "
 			</tr>
 			";
 		while ($todo_r = pg_fetch_array($todo)) {
-			if ($todo_r[completed] == f) {
+			if ($todo_r['completed'] == false) {
 				$bolde = 'font-weight: bold;';
 				$tf = "{$lng->__('No')}";
 				$comp= "red";
@@ -110,16 +110,16 @@ echo "
 			$com_r = pg_fetch_array($com);
 			
 			
-			$date = date('Y-m-d',strtotime($todo_r[created]));
-			$due = date('Y-m-d',strtotime($todo_r[due]));
+			$date = date('Y-m-d',strtotime($todo_r['created']));
+			$due = date('Y-m-d',strtotime($todo_r['due']));
 			
 			$pripath = "index.php?section=todo&template=todo_view&tid=$todo_r[tid]";
 			
-			if ($todo_r[contact_id] and $todo_r[company_id] == 0) {
+			if ($todo_r['contact_id'] and $todo_r['company_id'] == 0) {
 				$target = "$con_r[lname], $con_r[fname]";
-			} elseif ($todo_r[contact_id] == 0 and $todo_r[company_id]) {
+			} elseif ($todo_r['contact_id'] == 0 and $todo_r['company_id']) {
 				$target = "$com_r[name]";
-			} elseif ($todo_r[contact_id] and $todo_r[company_id]) {
+			} elseif ($todo_r['contact_id'] and $todo_r['company_id']) {
 				$target = "$con_r[lname], $con_r[fname] - $com_r[name]";
 			} else {
 				$target = "None";
@@ -148,7 +148,7 @@ echo "
 					</td>
 					<td style='overflow: hidden; $bolde' >
 						<a href='$pripath'>";
-							echo substr($todo_r[cont], 0, 30);
+							echo substr($todo_r['cont'], 0, 30);
 							echo " 
 						</a>
 					</td>

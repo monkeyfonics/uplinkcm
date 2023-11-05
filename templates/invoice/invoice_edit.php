@@ -7,7 +7,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 
 if (!$_GET['inoid']) {
@@ -79,7 +79,7 @@ $ul = pg_query($conn, $query);
 
 if ($suid) {
 	
-	$in_r[pid] = $suid;
+	$in_r['pid'] = $suid;
 } else {
 	$wher = '';
 }
@@ -104,8 +104,8 @@ $cl = pg_query($conn, $query);
 
 
 
-$in_r[dated] = date('Y-m-d', strtotime($in_r[dated]));
-$in_r[due_date] = date('Y-m-d', strtotime($in_r[due_date]));
+$in_r['dated'] = date('Y-m-d', strtotime($in_r['dated']));
+$in_r['due_date'] = date('Y-m-d', strtotime($in_r['due_date']));
 
 /*use buttons row */
 echo "
@@ -162,7 +162,7 @@ echo "
 						</option>
 						";
 						while ($ul_r = pg_fetch_array($ul)) {
-							if ($ul_r[id] == $in_r[pid]) $sel=" selected"; else $sel="";
+							if ($ul_r['id'] == $in_r['pid']) $sel=" selected"; else $sel="";
 							echo "
 								<option value='$ul_r[id]' $sel>
 									$ul_r[lname], $ul_r[fname]
@@ -190,7 +190,7 @@ echo "
 						</option>
 						";
 						while ($cl_r = pg_fetch_array($cl)) {
-							if ($cl_r[id] == $in_r[cid]) $sel=" selected"; else $sel="";
+							if ($cl_r['id'] == $in_r['cid']) $sel=" selected"; else $sel="";
 							echo "
 								<option value='$cl_r[id]' $sel>
 									$cl_r[name]
@@ -215,9 +215,9 @@ echo "
 				<td>
 				";
 					/*check users language somehow if new template*/
-						if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
-						if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
-						if ($in_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+						if ($in_r['loc'] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($in_r['loc'] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($in_r['loc'] == 'en') $sel3=" selected='selected'"; else $sel3="";
 					
 				echo "
 					<select name='loc'>
@@ -324,22 +324,22 @@ $ig = pg_query($conn, $query);
 					}
 		
 		while ($it_r = pg_fetch_array($it)) {
-			$price = $it_r[price];
-			$vatprice = $it_r[price] * $it_r[vat];
+			$price = $it_r['price'];
+			$vatprice = $it_r['price'] * $it_r['vat'];
 			$fullvatprice = $price + $vatprice;
 			/*Units */
 			
-			if ($it_r[unit] == 1) {
+			if ($it_r['unit'] == 1) {
 				
 				$usel1 = " selected='selected'";
 				$usel2 = ' ';
 				$usel3 = ' ';
-			} elseif ($it_r[unit] == 2) {
+			} elseif ($it_r['unit'] == 2) {
 				
 				$usel1 = ' ';
 				$usel2 = " selected='selected'";
 				$usel3 = ' ';
-			} elseif ($it_r[unit] == 3) {
+			} elseif ($it_r['unit'] == 3) {
 				
 				$usel1 = ' ';
 				$usel2 = ' ';
@@ -352,7 +352,7 @@ $ig = pg_query($conn, $query);
 					<select class='short' name='cat[$it_r[id]]' id='$it_r[id]' onchange='changeOldVat(this);'>
 						";
 						foreach ($cat_ar as $catr) {
-    						if ($it_r[cat] == $catr[id]) {
+    						if ($it_r['cat'] == $catr['id']) {
 								$sel = " selected='selected'";
 							}else{
 								$sel = " ";

@@ -78,7 +78,7 @@ while ($in_r = pg_fetch_array($in)) {
 					unit,
 					vat
 		from		$acco.invoice_def_item
-		where		def_id = $in_r['ident']
+		where		def_id = $in_r[ident]
 		
 		";
 
@@ -159,7 +159,7 @@ while ($in_r = pg_fetch_array($in)) {
 			$dueplus = date('Y-m-d', strtotime('+1 week', strtotime($datenow)));
 			
 			/* reference gen place holder, make real when published */
-			if ($in_r['ongoing'] == 't') {
+			if ($in_r['ongoing'] == true) {
 				$firstdigit = '2';
 			} else {
 				$firstdigit = '1';
@@ -171,8 +171,8 @@ while ($in_r = pg_fetch_array($in)) {
 			$compref = $ref.viite($ref);
 			
 			
-			$pub = "f";
-			$cash = "f";
+			$pub = "false";
+			$cash = "false";
 			
 			
 			/* creating invoice outs */

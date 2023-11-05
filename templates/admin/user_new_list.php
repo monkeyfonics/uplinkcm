@@ -76,7 +76,7 @@ echo "
 		
 		
 		while ($nu_r = pg_fetch_array($nu)) {
-			$date = strtotime($nu_r[create_date]);
+			$date = strtotime($nu_r['create_date']);
 			echo "	
 				<tr>
 					

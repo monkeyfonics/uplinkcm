@@ -30,7 +30,7 @@ $ac = pg_query($conn, $query);
 
 $ac_r = pg_fetch_array($ac);
 
-if ($ac_r[active]==t) {
+if ($ac_r['active']==true) {
 	$checked=" checked";
 } else {
 	$checked="";

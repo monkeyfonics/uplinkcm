@@ -7,7 +7,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 $today = date('Y-m-d');
 
@@ -131,13 +131,13 @@ echo "
 			$ca = pg_query($conn, $query);
 			$ca_r = pg_fetch_array($ca);
 			
-			$created = date('Y-m-d', strtotime($in_r[created]));
-			$date = date('Y-m-d', strtotime($in_r[dated]));
-			$next = date('Y-m-d', strtotime($in_r[next_create]));
-			$end = date('Y-m-d', strtotime($in_r[end_date]));
+			$created = date('Y-m-d', strtotime($in_r['created']));
+			$date = date('Y-m-d', strtotime($in_r['dated']));
+			$next = date('Y-m-d', strtotime($in_r['next_create']));
+			$end = date('Y-m-d', strtotime($in_r['end_date']));
 			
 			/* check if the template has expired */
-			if ($in_r[active] == t) {
+			if ($in_r['active'] == true) {
 				$active = "{$lng->__('Yes')}";
 				$expired = "color: green;";
 				$icon = "&#10003;";
@@ -147,8 +147,8 @@ echo "
 				$icon = "x";
 			}
 			
-			if ($in_r[recurring] > 0) {
-				if ($in_r[ongoing] == t or $next <= $end and $end >= $today) {
+			if ($in_r['recurring'] > 0) {
+				if ($in_r['ongoing'] == t or $next <= $end and $end >= $today) {
 					$marker = "&raquo; $in_r[recurring]";
 				} else {
 					$marker = $icon;
@@ -178,8 +178,8 @@ $query = "
 $it = pg_query($conn, $query);
 			$combprice;
 			while ($it_r = pg_fetch_array($it)) {
-					$tempprice1 = $it_r[price] * $it_r[qty];
-					$tempprice2 = $tempprice1 * $it_r[vat];
+					$tempprice1 = $it_r['price'] * $it_r['qty'];
+					$tempprice2 = $tempprice1 * $it_r['vat'];
 					$combprice += ($tempprice1 + $tempprice2);
 				}
 
@@ -197,8 +197,8 @@ $query = "
 $inl = pg_query($conn, $query);
 			
 $inl_r = pg_fetch_array($inl);
-			if ($inl_r[dated]) {
-				$lastinvoice = date('Y-m-d', strtotime($inl_r[dated]));
+			if ($inl_r['dated']) {
+				$lastinvoice = date('Y-m-d', strtotime($inl_r['dated']));
 			} else {
 				$lastinvoice = "{$lng->__('None')}";
 			}
@@ -208,12 +208,12 @@ $inl_r = pg_fetch_array($inl);
 			$pripath = "index.php?section=def&template=def_view&ident=$in_r[ident]";
 			
 			/*active tooltip*/
-			if ($in_r[active] == t) {
+			if ($in_r['active'] == true) {
 				$activetip = "{$lng->__('Active')}";
 			} else {
 				$activetip = "{$lng->__('Inactive')}";
 			}
-			if ($in_r[ongoing] == t) {
+			if ($in_r['ongoing'] == true) {
 				$ongoingtip = "{$lng->__('Ongoing')}";
 			} else {
 				$ongoingtip = "{$lng->__('Not ongoing')}";
@@ -236,9 +236,9 @@ $inl_r = pg_fetch_array($inl);
 					</td>
 					<td>
 					";
-						if($in_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
+						if($in_r['pid']) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
 						
-						if($in_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
+						if($in_r['cid']) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
 					echo "
 						
 					</td>

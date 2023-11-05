@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 $suid = $_GET['suid'];
 	
@@ -35,15 +35,15 @@ $ul = pg_query($conn, $query);
 $ul_r = pg_fetch_array($ul);
 
 /*get the first letter of lastname*/
-$firstletter = substr($ul_r[lname],0,1);
+$firstletter = substr($ul_r['lname'],0,1);
 
 /*language clean up */
 
-if ($ul_r[loc] == 'fi') {
+if ($ul_r['loc'] == 'fi') {
 	$langu="{$lng->__('Finnish')}";
-} elseif ($ul_r[loc] == 'sv') {
+} elseif ($ul_r['loc'] == 'sv') {
 	$langu="{$lng->__('Swedish')}";
-} elseif ($ul_r[loc] == 'en') {
+} elseif ($ul_r['loc'] == 'en') {
 	$langu="{$lng->__('English')}";
 }	
 
@@ -136,7 +136,7 @@ echo "
 ";
 
 // format webaddress
-$webadr = str_replace("http://","",$ul_r[www]);
+$webadr = str_replace("http://","",$ul_r['www']);
 
 echo "
 	<div class='fullcont'>
@@ -281,7 +281,7 @@ echo "
 			</tr>
 			";
 		while($con_not_r = pg_fetch_array($con_not)) {
-			$date = strtotime($con_not_r[created]);
+			$date = strtotime($con_not_r['created']);
 			echo "
 			<tr>
 				<td>
@@ -353,15 +353,17 @@ echo "
 				";
 				
 				$con_it = pg_query($conn, $query);
-				$combprice =0;
+				//$combprice =0;
 				while ($con_it_r = pg_fetch_array($con_it)) {
-						$tempprice1 = $con_it_r[price] * $con_it_r[qty];
-						$tempprice2 = $tempprice1 * $con_it_r[vat];
+						$tempprice1 = $con_it_r['price'] * $con_it_r['qty'];
+						$tempprice1 = floatval($tempprice1);
+						$tempprice2 = $tempprice1 * $con_it_r['vat'];
+						$tempprice2 = floatval($tempprice2);
 						$combprice += ($tempprice1 + $tempprice2);
 					}
-				$invidformat = chunk_split($con_in_r[invoice_id], 6, ' ');
-				$date = date('Y-m-d', strtotime($con_in_r[dated]));
-				if ($con_in_r[pub] == f) {
+				$invidformat = chunk_split($con_in_r['invoice_id'], 6, ' ');
+				$date = date('Y-m-d', strtotime($con_in_r['dated']));
+				if ($con_in_r['pub'] == false) {
 					$pub = "class='pub'";
 				} else {
 					$pub = " ";

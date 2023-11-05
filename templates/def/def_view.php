@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 $ident = $_GET['ident'];
 	
@@ -104,12 +104,12 @@ $ig = pg_query($conn, $query);
 
 
 
-$in_r[created] = date('Y-m-d', strtotime($in_r[created]));
-$in_r[dated] = date('Y-m-d', strtotime($in_r[dated]));
-$in_r[next_create] = date('Y-m-d', strtotime($in_r[next_create]));
-$in_r[end_date] = date('Y-m-d', strtotime($in_r[end_date]));
+$in_r['created'] = date('Y-m-d', strtotime($in_r['created']));
+$in_r['dated'] = date('Y-m-d', strtotime($in_r['dated']));
+$in_r['next_create'] = date('Y-m-d', strtotime($in_r['next_create']));
+$in_r['end_date'] = date('Y-m-d', strtotime($in_r['end_date']));
 
-if ($in_r[active] == t) {
+if ($in_r['active'] == true) {
 				$activate = "{$lng->__('Deactivate')}";
 			} else {
 				$activate = "{$lng->__('Activate')}";
@@ -117,12 +117,12 @@ if ($in_r[active] == t) {
 
 			
 /*checks to see if there is no end date */
-if ($in_r[ongoing] == t) {
+if ($in_r['ongoing'] == true) {
 				$ongoing = "{$lng->__('Yes')}";
 				$end_date = " ";
 			} else {
 				$ongoing = "{$lng->__('No')}";
-				$end_date = $in_r[end_date];
+				$end_date = $in_r['end_date'];
 			}
 /*use buttons row */
 echo "
@@ -173,7 +173,7 @@ echo "
 				</td>
 				<td>
 					";
-						if($cl_r[coid]) { echo "$cl_r[lname], $cl_r[fname]"; }
+						if($cl_r['coid']) { echo "$cl_r[lname], $cl_r[fname]"; }
 					echo "
 				</td>
 			</tr>
@@ -197,7 +197,7 @@ echo "
 				</td>
 				<td>
 				";
-				if ($in_r[recurring] == 0) {
+				if ($in_r['recurring'] == 0) {
 					echo "{$lng->__('No')}";
 				} else {
 					echo "{$lng->__('Every')} $in_r[recurring] {$lng->__('Month(s)')}";
@@ -281,24 +281,24 @@ $it = pg_query($conn, $query);
 			</tr>
 		";
 		while ($it_r = pg_fetch_array($it)) {
-			$price = $it_r[price];
-			$fullprice = $it_r[price] * $it_r[qty];
-			$vatprice = number_format($fullprice * $it_r[vat],2,".","");
+			$price = $it_r['price'];
+			$fullprice = $it_r['price'] * $it_r['qty'];
+			$vatprice = number_format($fullprice * $it_r['vat'],2,".","");
 			$fullvatprice = $fullprice + $vatprice;
 			
 			$invoiceprice += $fullvatprice;
 			
-			if ($it_r[unit] == 1) {
+			if ($it_r['unit'] == 1) {
 				$unit = 'hour(s)';
-			} elseif ($it_r[unit] == 2) {
+			} elseif ($it_r['unit'] == 2) {
 				$unit = 'month(s)';
-			} elseif ($it_r[unit] == 3) {
+			} elseif ($it_r['unit'] == 3) {
 				$unit = 'qty';
 			}
 			
 		/* category fetch */
 		
-		$vat_clear = $it_r[vat] * 100;
+		$vat_clear = $it_r['vat'] * 100;
 		
 		$query = "
 			select		id,
@@ -388,7 +388,7 @@ $it = pg_query($conn, $query);
 		";
 		while ($def_r = pg_fetch_array($def)) {
 			/* format dates*/
-			$def_r[dated] = date('Y-m-d', strtotime($def_r[dated]));
+			$def_r['dated'] = date('Y-m-d', strtotime($def_r['dated']));
 				echo "
 					<tr>
 						<td>

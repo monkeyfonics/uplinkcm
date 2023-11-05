@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 $query = "
 	select		id,
@@ -35,7 +35,7 @@ echo "
 	<div class='abc_container'>
 		";
 	while ($ul_r = pg_fetch_array($ul)) {
-		$l = strtoupper(mb_substr($ul_r[lname],0,1,"UTF-8"));
+		$l = strtoupper(mb_substr($ul_r['lname'],0,1,"UTF-8"));
 		if ($l != $letter && strlen($l)) {
 			$letter = $l;
 			echo "<a class='abc_letters' href='#$l'><div class='abc_item'>$l</div></a>";
@@ -88,7 +88,7 @@ echo "
 		while ($ul_r = pg_fetch_array($ul)) {
 			
 			/*insert anchor */
-			$l = strtoupper(mb_substr($ul_r[lname],0,1,"UTF-8"));
+			$l = strtoupper(mb_substr($ul_r['lname'],0,1,"UTF-8"));
 			if ($l != $letter && strlen($l)) {
 				$letter = $l;
 				$a = "<a id='$l'>";

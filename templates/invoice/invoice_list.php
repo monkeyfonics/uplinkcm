@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 /* check for contact filter */
 if ($_GET['cfilter']) {
@@ -136,7 +136,7 @@ echo "
 			</tr>
 			";
 		while ($in_r = pg_fetch_array($in)) {
-			if ($in_r[pub] == f) {
+			if ($in_r['pub'] == false) {
 				$bolde = 'font-weight: bold;';
 			} else {
 				$bolde = '';
@@ -167,26 +167,26 @@ echo "
 			$ca = pg_query($conn, $query);
 			$ca_r = pg_fetch_array($ca);
 			
-			$date = strtotime($in_r[dated_out]);
-			if ($in_r[printed]) {
+			$date = strtotime($in_r['dated_out']);
+			if ($in_r['printed']) {
 				$printed_s = "<img style='width: 20px;' src='../layout/img/printer.png' alt='Printed'>";
-				$printed = date('Y-m-d', strtotime($in_r[printed]));
-				$print_hover = date('Y-m-d', strtotime($in_r[printed]));
+				$printed = date('Y-m-d', strtotime($in_r['printed']));
+				$print_hover = date('Y-m-d', strtotime($in_r['printed']));
 			} else {
 				$printed_s = " ";
 				$printed = "<span style='color: #B2B2B2; font-size: 70%;'>{$lng->__('Not printed')}</span>";
 				$print_hover = "{$lng->__('Not printed')}";
 			}
-			if ($in_r[emailed]) {
+			if ($in_r['emailed']) {
 				$emailed = "<img style='width: 20px;' src='../layout/img/email.png' alt='Email'>";
-				$email_date = date('Y-m-d', strtotime($in_r[emailed]));
-				$email_hover = date('Y-m-d', strtotime($in_r[emailed]));
+				$email_date = date('Y-m-d', strtotime($in_r['emailed']));
+				$email_hover = date('Y-m-d', strtotime($in_r['emailed']));
 			} else {
 				$emailed = " ";
 				$email_date = "<span style='color: #B2B2B2; font-size: 70%;'>{$lng->__('Not emailed')}</span>";
 				$email_hover = "{$lng->__('Not emailed')}";
 			}
-			if ($in_r[cash] == t) {
+			if ($in_r['cash'] == true) {
 				$cash = "&#10004;";
 			} else {
 				$cash = " ";
@@ -211,16 +211,16 @@ echo "
 
 			$combprice;
 			while ($it_r = pg_fetch_array($it)) {
-					$tempprice1 = $it_r[price] * $it_r[qty];
-					$tempprice2 = number_format($tempprice1 * $it_r[vat],2,".","");
+					$tempprice1 = $it_r['price'] * $it_r['qty'];
+					$tempprice2 = number_format($tempprice1 * $it_r['vat'],2,".","");
 					
 					$combprice += ($tempprice1 + $tempprice2);
 				}
 			$pripath = "index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]&invid=$in_r[invoice_id]";
 			
-			$refformat = chunk_split($in_r[ref], 5, ' ');
+			$refformat = chunk_split($in_r['ref'], 5, ' ');
 			/*format invoice id*/
-			$invidformat = chunk_split($in_r[invoice_id], 6, ' ');
+			$invidformat = chunk_split($in_r['invoice_id'], 6, ' ');
 			
 			echo "	
 			
@@ -243,9 +243,9 @@ echo "
 					</td>
 					<td>
 					";
-						if($in_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
+						if($in_r['pid']) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
 						
-						if($in_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
+						if($in_r['cid']) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
 					echo "
 					</td>
 					<td>

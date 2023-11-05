@@ -6,7 +6,7 @@ if ($_SESSION['s_id']) {
 	
 } else {
 	$s_id = 0;
-	$_GET['section'] = "";
+	$_GET['section'] = " ";
 	$_GET['template'] = "login";
 }
 

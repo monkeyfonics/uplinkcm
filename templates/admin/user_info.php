@@ -40,8 +40,8 @@ $query = "
 
 $us = pg_query($conn, $query);
 
-$joined = strtotime($ac_r[create_date]);
-$last = strtotime($ac_r[last_login]);
+$joined = strtotime($ac_r['create_date']);
+$last = strtotime($ac_r['last_login']);
 
 /*use buttons row */
 echo "
@@ -170,7 +170,7 @@ echo "
 			
 		</table>
 	";
-if ($ac_r[lvl] > 1) {
+if ($ac_r['lvl'] > 1) {
 	
 
 echo "

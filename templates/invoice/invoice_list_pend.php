@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 /* check for contact filter */
 if ($_GET['cfilter']) {
@@ -128,7 +128,7 @@ echo "
 			</tr>
 			";
 		while ($in_r = pg_fetch_array($in)) {
-			if ($in_r[pub] == f) {
+			if ($in_r['pub'] == false) {
 				$bolde = 'font-weight: bold;';
 			} else {
 				$bolde = '';
@@ -159,8 +159,8 @@ echo "
 			$ca = pg_query($conn, $query);
 			$ca_r = pg_fetch_array($ca);
 			
-			$date = strtotime($in_r[dated_out]);
-			$due_date = date('Y-m-d', strtotime($in_r[due_date]));
+			$date = strtotime($in_r['dated_out']);
+			$due_date = date('Y-m-d', strtotime($in_r['due_date']));
 			$today = date('Y-m-d');
 			
 			if ($due_date >= $today) {
@@ -188,15 +188,15 @@ echo "
 
 			$combprice;
 			while ($it_r = pg_fetch_array($it)) {
-					$tempprice1 = $it_r[price] * $it_r[qty];
-					$tempprice2 = number_format($tempprice1 * $it_r[vat],2,".","");
+					$tempprice1 = $it_r['price'] * $it_r['qty'];
+					$tempprice2 = number_format($tempprice1 * $it_r['vat'],2,".","");
 					$combprice += ($tempprice1 + $tempprice2);
 				}
 			$pripath = "index.php?section=invoice&template=invoice_view&inoid=$in_r[outid]&ident=$in_r[ident]&invid=$in_r[invoice_id]";
 			
-			$refformat = chunk_split($in_r[ref], 5, ' ');
+			$refformat = chunk_split($in_r['ref'], 5, ' ');
 			/*format invoice id*/
-			$invidformat = chunk_split($in_r[invoice_id].$in_r[runid], 6, ' ');
+			$invidformat = chunk_split($in_r['invoice_id'].$in_r['runid'], 6, ' ');
 			
 			echo "	
 			
@@ -219,9 +219,9 @@ echo "
 					</td>
 					<td>
 						";
-						if($in_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
+						if($in_r['pid']) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$ua_r[pid]'><span style='color:#000;'>$ua_r[lname], $ua_r[fname]</span></a>"; }
 						
-						if($in_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
+						if($in_r['cid']) { echo " - <a href='index.php?section=company&template=company_view&suid=$ca_r[cid]'><span style='color:#656565;'>$ca_r[name]</span></a>"; }
 					echo "
 					</td>
 					<td>

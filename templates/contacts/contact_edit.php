@@ -7,7 +7,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 
 if (!$_GET['suid']) {
@@ -61,7 +61,7 @@ $ul_r = pg_fetch_array($ul);
 if (!$suid) {
 	$header = 'New Contact';
 } else {
-	$header = $ul_r[lname].', '.$ul_r[fname];
+	$header = $ul_r['lname'].', '.$ul_r['fname'];
 
 /* existing companies */
 $query = "
@@ -255,9 +255,9 @@ echo "
 				</td>
 				<td>
 				";
-					if ($ul_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
-					if ($ul_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
-					if ($ul_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+					if ($ul_r['loc'] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+					if ($ul_r['loc'] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+					if ($ul_r['loc'] == 'en') $sel3=" selected='selected'"; else $sel3="";
 					
 				echo "
 					<select name='loco' tabindex='12'>

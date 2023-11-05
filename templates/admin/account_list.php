@@ -70,12 +70,12 @@ echo "
 		
 		$filetime = date ("Y-m-d H:i:s", filemtime($tablefile));
 		while ($ac_r = pg_fetch_array($ac)) {
-			$created = strtotime($ac_r[created]);
-			$updated = strtotime($ac_r[updated]);
+			$created = strtotime($ac_r['created']);
+			$updated = strtotime($ac_r['updated']);
 			
 			
 			
-			if ($filetime > $ac_r[updated]) {
+			if ($filetime > $ac_r['updated']) {
 				$nosync = "no sync";
 				$syncclass = "red";
 			} else {

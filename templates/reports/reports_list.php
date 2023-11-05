@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 
 /*use buttons row */
@@ -35,10 +35,10 @@ echo "
 			<table class='list'>
 				
 	";
-		$daynow = date(d);
+		$daynow = date('d');
 		$dayfirst = "01";
-		$monthnow = date(m);
-		$yearnow = date(Y);
+		$monthnow = date('m');
+		$yearnow = date('Y');
 		$yearlast = $yearnow - 1;
 		
 		
@@ -96,9 +96,9 @@ $monthly = pg_query($conn, $query);
 			
 			
 			
-			$yearnow = date(Y,strtotime($minus));
-			$monthtext = date(F,strtotime($minus));
-			$now = date(n-Y);
+			$yearnow = date('Y',strtotime($minus));
+			$monthtext = date('F',strtotime($minus));
+			$now = date('n-Y');
 			
 			echo "
 				<tr>
@@ -149,12 +149,12 @@ $monthly = pg_query($conn, $query);
 		$nrofinv = 0;
 		
 		while ($monthly_r = pg_fetch_array($monthly)) {
-			if ($monthly_r[cash] == t) {
+			if ($monthly_r['cash'] == true) {
 				$cash = "&#10004;";
 			} else {
 				$cash = " ";
 			}
-			if ($monthly_r[pub] == t) {
+			if ($monthly_r['pub'] == true) {
 				$nrofinv++;
 			}
 			 /*get name for contact*/
@@ -171,7 +171,7 @@ $monthly = pg_query($conn, $query);
 			$co = pg_query($conn, $query);
 			$co_r = pg_fetch_array($co);
 			/*check for company*/
-			if ($monthly_r[cid]) {
+			if ($monthly_r['cid']) {
 				/*get name for company*/
 								
 			$query = "
@@ -228,32 +228,32 @@ $monthly = pg_query($conn, $query);
 
 			$combprice;
 			while ($it_r = pg_fetch_array($it)) {
-					$tempprice1 = $it_r[price] * $it_r[qty];
-					$tempprice2 = number_format($tempprice1 * $it_r[vat],2,".","");
-					if ($it_r[invoice_id]== $last_id) {
+					$tempprice1 = $it_r['price'] * $it_r['qty'];
+					$tempprice2 = number_format($tempprice1 * $it_r['vat'],2,".","");
+					if ($it_r['invoice_id']== $last_id) {
 						$combprice += ($tempprice1 + $tempprice2);
 					} else {
 						$combprice = ($tempprice1 + $tempprice2);
 					}
 					
-					$last_id = $it_r[invoice_id];
+					$last_id = $it_r['invoice_id'];
 				}
 			/*format price */
 			$formatprice = number_format($combprice, 2, '.', '');
 			/*format invoice id */
-			$invidformat = chunk_split($monthly_r[invoice_id], 6, ' ');
+			$invidformat = chunk_split($monthly_r['invoice_id'], 6, ' ');
 			/*format date*/
-			$dated_out = date('Y-m-d',strtotime($monthly_r[dated_out]));
-			$dated_out_s = date('d',strtotime($monthly_r[dated_out]));
+			$dated_out = date('Y-m-d',strtotime($monthly_r['dated_out']));
+			$dated_out_s = date('d',strtotime($monthly_r['dated_out']));
 			
 			/*format date for dowanloads*/
-			$recieved_date = date('Y-m-d H:m:i',strtotime($pdf_r[recieved]));
-			$sent_date = date('Y-m-d H:m:i',strtotime($pdf_r[sent]));
+			$recieved_date = date('Y-m-d H:m:i',strtotime($pdf_r['recieved']));
+			$sent_date = date('Y-m-d H:m:i',strtotime($pdf_r['sent']));
 			
 			
 			/*logic for pdf link*/
-			if ($pdf_r[sent]) {
-				if ($pdf_r[downloaded] == t) {
+			if ($pdf_r['sent']) {
+				if ($pdf_r['downloaded'] == true) {
 					$linkoutput = "DL";
 					$title = "{$lng->__('Downloaded at')} $recieved_date";
 				} else {
@@ -288,9 +288,9 @@ $monthly = pg_query($conn, $query);
 					</td>
 					<td>
 					";
-						if($monthly_r[pid]) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$co_r[id]'><span style='color:#000;'>$co_r[lname], $co_r[fname]</span></a>"; }
+						if($monthly_r['pid']) { echo "<a href='index.php?section=contacts&template=contact_view&suid=$co_r[id]'><span style='color:#000;'>$co_r[lname], $co_r[fname]</span></a>"; }
 						
-						if($monthly_r[cid]) { echo " - <a href='index.php?section=company&template=company_view&suid=$com_r[id]'><span style='color:#656565;'>$com_r[name]</span></a>"; }
+						if($monthly_r['cid']) { echo " - <a href='index.php?section=company&template=company_view&suid=$com_r[id]'><span style='color:#656565;'>$com_r[name]</span></a>"; }
 					echo "
 						
 					</td>

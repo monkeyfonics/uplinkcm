@@ -88,8 +88,8 @@ echo "
 			while ($aul_r = pg_fetch_array($aul)) {
 				$countnr += 1;
 			}
-			$date = strtotime($ou_r[create_date]);
-			$last = strtotime($ou_r[last_login]);
+			$date = strtotime($ou_r['create_date']);
+			$last = strtotime($ou_r['last_login']);
 			echo "	
 				<tr>
 					

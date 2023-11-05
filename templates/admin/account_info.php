@@ -97,7 +97,7 @@ echo "
 		<div style='clear:both;'>
 		<h2 class='header'>$ac_r[name]</h2>
 		";
-		$logopath = "acc_img/".$ac_r[identy]."/logo.png";
+		$logopath = "acc_img/".$ac_r['identy']."/logo.png";
 		if (file_exists($logopath)) {
 			echo "
 			<img src='$logopath' style='max-height: 150px;'/>
@@ -197,7 +197,7 @@ echo "
 		<table class='list'>
 	";	
 		while ($us_r = pg_fetch_array($us)) {
-			if ($us_r[active] == t) {
+			if ($us_r['active'] == true) {
 				$active = "Active";
 			} else {
 				$active = "Not active";

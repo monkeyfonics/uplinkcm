@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 $ident = $_GET['ident'];
 $invid = $_GET['invid'];
@@ -77,20 +77,20 @@ $co = pg_query($conn, $query);
 $co_r = pg_fetch_array($co);
 
 
-$datedcount = new DateTime($in_r[dated_out]);
-$duecount = new DateTime($in_r[due_date_out]);
+$datedcount = new DateTime($in_r['dated_out']);
+$duecount = new DateTime($in_r['due_date_out']);
 
 $diff = $duecount->diff($datedcount)->format("%a");
 
-$in_r[created_out] = date('Y-m-d', strtotime($in_r[created_out]));
-$in_r[dated_out] = date('Y-m-d', strtotime($in_r[dated_out]));
-$in_r[due_date_out] = date('Y-m-d', strtotime($in_r[due_date_out]));
+$in_r['created_out'] = date('Y-m-d', strtotime($in_r['created_out']));
+$in_r['dated_out'] = date('Y-m-d', strtotime($in_r['dated_out']));
+$in_r['due_date_out'] = date('Y-m-d', strtotime($in_r['due_date_out']));
 
 
 
-$email_id = $cl_r[coid];
+$email_id = $cl_r['coid'];
 
-if ($in_r[cid]) {
+if ($in_r['cid']) {
 	$contact_link = "
 		<a href='index.php?section=company&template=company_view&suid=$co_r[cmid]'>
 			<div class='header'>$co_r[name]</div>
@@ -105,21 +105,21 @@ if ($in_r[cid]) {
 	";
 }
 
-if ($in_r[printed]) {
+if ($in_r['printed']) {
 	$prin = "&bull;";
-	$print_date = date('Y-m-d', strtotime($in_r[printed]));
+	$print_date = date('Y-m-d', strtotime($in_r['printed']));
 } else {
 	$prin = " ";
 	$print_date = "{$lng->__('Never')}";
 }
-if ($in_r[emailed]) {
+if ($in_r['emailed']) {
 	$emai = "&bull;";
-	$email_date = date('Y-m-d', strtotime($in_r[emailed]));
+	$email_date = date('Y-m-d', strtotime($in_r['emailed']));
 } else {
 	$emai = " ";
 	$email_date = "{$lng->__('Never')}";
 }
-if ($in_r[cash] == t) {
+if ($in_r['cash'] == true) {
 	$cash = "&bull;";
 } else {
 	$cash = " ";
@@ -137,7 +137,7 @@ echo "
 		</a>
 		";
 		/* if invoice is published*/
-		if ($in_r[pub] == t) {
+		if ($in_r['pub'] == true) {
 			echo "
 				<a href='out.php?section=invoice&t=invoice_print&ident=$in_r[ident]&inoid=$inoid' target='blank'>
 					<div title='{$lng->__('Printed')}: $print_date'>{$lng->__('Print')} $prin</div>
@@ -150,7 +150,7 @@ echo "
 				</a>
 				";
 				 */
-				if ($cl_r[email]) {
+				if ($cl_r['email']) {
 					echo "
 					<a href='transaction.php?section=invoice&t=invoice_email&ident=$in_r[ident]&inoid=$inoid&eid=$email_id' onclick='return confirm(\"{$lng->__('Send to')} $cl_r[email]?\");'>
 						<div title='{$lng->__('Emailed')}: $email_date , $cl_r[email]'>{$lng->__('Email')} $emai</div>
@@ -188,8 +188,8 @@ echo "
 	</div>
 ";
 
-$refformat = chunk_split($in_r[ref], 5, ' ');
-$invidformat = chunk_split($in_r[invoice_id], 6, ' ');
+$refformat = chunk_split($in_r['ref'], 5, ' ');
+$invidformat = chunk_split($in_r['invoice_id'], 6, ' ');
 echo "
 	<div class='fullcont'>
 		
@@ -224,14 +224,14 @@ echo "
 				<td>
 					<a href='index.php?section=contacts&template=contact_view&suid=$cl_r[coid]'>
 						";
-						if($cl_r[pid]) { echo "$cl_r[lname], $cl_r[fname]"; }
+						if($cl_r['pid']) { echo "$cl_r[lname], $cl_r[fname]"; }
 						echo "
 					</a>
 				</td>
 			</tr>
 			<tr>
 			";
-				if ($in_r[pub] == f) {
+				if ($in_r['pub'] == false) {
 					echo "
 					<td class='head'>
 						{$lng->__('Dated')}:
@@ -269,9 +269,9 @@ echo "
 					$in_r[due_date_out]
 				</td>
 			";
-			if ($in_r[loc] == 'fi') {
+			if ($in_r['loc'] == 'fi') {
 				$locout = "{$lng->__('Finnish')}";
-			} elseif ($in_r[loc] == 'sv') {
+			} elseif ($in_r['loc'] == 'sv') {
 				$locout = "{$lng->__('Swedish')}";
 			} else {
 				$locout = "{$lng->__('English')}";
@@ -291,7 +291,7 @@ echo "
 				</td>
 				<td>
 					";
-						if ($in_r[recurring] == 0) {
+						if ($in_r['recurring'] == 0) {
 							echo "{$lng->__('No')}";
 						} else {
 							echo "{$lng->__('Every')} $in_r[recurring] {$lng->__('Month(s)')}";
@@ -370,9 +370,9 @@ $it = pg_query($conn, $query);
 			</tr>
 		";
 		while ($it_r = pg_fetch_array($it)) {
-			$price = $it_r[price];
-			$fullprice = $it_r[price] * $it_r[qty];
-			$vatprice = number_format($fullprice * $it_r[vat],2,".","");
+			$price = $it_r['price'];
+			$fullprice = $it_r['price'] * $it_r['qty'];
+			$vatprice = number_format($fullprice * $it_r['vat'],2,".","");
 			$fullvatprice = $fullprice + $vatprice;
 			$fullvatprice = number_format($fullvatprice,2,".","");
 			
@@ -403,7 +403,7 @@ $it = pg_query($conn, $query);
 		
 		$ig_r = pg_fetch_array($ig);
 			
-		$vat_clear = $it_r[vat] * 100;	
+		$vat_clear = $it_r['vat'] * 100;	
 		
 		echo "
 			<tr>

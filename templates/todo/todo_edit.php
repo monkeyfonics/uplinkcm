@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 if ($_GET['tid']) {
 	
@@ -48,14 +48,14 @@ $todo = pg_query($conn, $query);
 
 $todo_r = pg_fetch_array($todo);
 
-if (!$todo_r[id]) {
+if (!$todo_r['id']) {
 	$created = date('Y-m-d');
 	$due = date('Y-m-d');
 	$head = "New Todo";
 } else {
-	$created = date('Y-m-d', strtotime($todo_r[created]));
-	$due = date('Y-m-d', strtotime($todo_r[due]));
-	$head = substr($todo_r[cont], 0, 10);
+	$created = date('Y-m-d', strtotime($todo_r['created']));
+	$due = date('Y-m-d', strtotime($todo_r['due']));
+	$head = substr($todo_r['cont'], 0, 10);
 }
 
 
@@ -173,9 +173,9 @@ echo "
 						</option>
 					";
 						while ($speccont_r = pg_fetch_array($speccont)) {
-							if ($speccont_r[prim] == t) {
+							if ($speccont_r['prim'] == true) {
 								$sel = " selected='selected'";
-								$conlang = $speccont_r[loc];
+								$conlang = $speccont_r['loc'];
 							} else {
 								$sel = " ";
 							}
@@ -193,7 +193,7 @@ echo "
 						";
 						
 						while ($ul_r = pg_fetch_array($ul)) {
-							if ($ul_r[id] == $todo_r[contact_id] or $ul_r[id] == $suid) $sel=" selected='selected'"; else $sel="";
+							if ($ul_r['id'] == $todo_r['contact_id'] or $ul_r['id'] == $suid) $sel=" selected='selected'"; else $sel="";
 							echo "
 								<option value='$ul_r[id]' $sel>
 									$ul_r[lname], $ul_r[fname]
@@ -236,7 +236,7 @@ echo "
 						</option>
 						";
 						while ($cl_r = pg_fetch_array($cl)) {
-							if ($cl_r[id] == $todo_r[company_id] or $cl_r[id] == $comid) $sel=" selected='selected'"; else $sel="";
+							if ($cl_r['id'] == $todo_r['company_id'] or $cl_r['id'] == $comid) $sel=" selected='selected'"; else $sel="";
 							echo "
 								<option value='$cl_r[id]' $sel>
 									$cl_r[name]

@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 $tid = $_GET['tid'];
 
@@ -47,7 +47,7 @@ $ul_r = pg_fetch_array($ul);
 
 if ($tid) {
 	
-	$todo_r[id] = $tid;
+	$todo_r['id'] = $tid;
 } else {
 	$wher = '';
 }
@@ -65,13 +65,13 @@ $query = "
 $co = pg_query($conn, $query);
 $co_r = pg_fetch_array($co);
 
-if ($todo_r[completed] == t) {
+if ($todo_r['completed'] == true) {
 	$completed = "{$lng->__('Not Completed')}";
 } else {
 	$completed = "{$lng->__('Mark Completed')}";
 }
 
-$head = substr($todo_r[cont], 0, 10);
+$head = substr($todo_r['cont'], 0, 10);
 
 
 /*use buttons row */
@@ -89,22 +89,22 @@ echo "
 	</div>
 ";
 
-$date = date('Y-m-d', strtotime($todo_r[created]));
-$due = date('Y-m-d', strtotime($todo_r[due]));
+$date = date('Y-m-d', strtotime($todo_r['created']));
+$due = date('Y-m-d', strtotime($todo_r['due']));
 
-if (!$todo_r[contact_id]) {
+if (!$todo_r['contact_id']) {
 	$person = "{$lng->__('None')}";
 } else {
 	$person = "$ul_r[lname], $ul_r[fname]";
 }
 
-if (!$todo_r[company_id]) {
+if (!$todo_r['company_id']) {
 	$company = "{$lng->__('None')}";
 } else {
 	$company = "$co_r[name]";
 }
 
-if ($todo_r[completed] == t) {
+if ($todo_r['completed'] == true) {
 	$comp = "{$lng->__('Yes')}";
 	$class = "green";
 } else {

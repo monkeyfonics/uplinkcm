@@ -7,7 +7,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 
 if (!$_GET['ident']) {
@@ -67,7 +67,7 @@ if (!$_GET['suid']) {
 	
 } else {
 	$suid = $_GET['suid'];
-	$in_r[pid] = $suid;
+	$in_r['pid'] = $suid;
 	
 	/* specific contact */
 $query = "
@@ -96,9 +96,9 @@ if (!$_GET['coid']) {
 	
 } else {
 	$coid = $_GET['coid'];
-	$in_r[cid] = $coid;
+	$in_r['cid'] = $coid;
 }
-if ($in_r[pid]) {
+if ($in_r['pid']) {
 /* only companies for that contact*/
 $query = "
 		select		{$acco}.company.id as id,
@@ -113,7 +113,7 @@ $speccomp = pg_query($conn, $query);
 } else {
 	
 }
-if ($in_r[cid]) {
+if ($in_r['cid']) {
 /* only contacts for that company*/
 $query = "
 		select		{$acco}.contacts.id as id,
@@ -153,23 +153,23 @@ $cl = pg_query($conn, $query);
 if (!$ident) {
 	$blank = 1;
 	$header = "{$lng->__('New Template')}";
-	$in_r[dated] = date('Y-m-d');
+	$in_r['dated'] = date('Y-m-d');
 	
-	$in_r[next_create] = date('Y-m-d', strtotime($in_r[dated]));
+	$in_r['next_create'] = date('Y-m-d', strtotime($in_r['dated']));
 	$oneWeek = date('Y-m-d', strtotime('+1 week'));
-	$in_r[end_date] = date('Y-m-d', strtotime($in_r[dated]));
+	$in_r['end_date'] = date('Y-m-d', strtotime($in_r['dated']));
 
 } else {
 	$blank = 0;
-	$header = $in_r[header];
+	$header = $in_r['header'];
 }
-$in_r[created] = date('Y-m-d', strtotime($in_r[created]));
-$in_r[dated] = date('Y-m-d', strtotime($in_r[dated]));
-$in_r[next_create] = date('Y-m-d', strtotime($in_r[next_create]));
-$in_r[end_date] = date('Y-m-d', strtotime($in_r[end_date]));
+$in_r['created'] = date('Y-m-d', strtotime($in_r['created']));
+$in_r['dated'] = date('Y-m-d', strtotime($in_r['dated']));
+$in_r['next_create'] = date('Y-m-d', strtotime($in_r['next_create']));
+$in_r['end_date'] = date('Y-m-d', strtotime($in_r['end_date']));
 
 /*checks to see if it is ongoing */
-if ($in_r[ongoing] == t) {
+if ($in_r['ongoing'] == true) {
 				$ongoing1 = " ";
 				$ongoing2 = " selected='selected' ";
 				
@@ -179,7 +179,7 @@ if ($in_r[ongoing] == t) {
 				
 			}
 /* check if ongoing is active or recurring is 0 */
-if ($in_r[ongoing] == t or $in_r[recurring] == 0) {
+if ($in_r['ongoing'] == true or $in_r['recurring'] == 0) {
 				
 				$enddate_display = "hidden";
 				$enddate_display_n = "text";
@@ -249,9 +249,9 @@ echo "
 						";
 						
 						while ($speccont_r = pg_fetch_array($speccont)) {
-							if ($speccont_r[prim] == t) {
+							if ($speccont_r['prim'] == true) {
 								$sel = " selected='selected'";
-								$conlang = $speccont_r[loc];
+								$conlang = $speccont_r['loc'];
 							} else {
 								$sel = " ";
 							}
@@ -268,7 +268,7 @@ echo "
 						</option>
 						";
 						while ($ul_r = pg_fetch_array($ul)) {
-							if ($ul_r[id] == $in_r[pid]) $sel=" selected='selected'"; else $sel="";
+							if ($ul_r['id'] == $in_r['pid']) $sel=" selected='selected'"; else $sel="";
 							echo "
 								<option value='$ul_r[id]' $sel>
 									$ul_r[lname], $ul_r[fname]
@@ -320,7 +320,7 @@ echo "
 						</option>
 						";
 						while ($cl_r = pg_fetch_array($cl)) {
-							if ($cl_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
+							if ($cl_r['id'] == $in_r['cid']) $sel=" selected='selected'"; else $sel="";
 							echo "
 								<option value='$cl_r[id]' $sel>
 									$cl_r[name]
@@ -337,12 +337,12 @@ echo "
 				</td>
 				<td>
 				";
-					if ($in_r[recurring] == 0) $sel0=" selected='selected'"; else $sel0="";
-					if ($in_r[recurring] == 1) $sel1=" selected='selected'"; else $sel1="";
-					if ($in_r[recurring] == 2) $sel2=" selected='selected'"; else $sel2="";
-					if ($in_r[recurring] == 3) $sel3=" selected='selected'"; else $sel3="";
-					if ($in_r[recurring] == 6) $sel6=" selected='selected'"; else $sel6="";
-					if ($in_r[recurring] == 12) $sel12=" selected='selected'"; else $sel12="";
+					if ($in_r['recurring'] == 0) $sel0=" selected='selected'"; else $sel0="";
+					if ($in_r['recurring'] == 1) $sel1=" selected='selected'"; else $sel1="";
+					if ($in_r['recurring'] == 2) $sel2=" selected='selected'"; else $sel2="";
+					if ($in_r['recurring'] == 3) $sel3=" selected='selected'"; else $sel3="";
+					if ($in_r['recurring'] == 6) $sel6=" selected='selected'"; else $sel6="";
+					if ($in_r['recurring'] == 12) $sel12=" selected='selected'"; else $sel12="";
 				echo "
 					<select id='rec' name='recurring' onchange='disableEnd();'>
 						<option value='0'$sel0>
@@ -375,14 +375,14 @@ echo "
 					/*check users language somehow if new template*/
 					if ($blank == 1) {
 						/*if company is selected with primary or contact selected*/
-						if ($conlang == 'fi' or $spco_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
-						if ($conlang == 'sv' or $spco_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
-						if ($conlang == 'en' or $spco_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+						if ($conlang == 'fi' or $spco_r['loc'] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($conlang == 'sv' or $spco_r['loc'] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($conlang == 'en' or $spco_r['loc'] == 'en') $sel3=" selected='selected'"; else $sel3="";
 						
 					} else {
-						if ($in_r[loc] == 'fi') $sel1=" selected='selected'"; else $sel1="";
-						if ($in_r[loc] == 'sv') $sel2=" selected='selected'"; else $sel2="";
-						if ($in_r[loc] == 'en') $sel3=" selected='selected'"; else $sel3="";
+						if ($in_r['loc'] == 'fi') $sel1=" selected='selected'"; else $sel1="";
+						if ($in_r['loc'] == 'sv') $sel2=" selected='selected'"; else $sel2="";
+						if ($in_r['loc'] == 'en') $sel3=" selected='selected'"; else $sel3="";
 						
 					}
 						
@@ -501,22 +501,22 @@ $ig = pg_query($conn, $query);
 		
 		/* invoice items */
 		while ($it_r = pg_fetch_array($it)) {
-			$price = $it_r[price];
-			$vatprice = $it_r[price] * $it_r[vat];
+			$price = $it_r['price'];
+			$vatprice = $it_r['price'] * $it_r['vat'];
 			$fullvatprice = $price + $vatprice;
 			/*Units */
 			
-			if ($it_r[unit] == 1) {
+			if ($it_r['unit'] == 1) {
 				
 				$usel1 = " selected='selected'";
 				$usel2 = ' ';
 				$usel3 = ' ';
-			} elseif ($it_r[unit] == 2) {
+			} elseif ($it_r['unit'] == 2) {
 				
 				$usel1 = ' ';
 				$usel2 = " selected='selected'";
 				$usel3 = ' ';
-			} elseif ($it_r[unit] == 3) {
+			} elseif ($it_r['unit'] == 3) {
 				
 				$usel1 = ' ';
 				$usel2 = ' ';
@@ -533,7 +533,7 @@ $ig = pg_query($conn, $query);
 					<select class='short' name='cat[$it_r[id]]' id='$it_r[id]' onchange='changeOldVat(this);'>
 						";
 						foreach ($cat_ar as $catr) {
-    						if ($it_r[cat] == $catr[id]) {
+    						if ($it_r['cat'] == $catr['id']) {
 								$sel = " selected='selected'";
 							}else{
 								$sel = " ";
@@ -594,9 +594,9 @@ $ig = pg_query($conn, $query);
 						
 				";
 					foreach ($cat_ar as $catr2) {
-    						if ($it_r[cat] == $catr2[id]) {
+    						if ($it_r['cat'] == $catr2['id']) {
 								$sel = " selected='selected'";
-								$vate = $catr2[vat];
+								$vate = $catr2['vat'];
 							}else{
 								$sel = " ";
 							}

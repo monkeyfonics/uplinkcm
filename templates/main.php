@@ -7,7 +7,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 /*contacts*/
 
@@ -107,8 +107,8 @@ $todo = pg_query($conn, $query);
 /* common variables*/
 $today = date('Y-m-d');
 $dayfirst = "01";
-$monthnow = date(m);
-$yearnow = date(Y);
+$monthnow = date('m');
+$yearnow = date('Y');
 $minus =  date("Y-m-d", strtotime("$yearnow-$monthnow-$dayfirst"));
 //remove one day to make it last day of last month
 $lastofmonth = strtotime ( '-1 day' , strtotime ( $minus ) ) ;
@@ -121,7 +121,7 @@ $twomonthlast = date ( 'Y-m-d' , $twomonthlast );
 $twomonthlast01 = strtotime ( '-2 months' , strtotime ( $minus ) ) ;
 $twomonthlast01 = date ( 'Y-m-d' , $twomonthlast01 );
 
-$monthnowtext = date(F);
+$monthnowtext = date('F');
 $lastmonthtext = strtotime ( '-1 month' , strtotime ( $monthnowtext ) ) ;
 $lastmonthtext = date ( 'F' , $lastmonthtext );
 $month3text = strtotime ( '-2 month' , strtotime ( $monthnowtext ) ) ;
@@ -155,10 +155,10 @@ echo "
 		$unpubcount3 = 0;
 		$pubcount3 =0;
 		while ($in_r = pg_fetch_array($in)) {
-			$date = date('Y-m-d', strtotime($in_r[dated_out]));
+			$date = date('Y-m-d', strtotime($in_r['dated_out']));
 			
 			if ($date >= $minus) {
-				if ($in_r[pub] == f) {
+				if ($in_r['pub'] == false) {
 					$pub = 'pub';
 					$unpubcount++;
 					
@@ -166,20 +166,20 @@ echo "
 					$pub = ' ';
 					$pubcount++;
 					/*check how many are unsent of the published*/
-					if ($in_r[printed] == '' and $in_r[emailed] == '') {
+					if ($in_r['printed'] == '' and $in_r['emailed'] == '') {
 						$tosend++;
 					} else {
 						
 					}
 				}
 				/* check for printed flag*/
-				if ($in_r[printed] == '') {
+				if ($in_r['printed'] == '') {
 					
 				} else {
 					$printcount++;
 				}
 				/* check for emailed flag*/
-				if ($in_r[emailed] == '') {
+				if ($in_r['emailed'] == '') {
 					
 				} else {
 					$emailcount++;
@@ -189,12 +189,12 @@ echo "
 			
 			// last month
 			if ($date > $lastofmonth01 and $date < $lastofmonth) {
-				if ($in_r[pub] == f) {
+				if ($in_r['pub'] == false) {
 					$unpubcountlast++;
 				} else {
 					$pubcountlast++;
 					/*check how many are unsent of the published*/
-					if ($in_r[printed] == '' and $in_r[emailed] == '') {
+					if ($in_r['printed'] == '' and $in_r['emailed'] == '') {
 						
 					} else {
 						
@@ -204,7 +204,7 @@ echo "
 			} //end of last month
 			// 3rd month
 			if ($date > $twomonthlast01 and $date < $twomonthlast) {
-				if ($in_r[pub] == f) {
+				if ($in_r['pub'] == false) {
 					$unpubcount3++;
 				} else {
 					$pubcount3++;
@@ -339,7 +339,7 @@ echo "
 				
 	";
 		while ($ul_r = pg_fetch_array($ul)) {
-			$date = strtotime($ul_r[created]);
+			$date = strtotime($ul_r['created']);
 			echo "
 				<tr>
 					<td>
@@ -367,11 +367,11 @@ echo "
 				
 	";
 		while ($todo_r = pg_fetch_array($todo)) {
-			$date = strtotime($todo_r[created]);
-			if ($todo_r[cont] == '') {
-				$todo_r[cont] = "{$lng->__('Empty')}";
+			$date = strtotime($todo_r['created']);
+			if ($todo_r['cont'] == '') {
+				$todo_r['cont'] = "{$lng->__('Empty')}";
 			}
-			if ($todo_r[completed] == f) {
+			if ($todo_r['completed'] == false) {
 				$bolde = 'bold';
 			} else {
 				$bolde = '';
@@ -381,7 +381,7 @@ echo "
 					<td class='$bolde'>
 						<a href='index.php?section=todo&template=todo_view&tid=$todo_r[id]'>
 						";
-							echo substr($todo_r[cont], 0, 30);
+							echo substr($todo_r['cont'], 0, 30);
 							echo " 
 						
 							<div class='itemheader'>".date('Y-m-d', $date)."<br/> {$lng->__('for')} $todo_r[lname], $todo_r[fname]</div>
@@ -407,8 +407,8 @@ echo "
 	";
 		
 		while ($note_r = pg_fetch_array($note)) {
-			$date = strtotime($note_r[created]);
-			if ($note_r[contact_id] > 0) {
+			$date = strtotime($note_r['created']);
+			if ($note_r['contact_id'] > 0) {
 				$notcon = "$note_r[lname], $note_r[fname]";
 				$href = "index.php?section=contacts&template=contact_view&suid=$note_r[contact_id]";
 			} else {
@@ -421,7 +421,7 @@ echo "
 					<td>
 						<a href='$href'>
 						";
-						echo substr($note_r[cont], 0, 30);
+						echo substr($note_r['cont'], 0, 30);
 						echo "
 							<div class='itemheader'>".date('Y-m-d', $date)."<br/> {$lng->__('for')} $notcon</div>
 						</a>

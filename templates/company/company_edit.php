@@ -7,7 +7,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 
 if (!$_GET['suid']) {
@@ -57,7 +57,7 @@ $ul_r = pg_fetch_array($ul);
 if (!$suid) {
 	$header = "{$lng->__('New Company')}";
 } else {
-	$header = $ul_r[name];
+	$header = $ul_r['name'];
 
 
 /* fetch contacts for company */
@@ -285,7 +285,7 @@ echo "
 		";
 		if ($cl) {
 			while ($cl_r = pg_fetch_array($cl)) {
-			if ($cl_r[prim] == t) {
+			if ($cl_r['prim'] == true) {
 				$selt = " selected='selected'";
 				$self = "";
 			} else {

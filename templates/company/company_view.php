@@ -8,7 +8,7 @@ require 'includes/accountcheck.php';
 
 $ac_r = pg_fetch_array($ac);
 
-$acco = $ac_r[identy];
+$acco = $ac_r['identy'];
 
 $suid = $_GET['suid'];
 	
@@ -33,7 +33,7 @@ $ul = pg_query($conn, $query);
 $ul_r = pg_fetch_array($ul);
 
 /*get the first letter of lastname*/
-$firstletter = substr($ul_r[name],0,1);
+$firstletter = substr($ul_r['name'],0,1);
 
 /* fetch contacts for company */
 $query = "
@@ -123,7 +123,7 @@ echo "
 ";
 
 // format webaddress
-$webadr = str_replace("http://","",$ul_r[www]);
+$webadr = str_replace("http://","",$ul_r['www']);
 
 echo "
 	<div class='fullcont'>
@@ -216,7 +216,7 @@ echo "
 				</tr>
 		";
 		while ($cl_r = pg_fetch_array($cl)) {
-			if ($cl_r[prim] == t) {
+			if ($cl_r['prim'] == true) {
 				$prim = "{$lng->__('Yes')}";
 			} else {
 				$prim = "{$lng->__('No')}";
@@ -258,7 +258,7 @@ echo "
 			</tr>
 			";
 		while($con_not_r = pg_fetch_array($con_not)) {
-			$date = strtotime($con_not_r[created]);
+			$date = strtotime($con_not_r['created']);
 			echo "
 			<tr>
 				<td>
@@ -330,15 +330,17 @@ echo "
 				
 				$com_it = pg_query($conn, $query);
 				$combprice ='';
+				$tempprice1 = 0;
+				$tempprice2 = 0;
 				while ($com_it_r = pg_fetch_array($com_it)) {
-						$tempprice1 = $com_it_r[price] * $com_it_r[qty];
-						$tempprice2 = $tempprice1 * $com_it_r[vat];
+						$tempprice1 = $com_it_r['price'] * $com_it_r['qty'];
+						$tempprice2 = $tempprice1 * $com_it_r['vat'];
 						$combprice += ($tempprice1 + $tempprice2);
 					}
 					
-				$invidformat = chunk_split($com_in_r[invoice_id], 6, ' ');
-				$date = date('Y-m-d', strtotime($com_in_r[dated]));
-				if ($com_in_r[pub] == f) {
+				$invidformat = chunk_split($com_in_r['invoice_id'], 6, ' ');
+				$date = date('Y-m-d', strtotime($com_in_r['dated']));
+				if ($com_in_r['pub'] == false) {
 					$pub = "class='pub'";
 				} else {
 					$pub = " ";

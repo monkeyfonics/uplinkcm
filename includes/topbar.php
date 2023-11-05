@@ -22,6 +22,8 @@ if ($_SESSION['ac_id']) {
 $section = $_GET['section'];
 $template = $_GET['template'];
 
+
+
 if ($section == "") {
 	$dashact = "menuactive";
 	$conact = " ";
@@ -69,7 +71,7 @@ if ($section == "") {
 
 echo "
 	<div class='topcont'>
-		
+	s: $section
 		";
 
 		
