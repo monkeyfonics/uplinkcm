@@ -25,7 +25,7 @@ $ch_r = pg_fetch_array($ch);
 
 $hasher = new PasswordHash($hash_cost_log2, $hash_portable);
 
-$hash = $ch_r[pass];
+$hash = $ch_r['pass'];
 
 
 /* generate new hash */

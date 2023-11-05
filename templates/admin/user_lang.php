@@ -22,11 +22,11 @@ $ac = pg_query($conn, $query);
 
 $ac_r = pg_fetch_array($ac);
 
-if ($ac_r[lang] == "en") {
+if ($ac_r['lang'] == "en") {
 	$style1 = "style='border:1px solid #000;'";
-} elseif ($ac_r[lang] == "sv") {
+} elseif ($ac_r['lang'] == "sv") {
 	$style2 = "style='border:1px solid #000;'";
-} elseif ($ac_r[lang] == "fi") {
+} elseif ($ac_r['lang'] == "fi") {
 	$style3 = "style='border:1px solid #000;'";
 } else {
 	$style1 = "";
@@ -43,9 +43,9 @@ if ($ac_r[lang] == "en") {
 			<h4>
 			{$lng->__('Chosen language for user')} $ac_r[fname] $ac_r[lname]:
 			 ";
-			 if ($ac_r[lang] == 'sv') {
+			 if ($ac_r['lang'] == 'sv') {
 			 	echo "{$lng->__('Swedish')}";
-			 } elseif ($ac_r[lang] == 'fi') {
+			 } elseif ($ac_r['lang'] == 'fi') {
 			 	echo "{$lng->__('Finnish')}";
 			 } else {
 			 	echo "{$lng->__('English')}";

@@ -8,7 +8,7 @@ include("includes/topbar.php");
 
 if (!$_GET['section']) {
 
-	$_GET['section'] = "";
+	$_GET['section'] = null;
 }
 
 if (!$_GET['template']) {

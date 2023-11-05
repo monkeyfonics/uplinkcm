@@ -32,7 +32,7 @@ echo "
 		
 		<div class='logo_holder'>
 		";
-		$logopath = "acc_img/".$ac_r[identy]."/logo.png";
+		$logopath = "acc_img/".$ac_r['identy']."/logo.png";
 		if (file_exists($logopath)) {
 			echo "
 			<img src='$logopath' style='max-height: 150px;'/>

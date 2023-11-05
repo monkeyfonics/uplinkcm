@@ -55,7 +55,7 @@ echo "
 			</tr>
 			";
 		while ($nu_r = pg_fetch_array($nu)) {
-			$date = strtotime($nu_r[create_date]);
+			$date = strtotime($nu_r['create_date']);
 			
 			echo "	
 				<input type='hidden' name='usid' value='$nu_r[id]'/>
@@ -113,7 +113,7 @@ echo "
 		
 		
 		while ($ou_r = pg_fetch_array($ou)) {
-			$date = strtotime($ou_r[create_date]);
+			$date = strtotime($ou_r['create_date']);
 			echo "	
 				<tr>
 					

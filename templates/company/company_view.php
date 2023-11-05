@@ -329,12 +329,12 @@ echo "
 				";
 				
 				$com_it = pg_query($conn, $query);
-				$combprice ='';
-				$tempprice1 = 0;
-				$tempprice2 = 0;
+				
 				while ($com_it_r = pg_fetch_array($com_it)) {
 						$tempprice1 = $com_it_r['price'] * $com_it_r['qty'];
+						$tempprice1 = floatval($tempprice1);
 						$tempprice2 = $tempprice1 * $com_it_r['vat'];
+						$tempprice2 = floatval($tempprice2);
 						$combprice += ($tempprice1 + $tempprice2);
 					}
 					

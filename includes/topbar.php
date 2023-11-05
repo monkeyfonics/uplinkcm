@@ -71,7 +71,7 @@ if ($section == "") {
 
 echo "
 	<div class='topcont'>
-	s: $section
+	
 		";
 
 		
