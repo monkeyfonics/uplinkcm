@@ -148,7 +148,7 @@ echo "
 			}
 			
 			if ($in_r['recurring'] > 0) {
-				if ($in_r['ongoing'] == t or $next <= $end and $end >= $today) {
+				if ($in_r['ongoing'] == true or $next <= $end and $end >= $today) {
 					$marker = "&raquo; $in_r[recurring]";
 				} else {
 					$marker = $icon;

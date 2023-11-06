@@ -62,7 +62,7 @@ class sepa {
 	
 	function invoice ($invoice) {
 		/*langage settings*/
-		$this->pdflang = new Translator($invoice['locale']);//$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
+		$this->pdflang = new Translator($invoice['locale']); //$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
 		$this->pdflang->setPath('lang/pdf/');
 		$this->pdf->pdflang &= $this->pdflang;
 		
