@@ -247,20 +247,21 @@ echo "
 							{$lng->__('None')}
 						</option>
 						";
-						
-						while ($speccont_r = pg_fetch_array($speccont)) {
-							if ($speccont_r['prim'] == true) {
-								$sel = " selected='selected'";
-								$conlang = $speccont_r['loc'];
-							} else {
-								$sel = " ";
+						if ($speccont) {
+							while ($speccont_r = pg_fetch_array($speccont)) {
+								if ($speccont_r['prim'] == true) {
+									$sel = " selected='selected'";
+									$conlang = $speccont_r['loc'];
+								} else {
+									$sel = " ";
+								}
+								//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
+								echo "
+									<option value='$speccont_r[id]' $sel>
+										$speccont_r[lname], $speccont_r[fname]
+									</option>
+								";
 							}
-							//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
-							echo "
-								<option value='$speccont_r[id]' $sel>
-									$speccont_r[lname], $speccont_r[fname]
-								</option>
-							";
 						}
 					echo "
 						<option value='0' disabled>
@@ -306,13 +307,15 @@ echo "
 						</option>
 						
 						";
-						while ($speccomp_r = pg_fetch_array($speccomp)) {
-							//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
-							echo "
-								<option value='$speccomp_r[id]'>
-									$speccomp_r[name]
-								</option>
-							";
+						if ($speccomp) {
+							while ($speccomp_r = pg_fetch_array($speccomp)) {
+								//if ($speccomp_r[id] == $in_r[cid]) $sel=" selected='selected'"; else $sel="";
+								echo "
+									<option value='$speccomp_r[id]'>
+										$speccomp_r[name]
+									</option>
+								";
+							}
 						}
 					echo "
 						<option value='0' disabled>
