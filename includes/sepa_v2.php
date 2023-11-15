@@ -3,17 +3,17 @@
 require_once("tfpdf/rotate.php");
 
 class PDF extends PDF_Rotate {
-	var $invoice;
-	var $pgnr;
-	var $pdflang;
+	public $invoice;
+	public $pgnr;
+	public $pdflang;
 	
 }
 
 
 class sepa {
-	var $pdf;
-	var $lastalias = 0;
-	var $pdflang;
+	public $pdf;
+	public $lastalias = 0;
+	public $pdflang;
 	
 	function sepa () {
 		$this->pdf = new PDF('P','mm','A4');
@@ -61,7 +61,7 @@ class sepa {
 	}
 	
 	function invoice ($invoice) {
-		/*langage settings*/
+		/*language settings*/
 		$this->pdflang = new Translator($invoice['locale']); //$outputlanguage: ISO code (example: de,en,fi,sv...) --> these are the names of each file
 		$this->pdflang->setPath('lang/pdf/');
 		$this->pdf->pdflang &= $this->pdflang;

@@ -369,7 +369,11 @@ $it = pg_query($conn, $query);
 				</th>
 			</tr>
 		";
+		
 		while ($it_r = pg_fetch_array($it)) {
+			if (!$invoiceprice) {
+				$invoiceprice = null;
+			}
 			$price = $it_r['price'];
 			$fullprice = $it_r['price'] * $it_r['qty'];
 			$vatprice = number_format($fullprice * $it_r['vat'],2,".","");
