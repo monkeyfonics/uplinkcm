@@ -5,9 +5,7 @@ services:
   db:
     image: "postgres:latest"
     environment:
-      POSTGRES_PASSWORD: "uplinkcm"
-      PGADMIN_DEFAULT_EMAIL: "niklas@uplink.fi"
-      PGADMIN_DEFAULT_PASSWORD: "uplinkcm"
+      POSTGRES_PASSWORD: "password"
     volumes:
       - ./db-data/:/var/lib/postgresql/data/
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
