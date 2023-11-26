@@ -4,3 +4,4 @@ acc_img/*
 tempfiles/*
 templates/admin/imports/*
 pdf/*
+init.sql
